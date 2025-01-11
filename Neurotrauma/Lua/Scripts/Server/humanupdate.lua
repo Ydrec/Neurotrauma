@@ -639,22 +639,15 @@ NT.Afflictions = {
 				return
 			end
 			c.afflictions[i].strength = c.afflictions[i].strength
+				+ HF.BoolToNum(c.afflictions.hypoventilation.strength > 0 and c.afflictions.alv.strength <= 0.1) * 0.09 * NT.Deltatime
+				+ HF.BoolToNum(
+					(
+						c.afflictions.cardiacarrest.strength
+						+ c.afflictions.respiratoryarrest.strength * HF.BoolToNum(c.afflictions.alv.strength <= 0.1)
+					) > 0
+				) * 0.18 * NT.Deltatime
+				+ math.max(0, c.afflictions.kidneydamage.strength - 80) / 20 * 0.1 * NT.Deltatime
 				- NT.Deltatime * 0.03
-				+ (
-						HF.Clamp(c.afflictions.hypoventilation.strength, 0, 1) * 0.09
-						+ HF.Clamp(
-							(
-								c.afflictions.respiratoryarrest.strength
-								* HF.BoolToNum(
-									c.afflictions.alv.strength <= 0.1 and not HF.HasAffliction(c.character, "cpr_buff")
-								)
-							) + c.afflictions.cardiacarrest.strength,
-							0,
-							1
-						) * 0.18
-						+ math.max(0, c.afflictions.kidneydamage.strength - 80) / 20 * 0.1
-					)
-					* NT.Deltatime
 		end,
 	},
 	alkalosis = {
