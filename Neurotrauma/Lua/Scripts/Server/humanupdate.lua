@@ -84,7 +84,7 @@ local function limbLockedInitial(c, limbtype, key)
 		)
 end
 NT.organDamageCalc = function(c, damagevalue, nomaxstrength)
-	if damagevalue >= 99 and not nomaxstrength ~= nil then
+	if damagevalue >= 99 and (nomaxstrength == nil or nomaxstrength == false) then
 		return 100
 	end
 	return damagevalue - 0.01 * c.stats.healingrate * c.stats.specificOrganDamageHealMultiplier * NT.Deltatime
