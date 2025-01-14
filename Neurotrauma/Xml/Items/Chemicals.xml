@@ -291,7 +291,7 @@
         <PreferredContainer primary="outpostmedcompartment" minamount="0" maxamount="3" spawnprobability="0.25"/>
 
         <Price baseprice="216">
-            <Price storeidentifier="merchantmedical" sold="true" multiplier="0.9" minavailable="40"/>
+            <Price storeidentifier="merchantmedical" sold="true" multiplier="0.9" minavailable="6"/>
         </Price>
 
         <Fabricate suitablefabricators="medicalfabricator" requiredtime="15">
