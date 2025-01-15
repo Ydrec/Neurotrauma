@@ -686,7 +686,7 @@ NT.ItemMethods.suture = function(item, usingCharacter, targetCharacter, limb)
 		HF.AddAfflictionLimb(targetCharacter, "bleeding", limbtype, -40, usingCharacter)
 		HF.AddAfflictionLimb(targetCharacter, "suturedw", limbtype, healeddamage)
 
-		HF.GiveSkillScaled(usingCharacter, "medical", healeddamage)
+		HF.GiveSkillScaled(usingCharacter, "medical", healeddamage * 2)
 
 		-- terminating surgeries
 		-- amputations
@@ -910,7 +910,12 @@ NT.ItemMethods.antibleeding2 = function(item, usingCharacter, targetCharacter, l
 	HF.AddAfflictionLimb(targetCharacter, "bleeding", limbtype, -24 - success * 24, usingCharacter)
 	if HF.HasAfflictionLimb(targetCharacter, "retractedskin", limbtype) then
 		-- remove all burn if applied during surgery
-		HF.AddAfflictionLimb(targetCharacter, "burn", limbtype, -100 - success * 100, usingCharacter)
+		if success and limbtype == LimbType.Torso and HF.HasAffliction(targetCharacter, "burn", 1) then
+			local affAmount = HF.GetAfflictionStrengthLimb(targetCharacter, limbtype, "burn")
+			local healedamount = math.min(affAmount, 100)
+			HF.AddAfflictionLimb(targetCharacter, "burn", limbtype, -healedamount, usingCharacter)
+			HF.GiveSkillScaled(usingCharacter, "medical", healedamount * 2)
+		end
 	elseif not limbHasThirdDegreeBurns(targetCharacter, limbtype) then
 		-- remove normal amount of burn if not third degree
 		HF.AddAfflictionLimb(targetCharacter, "burn", limbtype, -12 - success * 12, usingCharacter)
