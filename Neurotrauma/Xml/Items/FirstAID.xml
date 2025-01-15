@@ -114,6 +114,6 @@
         </MeleeWeapon>
 
         <AiTarget sightrange="1000" static="true"/>
-        <SkillRequirementHint identifier="medical" level="5"/>
+        <SkillRequirementHint identifier="medical" level="40"/>
     </Item>
 </Items>
