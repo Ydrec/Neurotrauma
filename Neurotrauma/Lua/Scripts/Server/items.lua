@@ -631,7 +631,7 @@ NT.ItemMethods.gypsum = function(item, usingCharacter, targetCharacter, limb)
 			HF.SetAfflictionLimb(targetCharacter, "bandaged", limbtype, 0, usingCharacter)
 			HF.SetAfflictionLimb(targetCharacter, "gypsumcast", limbtype, 100, usingCharacter)
 			NT.BreakLimb(targetCharacter, limbtype, -20)
-			HF.GiveSkillScaled(usingCharacter, "medical", 200)
+			HF.GiveSkillScaled(usingCharacter, "medical", 400)
 			HF.RemoveItem(item)
 		else
 			HF.RemoveItem(item)
@@ -645,16 +645,16 @@ NT.SutureAfflictions = {
 	bonecut = { xpgain = 0, case = "surgeryincision" },
 	drilledbones = { xpgain = 0, case = "surgeryincision" },
 
-	ll_arterialcut = { xpgain = 1, case = "retractedskin" },
-	rl_arterialcut = { xpgain = 1, case = "retractedskin" },
-	la_arterialcut = { xpgain = 1, case = "retractedskin" },
-	ra_arterialcut = { xpgain = 1, case = "retractedskin" },
-	h_arterialcut = { xpgain = 1, case = "retractedskin" },
-	t_arterialcut = { xpgain = 2, case = "retractedskin" },
+	ll_arterialcut = { xpgain = 2, case = "retractedskin" },
+	rl_arterialcut = { xpgain = 2, case = "retractedskin" },
+	la_arterialcut = { xpgain = 2, case = "retractedskin" },
+	ra_arterialcut = { xpgain = 2, case = "retractedskin" },
+	h_arterialcut = { xpgain = 2, case = "retractedskin" },
+	t_arterialcut = { xpgain = 3, case = "retractedskin" },
 	arteriesclamp = { xpgain = 0, case = "retractedskin" },
-	tamponade = { xpgain = 1, case = "retractedskin" },
-	internalbleeding = { xpgain = 1, case = "retractedskin" },
-	stroke = { xpgain = 2, case = "retractedskin" },
+	tamponade = { xpgain = 2, case = "retractedskin" },
+	internalbleeding = { xpgain = 2, case = "retractedskin" },
+	stroke = { xpgain = 3, case = "retractedskin" },
 
 	clampedbleeders = {},
 	surgeryincision = {},
@@ -1217,11 +1217,12 @@ NT.ItemMethods.tweezers = function(item, usingCharacter, targetCharacter, limb)
 				HF.GiveItem(usingCharacter, "scrap")
 			end
 
-			healAfflictionGiveSkill("foreignbody", 5, 15) -- TODO: this should be randomized
+			local tohealamount = math.random(3, 5)
+			healAfflictionGiveSkill("foreignbody", tohealamount, 30)
 
 			if usecase == "surgery" then
-				healAfflictionGiveSkill("internaldamage", 5, 3)
-				healAfflictionGiveSkill("blunttrauma", 5, 3)
+				healAfflictionGiveSkill("internaldamage", tohealamount, 3)
+				healAfflictionGiveSkill("blunttrauma", tohealamount, 3)
 			end
 		else
 			HF.AddAfflictionLimb(targetCharacter, "internaldamage", limbtype, 6, usingCharacter)
@@ -1621,13 +1622,13 @@ NT.ItemMethods.osteosynthesisimplants = function(item, usingCharacter, targetCha
 			end
 
 			local implantafflictions = {
-				ll_fracture = { xpgain = 200 },
-				rl_fracture = { xpgain = 200 },
-				la_fracture = { xpgain = 200 },
-				ra_fracture = { xpgain = 200 },
-				h_fracture = { xpgain = 200 },
-				n_fracture = { xpgain = 200 },
-				t_fracture = { xpgain = 200 },
+				ll_fracture = { xpgain = 600 },
+				rl_fracture = { xpgain = 600 },
+				la_fracture = { xpgain = 600 },
+				ra_fracture = { xpgain = 600 },
+				h_fracture = { xpgain = 600 },
+				n_fracture = { xpgain = 600 },
+				t_fracture = { xpgain = 600 },
 				boneclamp = { xpgain = 0 },
 				drilledbones = { xpgain = 0 },
 			}
@@ -1671,9 +1672,9 @@ NT.ItemMethods.spinalimplant = function(item, usingCharacter, targetCharacter, l
 			HF.RemoveItem(item)
 
 			if NTSP ~= nil and NTConfig.Get("NTSP_enableSurgerySkill", true) then
-				HF.GiveSkillScaled(usingCharacter, "surgery", 400)
+				HF.GiveSkillScaled(usingCharacter, "surgery", 600)
 			else
-				HF.GiveSkillScaled(usingCharacter, "medical", 100)
+				HF.GiveSkillScaled(usingCharacter, "medical", 400)
 			end
 		else
 			HF.AddAfflictionLimb(targetCharacter, "bleeding", limbtype, 5, usingCharacter)
@@ -1699,9 +1700,9 @@ NT.ItemMethods.endovascballoon = function(item, usingCharacter, targetCharacter,
 		HF.SetAffliction(targetCharacter, "internalbleeding", 0, usingCharacter)
 
 		if NTSP ~= nil and NTConfig.Get("NTSP_enableSurgerySkill", true) then
-			HF.GiveSkillScaled(usingCharacter, "surgery", 400)
+			HF.GiveSkillScaled(usingCharacter, "surgery", 800)
 		else
-			HF.GiveSkillScaled(usingCharacter, "medical", 200)
+			HF.GiveSkillScaled(usingCharacter, "medical", 600)
 		end
 
 		if HF.Chance(NTC.GetMultiplier(usingCharacter, "balloonconsumechance")) then
@@ -1722,9 +1723,9 @@ NT.ItemMethods.medstent = function(item, usingCharacter, targetCharacter, limb)
 		HF.SetAffliction(targetCharacter, "t_arterialcut", 0, usingCharacter)
 
 		if NTSP ~= nil and NTConfig.Get("NTSP_enableSurgerySkill", true) then
-			HF.GiveSkillScaled(usingCharacter, "surgery", 800)
+			HF.GiveSkillScaled(usingCharacter, "surgery", 1200)
 		else
-			HF.GiveSkillScaled(usingCharacter, "medical", 400)
+			HF.GiveSkillScaled(usingCharacter, "medical", 1000)
 		end
 	end
 end
@@ -1765,6 +1766,12 @@ NT.ItemMethods.needle = function(item, usingCharacter, targetCharacter, limb)
 
 	if limbtype == LimbType.Torso and not HF.HasAfflictionLimb(targetCharacter, "retractedskin", limbtype) then
 		if HF.GetSkillRequirementMet(usingCharacter, "medical", 20) then
+			if
+				HF.HasAffliction(targetCharacter, "pneumothorax")
+				and not HF.HasAffliction(targetCharacter, "needlec", 0.1)
+			then
+				HF.GiveSkillScaled(usingCharacter, "medical", 200)
+			end
 			HF.SetAffliction(targetCharacter, "needlec", 100, usingCharacter)
 			HF.AddAffliction(targetCharacter, "pneumothorax", 1, usingCharacter)
 
@@ -1815,6 +1822,11 @@ local function reattachLimb(item, user, target, limb, itemlimbtype)
 	if NT.LimbIsAmputated(target, limbtype) and HF.HasAfflictionLimb(target, "bonecut", limbtype, 99) then
 		HF.SetAfflictionLimb(target, "bonecut", limbtype, 0, user)
 		NT.SurgicallyAmputateLimb(target, limbtype, 0, 0)
+		if NTSP ~= nil and NTConfig.Get("NTSP_enableSurgerySkill", true) then
+			HF.GiveSkillScaled(usingCharacter, "surgery", 400)
+		else
+			HF.GiveSkillScaled(usingCharacter, "medical", 200)
+		end
 		HF.RemoveItem(item)
 	end
 end
@@ -1863,9 +1875,11 @@ local function InfuseBloodpack(item, packtype, usingCharacter, targetCharacter, 
 	if compatible then
 		HF.AddAffliction(targetCharacter, "bloodloss", -30, usingCharacter)
 		HF.AddAffliction(targetCharacter, "bloodpressure", 30, usingCharacter)
+		HF.GiveSkillScaled(usingCharacter, "medical", 200 * HF.BoolToNum(bloodloss > 100))
 	else
 		HF.AddAffliction(targetCharacter, "bloodloss", -20, usingCharacter)
 		HF.AddAffliction(targetCharacter, "bloodpressure", 30, usingCharacter)
+		HF.GiveSkillScaled(usingCharacter, "medical", 200 * HF.BoolToNum(bloodloss > 100))
 		local immunity = HF.GetAfflictionStrength(targetCharacter, "immunity", 100)
 		HF.AddAffliction(targetCharacter, "hemotransfusionshock", math.max(immunity - 6, 0), usingCharacter)
 	end
@@ -1975,9 +1989,15 @@ NT.ItemMethods.gelipack = function(item, usingCharacter, targetCharacter, limb)
 		return
 	end
 	local limbtype = limb.type
-	local success = HF.BoolToNum(HF.GetSkillRequirementMet(usingCharacter, "medical", 5), 1)
-	HF.AddAfflictionLimb(targetCharacter, "iced", limbtype, 5 + success * 100, usingCharacter)
-	HF.SetAffliction(targetCharacter, "internalbleeding", 0, usingCharacter)
+	local success = HF.BoolToNum(HF.GetSkillRequirementMet(usingCharacter, "medical", 40), 1)
+	HF.AddAfflictionLimb(targetCharacter, "iced", limbtype, 75 + success * 25, usingCharacter)
+
+	if success and limbtype == LimbType.Torso and HF.HasAffliction(targetCharacter, "internalbleeding", 1) then
+		local affAmount = HF.GetAfflictionStrengthLimb(targetCharacter, limbtype, "internalbleeding")
+		local healedamount = math.min(affAmount, 100)
+		HF.AddAfflictionLimb(targetCharacter, "internalbleeding", limbtype, -healedamount, usingCharacter)
+		HF.GiveSkillScaled(usingCharacter, "medical", healedamount * 20)
+	end
 	HF.GiveItem(targetCharacter, "ntsfx_bandage")
 
 	item.Condition = item.Condition - 35
@@ -2123,7 +2143,7 @@ NT.ItemStartsWithMethods.wrench = function(item, usingCharacter, targetCharacter
 
 		if HF.GetSkillRequirementMet(usingCharacter, "medical", skillrequired) then
 			NT.DislocateLimb(targetCharacter, limbtype, -1000)
-			HF.GiveSkillScaled(usingCharacter, "medical", 75)
+			HF.GiveSkillScaled(usingCharacter, "medical", 200)
 		else
 			NT.BreakLimb(targetCharacter, limbtype, 1)
 		end
