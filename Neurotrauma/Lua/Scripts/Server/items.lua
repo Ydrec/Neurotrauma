@@ -910,16 +910,13 @@ NT.ItemMethods.antibleeding2 = function(item, usingCharacter, targetCharacter, l
 	HF.AddAfflictionLimb(targetCharacter, "bleeding", limbtype, -24 - success * 24, usingCharacter)
 	if HF.HasAfflictionLimb(targetCharacter, "retractedskin", limbtype) then
 		-- remove all burn if applied during surgery
-		if success and limbtype == LimbType.Torso and HF.HasAffliction(targetCharacter, "burn", 1) then
-			local affAmount = HF.GetAfflictionStrengthLimb(targetCharacter, limbtype, "burn")
-			local healedamount = math.min(affAmount, 100)
-			HF.AddAfflictionLimb(targetCharacter, "burn", limbtype, -healedamount, usingCharacter)
-			HF.GiveSkillScaled(usingCharacter, "medical", healedamount * 5)
-			if NTSP ~= nil and NTConfig.Get("NTSP_enableSurgerySkill", true) then
-				HF.GiveSkillScaled(usingCharacter, "surgery", healedamount * 300)
-			else
-				HF.GiveSkillScaled(usingCharacter, "medical", healedamount * 150)
-			end
+		local affAmount = HF.GetAfflictionStrengthLimb(targetCharacter, limbtype, "burn")
+		local healedamount = math.min(affAmount, 200)
+		HF.AddAfflictionLimb(targetCharacter, "burn", limbtype, -healedamount, usingCharacter)
+		if NTSP ~= nil and NTConfig.Get("NTSP_enableSurgerySkill", true) then
+			HF.GiveSkillScaled(usingCharacter, "surgery", healedamount * 300)
+		else
+			HF.GiveSkillScaled(usingCharacter, "medical", healedamount * 150)
 		end
 	elseif not limbHasThirdDegreeBurns(targetCharacter, limbtype) then
 		-- remove normal amount of burn if not third degree
@@ -1632,13 +1629,13 @@ NT.ItemMethods.osteosynthesisimplants = function(item, usingCharacter, targetCha
 			end
 
 			local implantafflictions = {
-				ll_fracture = { xpgain = 6000 },
-				rl_fracture = { xpgain = 6000 },
-				la_fracture = { xpgain = 6000 },
-				ra_fracture = { xpgain = 6000 },
-				h_fracture = { xpgain = 6000 },
-				n_fracture = { xpgain = 6000 },
-				t_fracture = { xpgain = 6000 },
+				ll_fracture = { xpgain = 10000 },
+				rl_fracture = { xpgain = 10000 },
+				la_fracture = { xpgain = 10000 },
+				ra_fracture = { xpgain = 10000 },
+				h_fracture = { xpgain = 10000 },
+				n_fracture = { xpgain = 10000 },
+				t_fracture = { xpgain = 10000 },
 				boneclamp = { xpgain = 0 },
 				drilledbones = { xpgain = 0 },
 			}
@@ -1710,9 +1707,9 @@ NT.ItemMethods.endovascballoon = function(item, usingCharacter, targetCharacter,
 		HF.SetAffliction(targetCharacter, "internalbleeding", 0, usingCharacter)
 
 		if NTSP ~= nil and NTConfig.Get("NTSP_enableSurgerySkill", true) then
-			HF.GiveSkillScaled(usingCharacter, "surgery", 6000)
+			HF.GiveSkillScaled(usingCharacter, "surgery", 10000)
 		else
-			HF.GiveSkillScaled(usingCharacter, "medical", 3000)
+			HF.GiveSkillScaled(usingCharacter, "medical", 5000)
 		end
 
 		if HF.Chance(NTC.GetMultiplier(usingCharacter, "balloonconsumechance")) then
@@ -1733,9 +1730,9 @@ NT.ItemMethods.medstent = function(item, usingCharacter, targetCharacter, limb)
 		HF.SetAffliction(targetCharacter, "t_arterialcut", 0, usingCharacter)
 
 		if NTSP ~= nil and NTConfig.Get("NTSP_enableSurgerySkill", true) then
-			HF.GiveSkillScaled(usingCharacter, "surgery", 12000)
+			HF.GiveSkillScaled(usingCharacter, "surgery", 20000)
 		else
-			HF.GiveSkillScaled(usingCharacter, "medical", 6000)
+			HF.GiveSkillScaled(usingCharacter, "medical", 10000)
 		end
 	end
 end
