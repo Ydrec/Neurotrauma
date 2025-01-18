@@ -3705,7 +3705,7 @@ thats what the vomiting symptom is for -->
     <Effect minstrength="5" maxstrength="200"
       resistancefor="damage"
       minresistance="0.025"
-      maxresistance="0.5"
+      maxresistance="0.25"
       minscreendistort="0.0"
       maxscreendistort="0.0"
       minscreenblur="0.0"
