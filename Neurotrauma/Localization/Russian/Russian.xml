@@ -36,6 +36,7 @@
 </Override>
 
 <stasisbagequipconfirmation>После надевания вы потеряете сознание. Вы уверены?</stasisbagequipconfirmation>
+<emergencysuitequipconfirmation>После надевания вы не сможете двигаться. Вы уверены?</emergencysuitequipconfirmation>
 
 <!-- /// Хирургия /// -->
 
@@ -237,6 +238,9 @@
 
 <entityname.stasisbag>Стазис-мешок</entityname.stasisbag>
 <entitydescription.stasisbag>Приостанавливает большинство биохимических процессов.</entitydescription.stasisbag>
+
+<entityname.emergencysuit>Костюм для экстренной помощи</entityname.emergencysuit>
+<entitydescription.emergencysuit>Дает относительную безопасность для использования дефибриллятора и проведения всех видов операций. Обездвиживает, но обладает слотом аккумулятора для питания искусственной вентиляции.</entitydescription.emergencysuit>
 
 
 

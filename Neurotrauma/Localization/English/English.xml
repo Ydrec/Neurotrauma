@@ -37,6 +37,7 @@
 </Override>
 
 <stasisbagequipconfirmation>Equipping this will cause you to go unconscious. Are you sure?</stasisbagequipconfirmation>
+<emergencysuitequipconfirmation>Equipping this will cause you to go immobile. Are you sure?</emergencysuitequipconfirmation>
 
 <!-- /// Surgery /// -->
 <entityname.advscalpel>Scalpel</entityname.advscalpel>
@@ -251,6 +252,9 @@ Can give blood to: AB+</entitydescription.abpluscard>
 
 <entityname.stasisbag>Stasis bag</entityname.stasisbag>
 <entitydescription.stasisbag>Stops most biological processes from taking place.</entitydescription.stasisbag>
+
+<entityname.emergencysuit>Emergency suit</entityname.emergencysuit>
+<entitydescription.emergencysuit>Makes it relatively safe for using defibrillator and performing all kinds of surgeries. Stops movement, but has a battery slot to power artificial ventilation.</entitydescription.emergencysuit>
 
 
 

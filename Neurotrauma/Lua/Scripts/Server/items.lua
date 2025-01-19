@@ -1930,6 +1930,34 @@ NT.ItemMethods.stasisbag = function(item, usingCharacter, targetCharacter, limb)
 		end
 	end
 end
+NT.ItemMethods.emergencysuit = function(item, usingCharacter, targetCharacter, limb)
+	local condition = item.Condition
+	if condition <= 0 or usingCharacter == targetCharacter then
+		return
+	end
+
+	local targetInventory = targetCharacter.Inventory
+	if targetInventory ~= nil then
+		if targetInventory.TryPutItem(item, 4, false, true, usingCharacter, true, true) then
+			HF.GiveItem(targetCharacter, "ntsfx_zipper")
+		else
+			local userInventory = usingCharacter.Inventory
+			local targetItem = HF.GetOuterWear(targetCharacter)
+			local lhand = HF.GetItemInLeftHand(usingCharacter)
+			local rhand = HF.GetItemInRightHand(usingCharacter)
+			if rhand ~= nil then
+				userInventory.TryPutItem(rhand, nil, { InvSlotType.Any })
+			end
+			if lhand ~= nil then
+				userInventory.TryPutItem(lhand, nil, { InvSlotType.Any })
+			end
+			userInventory.TryPutItem(targetItem, 5, true, true, usingCharacter, true, true)
+			if targetInventory.TryPutItem(item, 4, true, true, usingCharacter, true, true) then
+				HF.GiveItem(targetCharacter, "ntsfx_zipper")
+			end
+		end
+	end
+end
 NT.ItemMethods.autocpr = function(item, usingCharacter, targetCharacter, limb)
 	local condition = item.Condition
 	if targetCharacter.InWater then
