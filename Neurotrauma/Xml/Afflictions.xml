@@ -3702,17 +3702,34 @@ thats what the vomiting symptom is for -->
         <ReduceAffliction type="pain" amount="5" />
       </StatusEffect>
     </Effect>
-    <Effect minstrength="5" maxstrength="200"
+    <Effect minstrength="5" maxstrength="20"
       resistancefor="damage"
       minresistance="0.025"
       maxresistance="0.25"
       minscreendistort="0.0"
       maxscreendistort="0.0"
       minscreenblur="0.0"
-      maxscreenblur="0.1"
+      maxscreenblur="0.01"
       minradialdistort="0.0"
-      maxradialdistort="0.5"
+      maxradialdistort="0.05"
       minchromaticaberration="0"
+      maxchromaticaberration="2"
+      strengthchange="-0.3">
+      <StatusEffect target="Character">
+        <ReduceAffliction type="pain" amount="10" />
+      </StatusEffect>
+    </Effect>
+    <Effect minstrength="20" maxstrength="200"
+      resistancefor="damage,stun"
+      minresistance="0.25"
+      maxresistance="0.25"
+      minscreendistort="0.0"
+      maxscreendistort="0.0"
+      minscreenblur="0.01"
+      maxscreenblur="0.1"
+      minradialdistort="0.05"
+      maxradialdistort="0.5"
+      minchromaticaberration="2"
       maxchromaticaberration="20"
       strengthchange="-0.3">
       <StatusEffect target="Character">
