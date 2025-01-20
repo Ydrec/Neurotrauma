@@ -27,7 +27,7 @@
     </Item>
     
     <Item name="" identifier="organtoolbox" category="Equipment" tags="mediumitem,mobilecontainer,tool,refrigerated,toolbox" cargocontaineridentifier="" showcontentsintooltip="true" Scale="0.5" fireproof="true" impactsoundtag="impact_metal_heavy" RequireAimToUse="True" description="">
-        <PreferredContainer primary="medcab" minamount="1" maxamount="1" spawnprobability="1"/>
+        <PreferredContainer primary="medcab" minamount="1" maxamount="1"/>
         <PreferredContainer secondary="wreckstoragecab" spawnprobability="0.05"/>
         <PreferredContainer secondary="locker"/>
         
@@ -78,7 +78,7 @@
     </Item>
    
     <Item name="" identifier="medtoolbox" category="Equipment" tags="smallitem,mobilecontainer,tool,toolbox" cargocontaineridentifier="" showcontentsintooltip="true" Scale="0.5" fireproof="true" impactsoundtag="impact_metal_heavy" RequireAimToUse="True" description="">
-        <PreferredContainer primary="medcab" minamount="2" maxamount="2" spawnprobability="1"/>
+        <PreferredContainer primary="medcab" minamount="2" maxamount="2"/>
         <PreferredContainer secondary="wreckstoragecab" spawnprobability="0.05"/>
         <PreferredContainer secondary="locker"/>
         
@@ -118,7 +118,7 @@
     </Item>
     
     <Item name="" identifier="surgerytoolbox" category="Equipment" tags="smallitem,mobilecontainer,tool,toolbox" cargocontaineridentifier="" showcontentsintooltip="true" Scale="0.5" fireproof="true" impactsoundtag="impact_metal_heavy" RequireAimToUse="True" description="">
-        <PreferredContainer primary="medcab" minamount="1" maxamount="1" spawnprobability="1"/>
+        <PreferredContainer primary="medcab" minamount="1" maxamount="1" />
         <PreferredContainer secondary="locker"/>
        
         <Deconstruct time="10">
@@ -353,8 +353,8 @@
         <aitarget maxsightrange="50" />
     </Item>
     
-    <Item name="" identifier="emergencybag" category="Equipment" useinhealthinterface="True" tags="provocative,mediumitem,diving" scale="0.9" fireproof="true" description="" cargocontaineridentifier="metalcrate" impactsoundtag="impact_soft" equipconfirmationtext="emergencysuitequipconfirmation">
-        <Price baseprice="1500" soldbydefault="false">
+    <Item name="" identifier="emergencysuit" category="Equipment" useinhealthinterface="True" tags="provocative,mediumitem,diving" scale="0.9" fireproof="true" description="" cargocontaineridentifier="metalcrate" impactsoundtag="impact_soft" equipconfirmationtext="emergencysuitequipconfirmation">
+        <Price baseprice="800" soldbydefault="false">
             <Price storeidentifier="merchantmedical" sold="true" multiplier="0.9" minavailable="1"/>
         </Price>
        
@@ -371,7 +371,7 @@
             <Item identifier="steel" />
         </Deconstruct>
        
-        <PreferredContainer primary="medcab" minamount="0" maxamount="1" spawnprobability="0.5" />
+        <PreferredContainer primary="medcab" minamount="1" maxamount="1" />
         <PreferredContainer primary="wreckmedcab,abandonedmedcab" minamount="0" maxamount="1" spawnprobability="0.15" />
         <InventoryIcon texture="%ModDir%\Images\Suits\redsuit.png" sourcerect="0,0,67,46" origin="0.5,0.5" />
         <Sprite texture="%ModDir%\Images\Suits\redsuit.png" sourcerect="0,0,68,46" depth="0.55" origin="0.5,0.5" />
