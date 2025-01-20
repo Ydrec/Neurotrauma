@@ -201,7 +201,7 @@
         
         <Deconstruct time="10"/>
 
-        <PreferredContainer primary="medcab" minamount="0" maxamount="4" spawnprobability="0.75" />
+        <PreferredContainer primary="medcab" minamount="1" maxamount="1" spawnprobability="0.75" />
         <PreferredContainer primary="wreckmedcab,abandonedmedcab" minamount="0" maxamount="1" spawnprobability="0.15" />
         <InventoryIcon texture="%ModDir%\Images\Suits\blackbag.png" sourcerect="0,0,67,45" origin="0.5,0.5" />
         <Sprite texture="%ModDir%\Images\Suits\blackbag.png" sourcerect="0,0,67,45" depth="0.55" origin="0.5,0.5" />
