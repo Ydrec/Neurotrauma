@@ -83,7 +83,7 @@
     </Item>
 
     <Item name="" identifier="surgerysaw" category="Equipment" cargocontaineridentifier="mediccrate" Tags="smallitem,medical,surgery,surgerytool" description="" useinhealthinterface="True" scale="0.4">
-        <PreferredContainer primary="toxcontainer" spawnprobability="0.5"/>
+        <PreferredContainer primary="toxcontainer" spawnprobability="1"/>
         <PreferredContainer primary="locker"/>
 
         <Fabricate suitablefabricators="fabricator">

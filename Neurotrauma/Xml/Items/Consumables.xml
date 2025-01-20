@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Items>
     <Item name="" identifier="suture" category="Medical" maxstacksize="32" maxstacksizecharacterinventory="16" cargocontaineridentifier="mediccrate" Tags="smallitem,medical,surgery,surgerytool" description="" useinhealthinterface="True" scale="0.250">
-        <PreferredContainer primary="medcab" minamount="10" maxamount="16" spawnprobability="1"/>
-        <PreferredContainer primary="wreckmedcab,abandonedmedcab" minamount="0" maxamount="3" spawnprobability="0.5"/>
-        <PreferredContainer primary="outpostmedcompartment" minamount="0" maxamount="1" spawnprobability="0.25"/>
+        <PreferredContainer primary="medcab" minamount="20" maxamount="32" spawnprobability="1"/>
+        <PreferredContainer primary="wreckmedcab,abandonedmedcab" minamount="2" maxamount="6" spawnprobability="0.5"/>
+        <PreferredContainer primary="outpostmedcompartment" minamount="10" maxamount="16" spawnprobability="0.25"/>
 
         <Fabricate suitablefabricators="medicalfabricator" amount="8" requiredtime="10">
             <RequiredSkill identifier="medical" level="25"/>
@@ -43,8 +43,8 @@
     </Item>
 
     <Item name="" identifier="medstent" category="Medical" maxstacksize="1" cargocontaineridentifier="mediccrate" Tags="smallitem,medical,surgery,syringe,surgerytool" description="" useinhealthinterface="True" scale="0.250">
-        <PreferredContainer primary="toxcontainer" spawnprobability="0.2"/>
-        <PreferredContainer primary="medcab" minamount="0" maxamount="1" spawnprobability="0.5"/>
+        <PreferredContainer primary="toxcontainer" minamount="1" maxamount="1" spawnprobability="0.5"/>
+        <PreferredContainer primary="outpostmedcompartment" minamount="0" maxamount="1" spawnprobability="0.125"/>
 
         <Fabricate suitablefabricators="medicalfabricator" amount="1">
             <RequiredSkill identifier="medical" level="25"/>
@@ -75,8 +75,8 @@
     </Item>
 
     <Item name="" identifier="drainage" category="Medical" maxstacksize="4" cargocontaineridentifier="mediccrate" Tags="smallitem,medical,surgery,syringe,surgerytool" description="" useinhealthinterface="True" scale="0.250">
-        <PreferredContainer primary="toxcontainer" spawnprobability="0.2"/>
-        <PreferredContainer primary="medcab" minamount="0" maxamount="1" spawnprobability="0.5"/>
+        <PreferredContainer primary="toxcontainer" minamount="1" maxamount="1" spawnprobability="0.5"/>
+        <PreferredContainer primary="outpostmedcompartment" minamount="0" maxamount="1" spawnprobability="0.125"/>
 
         <Fabricate suitablefabricators="medicalfabricator" amount="1">
             <RequiredSkill identifier="medical" level="25"/>

@@ -626,8 +626,8 @@
         <Item name="" identifier="antidama1" aliases="Corrigodone" category="Medical" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="mediccrate" Tags="smallitem,chem,medical,syringe" description="" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True">
             <Upgrade gameversion="0.10.0.0" scale="0.5" />
             <PreferredContainer secondary="supplycab" minamount="1" maxamount="2" spawnprobability="0.5" notcampaign="true"/>
-            <PreferredContainer secondary="wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.3" />
-            <PreferredContainer secondary="wreckmedcab,abandonedmedcab" minamount="1" maxamount="2" spawnprobability="0.8" />
+            <PreferredContainer secondary="wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.2" />
+            <PreferredContainer secondary="wreckmedcab,abandonedmedcab" minamount="0" maxamount="2" spawnprobability="0.3" />
             <PreferredContainer secondary="outpostmedcab" minamount="1" maxamount="3" spawnprobability="0.5" />
             <PreferredContainer secondary="outpostmedcompartment" amount="1" spawnprobability="0.2" />
             <PreferredContainer secondary="outposttrashcan" amount="1" spawnprobability="0.1" />
@@ -703,14 +703,14 @@
                 </StatusEffect>
             </MeleeWeapon>
 
-            <Projectile characterusable="false" launchimpulse="18.0" sticktocharacters="true" launchrotation="-90" inheritstatuseffectsfrom="MeleeWeapon" inheritrequiredskillsfrom="MeleeWeapon" />
+            <!-- No <Projectile characterusable="false" launchimpulse="18.0" sticktocharacters="true" launchrotation="-90" inheritstatuseffectsfrom="MeleeWeapon" inheritrequiredskillsfrom="MeleeWeapon" />-->
             <SkillRequirementHint identifier="medical" level="50"/>
         </Item>
 
         <Item name="" identifier="antidama2" category="Medical" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="mediccrate" Tags="smallitem,chem,medical,syringe" description="" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True">
             <Upgrade gameversion="0.10.0.0" scale="0.5" />
             <PreferredContainer primary="medcab" secondary="medcontainer"/>
-            <PreferredContainer secondary="wreckmedcab,abandonedmedcab" minamount="1" maxamount="2" spawnprobability="0.4" />
+            <PreferredContainer secondary="wreckmedcab,abandonedmedcab" minamount="0" maxamount="1" spawnprobability="0.4" />
             <PreferredContainer secondary="outpostmedcab" minamount="1" maxamount="3" spawnprobability="0.3" />
             <PreferredContainer secondary="outpostmedcompartment" amount="1" spawnprobability="0.1" />
             <PreferredContainer secondary="outposttrashcan" amount="1" spawnprobability="0.05" />
@@ -787,7 +787,7 @@
                 </StatusEffect>
             </MeleeWeapon>
 
-            <Projectile characterusable="false" launchimpulse="18.0" sticktocharacters="true" launchrotation="-90" inheritstatuseffectsfrom="MeleeWeapon" inheritrequiredskillsfrom="MeleeWeapon" />
+            <!-- No <Projectile characterusable="false" launchimpulse="18.0" sticktocharacters="true" launchrotation="-90" inheritstatuseffectsfrom="MeleeWeapon" inheritrequiredskillsfrom="MeleeWeapon" />-->
             <SkillRequirementHint identifier="medical" level="72"/>
         </Item>
 
@@ -852,14 +852,14 @@
                 </StatusEffect>
             </MeleeWeapon>
 
-            <Projectile characterusable="false" launchimpulse="18.0" sticktocharacters="true" launchrotation="-90" inheritstatuseffectsfrom="MeleeWeapon" inheritrequiredskillsfrom="MeleeWeapon" />
+            <!-- No <Projectile characterusable="false" launchimpulse="18.0" sticktocharacters="true" launchrotation="-90" inheritstatuseffectsfrom="MeleeWeapon" inheritrequiredskillsfrom="MeleeWeapon" />-->
             <SkillRequirementHint identifier="medical" level="39"/>
         </Item>
 
         <!-- Antibiotics, Adrenaline -->
         <Item name="" identifier="antibiotics" category="Medical" maxstacksize="32" maxstacksizecharacterinventory="8" Tags="smallitem,chem,medical,syringe" description="" cargocontaineridentifier="mediccrate" scale="0.5" useinhealthinterface="true" RequireAimToUse="True">
             <Upgrade gameversion="0.10.0.0" scale="0.5" />
-            <PreferredContainer secondary="abandonedmedcab,wreckmedcab" minamount="1" maxamount="2" spawnprobability="0.5" />
+            <PreferredContainer secondary="abandonedmedcab,wreckmedcab" minamount="0" maxamount="2" spawnprobability="0.5" />
             <PreferredContainer primary="medfabcab" secondary="medcontainer"/>
 
             <Price baseprice="40">
@@ -920,7 +920,7 @@
                 </StatusEffect>
             </MeleeWeapon>
 
-            <Projectile characterusable="false" launchimpulse="18.0" sticktocharacters="true" launchrotation="-90" inheritstatuseffectsfrom="MeleeWeapon" inheritrequiredskillsfrom="MeleeWeapon" />
+            <!-- No <Projectile characterusable="false" launchimpulse="18.0" sticktocharacters="true" launchrotation="-90" inheritstatuseffectsfrom="MeleeWeapon" inheritrequiredskillsfrom="MeleeWeapon" />-->
             <SkillRequirementHint identifier="medical" level="25"/>
         </Item>
 
@@ -1315,7 +1315,7 @@
                 </StatusEffect>
             </MeleeWeapon>
 
-            <Projectile characterusable="false" launchimpulse="15.0" sticktocharacters="true" launchrotation="-90" inheritstatuseffectsfrom="MeleeWeapon" inheritrequiredskillsfrom="MeleeWeapon"/>
+            <!-- No <Projectile characterusable="false" launchimpulse="15.0" sticktocharacters="true" launchrotation="-90" inheritstatuseffectsfrom="MeleeWeapon" inheritrequiredskillsfrom="MeleeWeapon"/>-->
             <SkillRequirementHint identifier="medical" level="35" />
         </Item>
 
@@ -1395,7 +1395,7 @@
                 </StatusEffect>
             </MeleeWeapon>
 
-            <Projectile characterusable="false" launchimpulse="15.0" sticktocharacters="true" launchrotation="-90" inheritstatuseffectsfrom="MeleeWeapon" inheritrequiredskillsfrom="MeleeWeapon"/>
+            <!-- No <Projectile characterusable="false" launchimpulse="15.0" sticktocharacters="true" launchrotation="-90" inheritstatuseffectsfrom="MeleeWeapon" inheritrequiredskillsfrom="MeleeWeapon"/>-->
             <SkillRequirementHint identifier="medical" level="50" />
         </Item>
 

@@ -39,7 +39,7 @@
     </Item>
 
     <Item name="" identifier="spinalimplant" description="" category="Medical" scale="0.3" useinhealthinterface="True" cargocontaineridentifier="mediccrate" Tags="smallitem,medical,surgery,surgerytool">
-        <PreferredContainer primary="toxcontainer" spawnprobability="0.5"/>
+        <PreferredContainer primary="toxcontainer" spawnprobability="1"/>
 
         <Price baseprice="200" soldbydefault="false">
             <Price storeidentifier="merchantmedical" sold="true" multiplier="0.9" minavailable="1"/>
