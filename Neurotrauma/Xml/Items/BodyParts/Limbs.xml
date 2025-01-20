@@ -6,7 +6,7 @@
         <Body width="46" height="90" density="20"/>
 
         <Deconstruct time="10">
-            <Item identifier="calcium" amount="2" />
+            <Item identifier="calcium" amount="1" />
         </Deconstruct>
 
         <Price baseprice="50" soldbydefault="false"></Price>
@@ -41,7 +41,7 @@
         <Body width="46" height="90" density="20"/>
 
         <Deconstruct time="10">
-            <Item identifier="calcium" amount="2" />
+            <Item identifier="calcium" amount="1" />
         </Deconstruct>
 
         <Price baseprice="50" soldbydefault="false"></Price>
@@ -76,7 +76,7 @@
         <Sprite texture="%ModDir%/Images/limbs.png" sourcerect="57,0,60,90" depth="0.6" origin="0.5,0.5"/>
 
         <Deconstruct time="10">
-            <Item identifier="calcium" amount="2" />
+            <Item identifier="calcium" amount="1" />
         </Deconstruct>
 
         <Price baseprice="50" soldbydefault="false"></Price>
@@ -110,7 +110,7 @@
         <Body width="60" height="90" density="20"/>
 
         <Deconstruct time="10">
-            <Item identifier="calcium" amount="2" />
+            <Item identifier="calcium" amount="1" />
         </Deconstruct>
 
         <Price baseprice="50" soldbydefault="false"></Price>
