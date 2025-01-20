@@ -3713,7 +3713,7 @@ thats what the vomiting symptom is for -->
       minradialdistort="0.0"
       maxradialdistort="0.5"
       minchromaticaberration="0"
-      maxchromaticaberration="100"
+      maxchromaticaberration="20"
       strengthchange="-0.3">
       <StatusEffect target="Character">
         <ReduceAffliction type="pain" amount="100" />
