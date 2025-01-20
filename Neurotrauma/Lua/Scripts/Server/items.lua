@@ -1326,6 +1326,7 @@ NT.ItemMethods.organscalpel_lungs = function(item, usingCharacter, targetCharact
 			if HF.GetSurgerySkillRequirementMet(usingCharacter, 50) then
 				HF.SetAffliction(targetCharacter, "lungremoved", 100, usingCharacter)
 				HF.SetAffliction(targetCharacter, "lungdamage", 100, usingCharacter)
+				HF.SetAffliction(targetCharacter, "respiratoryarrest", 100, usingCharacter)
 
 				HF.SetAffliction(targetCharacter, "pneumothorax", 0, usingCharacter)
 				HF.SetAffliction(targetCharacter, "needlec", 0, usingCharacter)
@@ -1389,6 +1390,7 @@ NT.ItemMethods.organscalpel_heart = function(item, usingCharacter, targetCharact
 			if HF.GetSurgerySkillRequirementMet(usingCharacter, 60) then
 				HF.SetAffliction(targetCharacter, "heartremoved", 100, usingCharacter)
 				HF.SetAffliction(targetCharacter, "heartdamage", 100, usingCharacter)
+				HF.SetAffliction(targetCharacter, "cardiacarrest", 100, usingCharacter)
 
 				HF.SetAffliction(targetCharacter, "tamponade", 0, usingCharacter)
 				HF.SetAffliction(targetCharacter, "heartattack", 0, usingCharacter)
