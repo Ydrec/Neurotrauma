@@ -11,6 +11,7 @@
         <Deconstruct time="10">
             <Item identifier="steel"/>
             <Item identifier="aluminium"/>
+            <Item identifier="copper"/>
         </Deconstruct>
 
         <Fabricate suitablefabricators="medicalfabricator" requiredtime="30">
