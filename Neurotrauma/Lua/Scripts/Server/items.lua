@@ -943,6 +943,8 @@ NT.ItemMethods.defibrillator = function(item, usingCharacter, targetCharacter, l
 	HF.GiveItem(targetCharacter, "ntsfx_manualdefib")
 	-- about to get deepfried if underwater
 	local unsafe = HF.GetOuterWearIdentifier(targetCharacter) ~= "emergencysuit" and targetCharacter.InWater
+	local unsafeArrestRoll = unsafe
+		and HF.Chance(HF.Clamp(0.3, (1 - (HF.GetSkillLevel(usingCharacter, "medical") / 100)) ^ 2 * 8.5, 1))
 	if unsafe then
 		-- shock therapy the surrounding characters
 		containedItem.Condition = containedItem.Condition - 10
@@ -987,17 +989,15 @@ NT.ItemMethods.defibrillator = function(item, usingCharacter, targetCharacter, l
 
 	Timer.Wait(function()
 		HF.AddAffliction(targetCharacter, "stun", 2, usingCharacter)
-		if
-			unsafe and HF.Chance(HF.Clamp(0.3, (1 - (HF.GetSkillLevel(usingCharacter, "medical") / 100)) ^ 2 * 8.5, 1))
-		then
+		if unsafeArrestRoll then
 			HF.SetAffliction(targetCharacter, "cardiacarrest", 100, usingCharacter)
 		elseif HF.Chance(successChance) then
 			HF.SetAffliction(targetCharacter, "tachycardia", 0, usingCharacter)
 			HF.SetAffliction(targetCharacter, "fibrillation", 0, usingCharacter)
 		end
-		if HF.Chance(arrestSuccessChance) and not unsafe then
+		if HF.Chance(arrestSuccessChance) and not unsafeArrestRoll then
 			HF.SetAffliction(targetCharacter, "cardiacarrest", 0, usingCharacter)
-		elseif HF.Chance(arrestFailChance) and not unsafe then
+		elseif HF.Chance(arrestFailChance) and not unsafeArrestRoll then
 			HF.SetAffliction(targetCharacter, "cardiacarrest", 100, usingCharacter)
 		end
 	end, 2000)
@@ -1029,6 +1029,7 @@ NT.ItemMethods.aed = function(item, usingCharacter, targetCharacter, limb)
 			end
 			-- about to get deepfried if underwater
 			local unsafe = HF.GetOuterWearIdentifier(targetCharacter) ~= "emergencysuit" and targetCharacter.InWater
+			local unsafeArrestRoll = unsafe and HF.Chance(0.3)
 			if unsafe then
 				-- shock therapy the surrounding characters
 				containedItem.Condition = containedItem.Condition - 10
@@ -1066,9 +1067,11 @@ NT.ItemMethods.aed = function(item, usingCharacter, targetCharacter, limb)
 
 			Timer.Wait(function()
 				HF.AddAffliction(targetCharacter, "stun", 2, usingCharacter)
-				HF.SetAffliction(targetCharacter, "tachycardia", 0, usingCharacter)
-				HF.SetAffliction(targetCharacter, "fibrillation", 0, usingCharacter)
-				if unsafe and HF.Chance(0.3) then
+				if not unsafeArrestRoll then
+					HF.SetAffliction(targetCharacter, "tachycardia", 0, usingCharacter)
+					HF.SetAffliction(targetCharacter, "fibrillation", 0, usingCharacter)
+				end
+				if unsafeArrestRoll then
 					HF.SetAffliction(targetCharacter, "cardiacarrest", 100, usingCharacter)
 				elseif HF.Chance(arrestSuccessChance) then
 					HF.SetAffliction(targetCharacter, "cardiacarrest", 0, usingCharacter)
