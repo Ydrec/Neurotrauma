@@ -1380,11 +1380,12 @@ NT.Afflictions = {
 			c.afflictions[i].strength = HF.BoolToNum(NT.modconflict, 1)
 		end,
 	},
-	sym_scorched = {
-		update = function(c, i)
-			c.afflictions[i].strength = HF.BoolToNum(c.stats.burndamage > 500, 10)
-		end,
-	},
+	-- Heelge: this really does the same thing as vanilla burns, why does it even exists?
+	--sym_scorched = {
+	--	update = function(c, i)
+	--		c.afflictions[i].strength = HF.BoolToNum(c.stats.burndamage > 500, 10)
+	--	end,
+	--},
 }
 -- define all the limb specific afflictions and their update functions
 NT.LimbAfflictions = {
