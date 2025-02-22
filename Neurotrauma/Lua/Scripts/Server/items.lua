@@ -1262,7 +1262,7 @@ NT.ItemMethods.tweezers = function(item, usingCharacter, targetCharacter, limb)
 				HF.GiveItem(usingCharacter, "scrap")
 			end
 
-			local tohealamount = math.random(3, 5)
+			local tohealamount = math.random(3, 10)
 			healAfflictionGiveSkill("foreignbody", tohealamount, 600)
 
 			if usecase == "surgery" then
