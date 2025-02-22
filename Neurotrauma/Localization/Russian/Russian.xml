@@ -36,7 +36,7 @@
 </Override>
 
 <stasisbagequipconfirmation>После надевания вы потеряете сознание. Вы уверены?</stasisbagequipconfirmation>
-<emergencysuitequipconfirmation>После надевания вы не сможете двигаться. Вы уверены?</emergencysuitequipconfirmation>
+<!--<emergencysuitequipconfirmation>После надевания вы не сможете двигаться. Вы уверены?</emergencysuitequipconfirmation>-->
 
 <!-- /// Хирургия /// -->
 
@@ -86,15 +86,15 @@
 <entitydescription.organscalpel_brain>Специализированный скальпель для удаления мозга.</entitydescription.organscalpel_brain>
 
 <entityname.multiscalpel>Универсальный скальпель</entityname.multiscalpel>
-<entitydescription.multiscalpel>Передовой скальпель. В руках практикующего врача, кнопочная панель может использоваться для переключения между операциями: выполнением надрезов, извлечением органов, снятием повязок или совершением зловредной практики.</entitydescription.multiscalpel>
-<multiscalpel.incision>Режим: Хирургический надрез.</multiscalpel.incision>
-<multiscalpel.kidneys>Режим: Извлечь почки</multiscalpel.kidneys>
-<multiscalpel.liver>Режим: Извлечь печень</multiscalpel.liver>
-<multiscalpel.lungs>Режим: Извлечь легкие</multiscalpel.lungs>
-<multiscalpel.heart>Режим: Извлечь сердце</multiscalpel.heart>
-<multiscalpel.brain>Режим: Извлечь мозг</multiscalpel.brain>
-<multiscalpel.bandage>Режим: Снять бинт, гипсовый слепок, небрежная практика.</multiscalpel.bandage>
-<multiscalpel.speedflex>Режим: Адаптивное извлечение органов. Применение на голове извлекает мозг, левая рука - почки, торс - печень, правая рука - сердце, левая нога - легкие.</multiscalpel.speedflex>
+<entitydescription.multiscalpel>Передовой скальпель. Выключен и требует активации. В руках практикующего врача, кнопочная панель может использоваться для активации режимов и переключения между операциями: выполнением надрезов, извлечением органов, снятием повязок или совершением зловредной практики.</entitydescription.multiscalpel>
+<multiscalpel.incision>Активный режим: Хирургический надрез.</multiscalpel.incision>
+<multiscalpel.kidneys>Активный режим: Извлечь почки</multiscalpel.kidneys>
+<multiscalpel.liver>Активный режим: Извлечь печень</multiscalpel.liver>
+<multiscalpel.lungs>Активный режим: Извлечь легкие</multiscalpel.lungs>
+<multiscalpel.heart>Активный режим: Извлечь сердце</multiscalpel.heart>
+<multiscalpel.brain>Активный режим: Извлечь мозг</multiscalpel.brain>
+<multiscalpel.bandage>Активный режим: Снять бинт, гипсовый слепок, небрежная практика.</multiscalpel.bandage>
+<multiscalpel.speedflex>Активный режим: Адаптивное извлечение органов. Применение на голове извлекает мозг, левая рука - почки, торс - печень, правая рука - сердце, левая нога - легкие.</multiscalpel.speedflex>
 
 <multiscalpel.btn.incision>Надрез</multiscalpel.btn.incision>
 <multiscalpel.btn.kidneys>Почки</multiscalpel.btn.kidneys>
@@ -239,8 +239,8 @@
 <entityname.stasisbag>Стазис-мешок</entityname.stasisbag>
 <entitydescription.stasisbag>Приостанавливает большинство биохимических процессов.</entitydescription.stasisbag>
 
-<entityname.emergencysuit>Костюм для экстренной помощи</entityname.emergencysuit>
-<entitydescription.emergencysuit>Дает относительную безопасность для использования дефибриллятора и проведения всех видов операций. Обездвиживает, но обладает слотом аккумулятора для питания искусственной вентиляции.</entitydescription.emergencysuit>
+<!--<entityname.emergencysuit>Костюм для экстренной помощи</entityname.emergencysuit>
+<entitydescription.emergencysuit>Дает относительную безопасность для использования дефибриллятора и проведения всех видов операций. Обездвиживает, но обладает слотом аккумулятора для питания искусственной вентиляции.</entitydescription.emergencysuit>-->
 
 
 

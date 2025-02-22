@@ -37,7 +37,7 @@
 </Override>
 
 <stasisbagequipconfirmation>Equipping this will cause you to go unconscious. Are you sure?</stasisbagequipconfirmation>
-<emergencysuitequipconfirmation>Equipping this will cause you to go immobile. Are you sure?</emergencysuitequipconfirmation>
+<!--<emergencysuitequipconfirmation>Equipping this will cause you to go immobile. Are you sure?</emergencysuitequipconfirmation>-->
 
 <!-- /// Surgery /// -->
 <entityname.advscalpel>Scalpel</entityname.advscalpel>
@@ -86,15 +86,15 @@
 <entitydescription.organscalpel_brain>A specialized scalpel for the removal of the brain.</entitydescription.organscalpel_brain>
 
 <entityname.multiscalpel>Multipurpose scalpel</entityname.multiscalpel>
-<entitydescription.multiscalpel>Novelty scalpel. In the practitioner’s hands, a button pad can be utilised to switch between various operations: making incisions, extracting organs, removing bandages, or doing malpractice.</entitydescription.multiscalpel>
-<multiscalpel.incision>Mode: Surgery incision</multiscalpel.incision>
-<multiscalpel.kidneys>Mode: Extract kidneys</multiscalpel.kidneys>
-<multiscalpel.liver>Mode: Extract liver</multiscalpel.liver>
-<multiscalpel.lungs>Mode: Extract lungs</multiscalpel.lungs>
-<multiscalpel.heart>Mode: Extract heart</multiscalpel.heart>
-<multiscalpel.brain>Mode: Extract brain</multiscalpel.brain>
-<multiscalpel.bandage>Mode: Remove bandages and casts / malpractice</multiscalpel.bandage>
-<multiscalpel.speedflex>Mode: Adaptive organ extraction. Use on head for brain, left arm for kidneys, torso for liver, right arm for heart, left leg for lungs.</multiscalpel.speedflex>
+<entitydescription.multiscalpel>Novelty scalpel. Disabled and needs activation. In the practitioner’s hands, a button pad can be utilised to activate the scalpel and switch between between operations: making incisions, extracting organs, removing bandages, or doing malpractice.</entitydescription.multiscalpel>
+<multiscalpel.incision>Mode active: Surgery incision</multiscalpel.incision>
+<multiscalpel.kidneys>Mode active: Extract kidneys</multiscalpel.kidneys>
+<multiscalpel.liver>Mode active: Extract liver</multiscalpel.liver>
+<multiscalpel.lungs>Mode active: Extract lungs</multiscalpel.lungs>
+<multiscalpel.heart>Mode active: Extract heart</multiscalpel.heart>
+<multiscalpel.brain>Mode active: Extract brain</multiscalpel.brain>
+<multiscalpel.bandage>Mode active: Remove bandages and casts / malpractice</multiscalpel.bandage>
+<multiscalpel.speedflex>Mode active: Adaptive organ extraction. Use on head for brain, left arm for kidneys, torso for liver, right arm for heart, left leg for lungs.</multiscalpel.speedflex>
 
 <multiscalpel.btn.incision>Incision</multiscalpel.btn.incision>
 <multiscalpel.btn.kidneys>Kidneys</multiscalpel.btn.kidneys>
@@ -235,7 +235,7 @@ Can give blood to: AB+</entitydescription.abpluscard>
 <entityname.medtoolbox>Medical container</entityname.medtoolbox> 
 <entitydescription.medtoolbox>Can store medicine and medical instruments</entitydescription.medtoolbox>
 
-<entityname.surgerytoolbox>Surgery toolbox</entityname.surgerytoolbox> 
+<entityname.surgerytoolbox>Surgery toolbox</entityname.surgerytoolbox>
 <entitydescription.surgerytoolbox>Can store many small items that are used during surgery</entitydescription.surgerytoolbox>
 
 <entityname.organcrate>Refrigerated crate</entityname.organcrate> 
@@ -253,8 +253,8 @@ Can give blood to: AB+</entitydescription.abpluscard>
 <entityname.stasisbag>Stasis bag</entityname.stasisbag>
 <entitydescription.stasisbag>Stops most biological processes from taking place.</entitydescription.stasisbag>
 
-<entityname.emergencysuit>Emergency suit</entityname.emergencysuit>
-<entitydescription.emergencysuit>Makes it relatively safe for using defibrillator and performing all kinds of surgeries. Stops movement, but has a battery slot to power artificial ventilation.</entitydescription.emergencysuit>
+<!--<entityname.emergencysuit>Emergency suit</entityname.emergencysuit>
+<entitydescription.emergencysuit>Makes it relatively safe for using defibrillator and performing all kinds of surgeries. Stops movement, but has a battery slot to power artificial ventilation.</entitydescription.emergencysuit>-->
 
 
 
@@ -452,7 +452,7 @@ Can give blood to: AB+</entitydescription.abpluscard>
 
 <afflictionname.surgeryincision>Surgery incision</afflictionname.surgeryincision>
 <afflictiondescription.surgeryincision>An incision has been made by a scalpel.</afflictiondescription.surgeryincision>
-  
+
 <afflictionname.clampedbleeders>Clamped bleeding</afflictionname.clampedbleeders>
 <afflictiondescription.clampedbleeders>Surgical bleeders have been staunched.</afflictiondescription.clampedbleeders>
 
@@ -690,10 +690,10 @@ Can give blood to: AB+</entitydescription.abpluscard>
 
 <afflictionname.luabotomy>Lualess</afflictionname.luabotomy>
 <afflictiondescription.luabotomy>Lua isn't running. That means neurotrauma and any other mods that use it won't work. Please read the workshop pages of mods you plan to use.</afflictiondescription.luabotomy>
-  
+
 <afflictionname.modconflict>Mod conflict</afflictionname.modconflict>
 <afflictiondescription.modconflict>There is a mod conflict. A different mod is overriding some of the same items Neurotrauma does. Some things may not function correctly. Please adjust your load order.</afflictiondescription.modconflict>
-  
+
 <afflictionname.analgesia>Analgesia</afflictionname.analgesia>
 <afflictiondescription.analgesia>Insensitivity to pain.</afflictiondescription.analgesia>
 
