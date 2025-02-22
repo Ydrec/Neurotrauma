@@ -379,10 +379,10 @@ NT.Afflictions = {
 			end
 
 			c.afflictions[i].strength = c.afflictions[i].strength + gain
-			if c.afflictions[i].strength >= 200 then
-				HF.SetAffliction(c.character, "miracleworker", -100)
-				return
-			end
+			--if c.afflictions[i].strength >= 200 then
+			--	HF.SetAffliction(c.character, "miracleworker", -100)
+			--	return
+			--end
 
 			c.afflictions[i].strength = HF.Clamp(c.afflictions[i].strength, 0, 200)
 		end,
