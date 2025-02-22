@@ -32,7 +32,7 @@ Hook.Add("human.CPRFailed", "NT.CPRFailed", function(animcontroller)
 		HF.Chance(
 			NTConfig.Get("NT_fractureChance", 1)
 				* NTConfig.Get("NT_CPRFractureChance", 1)
-				* 0.05
+				* 0.2
 				/ HF.GetSkillLevel(animcontroller.Character, "medical")
 		)
 	then
