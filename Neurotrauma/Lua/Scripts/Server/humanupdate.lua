@@ -2029,11 +2029,14 @@ end
 function NT.UpdateMonster(character)
 	-- trade bloodloss on this creature for organ damage so that creatures can still bleed out
 	local bloodloss = HF.GetAfflictionStrength(character, "bloodloss", 0)
+	local oxygenlow = HF.GetAfflictionStrength(character, "oxygenlow", 0)
 	if bloodloss > 0 then
 		HF.AddAffliction(character, "organdamage", bloodloss * 2)
 		HF.SetAffliction(character, "bloodloss", 0)
+	elseif oxygenlow > 50 then
+		HF.AddAffliction(character, "organdamage", (oxygenlow - 50) * 2)
+		HF.SetAffliction(character, "oxygenlow", 50)
 	end
-	-- TOOD: oxygen low conversion
 end
 
 -- gets run every tick, shouldnt be used unless necessary
