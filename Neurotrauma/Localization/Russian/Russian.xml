@@ -414,10 +414,10 @@
 
 <!-- /// Кости /// -->
 
-<afflictionname.bonedamage>Повреждённая кость</afflictionname.bonedamage>
+<afflictionname.bonedamage>Повреждения костных тканей</afflictionname.bonedamage>
 <afflictiondescription.bone></afflictiondescription.bone>
 
-<afflictionname.bonedeath>Костная смерть</afflictionname.bonedeath>
+<afflictionname.bonedeath>Смерть костных тканей</afflictionname.bonedeath>
 <afflictiondescription.bonedeath></afflictiondescription.bonedeath>
 
 <afflictionname.bonegrowth>Стимулированный рост костей</afflictionname.bonegrowth>
