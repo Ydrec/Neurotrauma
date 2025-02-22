@@ -941,43 +941,43 @@ NT.ItemMethods.defibrillator = function(item, usingCharacter, targetCharacter, l
 		return
 	end
 	HF.GiveItem(targetCharacter, "ntsfx_manualdefib")
-	-- about to get deepfried if underwater
-	local unsafe = HF.GetOuterWearIdentifier(targetCharacter) ~= "emergencysuit" and targetCharacter.InWater
-	local unsafeArrestRoll = unsafe
-		and HF.Chance(HF.Clamp(0.3, (1 - (HF.GetSkillLevel(usingCharacter, "medical") / 100)) ^ 2 * 8.5, 1))
-	if unsafe then
-		-- shock therapy the surrounding characters
-		containedItem.Condition = containedItem.Condition - 10
-		if containedItem.Prefab.Identifier.Value ~= "fulguriumbatterycell" then
-			containedItem.Condition = containedItem.Condition - 10
-		end
-		Timer.Wait(function()
-			for _, character in pairs(Character.CharacterList) do
-				local distance = HF.DistanceBetween(item.worldPosition, character.worldPosition)
-				if
-					distance <= 300 and character.CanSeeTarget(usingCharacter) and HF.Chance(0.3)
-					or character == targetCharacter
-				then
-					local limbtypes = {
-						LimbType.Torso,
-						LimbType.Head,
-						LimbType.LeftArm,
-						LimbType.RightArm,
-						LimbType.LeftLeg,
-						LimbType.RightLeg,
-					}
-					for type in limbtypes do
-						if math.random() < 0.5 then
-							HF.AddAfflictionLimb(character, "burn", type, math.random(15, 20), usingCharacter)
-							HF.AddAfflictionLimb(character, "spasm", type, 10)
-						end
-					end
-					HF.SetAffliction(character, "electricshock", 100, usingCharacter)
-					HF.AddAffliction(character, "traumaticshock", 25, usingCharacter)
-				end
-			end
-		end, 2000)
-	end
+	-- about to get deepfried if underwater (TODO)
+	--local unsafe = HF.GetOuterWearIdentifier(targetCharacter) ~= "emergencysuit" and targetCharacter.InWater
+	--local unsafeArrestRoll = unsafe
+	--	and HF.Chance(HF.Clamp(0.3, (1 - (HF.GetSkillLevel(usingCharacter, "medical") / 100)) ^ 2 * 8.5, 1))
+	--if unsafe then
+	-- shock therapy the surrounding characters
+	--	containedItem.Condition = containedItem.Condition - 10
+	--	if containedItem.Prefab.Identifier.Value ~= "fulguriumbatterycell" then
+	--		containedItem.Condition = containedItem.Condition - 10
+	--	end
+	--	Timer.Wait(function()
+	--		for _, character in pairs(Character.CharacterList) do
+	--			local distance = HF.DistanceBetween(item.worldPosition, character.worldPosition)
+	--			if
+	--				distance <= 300 and character.CanSeeTarget(usingCharacter) and HF.Chance(0.3)
+	--				or character == targetCharacter
+	--			then
+	--				local limbtypes = {
+	--					LimbType.Torso,
+	--					LimbType.Head,
+	--					LimbType.LeftArm,
+	--					LimbType.RightArm,
+	--					LimbType.LeftLeg,
+	--					LimbType.RightLeg,
+	--				}
+	--				for type in limbtypes do
+	--					if math.random() < 0.5 then
+	--						HF.AddAfflictionLimb(character, "burn", type, math.random(15, 20), usingCharacter)
+	--						HF.AddAfflictionLimb(character, "spasm", type, 10)
+	--					end
+	--				end
+	--				HF.SetAffliction(character, "electricshock", 100, usingCharacter)
+	--				HF.AddAffliction(character, "traumaticshock", 25, usingCharacter)
+	--			end
+	--		end
+	--	end, 2000)
+	--end
 	containedItem.Condition = containedItem.Condition - 10
 	if containedItem.Prefab.Identifier.Value ~= "fulguriumbatterycell" then
 		containedItem.Condition = containedItem.Condition - 10
@@ -989,16 +989,12 @@ NT.ItemMethods.defibrillator = function(item, usingCharacter, targetCharacter, l
 
 	Timer.Wait(function()
 		HF.AddAffliction(targetCharacter, "stun", 2, usingCharacter)
-		if unsafeArrestRoll then
-			HF.SetAffliction(targetCharacter, "cardiacarrest", 100, usingCharacter)
-		elseif HF.Chance(successChance) then
+		if HF.Chance(successChance) then
 			HF.SetAffliction(targetCharacter, "tachycardia", 0, usingCharacter)
 			HF.SetAffliction(targetCharacter, "fibrillation", 0, usingCharacter)
 		end
-		if HF.Chance(arrestSuccessChance) and not unsafeArrestRoll then
+		if HF.Chance(arrestSuccessChance) then
 			HF.SetAffliction(targetCharacter, "cardiacarrest", 0, usingCharacter)
-		elseif HF.Chance(arrestFailChance) and not unsafeArrestRoll then
-			HF.SetAffliction(targetCharacter, "cardiacarrest", 100, usingCharacter)
 		end
 	end, 2000)
 end
@@ -1027,53 +1023,49 @@ NT.ItemMethods.aed = function(item, usingCharacter, targetCharacter, limb)
 			if containedItem.Prefab.Identifier.Value ~= "fulguriumbatterycell" then
 				containedItem.Condition = containedItem.Condition - 10
 			end
-			-- about to get deepfried if underwater
-			local unsafe = HF.GetOuterWearIdentifier(targetCharacter) ~= "emergencysuit" and targetCharacter.InWater
-			local unsafeArrestRoll = unsafe and HF.Chance(0.3)
-			if unsafe then
-				-- shock therapy the surrounding characters
-				containedItem.Condition = containedItem.Condition - 10
-				if containedItem.Prefab.Identifier.Value ~= "fulguriumbatterycell" then
-					containedItem.Condition = containedItem.Condition - 10
-				end
-				Timer.Wait(function()
-					for _, character in pairs(Character.CharacterList) do
-						local distance = HF.DistanceBetween(item.worldPosition, character.worldPosition)
-						if
-							distance <= 300 and character.CanSeeTarget(usingCharacter) and HF.Chance(0.3)
-							or character == targetCharacter
-						then
-							local limbtypes = {
-								LimbType.Torso,
-								LimbType.Head,
-								LimbType.LeftArm,
-								LimbType.RightArm,
-								LimbType.LeftLeg,
-								LimbType.RightLeg,
-							}
-							for type in limbtypes do
-								if math.random() < 0.5 then
-									HF.AddAfflictionLimb(character, "burn", type, math.random(15, 20), usingCharacter)
-									HF.AddAfflictionLimb(character, "spasm", type, 10)
-								end
-							end
-							HF.SetAffliction(character, "electricshock", 100, usingCharacter)
-							HF.AddAffliction(character, "traumaticshock", 25, usingCharacter)
-						end
-					end
-				end, 2000)
-			end
+			-- about to get deepfried if underwater (TODO)
+			--local unsafe = HF.GetOuterWearIdentifier(targetCharacter) ~= "emergencysuit" and targetCharacter.InWater
+			--local unsafeArrestRoll = unsafe and HF.Chance(0.3)
+			--if unsafe then
+			--	-- shock therapy the surrounding characters
+			--	containedItem.Condition = containedItem.Condition - 10
+			--	if containedItem.Prefab.Identifier.Value ~= "fulguriumbatterycell" then
+			--		containedItem.Condition = containedItem.Condition - 10
+			--	end
+			--	Timer.Wait(function()
+			--		for _, character in pairs(Character.CharacterList) do
+			--			local distance = HF.DistanceBetween(item.worldPosition, character.worldPosition)
+			--			if
+			--				distance <= 300 and character.CanSeeTarget(usingCharacter) and HF.Chance(0.3)
+			--				or character == targetCharacter
+			--			then
+			--				local limbtypes = {
+			--					LimbType.Torso,
+			--					LimbType.Head,
+			--					LimbType.LeftArm,
+			--					LimbType.RightArm,
+			--					LimbType.LeftLeg,
+			--					LimbType.RightLeg,
+			--				}
+			--				for type in limbtypes do
+			--					if math.random() < 0.5 then
+			--						HF.AddAfflictionLimb(character, "burn", type, math.random(15, 20), usingCharacter)
+			--						HF.AddAfflictionLimb(character, "spasm", type, 10)
+			--					end
+			--				end
+			--				HF.SetAffliction(character, "electricshock", 100, usingCharacter)
+			--				HF.AddAffliction(character, "traumaticshock", 25, usingCharacter)
+			--			end
+			--		end
+			--	end, 2000)
+			--end
 			local arrestSuccessChance = HF.Clamp((HF.GetSkillLevel(usingCharacter, "medical") / 200), 0.2, 0.4)
 
 			Timer.Wait(function()
 				HF.AddAffliction(targetCharacter, "stun", 2, usingCharacter)
-				if not unsafeArrestRoll then
-					HF.SetAffliction(targetCharacter, "tachycardia", 0, usingCharacter)
-					HF.SetAffliction(targetCharacter, "fibrillation", 0, usingCharacter)
-				end
-				if unsafeArrestRoll then
-					HF.SetAffliction(targetCharacter, "cardiacarrest", 100, usingCharacter)
-				elseif HF.Chance(arrestSuccessChance) then
+				HF.SetAffliction(targetCharacter, "tachycardia", 0, usingCharacter)
+				HF.SetAffliction(targetCharacter, "fibrillation", 0, usingCharacter)
+				if HF.Chance(arrestSuccessChance) then
 					HF.SetAffliction(targetCharacter, "cardiacarrest", 0, usingCharacter)
 				end
 			end, 3200)
@@ -2011,34 +2003,34 @@ NT.ItemMethods.stasisbag = function(item, usingCharacter, targetCharacter, limb)
 		end
 	end
 end
-NT.ItemMethods.emergencysuit = function(item, usingCharacter, targetCharacter, limb)
-	local condition = item.Condition
-	if condition <= 0 or usingCharacter == targetCharacter then
-		return
-	end
-
-	local targetInventory = targetCharacter.Inventory
-	if targetInventory ~= nil then
-		if targetInventory.TryPutItem(item, 4, false, true, usingCharacter, true, true) then
-			HF.GiveItem(targetCharacter, "ntsfx_zipper")
-		else
-			local userInventory = usingCharacter.Inventory
-			local targetItem = HF.GetOuterWear(targetCharacter)
-			local lhand = HF.GetItemInLeftHand(usingCharacter)
-			local rhand = HF.GetItemInRightHand(usingCharacter)
-			if rhand ~= nil then
-				userInventory.TryPutItem(rhand, nil, { InvSlotType.Any })
-			end
-			if lhand ~= nil then
-				userInventory.TryPutItem(lhand, nil, { InvSlotType.Any })
-			end
-			userInventory.TryPutItem(targetItem, 5, true, true, usingCharacter, true, true)
-			if targetInventory.TryPutItem(item, 4, true, true, usingCharacter, true, true) then
-				HF.GiveItem(targetCharacter, "ntsfx_zipper")
-			end
-		end
-	end
-end
+--NT.ItemMethods.emergencysuit = function(item, usingCharacter, targetCharacter, limb)
+--	local condition = item.Condition
+--	if condition <= 0 or usingCharacter == targetCharacter then
+--		return
+--	end
+--
+--	local targetInventory = targetCharacter.Inventory
+--	if targetInventory ~= nil then
+--		if targetInventory.TryPutItem(item, 4, false, true, usingCharacter, true, true) then
+--			HF.GiveItem(targetCharacter, "ntsfx_zipper")
+--		else
+--			local userInventory = usingCharacter.Inventory
+--			local targetItem = HF.GetOuterWear(targetCharacter)
+--			local lhand = HF.GetItemInLeftHand(usingCharacter)
+--			local rhand = HF.GetItemInRightHand(usingCharacter)
+--			if rhand ~= nil then
+--				userInventory.TryPutItem(rhand, nil, { InvSlotType.Any })
+--			end
+--			if lhand ~= nil then
+--				userInventory.TryPutItem(lhand, nil, { InvSlotType.Any })
+--			end
+--			userInventory.TryPutItem(targetItem, 5, true, true, usingCharacter, true, true)
+--			if targetInventory.TryPutItem(item, 4, true, true, usingCharacter, true, true) then
+--				HF.GiveItem(targetCharacter, "ntsfx_zipper")
+--			end
+--		end
+--	end
+--end
 NT.ItemMethods.autocpr = function(item, usingCharacter, targetCharacter, limb)
 	local condition = item.Condition
 	if targetCharacter.InWater then
