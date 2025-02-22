@@ -4452,11 +4452,8 @@ thats what the vomiting symptom is for -->
       maxstrength="200"
       burnoverlayalpha="1"
       WeaponsSkillGain="1.0">
-      <Effect minstrength="0" maxstrength="150" multiplybymaxvitality="true"
+      <Effect minstrength="0" maxstrength="200" multiplybymaxvitality="true"
         minvitalitydecrease="0"
-        maxvitalitydecrease="0.75"/>
-      <Effect minstrength="150" maxstrength="200" multiplybymaxvitality="true"
-        minvitalitydecrease="0.75"
         maxvitalitydecrease="2"/>
 
       <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="768,640,128,128" color="195,104,60,255" origin="0,0"/>
