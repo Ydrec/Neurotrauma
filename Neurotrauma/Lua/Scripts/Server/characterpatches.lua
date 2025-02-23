@@ -18,12 +18,13 @@ Hook.Patch("Barotrauma.AnimController", "GetAimWobble", function(instance, ptabl
 end, Hook.HookMethodType.Before)
 
 -- Patch to cause unconscious from the game rather than stun
-Hook.Patch("Barotrauma.CharacterHealth", "get_IsUnconscious", function(instance, ptable)
-	local isUnconscious = HF.HasAffliction(instance.Character, "sym_unconsciousness")
-	ptable.PreventExecution = true
-	return instance.Character.IsDead
-		or (
-			(instance.Character.Vitality <= 0.0 or isUnconscious)
-			and not instance.Character.HasAbilityFlag(AbilityFlags.AlwaysStayConscious)
-		)
-end, Hook.HookMethodType.After)
+-- Lags the game and there is no Lua perf tracker to fix, screw it for now
+--Hook.Patch("Barotrauma.CharacterHealth", "get_IsUnconscious", function(instance, ptable)
+--	local isUnconscious = HF.HasAffliction(instance.Character, "sym_unconsciousness")
+--	ptable.PreventExecution = true
+--	return instance.Character.IsDead
+--		or (
+--			(instance.Character.Vitality <= 0.0 or isUnconscious)
+--			and not instance.Character.HasAbilityFlag(AbilityFlags.AlwaysStayConscious)
+--		)
+--end, Hook.HookMethodType.After)
