@@ -2060,22 +2060,18 @@ NT.ItemMethods.autocpr = function(item, usingCharacter, targetCharacter, limb)
 	end
 end
 NT.ItemMethods.gelipack = function(item, usingCharacter, targetCharacter, limb)
-	if item.Condition <= 25 then
+	if item.Condition < 35 then
 		return
 	end
 	local limbtype = limb.type
 	local success = HF.BoolToNum(HF.GetSkillRequirementMet(usingCharacter, "medical", 40), 1)
-	HF.AddAfflictionLimb(targetCharacter, "iced", limbtype, 75 + success * 25, usingCharacter)
-
+	-- Dunno how to do this in XML correctly so here is Lua
 	if success and limbtype == LimbType.Torso and HF.HasAffliction(targetCharacter, "internalbleeding", 1) then
 		local affAmount = HF.GetAfflictionStrengthLimb(targetCharacter, limbtype, "internalbleeding")
 		local healedamount = math.min(affAmount, 100)
 		HF.AddAfflictionLimb(targetCharacter, "internalbleeding", limbtype, -healedamount, usingCharacter)
 		HF.GiveSkillScaled(usingCharacter, "medical", healedamount * 1000)
 	end
-	HF.GiveItem(targetCharacter, "ntsfx_bandage")
-
-	item.Condition = item.Condition - 35
 end
 
 -- startswith region begins

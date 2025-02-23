@@ -100,15 +100,28 @@
         <Body width="80" height="45" density="11"/>
 
         <MeleeWeapon canBeCombined="false" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="0,0" holdangle="10" reload="1.0" msg="ItemMsgPickUpSelect" HitOnlyCharacters="true">
+            <RequiredSkill identifier="medical" level="40" />
             <!-- HE compatibility -->
-            <StatusEffect type="Always" target="This" interval="5" disabledeltatime="true" condition="-0.15">
+            <StatusEffect type="Always" target="This" interval="5" disabledeltatime="true" condition="-0.3">
                 <Conditional hastag="neq refrigerated" targetcontainer="true" />
                 <Conditional HasStatusTag="neq activecooling" targetcontainer="true" />
             </StatusEffect>
             <!-- HE compatibility -->
-            <StatusEffect type="OnContained" target="This" interval="5" disabledeltatime="true" condition="17.5">
+            <StatusEffect type="OnContained" target="This" interval="5" disabledeltatime="true" condition="35">
                 <Conditional hastag="refrigerated" targetcontainer="true" />
                 <Conditional HasStatusTag="eq activecooling" targetcontainer="true" />
+            </StatusEffect>
+            <StatusEffect type="OnUse" target="This" Condition="-35">
+              <Sound file="Content/Items/Medical/Bandage1.ogg" range="500" />
+              <Sound file="Content/Items/Medical/Bandage2.ogg" range="500" />
+            </StatusEffect>
+            <StatusEffect tags="medical" type="OnSuccess" target="This, Limb" stackable="false" duration="60">
+              <Conditional condition="gte 35"/>
+              <ReduceAffliction type="blunttrauma" amount="0.3" />
+            </StatusEffect>
+            <StatusEffect tags="medical" type="OnFailure" target="This, Limb" stackable="false" duration="60">
+              <Conditional condition="gte 35"/>
+              <ReduceAffliction type="blunttrauma" amount="0.3" />
             </StatusEffect>
             <StatusEffect type="OnFire" target="This" Condition="-25.0" />
         </MeleeWeapon>
