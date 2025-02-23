@@ -2,8 +2,8 @@
 
 NT = {} -- Neurotrauma
 NT.Name = "Neurotrauma"
-NT.Version = "A1.12.0"
-NT.VersionNum = 01120000
+NT.Version = "A1.12.0h1"
+NT.VersionNum = 01120001
 NT.Path = table.pack(...)[1]
 
 dofile(NT.Path .. "/Lua/Scripts/helperfunctions.lua")
@@ -48,7 +48,7 @@ if (Game.IsMultiplayer and SERVER) or not Game.IsMultiplayer then
 		end, 1)
 	end, 1)
 
-	dofile(NT.Path .. "/Lua/Scripts/Server/characterpatches.lua")
+	--dofile(NT.Path .. "/Lua/Scripts/Server/characterpatches.lua")
 
 	dofile(NT.Path .. "/Lua/Scripts/Server/ntcompat.lua")
 	dofile(NT.Path .. "/Lua/Scripts/Server/blood.lua")
