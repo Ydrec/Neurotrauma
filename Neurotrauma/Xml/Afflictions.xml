@@ -5247,9 +5247,8 @@ thats what the vomiting symptom is for -->
     showinhealthscannerthreshold="1000"
     showiconthreshold="1000"
     maxstrength="200"
-    causeofdeathdescription="causeofdeathdescription.damage"
-    selfcauseofdeathdescription="self_causeofdeathdescription.damage"
     healcostmultiplier="2.5">
+    <Effect minstrength="0" maxstrength="200" strengthchange="-1000"/>
     <icon texture="Content/UI/TalentsIcons4.png" sourcerect="0,384,128,128" color="84,171,90,255" origin="0,0"/>
   </Affliction>
   <!-- Vanilla affliction override end -->

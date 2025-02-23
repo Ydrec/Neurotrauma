@@ -203,6 +203,31 @@ NT.Afflictions = {
 			c.afflictions[i].strength = c.afflictions[i].strength - 0.15 * NT.Deltatime
 		end,
 	},
+	forceprone = {
+		update = function(c, i)
+			c.afflictions[i].strength = HF.BoolToNum(
+				not NTC.GetSymptomFalse(c.character, i)
+					and c.afflictions.sym_unconsciousness.strength <= 0
+					and not c.character.IsClimbing
+					and (
+						NTC.GetSymptom(c.character, i)
+						or (c.stats.lockleftleg and c.stats.lockrightleg and not c.stats.wheelchaired)
+						or c.character.IsKeyDown(InputType.Attack)
+					),
+				2
+			)
+		end,
+	},
+	onwheelchair = {
+		update = function(c, i)
+			c.afflictions[i].strength = HF.BoolToNum(
+				not NTC.GetSymptomFalse(c.character, i)
+					and c.afflictions.sym_unconsciousness.strength <= 0
+					and (NTC.GetSymptom(c.character, i) or c.stats.wheelchaired),
+				2
+			)
+		end,
+	},
 
 	-- Organ conditions
 	cardiacarrest = {
@@ -379,10 +404,6 @@ NT.Afflictions = {
 			end
 
 			c.afflictions[i].strength = c.afflictions[i].strength + gain
-			--if c.afflictions[i].strength >= 200 then
-			--	HF.SetAffliction(c.character, "miracleworker", -100)
-			--	return
-			--end
 
 			c.afflictions[i].strength = HF.Clamp(c.afflictions[i].strength, 0, 200)
 		end,
@@ -394,7 +415,7 @@ NT.Afflictions = {
 			end
 			c.afflictions[i].strength = NT.organDamageCalc(
 				c,
-				c.afflictions.heartdamage.strength
+				c.afflictions[i].strength
 					+ NTC.GetMultiplier(c.character, "heartdamagegain")
 						* (c.stats.neworgandamage + HF.Clamp(c.afflictions.heartattack.strength, 0, 0.5) * NT.Deltatime)
 			)
@@ -1315,31 +1336,6 @@ NT.Afflictions = {
 			)
 		end,
 	},
-	forceprone = {
-		update = function(c, i)
-			c.afflictions[i].strength = HF.BoolToNum(
-				not NTC.GetSymptomFalse(c.character, i)
-					and c.afflictions.sym_unconsciousness.strength <= 0
-					and not c.character.IsClimbing
-					and (
-						NTC.GetSymptom(c.character, i)
-						or (c.stats.lockleftleg and c.stats.lockrightleg and not c.stats.wheelchaired)
-						or c.character.IsKeyDown(InputType.Attack)
-					),
-				2
-			)
-		end,
-	},
-	onwheelchair = {
-		update = function(c, i)
-			c.afflictions[i].strength = HF.BoolToNum(
-				not NTC.GetSymptomFalse(c.character, i)
-					and c.afflictions.sym_unconsciousness.strength <= 0
-					and (NTC.GetSymptom(c.character, i) or c.stats.wheelchaired),
-				2
-			)
-		end,
-	},
 	pain_abdominal = {
 		update = function(c, i)
 			c.afflictions[i].strength = HF.BoolToNum(
@@ -1419,18 +1415,6 @@ NT.LimbAfflictions = {
 		end,
 	},
 	dirtybandage = {}, -- for bandage dirtifaction logic see above
-	iced = {
-		update = function(c, limbaff, i, type)
-			-- over time skin temperature goes up again
-			if limbaff[i].strength > 0 then
-				limbaff[i].strength = limbaff[i].strength - 1.7 * NT.Deltatime
-			end
-			-- iced slowdown
-			if limbaff[i].strength > 0 then
-				c.stats.speedmultiplier = c.stats.speedmultiplier * 0.95
-			end
-		end,
-	},
 	gypsumcast = {
 		update = function(c, limbaff, i, type)
 			-- gypsum slowdown and fracture healing
@@ -1530,11 +1514,7 @@ NT.LimbAfflictions = {
 		update = function(c, limbaff, i)
 			if limbaff[i].strength < 100 then
 				limbaff[i].strength = limbaff[i].strength
-					- (
-							c.afflictions.immunity.prev / 8000
-							+ HF.Clamp(limbaff.bandaged.strength, 0, 1) * 0.1
-							+ HF.Clamp(limbaff.iced.strength, 0, 1) * 0.3
-						)
+					- (c.afflictions.immunity.prev / 8000 + HF.Clamp(limbaff.bandaged.strength, 0, 1) * 0.1)
 						* c.stats.healingrate
 						* NT.Deltatime
 			end
@@ -1598,7 +1578,7 @@ NT.LimbAfflictions = {
 			end
 
 			if infectindex > 0 then
-				infectindex = infectindex * NTConfig.Get("NT_infectionRate", 1) * HF.Clamp(limbaff.iced.strength, 1, 10)
+				infectindex = infectindex * NTConfig.Get("NT_infectionRate", 1)
 			end
 
 			limbaff[i].strength = limbaff[i].strength + infectindex / 5
@@ -1721,14 +1701,6 @@ NT.LimbAfflictions = {
 				limbaff[i].strength = 0
 			else
 				limbaff[i].strength = HF.Clamp((limbaff.burn.strength - 50) / 50 * 100, 5, 100)
-			end
-		end,
-	},
-	infection = {
-		update = function(c, limbaff, i, type)
-			if limbaff[i].strength ~= nil then
-				limbaff.infectedwound.strength = limbaff.infectedwound.strength + limbaff[i].strength / 2
-				limbaff[i].strength = 0
 			end
 		end,
 	},
