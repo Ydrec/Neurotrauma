@@ -55,7 +55,7 @@ Hook.Add("character.applyDamage", "NT.ondamaged", function(characterHealth, atta
 		methodtorun = NT.OnDamagedMethods[identifier]
 		if methodtorun ~= nil then
 			-- make resistance from afflictions apply
-			local resistance = HF.GetResistance(characterHealth.Character, identifier)
+			local resistance = HF.GetResistance(characterHealth.Character, identifier, hitLimb.type)
 			local strength = value.Strength * (1 - resistance)
 
 			methodtorun(characterHealth.Character, strength, hitLimb.type)
