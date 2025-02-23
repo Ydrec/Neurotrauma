@@ -2,8 +2,8 @@
 
 NT = {} -- Neurotrauma
 NT.Name = "Neurotrauma"
-NT.Version = "A1.12.0h1"
-NT.VersionNum = 01120001
+NT.Version = "A1.12.1"
+NT.VersionNum = 01120100
 NT.Path = table.pack(...)[1]
 
 dofile(NT.Path .. "/Lua/Scripts/helperfunctions.lua")
@@ -93,7 +93,7 @@ end
 
 -- Shared and singleplayer code
 dofile(NT.Path .. "/Lua/Scripts/Shared/surgerytable.lua") -- Heelge: fix for https://github.com/OlegBSTU/Neurotrauma/issues/15
-dofile(NT.Path .. "/Lua/Scripts/Shared/pronecolliderfix.lua") -- Heelge: fix collider on prone (thx Lua man)
+--dofile(NT.Path .. "/Lua/Scripts/Shared/pronecolliderfix.lua") -- Heelge: fix collider on prone (thx Lua man), but it has 2 ms perf drop so commented out
 
 -- Consent Required Extended with adjustments
 -- mod page: https://steamcommunity.com/sharedfiles/filedetails/?id=2892602084

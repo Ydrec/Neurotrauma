@@ -1415,6 +1415,18 @@ NT.LimbAfflictions = {
 		end,
 	},
 	dirtybandage = {}, -- for bandage dirtifaction logic see above
+	iced = {
+		update = function(c, limbaff, i, type)
+			-- over time skin temperature goes up again
+			if limbaff[i].strength > 0 then
+				limbaff[i].strength = limbaff[i].strength - 1.7 * NT.Deltatime
+			end
+			-- iced slowdown
+			if limbaff[i].strength > 0 then
+				c.stats.speedmultiplier = c.stats.speedmultiplier * 0.95
+			end
+		end,
+	},
 	gypsumcast = {
 		update = function(c, limbaff, i, type)
 			-- gypsum slowdown and fracture healing
@@ -1514,7 +1526,11 @@ NT.LimbAfflictions = {
 		update = function(c, limbaff, i)
 			if limbaff[i].strength < 100 then
 				limbaff[i].strength = limbaff[i].strength
-					- (c.afflictions.immunity.prev / 8000 + HF.Clamp(limbaff.bandaged.strength, 0, 1) * 0.1)
+					- (
+							c.afflictions.immunity.prev / 8000
+							+ HF.Clamp(limbaff.bandaged.strength, 0, 1) * 0.1
+							+ HF.Clamp(limbaff.iced.strength, 0, 1) * 0.3
+						)
 						* c.stats.healingrate
 						* NT.Deltatime
 			end
