@@ -7,6 +7,9 @@ Hook.Add("item.applyTreatment", "NT.itemused", function(item, usingCharacter, ta
 	then
 		return
 	end
+	if targetCharacter.TeamID ~= 1 then
+		NT.RemoveFromIgnoredNPC(targetCharacter)
+	end
 
 	local identifier = item.Prefab.Identifier.Value
 

@@ -19,6 +19,49 @@ Hook.Add("think", "NT.update", function()
 	NT.TickUpdate()
 end)
 
+local ignoredCharacters = {}
+NT.RemoveFromIgnoredNPC = function(character)
+	local function keyOfValue(table, v)
+		for key, value in pairs(table) do
+			if value == v then
+				return key
+			end
+		end
+		return nil
+	end
+	local characterKey = keyOfValue(ignoredCharacters, character)
+	if characterKey ~= nil then
+		ignoredCharacters[character.ID] = nil
+	end
+end
+NT.UpdateIgnoredNPC = function()
+	ignoredCharacters = {}
+	print("Ignored NPC:")
+	local debuffPrefab = AfflictionPrefab.Prefabs["opiateoverdose"]
+	local debuffType = debuffPrefab.AfflictionType
+	local function hasCriticalAfflictions(character, type)
+		return character.CharacterHealth.GetAfflictionStrengthByType(AfflictionPrefab.PoisonType, true)
+				+ character.CharacterHealth.GetAfflictionStrengthByType(AfflictionPrefab.DamageType, true)
+				+ character.CharacterHealth.GetAfflictionStrengthByType(type, true)
+			> 0
+	end
+	for character in Character.CharacterList do
+		if character.IsHuman and not (character.IsDead or character.TeamID == 1 or character.IsEscorted) then
+			if not hasCriticalAfflictions(character, debuffType) then
+				ignoredCharacters[character.ID] = character
+				print(character.Name)
+			end
+		end
+	end
+end
+Timer.Wait(function()
+	NT.UpdateIgnoredNPC()
+end, 1000)
+Hook.Add("roundStart", "NT.RoundStart.ignoredCharacters", function()
+	Timer.Wait(function()
+		NT.UpdateIgnoredNPC()
+	end, 10000)
+end)
 -- gets run once every two seconds
 function NT.Update()
 	local updateHumans = {}
@@ -1882,9 +1925,6 @@ NT.CharStats = {
 			elseif isProne and (c.stats.lockleftarm or c.stats.lockrightarm) then
 				c.stats.speedmultiplier = c.stats.speedmultiplier * 0.8
 			end
-			-- if isProne then
-			-- c.character.AnimController.RagdollParams.ColliderHeightFromFloor = 4.0
-			-- end - Heelge: collider adjustment scrapped for now, lets wait for proper method in Workshop
 			return res
 		end,
 	},
@@ -1900,18 +1940,22 @@ NT.CharStats = {
 			return res
 		end,
 	},
-	burndamage = {
-		getter = function(c)
-			local res = 0
-			for type in limbtypes do
-				res = res + HF.GetAfflictionStrengthLimb(c.character, type, "burn", 0)
-			end
-			return res
-		end,
-	},
+	--burndamage = {
+	--	getter = function(c)
+	--		local res = 0
+	--		for type in limbtypes do
+	--			res = res + HF.GetAfflictionStrengthLimb(c.character, type, "burn", 0)
+	--		end
+	--		return res
+	--	end,
+	--},
 }
 
 function NT.UpdateHuman(character)
+	-- escape if currently ignored
+	if ignoredCharacters[character.ID] == character then
+		return
+	end
 	-- pre humanupdate hooks
 	for key, val in pairs(NTC.PreHumanUpdateHooks) do
 		val(character)

@@ -111,6 +111,11 @@ Hook.Add("changeFallDamage", "NT.falldamage", function(impactDamage, character, 
 		return 0
 	end
 
+	-- no longer ignore the non-crew NPC
+	if character.TeamID ~= 1 then
+		NT.RemoveFromIgnoredNPC(character)
+	end
+
 	local velocityMagnitude = HF.Magnitude(velocity)
 	velocityMagnitude = velocityMagnitude ^ 1.5
 
