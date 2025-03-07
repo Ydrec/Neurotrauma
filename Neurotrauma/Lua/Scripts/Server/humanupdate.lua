@@ -21,22 +21,13 @@ end)
 
 local ignoredCharacters = {}
 NT.RemoveFromIgnoredNPC = function(character)
-	local function keyOfValue(table, v)
-		for key, value in pairs(table) do
-			if value == v then
-				return key
-			end
-		end
-		return nil
-	end
-	local characterKey = keyOfValue(ignoredCharacters, character)
-	if characterKey ~= nil then
+	if character.ID ~= nil then
 		ignoredCharacters[character.ID] = nil
 	end
 end
 NT.UpdateIgnoredNPC = function()
 	ignoredCharacters = {}
-	print("Ignored NPC:")
+	local amountIgnored = 0
 	local debuffPrefab = AfflictionPrefab.Prefabs["opiateoverdose"]
 	local debuffType = debuffPrefab.AfflictionType
 	local function hasCriticalAfflictions(character, type)
@@ -46,41 +37,81 @@ NT.UpdateIgnoredNPC = function()
 			> 0
 	end
 	for character in Character.CharacterList do
-		if character.IsHuman and not (character.IsDead or character.TeamID == 1 or character.IsEscorted) then
+		if character.IsHuman and not (character.IsDead or character.TeamID == 1) then
 			if not hasCriticalAfflictions(character, debuffType) then
 				ignoredCharacters[character.ID] = character
-				print(character.Name)
+				amountIgnored = amountIgnored + 1
 			end
 		end
 	end
+	print("Ignored NPC amount: ", amountIgnored)
 end
-Timer.Wait(function()
-	NT.UpdateIgnoredNPC()
-end, 1000)
-Hook.Add("roundStart", "NT.RoundStart.ignoredCharacters", function()
+local updateHumans = {}
+local amountHumans = 0
+local updateMonsters = {}
+local amountMonsters = 0
+local GetCharacters = function()
+	Timer.Wait(function()
+		updateHumans = {}
+		amountHumans = 0
+		updateMonsters = {}
+		amountMonsters = 0
+
+		-- fetchcharacters to update
+		for key, character in pairs(Character.CharacterList) do
+			if not character.IsDead then
+				if character.IsHuman and ignoredCharacters[character.ID] ~= character then
+					table.insert(updateHumans, character)
+					amountHumans = amountHumans + 1
+				else
+					table.insert(updateMonsters, character)
+					amountMonsters = amountMonsters + 1
+				end
+			end
+		end
+	end, 1)
+end
+Hook.Add("roundStart", "NT.RoundStart.fetchCharacters", function()
 	Timer.Wait(function()
 		NT.UpdateIgnoredNPC()
+		GetCharacters()
 	end, 10000)
+end)
+-- whenever a human is killed or spawned with TeamID other than 1, update ignored NPC
+Hook.Add("character.created", "NT.character.created", function(character)
+	if character.TeamID == nil then
+		return
+	elseif character.TeamID ~= 1 then
+		ignoredCharacters[character.ID] = character
+	end
+	GetCharacters()
+end)
+Hook.Add("character.death", "NT.character.death", function(character)
+	if character.TeamID == nil then
+		return
+	elseif character.TeamID ~= 1 then
+		ignoredCharacters[character.ID] = nil
+	end
+	GetCharacters()
 end)
 -- gets run once every two seconds
 function NT.Update()
-	local updateHumans = {}
-	local amountHumans = 0
-	local updateMonsters = {}
-	local amountMonsters = 0
-
-	-- fetchcharacters to update
-	for key, character in pairs(Character.CharacterList) do
-		if not character.IsDead then
-			if character.IsHuman then
-				table.insert(updateHumans, character)
-				amountHumans = amountHumans + 1
-			else
-				table.insert(updateMonsters, character)
-				amountMonsters = amountMonsters + 1
-			end
-		end
-	end
+	--local updateHumans = {}
+	--local amountHumans = 0
+	--local updateMonsters = {}
+	--local amountMonsters = 0
+	---- fetchcharacters to update
+	--for key, character in pairs(Character.CharacterList) do
+	--	if not character.IsDead then
+	--		if character.IsHuman and ignoredCharacters[character.ID] ~= character then
+	--			table.insert(updateHumans, character)
+	--			amountHumans = amountHumans + 1
+	--		else
+	--			table.insert(updateMonsters, character)
+	--			amountMonsters = amountMonsters + 1
+	--		end
+	--	end
+	--end
 
 	-- we spread the characters out over the duration of an update so that the load isnt done all at once
 	for key, value in pairs(updateHumans) do
@@ -1953,9 +1984,9 @@ NT.CharStats = {
 
 function NT.UpdateHuman(character)
 	-- escape if currently ignored
-	if ignoredCharacters[character.ID] == character then
-		return
-	end
+	--if ignoredCharacters[character.ID] == character then
+	--	return
+	--end
 	-- pre humanupdate hooks
 	for key, val in pairs(NTC.PreHumanUpdateHooks) do
 		val(character)
