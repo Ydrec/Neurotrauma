@@ -36,7 +36,7 @@ local GetCharacters = function()
 			if character.IsHuman and ignoredCharacters[character.ID] ~= character then
 				table.insert(updateHumans, character)
 				amountHumans = amountHumans + 1
-			else
+			elseif not character.IsHuman then
 				table.insert(updateMonsters, character)
 				amountMonsters = amountMonsters + 1
 			end
