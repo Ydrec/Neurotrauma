@@ -26,6 +26,7 @@ local updateHumans = {}
 local amountHumans = 0
 local updateMonsters = {}
 local amountMonsters = 0
+local roundStarted = false
 local GetCharacters = function()
 	updateHumans = {}
 	amountHumans = 0
@@ -44,6 +45,7 @@ local GetCharacters = function()
 			end
 		end
 	end
+	-- print("getChars")
 end
 local UpdateRescueTargets = function()
 	rescuetargets = {}
@@ -84,22 +86,27 @@ NT.UpdateIgnoredNPC = function()
 	print("Ignored NPC amount: ", amountIgnored)
 	Timer.Wait(function()
 		GetCharacters()
+		roundStarted = true
 	end, 1)
 end
 NT.RemoveFromIgnoredNPC = function(character)
-	if character.ID ~= nil then
+	if character.ID ~= nil and ignoredCharacters[character.ID] == character then
 		ignoredCharacters[character.ID] = nil
 		GetCharacters()
 	end
 end
 Hook.Add("roundStart", "NT.RoundStart.fetchCharacters", function()
+	local roundStarted = false
 	Timer.Wait(function()
 		UpdateRescueTargets()
 		NT.UpdateIgnoredNPC()
-	end, 10000)
+	end, 4000)
 end)
 -- whenever a human is killed or spawned with TeamID other than 1, update ignored NPC
 Hook.Add("character.created", "NT.character.created", function(character)
+	if roundStarted == false then
+		return
+	end
 	Timer.Wait(function()
 		if character.TeamID ~= nil and character.TeamID ~= 1 then
 			ignoredCharacters[character.ID] = character
