@@ -51,25 +51,23 @@ local amountHumans = 0
 local updateMonsters = {}
 local amountMonsters = 0
 local GetCharacters = function()
-	Timer.Wait(function()
-		updateHumans = {}
-		amountHumans = 0
-		updateMonsters = {}
-		amountMonsters = 0
+	updateHumans = {}
+	amountHumans = 0
+	updateMonsters = {}
+	amountMonsters = 0
 
-		-- fetchcharacters to update
-		for key, character in pairs(Character.CharacterList) do
-			if not character.IsDead then
-				if character.IsHuman and ignoredCharacters[character.ID] ~= character then
-					table.insert(updateHumans, character)
-					amountHumans = amountHumans + 1
-				else
-					table.insert(updateMonsters, character)
-					amountMonsters = amountMonsters + 1
-				end
+	-- fetchcharacters to update
+	for key, character in pairs(Character.CharacterList) do
+		if not character.IsDead then
+			if character.IsHuman and ignoredCharacters[character.ID] ~= character then
+				table.insert(updateHumans, character)
+				amountHumans = amountHumans + 1
+			else
+				table.insert(updateMonsters, character)
+				amountMonsters = amountMonsters + 1
 			end
 		end
-	end, 1)
+	end
 end
 Hook.Add("roundStart", "NT.RoundStart.fetchCharacters", function()
 	Timer.Wait(function()
@@ -79,17 +77,15 @@ Hook.Add("roundStart", "NT.RoundStart.fetchCharacters", function()
 end)
 -- whenever a human is killed or spawned with TeamID other than 1, update ignored NPC
 Hook.Add("character.created", "NT.character.created", function(character)
-	if character.TeamID == nil then
-		return
-	elseif character.TeamID ~= 1 then
-		ignoredCharacters[character.ID] = character
-	end
-	GetCharacters()
+	Timer.Wait(function()
+		if character.TeamID ~= nil and character.TeamID ~= 1 then
+			ignoredCharacters[character.ID] = character
+		end
+		GetCharacters()
+	end, 1)
 end)
 Hook.Add("character.death", "NT.character.death", function(character)
-	if character.TeamID == nil then
-		return
-	elseif character.TeamID ~= 1 then
+	if character.TeamID ~= nil and character.TeamID ~= 1 then
 		ignoredCharacters[character.ID] = nil
 	end
 	GetCharacters()
