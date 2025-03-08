@@ -19,6 +19,8 @@ Hook.Add("think", "NT.update", function()
 	NT.TickUpdate()
 end)
 
+LuaUserData.MakeFieldAccessible(Descriptors["Barotrauma.AbandonedOutpostMission"], "requireRescue")
+local rescuetargets = {}
 local ignoredCharacters = {}
 local updateHumans = {}
 local amountHumans = 0
@@ -43,6 +45,19 @@ local GetCharacters = function()
 		end
 	end
 end
+local UpdateRescueTargets = function()
+	rescuetargets = {}
+	for mission in Game.GameSession.Missions do
+		if LuaUserData.IsTargetType(mission.Prefab.MissionClass, "Barotrauma.AbandonedOutpostMission") then
+			for character in mission.requireRescue do
+				rescuetargets[character.ID] = character
+				--table.insert(rescuetargets, character)
+			end
+		end
+	end
+	-- print('rescue targets =')
+	-- for char in rescuetargets do print(char.Name) end
+end
 NT.UpdateIgnoredNPC = function()
 	ignoredCharacters = {}
 	local amountIgnored = 0
@@ -55,7 +70,11 @@ NT.UpdateIgnoredNPC = function()
 			> 0
 	end
 	for character in Character.CharacterList do
-		if character.IsHuman and not (character.IsDead or character.TeamID == 1) then
+		if
+			character.IsHuman and not (character.IsDead or character.TeamID == 1)
+			or character.IsEscorted
+			or rescuetargets[character.ID] == character
+		then
 			if not hasCriticalAfflictions(character, debuffType) then
 				ignoredCharacters[character.ID] = character
 				amountIgnored = amountIgnored + 1
@@ -75,6 +94,7 @@ NT.RemoveFromIgnoredNPC = function(character)
 end
 Hook.Add("roundStart", "NT.RoundStart.fetchCharacters", function()
 	Timer.Wait(function()
+		UpdateRescueTargets()
 		NT.UpdateIgnoredNPC()
 	end, 10000)
 end)
