@@ -20,32 +20,6 @@ Hook.Add("think", "NT.update", function()
 end)
 
 local ignoredCharacters = {}
-NT.RemoveFromIgnoredNPC = function(character)
-	if character.ID ~= nil then
-		ignoredCharacters[character.ID] = nil
-	end
-end
-NT.UpdateIgnoredNPC = function()
-	ignoredCharacters = {}
-	local amountIgnored = 0
-	local debuffPrefab = AfflictionPrefab.Prefabs["opiateoverdose"]
-	local debuffType = debuffPrefab.AfflictionType
-	local function hasCriticalAfflictions(character, type)
-		return character.CharacterHealth.GetAfflictionStrengthByType(AfflictionPrefab.PoisonType, true)
-				+ character.CharacterHealth.GetAfflictionStrengthByType(AfflictionPrefab.DamageType, true)
-				+ character.CharacterHealth.GetAfflictionStrengthByType(type, true)
-			> 0
-	end
-	for character in Character.CharacterList do
-		if character.IsHuman and not (character.IsDead or character.TeamID == 1) then
-			if not hasCriticalAfflictions(character, debuffType) then
-				ignoredCharacters[character.ID] = character
-				amountIgnored = amountIgnored + 1
-			end
-		end
-	end
-	print("Ignored NPC amount: ", amountIgnored)
-end
 local updateHumans = {}
 local amountHumans = 0
 local updateMonsters = {}
@@ -69,10 +43,39 @@ local GetCharacters = function()
 		end
 	end
 end
+NT.UpdateIgnoredNPC = function()
+	ignoredCharacters = {}
+	local amountIgnored = 0
+	local debuffPrefab = AfflictionPrefab.Prefabs["opiateoverdose"]
+	local debuffType = debuffPrefab.AfflictionType
+	local function hasCriticalAfflictions(character, type)
+		return character.CharacterHealth.GetAfflictionStrengthByType(AfflictionPrefab.PoisonType, true)
+				+ character.CharacterHealth.GetAfflictionStrengthByType(AfflictionPrefab.DamageType, true)
+				+ character.CharacterHealth.GetAfflictionStrengthByType(type, true)
+			> 0
+	end
+	for character in Character.CharacterList do
+		if character.IsHuman and not (character.IsDead or character.TeamID == 1) then
+			if not hasCriticalAfflictions(character, debuffType) then
+				ignoredCharacters[character.ID] = character
+				amountIgnored = amountIgnored + 1
+			end
+		end
+	end
+	print("Ignored NPC amount: ", amountIgnored)
+	Timer.Wait(function()
+		GetCharacters()
+	end, 1)
+end
+NT.RemoveFromIgnoredNPC = function(character)
+	if character.ID ~= nil then
+		ignoredCharacters[character.ID] = nil
+		GetCharacters()
+	end
+end
 Hook.Add("roundStart", "NT.RoundStart.fetchCharacters", function()
 	Timer.Wait(function()
 		NT.UpdateIgnoredNPC()
-		GetCharacters()
 	end, 10000)
 end)
 -- whenever a human is killed or spawned with TeamID other than 1, update ignored NPC
@@ -2089,6 +2092,10 @@ function NT.UpdateHuman(character)
 end
 
 function NT.UpdateMonster(character)
+	-- we somehow choose a human, escape
+	if character.IsHuman then
+		return
+	end
 	-- trade bloodloss on this creature for organ damage so that creatures can still bleed out
 	local bloodloss = HF.GetAfflictionStrength(character, "bloodloss", 0)
 	local oxygenlow = HF.GetAfflictionStrength(character, "oxygenlow", 0)
