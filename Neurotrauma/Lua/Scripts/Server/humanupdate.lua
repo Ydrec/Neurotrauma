@@ -73,9 +73,13 @@ NT.UpdateIgnoredNPC = function()
 	end
 	for character in Character.CharacterList do
 		if
-			character.IsHuman and not (character.IsDead or character.TeamID == 1)
-			or character.IsEscorted
-			or rescuetargets[character.ID] == character
+			character.IsHuman
+			and not character.IsDead
+			and (
+				character.TeamID ~= 1 and character.TeamID ~= 2
+				or character.IsEscorted
+				or rescuetargets[character.ID] == character
+			)
 		then
 			if not hasCriticalAfflictions(character, debuffType) then
 				ignoredCharacters[character.ID] = character
@@ -84,10 +88,8 @@ NT.UpdateIgnoredNPC = function()
 		end
 	end
 	print("Ignored NPC amount: ", amountIgnored)
-	Timer.Wait(function()
-		GetCharacters()
-		roundStarted = true
-	end, 1)
+	GetCharacters()
+	roundStarted = true
 end
 NT.RemoveFromIgnoredNPC = function(character)
 	if character.ID ~= nil and ignoredCharacters[character.ID] == character then
@@ -95,32 +97,26 @@ NT.RemoveFromIgnoredNPC = function(character)
 		GetCharacters()
 	end
 end
+Timer.Wait(function()
+	NT.UpdateIgnoredNPC()
+end, 4000)
 Hook.Add("roundStart", "NT.RoundStart.fetchCharacters", function()
+	UpdateRescueTargets()
 	Timer.Wait(function()
-		UpdateRescueTargets()
 		NT.UpdateIgnoredNPC()
-	end, 4000)
+	end, 1000)
 end)
-Hook.Add("roundEnd", "NT.RoundEnd.fetchCharacters", function()
-	roundStarted = false
-end)
--- whenever a human is killed or spawned with TeamID other than 1, update ignored NPC
+-- whenever a human is killed or spawned with TeamID other than 1 2, update ignored NPC
 Hook.Add("character.created", "NT.character.created", function(character)
-	if roundStarted == false then
-		return
+	if character.TeamID ~= 1 and character.TeamID ~= 2 then
+		ignoredCharacters[character.ID] = character
 	end
-	Timer.Wait(function()
-		if character.TeamID ~= nil and character.TeamID ~= 1 then
-			ignoredCharacters[character.ID] = character
-		end
+	if roundStarted == true then
 		GetCharacters()
-	end, 1)
+	end
 end)
 Hook.Add("character.death", "NT.character.death", function(character)
-	if character.TeamID ~= nil and character.TeamID ~= 1 then
-		ignoredCharacters[character.ID] = nil
-	end
-	GetCharacters()
+	NT.RemoveFromIgnoredNPC(character)
 end)
 -- gets run once every two seconds
 function NT.Update()
