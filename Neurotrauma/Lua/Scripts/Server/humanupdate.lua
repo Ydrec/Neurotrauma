@@ -98,6 +98,7 @@ NT.RemoveFromIgnoredNPC = function(character)
 	end
 end
 Timer.Wait(function()
+	UpdateRescueTargets()
 	NT.UpdateIgnoredNPC()
 end, 4000)
 Hook.Add("roundStart", "NT.RoundStart.fetchCharacters", function()
