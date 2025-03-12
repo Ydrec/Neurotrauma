@@ -88,8 +88,6 @@ NT.UpdateIgnoredNPC = function()
 		end
 	end
 	print("Ignored NPC amount: ", amountIgnored)
-	GetCharacters()
-	roundStarted = true
 end
 NT.RemoveFromIgnoredNPC = function(character)
 	if character.ID ~= nil and ignoredCharacters[character.ID] == character then
@@ -100,12 +98,14 @@ end
 Timer.Wait(function()
 	UpdateRescueTargets()
 	NT.UpdateIgnoredNPC()
+	roundStarted = true
+	GetCharacters()
 end, 4000)
 Hook.Add("roundStart", "NT.RoundStart.fetchCharacters", function()
 	UpdateRescueTargets()
-	Timer.Wait(function()
-		NT.UpdateIgnoredNPC()
-	end, 1000)
+	NT.UpdateIgnoredNPC()
+	roundStarted = true
+	GetCharacters()
 end)
 -- whenever a human is killed or spawned with TeamID other than 1 2, update ignored NPC
 Hook.Add("character.created", "NT.character.created", function(character)
