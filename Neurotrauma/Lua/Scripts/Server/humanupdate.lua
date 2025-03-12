@@ -92,32 +92,34 @@ end
 NT.RemoveFromIgnoredNPC = function(character)
 	if character.ID ~= nil and ignoredCharacters[character.ID] == character then
 		ignoredCharacters[character.ID] = nil
-		GetCharacters()
 	end
+	GetCharacters()
+end
+NT.FetchWorldCharacters = function()
+	UpdateRescueTargets()
+	NT.UpdateIgnoredNPC()
+	GetCharacters()
 end
 Timer.Wait(function()
-	UpdateRescueTargets()
-	NT.UpdateIgnoredNPC()
-	roundStarted = true
-	GetCharacters()
+	NT.FetchWorldCharacters()
 end, 4000)
 Hook.Add("roundStart", "NT.RoundStart.fetchCharacters", function()
-	UpdateRescueTargets()
-	NT.UpdateIgnoredNPC()
 	roundStarted = true
-	GetCharacters()
+	NT.FetchWorldCharacters()
 end)
 -- whenever a human is killed or spawned with TeamID other than 1 2, update ignored NPC
 Hook.Add("character.created", "NT.character.created", function(character)
 	if character.TeamID ~= 1 and character.TeamID ~= 2 then
 		ignoredCharacters[character.ID] = character
 	end
+	-- ignore getting a new character table if the round hasn't started yet, unintendedly executes if round restarts
 	if roundStarted == true then
 		GetCharacters()
 	end
 end)
 Hook.Add("character.death", "NT.character.death", function(character)
 	NT.RemoveFromIgnoredNPC(character)
+	GetCharacters()
 end)
 -- gets run once every two seconds
 function NT.Update()
