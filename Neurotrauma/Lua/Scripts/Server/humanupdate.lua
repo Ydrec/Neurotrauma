@@ -27,7 +27,7 @@ local amountHumans = 0
 local updateMonsters = {}
 local amountMonsters = 0
 local roundStarted = false
-local GetCharacters = function()
+local function GetCharacters()
 	updateHumans = {}
 	amountHumans = 0
 	updateMonsters = {}
@@ -47,7 +47,7 @@ local GetCharacters = function()
 	end
 	-- print("getChars")
 end
-local UpdateRescueTargets = function()
+local function UpdateRescueTargets()
 	rescuetargets = {}
 	for mission in Game.GameSession.Missions do
 		if LuaUserData.IsTargetType(mission.Prefab.MissionClass, "Barotrauma.AbandonedOutpostMission") then
@@ -60,7 +60,7 @@ local UpdateRescueTargets = function()
 	-- print('rescue targets =')
 	-- for char in rescuetargets do print(char.Name) end
 end
-NT.UpdateIgnoredNPC = function()
+function NT.UpdateIgnoredNPC()
 	ignoredCharacters = {}
 	local amountIgnored = 0
 	local debuffPrefab = AfflictionPrefab.Prefabs["opiateoverdose"]
@@ -106,6 +106,15 @@ end, 4000)
 Hook.Add("roundStart", "NT.RoundStart.fetchCharacters", function()
 	roundStarted = true
 	NT.FetchWorldCharacters()
+end)
+Hook.Add("roundEnd", "NT.RoundEnd.fetchCharacters", function()
+	rescuetargets = {}
+	ignoredCharacters = {}
+	updateHumans = {}
+	amountHumans = 0
+	updateMonsters = {}
+	amountMonsters = 0
+	roundStarted = false
 end)
 -- whenever a human is killed or spawned with TeamID other than 1 2, update ignored NPC
 Hook.Add("character.created", "NT.character.created", function(character)
