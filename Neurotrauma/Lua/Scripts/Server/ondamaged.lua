@@ -40,7 +40,7 @@ Hook.Add("character.applyDamage", "NT.ondamaged", function(characterHealth, atta
 	end
 
 	-- no longer ignore the non-crew NPC
-	if characterHealth.Character.TeamID ~= 1 then
+	if targetCharacter.TeamID ~= 1 and targetCharacter.TeamID ~= 2 then
 		NT.RemoveFromIgnoredNPC(characterHealth.Character)
 	end
 

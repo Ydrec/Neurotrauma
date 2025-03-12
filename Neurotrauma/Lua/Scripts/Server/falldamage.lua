@@ -112,7 +112,7 @@ Hook.Add("changeFallDamage", "NT.falldamage", function(impactDamage, character, 
 	end
 
 	-- no longer ignore the non-crew NPC
-	if character.TeamID ~= 1 then
+	if targetCharacter.TeamID ~= 1 and targetCharacter.TeamID ~= 2 then
 		NT.RemoveFromIgnoredNPC(character)
 	end
 
