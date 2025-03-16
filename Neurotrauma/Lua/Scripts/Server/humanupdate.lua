@@ -30,7 +30,6 @@ local function AddToUpdateTable(character)
 	if character.IsHuman then
 		table.insert(updateHumans, character)
 		amountHumans = amountHumans + 1
-		-- print("added " .. character.Name .. " to update table")
 	else
 		table.insert(updateMonsters, character)
 		amountMonsters = amountMonsters + 1
@@ -67,7 +66,6 @@ local function GetCharacters()
 			AddToUpdateTable(character)
 		end
 	end
-	-- print("getChars")
 end
 local function UpdateRescueTargets()
 	rescuetargets = {}
@@ -85,17 +83,11 @@ end
 NT.FetchWorldCharacters = function()
 	UpdateRescueTargets()
 	GetCharacters()
-	-- print("fetch complete!")
 	roundStarted = true
 end
 -- if we reload Lua or restarted the round, this makes sure we have a character table
 Timer.Wait(function()
 	roundStarted = false
-	rescuetargets = {}
-	updateHumans = {}
-	amountHumans = 0
-	updateMonsters = {}
-	amountMonsters = 0
 	NT.FetchWorldCharacters()
 end, 4000)
 -- no longer ignore the non-crew NPC on damage, fall damage, treatment
@@ -116,6 +108,7 @@ Hook.Add("item.applyTreatment", "NT.itemused.unignore", function(item, usingChar
 end)
 -- make sure to have a new character table on round start
 Hook.Add("roundStart", "NT.RoundStart.fetchCharacters", function()
+	roundStarted = false
 	NT.FetchWorldCharacters()
 end)
 -- clean up tables for a round start
@@ -129,13 +122,7 @@ Hook.Add("roundEnd", "NT.RoundEnd.fetchCharacters", function()
 end)
 -- whenever a human is spawned with TeamID other than 1 or 2 or is escort or rescued, then return, else add to update
 Hook.Add("character.created", "NT.character.created", function(character)
-	if
-		character.TeamID ~= 1 and character.TeamID ~= 2
-		or character.IsEscorted
-		or rescuetargets[character.ID] == character
-	then
-		return
-	elseif roundStarted == true and (character.IsPlayer or not NT.IsIgnoredNPC(character)) then
+	if roundStarted == true and (character.IsPlayer or not NT.IsIgnoredNPC(character)) then
 		AddToUpdateTable(character)
 	end
 end)
@@ -148,23 +135,6 @@ Hook.Add("character.death", "NT.character.death", function(character)
 end)
 -- gets run once every two seconds
 function NT.Update()
-	--local updateHumans = {}
-	--local amountHumans = 0
-	--local updateMonsters = {}
-	--local amountMonsters = 0
-	---- fetchcharacters to update
-	--for key, character in pairs(Character.CharacterList) do
-	--	if not character.IsDead then
-	--		if character.IsHuman and ignoredCharacters[character.ID] ~= character then
-	--			table.insert(updateHumans, character)
-	--			amountHumans = amountHumans + 1
-	--		else
-	--			table.insert(updateMonsters, character)
-	--			amountMonsters = amountMonsters + 1
-	--		end
-	--	end
-	--end
-
 	-- we spread the characters out over the duration of an update so that the load isnt done all at once
 	for key, value in pairs(updateHumans) do
 		-- make sure theyre still alive and human
@@ -2035,10 +2005,6 @@ NT.CharStats = {
 }
 
 function NT.UpdateHuman(character)
-	-- escape if currently ignored
-	--if ignoredCharacters[character.ID] == character then
-	--	return
-	--end
 	-- pre humanupdate hooks
 	for key, val in pairs(NTC.PreHumanUpdateHooks) do
 		val(character)
@@ -2145,7 +2111,7 @@ function NT.UpdateHuman(character)
 end
 
 function NT.UpdateMonster(character)
-	-- trade bloodloss on this creature for organ damage so that creatures can still bleed out
+	-- trade bloodloss and oxygenlow on this creature for organ damage so that creatures can still bleed out and suffocate
 	local bloodloss = HF.GetAfflictionStrength(character, "bloodloss", 0)
 	local oxygenlow = HF.GetAfflictionStrength(character, "oxygenlow", 0)
 	if bloodloss > 0 then
