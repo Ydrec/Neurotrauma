@@ -533,7 +533,7 @@
     <Deconstruct time="2">
       <Item identifier="plastic" outcondition="0.5" />
     </Deconstruct>
-    <Fabricate suitablefabricators="medicalfabricator" requiredtime="4">
+    <Fabricate suitablefabricators="fabricator" requiredtime="4">
       <RequiredSkill identifier="medical" level="10" />
       <RequiredItem identifier="plastic" />
     </Fabricate>
@@ -568,7 +568,7 @@
     <Deconstruct time="2">
       <Item identifier="plastic" outcondition="0.5" />
     </Deconstruct>
-    <Fabricate suitablefabricators="medicalfabricator" requiredtime="4">
+    <Fabricate suitablefabricators="fabricator" requiredtime="4">
       <RequiredSkill identifier="medical" level="50" />
       <RequiredItem identifier="plastic" />
     </Fabricate>
