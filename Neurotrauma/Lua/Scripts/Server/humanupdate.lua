@@ -20,49 +20,16 @@ Hook.Add("think", "NT.update", function()
 end)
 
 LuaUserData.MakeFieldAccessible(Descriptors["Barotrauma.AbandonedOutpostMission"], "requireRescue")
-local rescuetargets = {}
 local ignoredCharacters = {}
 local updateHumans = {}
 local amountHumans = 0
 local updateMonsters = {}
 local amountMonsters = 0
-local roundStarted = false
 local function GetCharacters()
-	updateHumans = {}
-	amountHumans = 0
-	updateMonsters = {}
-	amountMonsters = 0
-
-	-- fetchcharacters to update
-	for key, character in pairs(Character.CharacterList) do
-		if not character.IsDead then
-			if character.IsHuman and ignoredCharacters[character.ID] ~= character then
-				table.insert(updateHumans, character)
-				amountHumans = amountHumans + 1
-			elseif not character.IsHuman then
-				table.insert(updateMonsters, character)
-				amountMonsters = amountMonsters + 1
-			end
-		end
-	end
-	-- print("getChars")
-end
-local function UpdateRescueTargets()
-	rescuetargets = {}
-	for mission in Game.GameSession.Missions do
-		if LuaUserData.IsTargetType(mission.Prefab.MissionClass, "Barotrauma.AbandonedOutpostMission") then
-			for character in mission.requireRescue do
-				rescuetargets[character.ID] = character
-				--table.insert(rescuetargets, character)
-			end
-		end
-	end
-	-- print('rescue targets =')
-	-- for char in rescuetargets do print(char.Name) end
-end
-function NT.UpdateIgnoredNPC()
-	ignoredCharacters = {}
-	local amountIgnored = 0
+	local tupdateHumans = {}
+	local tamountHumans = 0
+	local tupdateMonsters = {}
+	local tamountMonsters = 0
 	local debuffPrefab = AfflictionPrefab.Prefabs["opiateoverdose"]
 	local debuffType = debuffPrefab.AfflictionType
 	local function hasCriticalAfflictions(character, type)
@@ -70,6 +37,43 @@ function NT.UpdateIgnoredNPC()
 				+ character.CharacterHealth.GetAfflictionStrengthByType(AfflictionPrefab.DamageType, true)
 				+ character.CharacterHealth.GetAfflictionStrengthByType(type, true)
 			> 0
+	end
+
+	-- fetchcharacters to update
+	for key, character in pairs(Character.CharacterList) do
+		if not character.IsDead then
+			if character.IsHuman and ignoredCharacters[character.ID] ~= character then
+				table.insert(tupdateHumans, character)
+				tamountHumans = tamountHumans + 1
+			elseif not character.IsHuman then
+				table.insert(tupdateMonsters, character)
+				tamountMonsters = tamountMonsters + 1
+			end
+		end
+	end
+	updateHumans = tupdateHumans
+	amountHumans = tamountHumans
+	updateMonsters = tupdateMonsters
+	amountMonsters = tamountMonsters
+	-- print("getChars")
+end
+local function UpdateIgnoredNPC()
+	local tignoredCharacters = {}
+	local rescuetargets = {}
+	local debuffPrefab = AfflictionPrefab.Prefabs["opiateoverdose"]
+	local debuffType = debuffPrefab.AfflictionType
+	local function hasCriticalAfflictions(character, type)
+		return character.CharacterHealth.GetAfflictionStrengthByType(AfflictionPrefab.PoisonType, true)
+				+ character.CharacterHealth.GetAfflictionStrengthByType(AfflictionPrefab.DamageType, true)
+				+ character.CharacterHealth.GetAfflictionStrengthByType(type, true)
+			> 0
+	end
+	for mission in Game.GameSession.Missions do
+		if LuaUserData.IsTargetType(mission.Prefab.MissionClass, "Barotrauma.AbandonedOutpostMission") then
+			for character in mission.requireRescue do
+				rescuetargets[character.ID] = character
+			end
+		end
 	end
 	for character in Character.CharacterList do
 		if
@@ -82,12 +86,11 @@ function NT.UpdateIgnoredNPC()
 			)
 		then
 			if not hasCriticalAfflictions(character, debuffType) then
-				ignoredCharacters[character.ID] = character
-				amountIgnored = amountIgnored + 1
+				tignoredCharacters[character.ID] = character
 			end
 		end
 	end
-	print("Ignored NPC amount: ", amountIgnored)
+	ignoredCharacters = tignoredCharacters
 end
 NT.RemoveFromIgnoredNPC = function(character)
 	if character.ID ~= nil and ignoredCharacters[character.ID] == character then
@@ -96,59 +99,25 @@ NT.RemoveFromIgnoredNPC = function(character)
 	GetCharacters()
 end
 NT.FetchWorldCharacters = function()
-	UpdateRescueTargets()
-	NT.UpdateIgnoredNPC()
+	UpdateIgnoredNPC()
 	GetCharacters()
 end
 Timer.Wait(function()
 	NT.FetchWorldCharacters()
 end, 4000)
 Hook.Add("roundStart", "NT.RoundStart.fetchCharacters", function()
-	roundStarted = true
 	NT.FetchWorldCharacters()
-end)
-Hook.Add("roundEnd", "NT.RoundEnd.fetchCharacters", function()
-	rescuetargets = {}
-	ignoredCharacters = {}
-	updateHumans = {}
-	amountHumans = 0
-	updateMonsters = {}
-	amountMonsters = 0
-	roundStarted = false
 end)
 -- whenever a human is killed or spawned with TeamID other than 1 2, update ignored NPC
 Hook.Add("character.created", "NT.character.created", function(character)
-	if character.TeamID ~= 1 and character.TeamID ~= 2 then
-		ignoredCharacters[character.ID] = character
-	end
-	-- ignore getting a new character table if the round hasn't started yet, unintendedly executes if round restarts
-	if roundStarted == true then
-		GetCharacters()
-	end
+	UpdateIgnoredNPC()
+	GetCharacters()
 end)
 Hook.Add("character.death", "NT.character.death", function(character)
 	NT.RemoveFromIgnoredNPC(character)
-	GetCharacters()
 end)
 -- gets run once every two seconds
 function NT.Update()
-	--local updateHumans = {}
-	--local amountHumans = 0
-	--local updateMonsters = {}
-	--local amountMonsters = 0
-	---- fetchcharacters to update
-	--for key, character in pairs(Character.CharacterList) do
-	--	if not character.IsDead then
-	--		if character.IsHuman and ignoredCharacters[character.ID] ~= character then
-	--			table.insert(updateHumans, character)
-	--			amountHumans = amountHumans + 1
-	--		else
-	--			table.insert(updateMonsters, character)
-	--			amountMonsters = amountMonsters + 1
-	--		end
-	--	end
-	--end
-
 	-- we spread the characters out over the duration of an update so that the load isnt done all at once
 	for key, value in pairs(updateHumans) do
 		-- make sure theyre still alive and human
