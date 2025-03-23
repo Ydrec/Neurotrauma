@@ -713,7 +713,8 @@ NT.Afflictions = {
 		update = function(c, i)
 			-- respiratory arrest? -> oxygen in lungs rapidly decreases
 			if c.afflictions.respiratoryarrest.strength > 0 then
-				c.afflictions.oxygenlow.strength = c.afflictions.oxygenlow.strength + 15 * (1 - HF.BoolToNum(HF.HasTalent(c.character,"thewaitinglist", 0.75)) * NT.Deltatime
+				c.afflictions.oxygenlow.strength = c.afflictions.oxygenlow.strength
+					+ 15 * (1 - HF.BoolToNum(HF.HasTalent(c.character, "thewaitinglist", 0.75))) * NT.Deltatime
 			end
 		end,
 	},
@@ -1955,9 +1956,9 @@ NT.CharStats = {
 			if isProne and c.character.IsClimbing then
 				c.stats.speedmultiplier = c.stats.speedmultiplier * 0.5
 			end
-			-- moving prone with one arm or 95% slowdown when no arms
+			-- moving prone with one arm or stop movement when no arms
 			if (isProne or res) and c.stats.lockleftarm and c.stats.lockrightarm then
-				c.stats.speedmultiplier = 0.05
+				c.stats.speedmultiplier = -9001
 			elseif isProne and (c.stats.lockleftarm or c.stats.lockrightarm) then
 				c.stats.speedmultiplier = c.stats.speedmultiplier * 0.8
 			end
