@@ -1546,6 +1546,9 @@ NT.LimbAfflictions = {
 						* NT.Deltatime
 			end
 		end,
+		apply = function(c, i, type, newval)
+			HF.SetAfflictionLimb(c.character, i, type, newval)
+		end,
 	},
 	acidburn = {
 		max = 200,
@@ -1658,6 +1661,9 @@ NT.LimbAfflictions = {
 						)
 					)
 					* NT.Deltatime
+		end,
+		apply = function(c, i, type, newval)
+			HF.SetAfflictionLimb(c.character, i, type, newval)
 		end,
 	},
 	-- other
