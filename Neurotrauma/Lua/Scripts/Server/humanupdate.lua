@@ -1567,6 +1567,9 @@ NT.LimbAfflictions = {
 						* NT.Deltatime
 			end
 		end,
+		apply = function(c, i, type, newval)
+			HF.SetAfflictionLimb(c.character, i, type, newval)
+		end,
 	},
 	gunshotwound = {
 		max = 200,
@@ -1577,6 +1580,9 @@ NT.LimbAfflictions = {
 						* c.stats.healingrate
 						* NT.Deltatime
 			end
+		end,
+		apply = function(c, i, type, newval)
+			HF.SetAfflictionLimb(c.character, i, type, newval)
 		end,
 	},
 	bitewounds = {
@@ -1589,6 +1595,9 @@ NT.LimbAfflictions = {
 						* NT.Deltatime
 			end
 		end,
+		apply = function(c, i, type, newval)
+			HF.SetAfflictionLimb(c.character, i, type, newval)
+		end,
 	},
 	explosiondamage = {
 		max = 200,
@@ -1599,6 +1608,9 @@ NT.LimbAfflictions = {
 						* c.stats.healingrate
 						* NT.Deltatime
 			end
+		end,
+		apply = function(c, i, type, newval)
+			HF.SetAfflictionLimb(c.character, i, type, newval)
 		end,
 	},
 	blunttrauma = {
@@ -1614,6 +1626,9 @@ NT.LimbAfflictions = {
 						* c.stats.healingrate
 						* NT.Deltatime
 			end
+		end,
+		apply = function(c, i, type, newval)
+			HF.SetAfflictionLimb(c.character, i, type, newval)
 		end,
 	},
 	internaldamage = {
