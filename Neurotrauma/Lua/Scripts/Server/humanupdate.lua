@@ -212,7 +212,6 @@ NT.Afflictions = {
 					and (
 						NTC.GetSymptom(c.character, i)
 						or (c.stats.lockleftleg and c.stats.lockrightleg and not c.stats.wheelchaired)
-						or c.character.IsKeyDown(InputType.Attack)
 					),
 				2
 			)
