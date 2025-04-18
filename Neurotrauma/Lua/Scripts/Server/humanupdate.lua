@@ -633,7 +633,14 @@ NT.Afflictions = {
 		update = function(c, i)
 			-- respiratory arrest? -> oxygen in lungs rapidly decreases
 			if c.afflictions.respiratoryarrest.strength > 0 then
-				c.afflictions.oxygenlow.strength = c.afflictions.oxygenlow.strength + 15 * (1 - HF.BoolToNum(HF.HasTalent(c.character,"thewaitinglist") and c.afflictions.sym_unconsciousness.strength > 0, 0.75)) * NT.Deltatime
+				c.afflictions.oxygenlow.strength = c.afflictions.oxygenlow.strength
+					+ 15
+						* (1 - HF.BoolToNum(
+							HF.HasTalent(c.character, "thewaitinglist")
+								and c.afflictions.sym_unconsciousness.strength > 0,
+							0.75
+						))
+						* NT.Deltatime
 			end
 		end,
 	},
@@ -1768,7 +1775,7 @@ NT.CharStats = {
 		getter = function(c)
 			return c.afflictions.analgesia.strength > 0
 				or c.afflictions.anesthesia.strength > 10
-				or c.afflictions.drunk.strength > 30
+				or c.afflictions.drunk.strength > 20
 				or c.stats.stasis
 		end,
 	},
