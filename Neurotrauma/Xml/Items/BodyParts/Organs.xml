@@ -13,13 +13,13 @@
 
         <Throwable characterusable="true" slots="Any,RightHand,LeftHand" throwforce="4.0" aimpos="35,-10" msg="ItemMsgPickUpSelect">
             <StatusEffect type="OnImpact" target="This" Condition="0.0" setvalue="true">
-                <Explosion range="0.0" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="0.0" decal="fruitsplatter1" decalsize="1.0" />
-                <ParticleEmitter particle="whitegoosplash" anglemin="0" anglemax="360" particleamount="2" velocitymin="0" velocitymax="0" scalemin="1.5" scalemax="2" />
+                <Explosion range="0.0" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="0.0" decal="fruitsplatter_red" decalsize="1.0" />
+                <ParticleEmitter particle="bloodsplash" anglemin="0" anglemax="360" particleamount="2" velocitymin="0" velocitymax="0" scalemin="1.5" scalemax="2" />
                 <ParticleEmitter particle="fruitchunks" anglemin="0" anglemax="360" particleamount="10" velocitymin="200" velocitymax="300" scalemin="0.4" scalemax="0.8" />
                 <Remove />
             </StatusEffect>
             <!-- making the organ go kaputt if left outside of refrigeration -->
-            <StatusEffect type="Always" target="This" condition="-0.5" conditionalComparison="And">
+            <StatusEffect type="Always" target="This" condition="-2.5" interval="5" disabledeltatime="true" conditionalComparison="And">
                 <Conditional hastag="neq refrigerated" targetcontainer="true" />
                 <Conditional hastag="neq medicalfabricator" Locked="neq true" targetitemcomponent="ItemContainer" targetcontainer="true" />
             </StatusEffect>
@@ -58,13 +58,13 @@
 
         <Throwable characterusable="true" slots="Any,RightHand,LeftHand" throwforce="4.0" aimpos="35,-10" msg="ItemMsgPickUpSelect">
             <StatusEffect type="OnImpact" target="This" Condition="0.0" setvalue="true">
-                <Explosion range="0.0" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="0.0" decal="fruitsplatter1" decalsize="1.0" />
-                <ParticleEmitter particle="whitegoosplash" anglemin="0" anglemax="360" particleamount="2" velocitymin="0" velocitymax="0" scalemin="1.5" scalemax="2" />
+                <Explosion range="0.0" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="0.0" decal="fruitsplatter_red" decalsize="1.0" />
+                <ParticleEmitter particle="bloodsplash" anglemin="0" anglemax="360" particleamount="2" velocitymin="0" velocitymax="0" scalemin="1.5" scalemax="2" />
                 <ParticleEmitter particle="fruitchunks" anglemin="0" anglemax="360" particleamount="10" velocitymin="200" velocitymax="300" scalemin="0.4" scalemax="0.8" />
                 <Remove />
             </StatusEffect>
             <!-- making the organ go kaputt if left outside of refrigeration -->
-            <StatusEffect type="Always" target="This" condition="-0.5" conditionalComparison="And">
+            <StatusEffect type="Always" target="This" condition="-2.5" interval="5" disabledeltatime="true" conditionalComparison="And">
                 <Conditional hastag="neq refrigerated" targetcontainer="true" />
                 <Conditional hastag="neq medicalfabricator" Locked="neq true" targetitemcomponent="ItemContainer" targetcontainer="true" />
             </StatusEffect>
@@ -103,13 +103,13 @@
 
         <Throwable characterusable="true" slots="Any,RightHand,LeftHand" throwforce="4.0" aimpos="35,-10" msg="ItemMsgPickUpSelect">
             <StatusEffect type="OnImpact" target="This" Condition="0.0" setvalue="true">
-                <Explosion range="0.0" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="0.0" decal="fruitsplatter1" decalsize="1.0" />
-                <ParticleEmitter particle="whitegoosplash" anglemin="0" anglemax="360" particleamount="2" velocitymin="0" velocitymax="0" scalemin="1.5" scalemax="2" />
+                <Explosion range="0.0" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="0.0" decal="fruitsplatter_red" decalsize="1.0" />
+                <ParticleEmitter particle="bloodsplash" anglemin="0" anglemax="360" particleamount="2" velocitymin="0" velocitymax="0" scalemin="1.5" scalemax="2" />
                 <ParticleEmitter particle="fruitchunks" anglemin="0" anglemax="360" particleamount="10" velocitymin="200" velocitymax="300" scalemin="0.4" scalemax="0.8" />
                 <Remove />
             </StatusEffect>
             <!-- making the organ go kaputt if left outside of refrigeration -->
-            <StatusEffect type="Always" target="This" condition="-0.5" conditionalComparison="And">
+            <StatusEffect type="Always" target="This" condition="-2.5" interval="5" disabledeltatime="true" conditionalComparison="And">
                 <Conditional hastag="neq refrigerated" targetcontainer="true" />
                 <Conditional hastag="neq medicalfabricator" Locked="neq true" targetitemcomponent="ItemContainer" targetcontainer="true" />
             </StatusEffect>
@@ -148,13 +148,13 @@
 
         <Throwable characterusable="true" slots="Any,RightHand,LeftHand" throwforce="4.0" aimpos="35,-10" msg="ItemMsgPickUpSelect">
             <StatusEffect type="OnImpact" target="This" Condition="0.0" setvalue="true">
-                <Explosion range="0.0" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="0.0" decal="fruitsplatter1" decalsize="1.0" />
-                <ParticleEmitter particle="whitegoosplash" anglemin="0" anglemax="360" particleamount="2" velocitymin="0" velocitymax="0" scalemin="1.5" scalemax="2" />
+                <Explosion range="0.0" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="0.0" decal="fruitsplatter_red" decalsize="1.0" />
+                <ParticleEmitter particle="bloodsplash" anglemin="0" anglemax="360" particleamount="2" velocitymin="0" velocitymax="0" scalemin="1.5" scalemax="2" />
                 <ParticleEmitter particle="fruitchunks" anglemin="0" anglemax="360" particleamount="10" velocitymin="200" velocitymax="300" scalemin="0.4" scalemax="0.8" />
                 <Remove />
             </StatusEffect>
             <!-- making the organ go kaputt if left outside of refrigeration -->
-            <StatusEffect type="Always" target="This" condition="-0.5" conditionalComparison="And">
+            <StatusEffect type="Always" target="This" condition="-2.5" interval="5" disabledeltatime="true" conditionalComparison="And">
                 <Conditional hastag="neq refrigerated" targetcontainer="true" />
                 <Conditional hastag="neq medicalfabricator" Locked="neq true" targetitemcomponent="ItemContainer" targetcontainer="true" />
             </StatusEffect>
@@ -194,8 +194,8 @@
         <Throwable characterusable="true" slots="Any,RightHand,LeftHand" throwforce="4.0" aimpos="35,-10" msg="ItemMsgPickUpSelect">
             <StatusEffect type="OnImpact" target="This" Condition="0.0" setvalue="true">
                 <Conditional hastag="neq braincontainer" targetcontainer="true" />
-                <Explosion range="0.0" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="0.0" decal="fruitsplatter1" decalsize="1.0" />
-                <ParticleEmitter particle="whitegoosplash" anglemin="0" anglemax="360" particleamount="2" velocitymin="0" velocitymax="0" scalemin="1.5" scalemax="2" />
+                <Explosion range="0.0" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="0.0" decal="fruitsplatter_red" decalsize="1.0" />
+                <ParticleEmitter particle="bloodsplash" anglemin="0" anglemax="360" particleamount="2" velocitymin="0" velocitymax="0" scalemin="1.5" scalemax="2" />
                 <ParticleEmitter particle="fruitchunks" anglemin="0" anglemax="360" particleamount="10" velocitymin="200" velocitymax="300" scalemin="0.4" scalemax="0.8" />
                 <Remove />
             </StatusEffect>

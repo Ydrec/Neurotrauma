@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Items>
-    <Item name="" identifier="rarm" description="" category="Medical" scale="0.4" useinhealthinterface="True" cargocontaineridentifier="organcrate" Tags="smallitem,organ,petfood1,petfood2,petfood3,monsterfood">
+    <Item name="" identifier="rarm" description="" category="Medical" scale="0.4" useinhealthinterface="True" impactsoundtag="impact_soft" cargocontaineridentifier="organcrate" impacttolerance="5.5" Tags="smallitem,organ,petfood1,petfood2,petfood3,monsterfood">
         <InventoryIcon texture="%ModDir%/Images/limbs.png" sourcerect="0,0,46,90" origin="0.5,0.5"/>
         <Sprite texture="%ModDir%/Images/limbs.png" sourcerect="0,0,46,90" depth="0.6" origin="0.5,0.5"/>
         <Body width="46" height="90" density="20"/>
@@ -15,8 +15,12 @@
             <StatusEffect target="Character" type="OnSpawn">
                 <Sound file="%ModDir%/Sound/severed.ogg" range="500"/>
             </StatusEffect>
+            <StatusEffect type="OnImpact" target="This" condition="-1.0">
+                <Explosion range="0.0" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="0.0" decal="fruitsplatter_red" decalsize="0.7" />
+                <ParticleEmitter particle="bloodsplash" anglemin="0" anglemax="360" particleamount="2" velocitymin="0" velocitymax="0" scalemin="1.5" scalemax="2" />
+            </StatusEffect>
             <!-- making the limb go kaputt if left outside of refrigeration -->
-            <StatusEffect type="Always" target="This" condition="-0.2" conditionalComparison="And">
+            <StatusEffect type="Always" target="This" condition="-1.0" interval="5" disabledeltatime="true" conditionalComparison="And">
                 <Conditional hastag="neq refrigerated" targetcontainer="true" />
                 <Conditional hastag="neq medicalfabricator" Locked="neq true" targetitemcomponent="ItemContainer" targetcontainer="true" />
             </StatusEffect>
@@ -35,7 +39,7 @@
         </Throwable>
     </Item>
 
-    <Item name="" identifier="larm" description="" category="Medical" scale="0.4" useinhealthinterface="True" cargocontaineridentifier="organcrate" Tags="smallitem,organ,petfood1,petfood2,petfood3,monsterfood">
+    <Item name="" identifier="larm" description="" category="Medical" scale="0.4" useinhealthinterface="True" impactsoundtag="impact_soft" cargocontaineridentifier="organcrate" impacttolerance="5.5" Tags="smallitem,organ,petfood1,petfood2,petfood3,monsterfood">
         <InventoryIcon texture="%ModDir%/Images/limbs.png" sourcerect="0,0,46,90" origin="0.5,0.5"/>
         <Sprite texture="%ModDir%/Images/limbs.png" sourcerect="0,0,46,90" depth="0.6" origin="0.5,0.5"/>
         <Body width="46" height="90" density="20"/>
@@ -50,8 +54,12 @@
             <StatusEffect target="Character" type="OnSpawn">
                 <Sound file="%ModDir%/Sound/severed.ogg" range="500"/>
             </StatusEffect>
+            <StatusEffect type="OnImpact" target="This" condition="-1.0">
+                <Explosion range="0.0" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="0.0" decal="fruitsplatter_red" decalsize="0.7" />
+                <ParticleEmitter particle="bloodsplash" anglemin="0" anglemax="360" particleamount="2" velocitymin="0" velocitymax="0" scalemin="1.5" scalemax="2" />
+            </StatusEffect>
             <!-- making the limb go kaputt if left outside of refrigeration -->
-            <StatusEffect type="Always" target="This" condition="-0.2" conditionalComparison="And">
+            <StatusEffect type="Always" target="This" condition="-1.0" interval="5" disabledeltatime="true" conditionalComparison="And">
                 <Conditional hastag="neq refrigerated" targetcontainer="true" />
                 <Conditional hastag="neq medicalfabricator" Locked="neq true" targetitemcomponent="ItemContainer" targetcontainer="true" />
             </StatusEffect>
@@ -70,7 +78,7 @@
         </Throwable>
     </Item>
 
-    <Item name="" identifier="rleg" description="" category="Medical" scale="0.4" useinhealthinterface="True" cargocontaineridentifier="organcrate" Tags="smallitem,organ,petfood1,petfood2,petfood3,monsterfood">
+    <Item name="" identifier="rleg" description="" category="Medical" scale="0.4" useinhealthinterface="True" impactsoundtag="impact_soft" cargocontaineridentifier="organcrate" impacttolerance="5.5" Tags="smallitem,organ,petfood1,petfood2,petfood3,monsterfood">
         <InventoryIcon texture="%ModDir%/Images/limbs.png" sourcerect="57,0,60,90" origin="0.5,0.5"/>
         <Body width="60" height="90" density="20"/>
         <Sprite texture="%ModDir%/Images/limbs.png" sourcerect="57,0,60,90" depth="0.6" origin="0.5,0.5"/>
@@ -84,8 +92,12 @@
             <StatusEffect target="Character" type="OnSpawn">
                 <Sound file="%ModDir%/Sound/severed.ogg" range="500"/>
             </StatusEffect>
+            <StatusEffect type="OnImpact" target="This" condition="-1.0">
+                <Explosion range="0.0" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="0.0" decal="fruitsplatter_red" decalsize="0.7" />
+                <ParticleEmitter particle="bloodsplash" anglemin="0" anglemax="360" particleamount="2" velocitymin="0" velocitymax="0" scalemin="1.5" scalemax="2" />
+            </StatusEffect>
             <!-- making the limb go kaputt if left outside of refrigeration -->
-            <StatusEffect type="Always" target="This" condition="-0.2" conditionalComparison="And">
+            <StatusEffect type="Always" target="This" condition="-1.0" interval="5" disabledeltatime="true" conditionalComparison="And">
                 <Conditional hastag="neq refrigerated" targetcontainer="true" />
                 <Conditional hastag="neq medicalfabricator" Locked="neq true" targetitemcomponent="ItemContainer" targetcontainer="true" />
             </StatusEffect>
@@ -104,7 +116,7 @@
         </Throwable>
     </Item>
 
-    <Item name="" identifier="lleg" description="" category="Medical" scale="0.4" useinhealthinterface="True" cargocontaineridentifier="organcrate" Tags="smallitem,organ,petfood1,petfood2,petfood3,monsterfood">
+    <Item name="" identifier="lleg" description="" category="Medical" scale="0.4" useinhealthinterface="True" impactsoundtag="impact_soft" cargocontaineridentifier="organcrate" impacttolerance="5.5" Tags="smallitem,organ,petfood1,petfood2,petfood3,monsterfood">
         <InventoryIcon texture="%ModDir%/Images/limbs.png" sourcerect="57,0,60,90" origin="0.5,0.5"/>
         <Sprite texture="%ModDir%/Images/limbs.png" sourcerect="57,0,60,90" depth="0.6" origin="0.5,0.5"/>
         <Body width="60" height="90" density="20"/>
@@ -119,8 +131,12 @@
             <StatusEffect target="Character" type="OnSpawn">
                 <Sound file="%ModDir%/Sound/severed.ogg" range="500"/>
             </StatusEffect>
+            <StatusEffect type="OnImpact" target="This" condition="-1.0">
+                <Explosion range="0.0" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="0.0" decal="fruitsplatter_red" decalsize="0.7" />
+                <ParticleEmitter particle="bloodsplash" anglemin="0" anglemax="360" particleamount="2" velocitymin="0" velocitymax="0" scalemin="1.5" scalemax="2" />
+            </StatusEffect>
             <!-- making the limb go kaputt if left outside of refrigeration -->
-            <StatusEffect type="Always" target="This" condition="-0.2" conditionalComparison="And">
+            <StatusEffect type="Always" target="This" condition="-1.0" interval="5" disabledeltatime="true" conditionalComparison="And">
                 <Conditional hastag="neq refrigerated" targetcontainer="true" />
                 <Conditional hastag="neq medicalfabricator" Locked="neq true" targetitemcomponent="ItemContainer" targetcontainer="true" />
             </StatusEffect>
@@ -139,9 +155,9 @@
         </Throwable>
     </Item>
 
-    <Item name="" identifier="heada" description="" category="Medical" scale="0.4" useinhealthinterface="True" cargocontaineridentifier="organcrate" Tags="smallitem,organ,petfood1,petfood2,petfood3,monsterfood">
-        <InventoryIcon texture="%ModDir%/Images/limbs.png" sourcerect="129,51,58,51" origin="0.5,0.5"/>
-        <Sprite texture="%ModDir%/Images/limbs.png" sourcerect="129,51,58,51" depth="0.6" origin="0.5,0.5"/>
+    <Item name="" identifier="heada" description="" category="Medical" scale="0.4" useinhealthinterface="True" impactsoundtag="impact_soft" cargocontaineridentifier="organcrate" impacttolerance="5.5" Tags="smallitem,organ,petfood1,petfood2,petfood3,monsterfood">
+        <InventoryIcon texture="%ModDir%/Images/limbs.png" sourcerect="129,31,58,51" origin="0.5,0.5"/>
+        <Sprite texture="%ModDir%/Images/limbs.png" sourcerect="129,31,58,51" depth="0.6" origin="0.5,0.5"/>
         <Body width="60" height="90" density="20"/>
 
         <Deconstruct time="10">
@@ -154,8 +170,12 @@
             <StatusEffect target="Character" type="OnSpawn">
                 <Sound file="%ModDir%/Sound/severed.ogg" range="500"/>
             </StatusEffect>
+            <StatusEffect type="OnImpact" target="This" condition="-1.0">
+                <Explosion range="0.0" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="0.0" decal="fruitsplatter_red" decalsize="0.7" />
+                <ParticleEmitter particle="bloodsplash" anglemin="0" anglemax="360" particleamount="2" velocitymin="0" velocitymax="0" scalemin="1.5" scalemax="2" />
+            </StatusEffect>
             <!-- making the limb go kaputt if left outside of refrigeration -->
-            <StatusEffect type="Always" target="This" condition="-0.2" conditionalComparison="And">
+            <StatusEffect type="Always" target="This" condition="-1.0" interval="5" disabledeltatime="true" conditionalComparison="And">
                 <Conditional hastag="neq refrigerated" targetcontainer="true" />
                 <Conditional hastag="neq medicalfabricator" Locked="neq true" targetitemcomponent="ItemContainer" targetcontainer="true" />
             </StatusEffect>
