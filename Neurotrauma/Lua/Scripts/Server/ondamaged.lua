@@ -269,7 +269,7 @@ NT.OnDamagedMethods.explosiondamage = function(character, strength, limbtype)
 			if previtem ~= nil then
 				previtem.Drop(character, true)
 			end
-			HF.AddAfflictionLimb(character, "gate_ta_h", limbtype, 5)
+			NT.TraumamputateLimb(character, limbtype)
 		end
 	end
 

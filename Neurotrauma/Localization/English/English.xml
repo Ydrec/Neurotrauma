@@ -271,6 +271,9 @@ Can give blood to: AB+</entitydescription.abpluscard>
 <entityname.lleg>Left leg</entityname.lleg>
 <entitydescription.lleg>A severed left leg. Can be surgically reattached.</entitydescription.lleg>
 
+<entityname.heada>Head</entityname.heada>
+<entitydescription.heada>A severed head, or what's left of it.</entitydescription.heada>
+
 <entityname.rarmp>Right arm bionic prosthesis</entityname.rarmp>
 <entitydescription.rarmp>A bionic right arm. Can be used to treat amputation.</entitydescription.rarmp>
 
@@ -759,7 +762,7 @@ Can give blood to: AB+</entitydescription.abpluscard>
 
 <loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Analgesia isn't limited to surgical use. Painlessness increases damage and stun resistance.</loadingscreentip>
 
-<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ The AED will always reset fibrillation regardless of medical skill.</loadingscreentip>
+<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ The AED will always reset fibrillation regardless of medical training.</loadingscreentip>
 
 <loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Drugs can still be administered to a patient in a Stasis Bag.</loadingscreentip>
 
@@ -787,13 +790,13 @@ Can give blood to: AB+</entitydescription.abpluscard>
 
 <loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Mannitol only treats neurotrauma if blood pressure is greater than 70% and hypoxemia is less than 30%.</loadingscreentip>
 
-<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Bots will not alert you of their Neurotrauma afflictions. Check on them often.</loadingscreentip>
+<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Bots will not alert you of their afflictions. Check on them often.</loadingscreentip>
 
 <loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ You can use a tweezer through open gunshot or deep tissue wounds, but this will always cause minor traumatic shock.</loadingscreentip>
 
 <loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Fibrillation is always dangerous. Blood pressure drops much faster than it rises.</loadingscreentip>
 
-<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Concussions are never dangerous, but cause multiple symptoms which may be confused with dangerous causes.</loadingscreentip>
+<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Concussions are never dangerous, but cause multiple symptoms which may be confused with dangerous afflictions.</loadingscreentip>
 
 <loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ The human body will always reject alien blood, regardless of immune status.</loadingscreentip>
 
@@ -807,13 +810,13 @@ Can give blood to: AB+</entitydescription.abpluscard>
 
 <loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Any bed other than a surgical or hospital one only prevent traumatic shock if the patient is laying on them.</loadingscreentip>
 
-<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ You can collect one blood pack at a time from healthy humans, assuming the skillcheck is succeeded.</loadingscreentip>
+<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ You can collect one blood pack at a time from healthy humans, assuming the application is successful.</loadingscreentip>
 
 <loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ To treat gangrene past 15%, you must attach a limb if none exists, stitch, remove it, stitch, attach a new limb, stitch.</loadingscreentip>
 
-<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Most affliction chances and rate of gain can be configured. To find the config, open the Esc menu after loading into a game. Screams, plaster behavior, and organ rejection may also be configured.</loadingscreentip>
+<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Most affliction chances and gain rates can be configured. To find the config, open the Esc menu after loading into a game. Screams, gypsum cast behavior, and organ rejection may also be configured.</loadingscreentip>
 
-<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ It is possible, but difficult, to play without a health scanner or hematology analyzer. Most afflictions can be diagnosed with context, symptoms, and visual effects.</loadingscreentip>
+<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ It is possible, but mentally demanding, to play without a health scanner or hematology analyzer. Most afflictions can be diagnosed with context, symptoms, and visual effects.</loadingscreentip>
 
 <loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Dislocations are extremely common after being caught in an explosion.</loadingscreentip>
 
@@ -825,11 +828,11 @@ Can give blood to: AB+</entitydescription.abpluscard>
 
 <loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Heart and lung damage are non-lethal until they reach 100%.</loadingscreentip>
 
-<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Keep a Blue Shark around. You never know when you might need one.</loadingscreentip>
+<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Keep a blue shark around. You never know when you might need one.</loadingscreentip>
 
 <loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Some symptoms override each other. You can't hear palpitations if your heart isn't beating.</loadingscreentip>
 
-<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Neurotrauma is synonymous with brain damage. 200% neurotrauma is equivalent to brain death.</loadingscreentip>
+<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Neurotrauma is synonymous with brain damage. 200% neurotrauma means brain death.</loadingscreentip>
 
 <!-- <loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ </loadingscreentip> -->
 
