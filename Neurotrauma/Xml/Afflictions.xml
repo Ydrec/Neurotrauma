@@ -1873,6 +1873,29 @@
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="3,3" sheetelementsize="128,128" origin="0,0"/>
   </Affliction>
 
+  <!-- For slowly healing internal bleeding via Lua calculations
+  Hidden -->
+  <Affliction
+    name=""
+    identifier="internalbleedingheal"
+    description=""
+    healableinmedicalclinic="false"
+    targets="human"
+    type="resistance"
+    isbuff="false"
+    limbspecific="false"
+    showiconthreshold="200"
+    showinhealthscannerthreshold="200"
+    maxstrength="100">
+    <Effect minstrength="0" maxstrength="100" strengthchange="-1.5">
+      <StatusEffect target="Character" comparison="and">
+        <Conditional ishuman="true"/>
+        <ReduceAffliction identifier="internalbleeding" amount="1.5"/>
+      </StatusEffect>
+    </Effect>
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="3,3" sheetelementsize="128,128" origin="0,0"/>
+  </Affliction>
+
   <!-- Lets you drag people around at full speed
   Invisible -->
   <Affliction name="" identifier="stretchers" isbuff="True" limbspecific="False" type="ambulance"
