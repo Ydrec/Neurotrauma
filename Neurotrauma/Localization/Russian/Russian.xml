@@ -224,7 +224,7 @@
 <entityname.medtoolbox>Медицинский контейнер</entityname.medtoolbox>
 <entitydescription.medtoolbox>Может хранить препараты и медицинские инструменты</entitydescription.medtoolbox>
 
-<entityname.surgerytoolbox>Ящик для хирургических инструментов</entityname.surgerytoolbox> 
+<entityname.surgerytoolbox>Ящик для хирургических инструментов</entityname.surgerytoolbox>
 <entitydescription.surgerytoolbox>Может вмещать в себя маленькие предметы для хирургии</entitydescription.surgerytoolbox> 
 
 <entityname.organcrate>Холодильный ящик</entityname.organcrate>
@@ -745,7 +745,7 @@
 <entityname.pressuremeds>Нитропруссид натрия</entityname.pressuremeds>
 <entitydescription.pressuremeds>Препарат, применяющийся для снижения артериального давления.</entitydescription.pressuremeds>
 
-<entityname.medstartercrate>Стартовый медицинский набор</entityname.medstartercrate> 
+<entityname.medstartercrate>Стартовый медицинский набор</entityname.medstartercrate>
 <entitydescription.medstartercrate>Ящик, в котором есть всё необходимое, и легко собираемый единственным крафтом</entitydescription.medstartercrate>
 
 <!-- /// Loading Screen Tips /// -->
@@ -762,7 +762,7 @@
 
 <loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Препараты всё так же вводятся в пациента в стазис мешке.</loadingscreentip>
 
-<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Жидкий кислородит предотвращает бессознание, вызванное гипоксемией.</loadingscreentip>
+<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Жидкий кислородит предотвращает без сознание, вызванное гипоксемией.</loadingscreentip>
 
 <loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Не забывайте о своей конечности после того, как она травматически ампутируется.</loadingscreentip>
 
@@ -770,7 +770,7 @@
 
 <loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Для полной диагности не забывайте проверять Интерфейс Здоровья и показания со сканера здоровья, гематологического анализатора.</loadingscreentip>
 
-<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Несколько симптомов исключительны для Гемотрансфузионного шока.</loadingscreentip>
+<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Несколько симптомов исключительны для гемотрансфузионного шока.</loadingscreentip>
 
 <loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Если ваша конечность получила слишком много урона, она может перестать регенерировать естественным путём. Бинты и холодные пакеты ускоряют естественную регенерацию вместо лечения.</loadingscreentip>
 
@@ -782,19 +782,19 @@
 
 <loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ АвтоПульс всегда лучше сердечно-легочной реанимации вручную, и их эффекты не складываются.</loadingscreentip>
 
-<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Гипоксемия это недостаток кислорода в крови. Не путать с гипоксией, которая значит недостаток кислорода (в лёгких).</loadingscreentip>
+<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Гипоксемия это недостаток кислорода в крови. Не путать с гипоксией, которая является недостатком кислорода (в лёгких).</loadingscreentip>
 
 <loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Маннитол лечит нейротравму только тогда, когда кровяное давление выше 70% и гипоксемия ниже 30%. В ином случае препарат замедлит прогресс нейротравмы.</loadingscreentip>
 
-<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Боты не предупреждают о своем состоянии. Своевременно проверяйте их.</loadingscreentip>
+<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Боты не предупреждают о своем состоянии здоровья. Своевременно проверяйте их.</loadingscreentip>
 
 <loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Вы можете использовать полустерильный пинцет через открытые огнестрельные раны и глубокие повреждения тканей, но это также вызовет незначительный травматический шок.</loadingscreentip>
 
 <loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Фибрилляция всегда опасна. Кровяное давление падает гораздо быстрее, чем поднимается.</loadingscreentip>
 
-<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Контузия не опасна, но вызывает несколько симптомов, которые можно спутать с опасными состояниями.</loadingscreentip>
+<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Контузия не опасна, но вызывает несколько симптомов, которые можно спутать с опасными состояниями здоровья.</loadingscreentip>
 
-<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Тело человека всегда будет отторгать инопланетную кровь, независимо от состояния иммунитета.</loadingscreentip>
+<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Тело человека всегда будет отторгать инопланетную кровь, независимо от силы иммунитета.</loadingscreentip>
 
 <loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Иммунитет вляет на естественную регенерацию заражения ран, отторгания органов и несовместимой крови.</loadingscreentip>
 

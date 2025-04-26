@@ -786,11 +786,11 @@ Can give blood to: AB+</entitydescription.abpluscard>
 
 <loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ The AutoPulse is always better than CPR, and their effects do not stack.</loadingscreentip>
 
-<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Hypoxemia refers to insufficient oxygen in the blood. Not to be confused with hypoxia, also known as oxygen low.</loadingscreentip>
+<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Hypoxemia refers to insufficient oxygen in the blood. Not to be confused with hypoxia, also known as oxygen low (insufficient oxygen in the lungs).</loadingscreentip>
 
-<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Mannitol only treats neurotrauma if blood pressure is greater than 70% and hypoxemia is less than 30%.</loadingscreentip>
+<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Mannitol only treats neurotrauma if blood pressure is greater than 70% and hypoxemia is less than 30%. If conditions aren't met, it will slow down the progression of neurotrauma.</loadingscreentip>
 
-<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Bots will not alert you of their afflictions. Check on them often.</loadingscreentip>
+<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Bots will not alert you of their health status. Check on them often.</loadingscreentip>
 
 <loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ You can use a tweezer through open gunshot or deep tissue wounds, but this will always cause minor traumatic shock.</loadingscreentip>
 
@@ -798,9 +798,9 @@ Can give blood to: AB+</entitydescription.abpluscard>
 
 <loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Concussions are never dangerous, but cause multiple symptoms which may be confused with dangerous afflictions.</loadingscreentip>
 
-<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ The human body will always reject alien blood, regardless of immune status.</loadingscreentip>
+<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ The human body will always reject alien blood, regardless of immunity strength.</loadingscreentip>
 
-<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Immunity affects natural healing of infected wounds, organ rejection, and incompatible blood type rejection.</loadingscreentip>
+<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Immunity strength affects natural healing of infected wounds, organ rejection, and incompatible blood type rejection.</loadingscreentip>
 
 <loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ If you are using the Trello guide, make sure you are using the version for the Community Fork.</loadingscreentip>
 
