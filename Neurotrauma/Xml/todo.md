@@ -1,5 +1,6 @@
 # TODO:
 - add "bundled" items for crafting to optimize medfab recipes count
+- add Care Package container which holds necessary items instead of filling cabinets with the items
 - add Lua StatusEffects to syringes to handle by Consent Required code
 - one manned stretcher with minor rest buffs and remove normal speed drag buffs from bags
 - bloody murder meat skull / bagged head for traumatic/surgery amputations
