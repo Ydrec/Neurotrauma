@@ -1430,15 +1430,6 @@
         <Conditional arteriesclamp="eq 0" inwater="false"/>
         <Explosion range="0.0" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="0.0" decal="blood" decalsize="0.85" shockwave="false" underwaterbubble="false" />
       </StatusEffect>
-      <StatusEffect target="Character" targetlimb="LeftLeg" comparison="and" disabledeltatime="true" stackable="false" duration="3" checkconditionalalways="false">
-        <Conditional arteriesclamp="eq 0" ishuman="true" inwater="false"/>
-        <sound file="%ModDir%/Sound/heavy_blood_drip_01.ogg" selectionmode="Random" />
-        <Sound file="%ModDir%/Sound/heavy_blood_drip_02.ogg" />
-        <Sound file="%ModDir%/Sound/heavy_blood_drip_03.ogg" />
-        <Sound file="%ModDir%/Sound/heavy_blood_drip_04.ogg" />
-        <Sound file="%ModDir%/Sound/heavy_blood_drip_05.ogg" />
-        <Sound file="%ModDir%/Sound/heavy_blood_drip_06.ogg" />
-      </StatusEffect>
     </PeriodicEffect>
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="3,3" sheetelementsize="128,128" origin="0,0"/>
   </Affliction>
@@ -1468,17 +1459,8 @@
     </Effect>
     <PeriodicEffect mininterval="6" maxinterval="6">
       <StatusEffect target="Character" targetlimb="RightLeg" comparison="and">
-        <Conditional arteriesclamp="eq 0" inwater="false"/>
+        <Conditional arteriesclamp="eq 0"/>
         <Explosion range="0.0" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="0.0" decal="blood" decalsize="0.85" shockwave="false" underwaterbubble="false" />
-      </StatusEffect>
-      <StatusEffect target="Character" targetlimb="RightLeg" comparison="and" disabledeltatime="true" stackable="false" duration="3" checkconditionalalways="false">
-        <Conditional arteriesclamp="eq 0" ishuman="true" inwater="false"/>
-        <sound file="%ModDir%/Sound/heavy_blood_drip_01.ogg" selectionmode="Random" />
-        <Sound file="%ModDir%/Sound/heavy_blood_drip_02.ogg" />
-        <Sound file="%ModDir%/Sound/heavy_blood_drip_03.ogg" />
-        <Sound file="%ModDir%/Sound/heavy_blood_drip_04.ogg" />
-        <Sound file="%ModDir%/Sound/heavy_blood_drip_05.ogg" />
-        <Sound file="%ModDir%/Sound/heavy_blood_drip_06.ogg" />
       </StatusEffect>
     </PeriodicEffect>
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="3,3" sheetelementsize="128,128" origin="0,0"/>
@@ -1510,17 +1492,8 @@
     </Effect>
     <PeriodicEffect mininterval="6" maxinterval="6">
       <StatusEffect target="Character" targetlimb="LeftArm" comparison="and">
-        <Conditional arteriesclamp="eq 0" inwater="false"/>
+        <Conditional arteriesclamp="eq 0"/>
         <Explosion range="0.0" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="0.0" decal="blood" decalsize="0.85" shockwave="false" underwaterbubble="false" />
-      </StatusEffect>
-      <StatusEffect target="Character" targetlimb="LeftArm" comparison="and" disabledeltatime="true" stackable="false" duration="3" checkconditionalalways="false">
-        <Conditional arteriesclamp="eq 0" ishuman="true" inwater="false"/>
-        <sound file="%ModDir%/Sound/heavy_blood_drip_01.ogg" selectionmode="Random" />
-        <Sound file="%ModDir%/Sound/heavy_blood_drip_02.ogg" />
-        <Sound file="%ModDir%/Sound/heavy_blood_drip_03.ogg" />
-        <Sound file="%ModDir%/Sound/heavy_blood_drip_04.ogg" />
-        <Sound file="%ModDir%/Sound/heavy_blood_drip_05.ogg" />
-        <Sound file="%ModDir%/Sound/heavy_blood_drip_06.ogg" />
       </StatusEffect>
     </PeriodicEffect>
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="3,3" sheetelementsize="128,128" origin="0,0"/>
@@ -1551,17 +1524,8 @@
     </Effect>
     <PeriodicEffect mininterval="6" maxinterval="6">
       <StatusEffect target="Character" targetlimb="RightArm" comparison="and">
-        <Conditional arteriesclamp="eq 0" inwater="false"/>
+        <Conditional arteriesclamp="eq 0"/>
         <Explosion range="0.0" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="0.0" decal="blood" decalsize="0.85" shockwave="false" underwaterbubble="false" />
-      </StatusEffect>
-      <StatusEffect target="Character" targetlimb="RightArm" comparison="and" disabledeltatime="true" stackable="false" duration="3" checkconditionalalways="false">
-        <Conditional arteriesclamp="eq 0" ishuman="true" inwater="false"/>
-        <sound file="%ModDir%/Sound/heavy_blood_drip_01.ogg" selectionmode="Random" />
-        <Sound file="%ModDir%/Sound/heavy_blood_drip_02.ogg" />
-        <Sound file="%ModDir%/Sound/heavy_blood_drip_03.ogg" />
-        <Sound file="%ModDir%/Sound/heavy_blood_drip_04.ogg" />
-        <Sound file="%ModDir%/Sound/heavy_blood_drip_05.ogg" />
-        <Sound file="%ModDir%/Sound/heavy_blood_drip_06.ogg" />
       </StatusEffect>
     </PeriodicEffect>
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="3,3" sheetelementsize="128,128" origin="0,0"/>
@@ -1619,37 +1583,10 @@
     </Effect>
     <PeriodicEffect mininterval="6" maxinterval="6">
       <StatusEffect target="Character" targetlimb="Head" comparison="and">
-        <Conditional inwater="false"/>
         <Explosion range="0.0" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="0.0" decal="blood" decalsize="0.85" shockwave="false" underwaterbubble="false" />
-      </StatusEffect>
-      <StatusEffect target="Character" targetlimb="Head" comparison="and" disabledeltatime="true" stackable="false" duration="3" checkconditionalalways="false">
-        <Conditional ishuman="true" inwater="false"/>
-        <sound file="%ModDir%/Sound/heavy_blood_drip_01.ogg" selectionmode="Random" />
-        <Sound file="%ModDir%/Sound/heavy_blood_drip_02.ogg" />
-        <Sound file="%ModDir%/Sound/heavy_blood_drip_03.ogg" />
-        <Sound file="%ModDir%/Sound/heavy_blood_drip_04.ogg" />
-        <Sound file="%ModDir%/Sound/heavy_blood_drip_05.ogg" />
-        <Sound file="%ModDir%/Sound/heavy_blood_drip_06.ogg" />
       </StatusEffect>
     </PeriodicEffect>
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="3,3" sheetelementsize="128,128" origin="0,0"/>
-  </Affliction>
-
-  <!-- Blood dripping -->
-  <Affliction name="" identifier="bloodsound" targets="human" healableinmedicalclinic="false" isbuff="false" limbspecific="False" maxstrength="2" showinhealthscannerthreshold="700" showiconthreshold="700">
-    <Effect minstrength="0" maxstrength="2" strengthchange="-1000">
-      <StatusEffect target="Character" comparison="and" disabledeltatime="true" stackable="false" duration="3" checkconditionalalways="false">
-        <Conditional ishuman="true" inwater="false"/>
-        <sound file="%ModDir%/Sound/heavy_blood_drip_01.ogg" selectionmode="Random" />
-        <Sound file="%ModDir%/Sound/heavy_blood_drip_02.ogg" />
-        <Sound file="%ModDir%/Sound/heavy_blood_drip_03.ogg" />
-        <Sound file="%ModDir%/Sound/heavy_blood_drip_04.ogg" />
-        <Sound file="%ModDir%/Sound/heavy_blood_drip_05.ogg" />
-        <Sound file="%ModDir%/Sound/heavy_blood_drip_06.ogg" />
-      </StatusEffect>
-    </Effect>
-
-    <icon texture="%ModDir%/Images/AfflictionIcons.png" sourcerect="256,0,128,128" color="68,157,198,255" origin="0,0"/>
   </Affliction>
 
   <!-- Immunity / your immune system. heals you passively if high enough

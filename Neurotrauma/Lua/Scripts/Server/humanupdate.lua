@@ -1460,9 +1460,6 @@ NT.LimbAfflictions = {
 			if limbaff[i].strength > 0 and math.abs(c.stats.clottingrate - 1) > 0.05 then
 				limbaff[i].strength = limbaff[i].strength - (c.stats.clottingrate - 1) * 0.1 * NT.Deltatime
 			end
-			if limbaff[i].strength > 50 and not HF.HasAffliction(c.character, "bloodsound", 1) then
-				HF.AddAffliction(c.character, "bloodsound", 10)
-			end
 		end,
 	},
 	burn = {
