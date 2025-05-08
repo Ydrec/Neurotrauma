@@ -21,6 +21,7 @@ if (Game.IsMultiplayer and SERVER) or not Game.IsMultiplayer then
 
 		dofile(NTSP.Path .. "/Lua/Scripts/humanupdate.lua")
 		dofile(NTSP.Path .. "/Lua/Scripts/items.lua")
+		dofile(NTSP.Path .. "/Lua/Scripts/addidtags.lua")
 
 		NTC.AddPreHumanUpdateHook(NTSP.PreUpdateHuman)
 		NTC.AddHumanUpdateHook(NTSP.PostUpdateHuman)
