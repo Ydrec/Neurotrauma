@@ -109,6 +109,7 @@
   </Override>
 
   <!-- Rum override -->
+  <Override>
   <Item name="" identifier="rum" category="Medical,Misc" maxstacksize="8" cargocontaineridentifier="mediccrate" description="" Tags="smallitem" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light">
     <PreferredContainer secondary="wreckmedcab,abandonedmedcab,piratemedcab" amount="1" spawnprobability="0.01" />
     <PreferredContainer secondary="abandonedcrewcab,piratecrewcab" minamount="1" maxamount="1" spawnprobability="0.01" />
@@ -171,6 +172,7 @@
       </StatusEffect>
     </Holdable>
   </Item>
+  </Override>
 
   <Item name="." identifier="ntsfx_huskhurt" category="hidden" description=".">
     <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="0,0,1,1" origin="0.5,0.5"/>
