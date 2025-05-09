@@ -24,6 +24,11 @@ if (Game.IsMultiplayer and SERVER) or not Game.IsMultiplayer then
 
         NTC.AddPreHumanUpdateHook(NTP.PreUpdateHuman)
         NTC.AddHumanUpdateHook(NTP.PostUpdateHuman)
+
+        -- Symbiote patch for pill effects with calyxanide ingredient / husk cure combo
+        if NTS ~= nil then 
+            dofile(NTP.Path.."/Lua/Scripts/symbiotepatch.lua")
+        end
     end,1)
 
 end
