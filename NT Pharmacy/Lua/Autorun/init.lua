@@ -1,10 +1,10 @@
 
 NTP = {} -- Neurotrauma Pharmacy
 NTP.Name="Pharmacy"
-NTP.Version = "A1.0.6h3"
-NTP.VersionNum = 01000603
-NTP.MinNTVersion = "A1.9.0"
-NTP.MinNTVersionNum = 01090000
+NTP.Version = "A1.0.7"
+NTP.VersionNum = 01000700
+NTP.MinNTVersion = "A1.12.1"
+NTP.MinNTVersionNum = 01120100
 NTP.Path = table.pack(...)[1]
 Timer.Wait(function() if NTC ~= nil and NTC.RegisterExpansion ~= nil then NTC.RegisterExpansion(NTP) end end,1)
 
