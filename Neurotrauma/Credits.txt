@@ -1,11 +1,11 @@
 
-Videogame People Playground - heavy blood sounds
 Evil Factory - Lua help
 I only use this when bored - Better scanner code and contributions to config GUI
 Luka - Config GUI contributions
 ThousandFields - Code contributions
 Ydrec - Code contributions
 Nebual - Code contributions
+Heelge - Sprite and code contributions
 _[|M|]_ - Bag overlays
 peelz - Bloodpack conversion code
 Vetinarix - Propofol maintenance
