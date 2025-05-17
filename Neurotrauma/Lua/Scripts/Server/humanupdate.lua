@@ -69,7 +69,6 @@ local function limbLockedInitial(c, limbtype, key)
 	return not NTC.GetSymptomFalse(c.character, key)
 		and (
 			NTC.GetSymptom(c.character, key)
-			or c.afflictions.t_paralysis.strength > 0
 			or NT.LimbIsAmputated(c.character, limbtype)
 			or (HF.GetAfflictionStrengthLimb(c.character, limbtype, "bandaged", 0) <= 0 and HF.GetAfflictionStrengthLimb(
 				c.character,
