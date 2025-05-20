@@ -3903,12 +3903,15 @@ thats what the vomiting symptom is for -->
       healableinmedicalclinic="false">
 
       <Effect minstrength="0" maxstrength="40"
+        convulseamount="0.05"
         strengthchange="-0.05"/>
 
       <Effect minstrength="40" maxstrength="80"
+        convulseamount="0.1"
         strengthchange="-0.1"/>
 
       <Effect minstrength="80" maxstrength="100"
+        convulseamount="0.25"
         strengthchange="-0.2">
       </Effect>
 
