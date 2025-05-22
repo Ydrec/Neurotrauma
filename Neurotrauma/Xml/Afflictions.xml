@@ -5004,7 +5004,6 @@ thats what the vomiting symptom is for -->
       name=""
       identifier="radiationsickness"
       description=""
-      type="poison"
       causeofdeathdescription="Died of radiation sickness."
       selfcauseofdeathdescription="You have died of radiation sickness."
       limbspecific="false"
