@@ -13,3 +13,5 @@
 - hyperzine: should this be any affliction of type damage? (for <StatusEffect tags="medical" type="OnFailure" target="UseTarget" duration="60.0">)
 - add bag container to the hotbar slots for bodybags and stasis bags
 - add animated medical interactions with individual xml based proxy items
+- some system to browse info on afflictions from scanner readout
+- some system from toomanybaro to browse info on items added or overridden and hovered over
