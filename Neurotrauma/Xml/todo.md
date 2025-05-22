@@ -12,3 +12,4 @@
 - add some effect for adrenaline, sticktocharacters false until there is an effect.
 - hyperzine: should this be any affliction of type damage? (for <StatusEffect tags="medical" type="OnFailure" target="UseTarget" duration="60.0">)
 - add bag container to the hotbar slots for bodybags and stasis bags
+- add animated medical interactions with individual xml based proxy items
