@@ -157,7 +157,7 @@
     </Item>
     
     <Item name="" identifier="medstartercrate" tags="crate" scale="0.4" linkable="true" pickdistance="150" showcontentsintooltip="true" impactsoundtag="impact_metal_heavy" waterproof="true" fireproof="true" description="">
-        <Price baseprice="400">
+        <Price baseprice="600">
             <Price storeidentifier="merchantmedical" sold="true" multiplier="0.9" minavailable="3"/>
         </Price>
        
