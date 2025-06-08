@@ -1,4 +1,5 @@
 # TODO:
+- override nonstopbleeding and bleeding so that it no longer drains blood above 60% bloodloss
 - add "bundled" items for crafting to optimize medfab recipes count
 - add Care Package container which holds necessary items instead of filling cabinets with the items
 - add Lua StatusEffects to syringes to handle by Consent Required code
