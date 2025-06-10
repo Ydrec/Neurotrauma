@@ -85,7 +85,7 @@
 <entitydescription.organscalpel_brain>Beyin dokusunu kesmek için özel üretilen neşter.</entitydescription.organscalpel_brain>
 
 <entityname.multiscalpel>Çok Amaçlı Neşter</entityname.multiscalpel>
-<entitydescription.multiscalpel>Kesik atmak için, organları çıkarmak için, bandajları çıkarmak için yada kötüye kullanmak arasında geçiş yapılabilen neşter.</entitydescription.multiscalpel>
+<entitydescription.multiscalpel>Kesik atmak için, organları çıkarmak için yada bandajları çıkarmak için modlar arasında geçiş yapılabilen neşter.</entitydescription.multiscalpel>
 <multiscalpel.incision>Cerrahi Kesim Modu</multiscalpel.incision>
 <multiscalpel.kidneys>Böbrekleri Çıkarma Modu</multiscalpel.kidneys>
 <multiscalpel.liver>Karaciğeri Çıkarma Modu</multiscalpel.liver>
@@ -247,62 +247,62 @@ Tüm Kan Gruplarına Kan Verebilir</entitydescription.ominuscard>
 
 
 <!-- /// Limbs and organs /// -->
-<entityname.rarm>Right arm</entityname.rarm>
+<entityname.rarm>Sağ Kol</entityname.rarm>
 <entitydescription.rarm>A severed right arm. Can be surgically reattached.</entitydescription.rarm>
 
-<entityname.larm>Left arm</entityname.larm>
+<entityname.larm>Sol Kol</entityname.larm>
 <entitydescription.larm>A severed left arm. Can be surgically reattached.</entitydescription.larm>
 
-<entityname.rleg>Right leg</entityname.rleg>
+<entityname.rleg>Sağ Bacak</entityname.rleg>
 <entitydescription.rleg>A severed right leg. Can be surgically reattached.</entitydescription.rleg>
 
-<entityname.lleg>Left leg</entityname.lleg>
+<entityname.lleg>Sol Bacak</entityname.lleg>
 <entitydescription.lleg>A severed left leg. Can be surgically reattached.</entitydescription.lleg>
 
-<entityname.rarmp>Right arm bionic prosthesis</entityname.rarmp>
-<entitydescription.rarmp>A bionic right arm. Can be used to treat amputation.</entitydescription.rarmp>
+<entityname.rarmp>Biyonik sağ kol protezi</entityname.rarmp>
+<entitydescription.rarmp>Biyonik sağ kol Amputasyonu tedavi etmede kullanılır.</entitydescription.rarmp>
 
-<entityname.larmp>Left arm bionic prosthesis</entityname.larmp>
-<entitydescription.larmp>A bionic left arm. Can be used to treat amputation.</entitydescription.larmp>
+<entityname.larmp>Biyonik sol kol protezi</entityname.larmp>
+<entitydescription.larmp>Biyonik sol kol Amputasyonu tedavi etmede kullanılır.</entitydescription.larmp>
 
-<entityname.rlegp>Right leg bionic prosthesis</entityname.rlegp>
-<entitydescription.rlegp>A bionic right leg. Can be used to treat amputation.</entitydescription.rlegp>
+<entityname.rlegp>Biyonik sağ bacak protezi</entityname.rlegp>
+<entitydescription.rlegp>Biyonik sağ bacak Amputasyonu tedavi etmede kullanılır.</entitydescription.rlegp>
 
-<entityname.llegp>Left leg bionic prosthesis</entityname.llegp>
-<entitydescription.llegp>A bionic left leg. Can be used to treat amputation.</entitydescription.llegp>
+<entityname.llegp>Biyonik sol Bacak protezi</entityname.llegp>
+<entitydescription.llegp>Biyonik sol Bacak Amputasyonu tedavi etmede kullanılır.</entitydescription.llegp>
 
-<entityname.livertransplant>Liver transplant</entityname.livertransplant>
-<entityname.livertransplant_q1>Liver transplant</entityname.livertransplant_q1>
-<entityname.livertransplant_q2>Liver transplant</entityname.livertransplant_q2>
-<entityname.livertransplant_q3>Liver transplant</entityname.livertransplant_q3>
-<entityname.livertransplant_q4>Liver transplant</entityname.livertransplant_q4>
-<entityname.livertransplant_q5>Liver transplant</entityname.livertransplant_q5>
+<entityname.livertransplant>Nakil Karaciğer</entityname.livertransplant>
+<entityname.livertransplant_q1>Nakil Karaciğer</entityname.livertransplant_q1>
+<entityname.livertransplant_q2>Nakil Karaciğer</entityname.livertransplant_q2>
+<entityname.livertransplant_q3>Nakil Karaciğer</entityname.livertransplant_q3>
+<entityname.livertransplant_q4>Nakil Karaciğer</entityname.livertransplant_q4>
+<entityname.livertransplant_q5>Nakil Karaciğer</entityname.livertransplant_q5>
 
-<entityname.lungtransplant>Lung transplant</entityname.lungtransplant>
-<entityname.lungtransplant_q1>Lung transplant</entityname.lungtransplant_q1>
-<entityname.lungtransplant_q2>Lung transplant</entityname.lungtransplant_q2>
-<entityname.lungtransplant_q3>Lung transplant</entityname.lungtransplant_q3>
-<entityname.lungtransplant_q4>Lung transplant</entityname.lungtransplant_q4>
-<entityname.lungtransplant_q5>Lung transplant</entityname.lungtransplant_q5>
+<entityname.lungtransplant>Nakil Akciğer</entityname.lungtransplant>
+<entityname.lungtransplant_q1>Nakil Akciğer</entityname.lungtransplant_q1>
+<entityname.lungtransplant_q2>Nakil Akciğer</entityname.lungtransplant_q2>
+<entityname.lungtransplant_q3>Nakil Akciğer</entityname.lungtransplant_q3>
+<entityname.lungtransplant_q4>Nakil Akciğer</entityname.lungtransplant_q4>
+<entityname.lungtransplant_q5>Nakil Akciğer</entityname.lungtransplant_q5>
 
-<entityname.kidneytransplant>Kidney transplant</entityname.kidneytransplant>
-<entityname.kidneytransplant_q1>Kidney transplant</entityname.kidneytransplant_q1>
-<entityname.kidneytransplant_q2>Kidney transplant</entityname.kidneytransplant_q2>
-<entityname.kidneytransplant_q3>Kidney transplant</entityname.kidneytransplant_q3>
-<entityname.kidneytransplant_q4>Kidney transplant</entityname.kidneytransplant_q4>
-<entityname.kidneytransplant_q5>Kidney transplant</entityname.kidneytransplant_q5>
+<entityname.kidneytransplant>Nakil Böbrek</entityname.kidneytransplant>
+<entityname.kidneytransplant_q1>Nakil Böbrek</entityname.kidneytransplant_q1>
+<entityname.kidneytransplant_q2>Nakil Böbrek</entityname.kidneytransplant_q2>
+<entityname.kidneytransplant_q3>Nakil Böbrek</entityname.kidneytransplant_q3>
+<entityname.kidneytransplant_q4>Nakil Böbrek</entityname.kidneytransplant_q4>
+<entityname.kidneytransplant_q5>Nakil Böbrek</entityname.kidneytransplant_q5>
 
-<entityname.hearttransplant>Heart transplant</entityname.hearttransplant>
-<entityname.hearttransplant_q1>Heart transplant</entityname.hearttransplant_q1>
-<entityname.hearttransplant_q2>Heart transplant</entityname.hearttransplant_q2>
-<entityname.hearttransplant_q3>Heart transplant</entityname.hearttransplant_q3>
-<entityname.hearttransplant_q4>Heart transplant</entityname.hearttransplant_q4>
-<entityname.hearttransplant_q5>Heart transplant</entityname.hearttransplant_q5>
+<entityname.hearttransplant>Nakil Kalp</entityname.hearttransplant>
+<entityname.hearttransplant_q1>Nakil Kalp</entityname.hearttransplant_q1>
+<entityname.hearttransplant_q2>Nakil Kalp</entityname.hearttransplant_q2>
+<entityname.hearttransplant_q3>Nakil Kalp</entityname.hearttransplant_q3>
+<entityname.hearttransplant_q4>Nakil Kalp</entityname.hearttransplant_q4>
+<entityname.hearttransplant_q5>Nakil Kalp</entityname.hearttransplant_q5>
 
-<entityname.braintransplant>Brain transplant</entityname.braintransplant>
+<entityname.braintransplant>Nakil Beyin</entityname.braintransplant>
 
-<entityname.armlock1>Non-working right hand</entityname.armlock1>
-<entityname.armlock2>Non-working left hand</entityname.armlock2>
+<entityname.armlock1>Çalışmayan sağ el</entityname.armlock1>
+<entityname.armlock2>Çalışmayan sol el</entityname.armlock2>
 
 
 <!-- AFFLICTIONS -->
@@ -468,8 +468,8 @@ Tüm Kan Gruplarına Kan Verebilir</entitydescription.ominuscard>
 <afflictionname.needlec>İğne</afflictionname.needlec>
 <afflictiondescription.needlec>Plevral boşluktaki basıncı normalleştirir</afflictiondescription.needlec>
 
-<!--<afflictionname.iced></afflictionname.iced>
-<afflictiondescription.iced></afflictiondescription.iced>-->
+<afflictionname.iced>Buz gibi</afflictionname.iced>
+<afflictiondescription.iced>Morukları iyileştirir ancak hareketi yavaşlatır</afflictiondescription.iced>
 
 <!-- fractures, amputations, dislocations and bleeding arteries-->
 <afflictionname.ra_fracture>Kırık sağ humerus</afflictionname.ra_fracture>
@@ -488,26 +488,26 @@ Tüm Kan Gruplarına Kan Verebilir</entitydescription.ominuscard>
 <afflictiondescription.n_fracture>Boynun kırık.</afflictiondescription.n_fracture>
 
 <afflictionname.tra_amputation>Travmatik Amputasyon</afflictionname.tra_amputation>
-<afflictiondescription.tra_amputation>Most of the tissue of the right arm was torn off.</afflictiondescription.tra_amputation>
+<afflictiondescription.tra_amputation>Sağ kolundaki deri dokusunun çoğu yırtılmış.</afflictiondescription.tra_amputation>
 <afflictionname.tla_amputation>Travmatik Amputasyon</afflictionname.tla_amputation>
-<afflictiondescription.tla_amputation>Most of the tissue of the left arm was torn off.</afflictiondescription.tla_amputation>
+<afflictiondescription.tla_amputation>Sol kolundaki deri dokusunun çoğu yırtılmış.</afflictiondescription.tla_amputation>
 <afflictionname.trl_amputation>Travmatik Amputasyon</afflictionname.trl_amputation>
-<afflictiondescription.trl_amputation>Most of the tissue of the right leg was torn off.</afflictiondescription.trl_amputation>
+<afflictiondescription.trl_amputation>Sağ bacağındaki deri dokusunun çoğu yırtılmış.</afflictiondescription.trl_amputation>
 <afflictionname.tll_amputation>Travmatik Amputasyon</afflictionname.tll_amputation>
-<afflictiondescription.tll_amputation>Most of the tissue of the left leg was torn off.</afflictiondescription.tll_amputation>
+<afflictiondescription.tll_amputation>Sol bacağındaki deri dokusunun çoğu yırtılmış.</afflictiondescription.tll_amputation>
 <afflictionname.th_amputation>Travmatik Amputasyon</afflictionname.th_amputation>
-<afflictiondescription.th_amputation>Most of the tissue of the head was torn off.</afflictiondescription.th_amputation>
+<afflictiondescription.th_amputation>Kafandaki deri dokusunun çoğu yırtılmış.</afflictiondescription.th_amputation>
 
 <afflictionname.sra_amputation>Amputasyon</afflictionname.sra_amputation>
-<afflictiondescription.sra_amputation>The right arm was surgically amputated.</afflictiondescription.sra_amputation>
+<afflictiondescription.sra_amputation>Sağ kolun cerrahi olarak ampute edildi.</afflictiondescription.sra_amputation>
 <afflictionname.sla_amputation>Amputasyon</afflictionname.sla_amputation>
-<afflictiondescription.sla_amputation>The left arm was surgically amputated.</afflictiondescription.sla_amputation>
+<afflictiondescription.sla_amputation>Sol kolun cerrahi olarak ampute edildi.</afflictiondescription.sla_amputation>
 <afflictionname.srl_amputation>Amputasyon</afflictionname.srl_amputation>
-<afflictiondescription.srl_amputation>The right leg was surgically amputated.</afflictiondescription.srl_amputation>
+<afflictiondescription.srl_amputation>Sağ bacağın cerrahi olarak ampute edildi.</afflictiondescription.srl_amputation>
 <afflictionname.sll_amputation>Amputasyon</afflictionname.sll_amputation>
-<afflictiondescription.sll_amputation>The left leg was surgically amputated.</afflictiondescription.sll_amputation>
+<afflictiondescription.sll_amputation>Sol bacağın cerrahi olarak ampute edildi.</afflictiondescription.sll_amputation>
 <afflictionname.sh_amputation>Amputasyon</afflictionname.sh_amputation>
-<afflictiondescription.sh_amputation>The head was surgically amputated.</afflictiondescription.sh_amputation>
+<afflictiondescription.sh_amputation>Kafan cerrahi olarak ampute edildi.</afflictiondescription.sh_amputation>
 
 <afflictionname.t_paralysis>Omurilik Hasarı</afflictionname.t_paralysis>
 <afflictiondescription.t_paralysis>Hasta felç ve vücudunu hissetmiyor.</afflictiondescription.t_paralysis>
@@ -554,7 +554,7 @@ Tüm Kan Gruplarına Kan Verebilir</entitydescription.ominuscard>
 <afflictioncauseofdeath.necrosis>Nekrotik Yaradan öldü.</afflictioncauseofdeath.necrosis>
 <afflictioncauseofdeathself.necrosis>Nekrozdan öldün.</afflictioncauseofdeathself.necrosis>
 
-<afflictionname.gangrene>Gangren</afflictionname.gangrene>
+<afflictionname.gangrene>Kangren</afflictionname.gangrene>
 <afflictiondescription.gangrene>Ekstremite küçüldü ve siyaha döndü.</afflictiondescription.gangrene>
 
 <afflictionname.afadrenaline>Adrenalin</afflictionname.afadrenaline>
@@ -587,7 +587,7 @@ Tüm Kan Gruplarına Kan Verebilir</entitydescription.ominuscard>
 <afflictionname.foreignbody>Yabancı cisim</afflictionname.foreignbody>
 <afflictiondescription.foreignbody></afflictiondescription.foreignbody>
 
-<afflictionname.tamponade>kardiyak tamponad</afflictionname.tamponade>
+<afflictionname.tamponade>Kardiyak Tamponad</afflictionname.tamponade>
 <afflictiondescription.tamponade></afflictiondescription.tamponade>
 
 <afflictionname.internalbleeding>İç Kanama</afflictionname.internalbleeding>
@@ -596,101 +596,101 @@ Tüm Kan Gruplarına Kan Verebilir</entitydescription.ominuscard>
 <!-- /// symptoms /// -->
 
 <afflictionname.sym_cough>Öksürük</afflictionname.sym_cough>
-<afflictiondescription.sym_cough>The patient is coughing periodically.</afflictiondescription.sym_cough>
+<afflictiondescription.sym_cough>Hasta sürekli bir biçimde öksürüyor.</afflictiondescription.sym_cough>
 
 <afflictionname.sym_paleskin>Soluk Ten</afflictionname.sym_paleskin>
-<afflictiondescription.sym_paleskin>The patients skin is pale.</afflictiondescription.sym_paleskin>
+<afflictiondescription.sym_paleskin>Hastanın teni solgun.</afflictiondescription.sym_paleskin>
 
 <afflictionname.sym_lightheadedness>Baş Dönmesi</afflictionname.sym_lightheadedness>
-<afflictiondescription.sym_lightheadedness>The patient is expressing lightheadedness.</afflictiondescription.sym_lightheadedness>
+<afflictiondescription.sym_lightheadedness>Hastanın başı dönüyor.</afflictiondescription.sym_lightheadedness>
 
 <afflictionname.sym_blurredvision>Bulanık Görme</afflictionname.sym_blurredvision>
-<afflictiondescription.sym_blurredvision>The patient is expressing blurred vision.</afflictiondescription.sym_blurredvision>
+<afflictiondescription.sym_blurredvision>Hasta etrafını net göremiyor.</afflictiondescription.sym_blurredvision>
 
 <afflictionname.sym_confusion>Bilinç Bulanıklığı</afflictionname.sym_confusion>
-<afflictiondescription.sym_confusion>The patient seems disoriented and confused.</afflictiondescription.sym_confusion>
+<afflictiondescription.sym_confusion>Hastanın zihni odaklanamıyor ve kafası karışmış görünüyor.</afflictiondescription.sym_confusion>
 
 <afflictionname.sym_headache>Baş Ağrısı</afflictionname.sym_headache>
-<afflictiondescription.sym_headache>The patient is expressing a headache.</afflictiondescription.sym_headache>
+<afflictiondescription.sym_headache>Hastanın başı ağrıyor.</afflictiondescription.sym_headache>
 
 <afflictionname.sym_legswelling>Bacak Şişmesi</afflictionname.sym_legswelling>
-<afflictiondescription.sym_legswelling>The patients legs are swollen.</afflictiondescription.sym_legswelling>
+<afflictiondescription.sym_legswelling>Hastanın bacağı şişmiş.</afflictiondescription.sym_legswelling>
 
 <afflictionname.sym_weakness>Zayıflık</afflictionname.sym_weakness>
-<afflictiondescription.sym_weakness>The patient is expressing weakness in the extremities.</afflictiondescription.sym_weakness>
+<afflictiondescription.sym_weakness>Hasta uzvunda zayıflık belirtisi gösteriyor.</afflictiondescription.sym_weakness>
 
 <afflictionname.sym_wheezing>Hırıltı</afflictionname.sym_wheezing>
-<afflictiondescription.sym_wheezing>The patients breathing is producing a high-pitched noise.</afflictiondescription.sym_wheezing>
+<afflictiondescription.sym_wheezing>Hastanın nefes alıp verişinde hırıltı var.</afflictiondescription.sym_wheezing>
 
 <afflictionname.sym_vomiting>Kusma</afflictionname.sym_vomiting>
-<afflictiondescription.sym_vomiting>The patient is vomiting periodically.</afflictiondescription.sym_vomiting>
+<afflictiondescription.sym_vomiting>Hasta sürekli bir biçimde kusuyor.</afflictiondescription.sym_vomiting>
 
 <afflictionname.sym_hematemesis>Kan Kusma</afflictionname.sym_hematemesis>
-<afflictiondescription.sym_hematemesis>The patient is vomiting blood periodically.</afflictiondescription.sym_hematemesis>
+<afflictiondescription.sym_hematemesis>Hasta sürekli bir biçimde kan kusuyor.</afflictiondescription.sym_hematemesis>
 
 <afflictionname.fever>Yüksek Ateş</afflictionname.fever>
-<afflictiondescription.fever>The patients body temperature is elevated.</afflictiondescription.fever>
+<afflictiondescription.fever>Hastanın ateşi var.</afflictiondescription.fever>
 
 <afflictionname.sym_abdomdiscomfort>Karın Rahatsızlığı</afflictionname.sym_abdomdiscomfort>
-<afflictiondescription.sym_abdomdiscomfort>The patient is expressing abdominal discomfort.</afflictiondescription.sym_abdomdiscomfort>
+<afflictiondescription.sym_abdomdiscomfort>Hastanın karın bölgesinde rahatsız hissediyor.</afflictiondescription.sym_abdomdiscomfort>
 
 <afflictionname.sym_bloating>Şişkinlik</afflictionname.sym_bloating>
-<afflictiondescription.sym_bloating>The patients abdomen is bloated.</afflictiondescription.sym_bloating>
+<afflictiondescription.sym_bloating>Hastanın karın bölgesinde şişkinlik var.</afflictiondescription.sym_bloating>
 
 <afflictionname.sym_jaundice>Sarılık</afflictionname.sym_jaundice>
-<afflictiondescription.sym_jaundice>The patients skin has turned a sickly shade of yellow.</afflictiondescription.sym_jaundice>
+<afflictiondescription.sym_jaundice>Hastanın teni sarıya dönüyor.</afflictiondescription.sym_jaundice>
 
 <afflictionname.sym_sweating>Terleme</afflictionname.sym_sweating>
-<afflictiondescription.sym_sweating>The patient is sweating excessively.</afflictiondescription.sym_sweating>
+<afflictiondescription.sym_sweating>Hasta su gibi terliyor.</afflictiondescription.sym_sweating>
 
 <afflictionname.sym_palpitations>Çarpıntı</afflictionname.sym_palpitations>
-<afflictiondescription.sym_palpitations>The patient is expressing palpitations.</afflictiondescription.sym_palpitations>
+<afflictiondescription.sym_palpitations>Hasta çarpıntı geçiriyor.</afflictiondescription.sym_palpitations>
 
 <afflictionname.sym_unconsciousness>Bilinç Kaybı</afflictionname.sym_unconsciousness>
-<afflictiondescription.sym_unconsciousness>The patient is unconscious.</afflictiondescription.sym_unconsciousness>
+<afflictiondescription.sym_unconsciousness>Hasta bilincini kaybetmiş.</afflictiondescription.sym_unconsciousness>
 
 <afflictionname.inflammation>İltihaplanma</afflictionname.inflammation>
-<afflictiondescription.inflammation>The area is red, swollen and warm.</afflictiondescription.inflammation>
+<afflictiondescription.inflammation>Yara bölgesi kırmızı, şişmiş ve sıcacık.</afflictiondescription.inflammation>
 
 <afflictionname.spasm>Spazm</afflictionname.spasm>
-<afflictiondescription.spasm>The patient can't control the erratic behaviour of the limb.</afflictiondescription.spasm>
+<afflictiondescription.spasm>Hasta uzvundaki kontrolsüz hareketi kontrol edemiyor.</afflictiondescription.spasm>
 
 <afflictionname.sym_craving>Arzu</afflictionname.sym_craving>
-<afflictiondescription.sym_craving>The patient is happy enough... so long as they get what they need.</afflictiondescription.sym_craving>
+<afflictiondescription.sym_craving>Hasta halinden yeterince memnun... tabi istediğini aldığı sürece.</afflictiondescription.sym_craving>
 
 <afflictionname.onfire>Yanıyor!</afflictionname.onfire>
-<afflictiondescription.onfire>The patient is burning alive! Grab an extinguisher!</afflictiondescription.onfire>
+<afflictiondescription.onfire>Hasta diri diri yanıyor. Acil bir şekilde yangın söndürücü bul</afflictiondescription.onfire>
 
 <afflictionname.pain_chest>Göğüs Ağrısı</afflictionname.pain_chest>
-<afflictiondescription.pain_chest>The patient is expressing sharp, piercing pain in their chest.</afflictiondescription.pain_chest>
+<afflictiondescription.pain_chest>Hasta göğsüne bıçak saplanmışçasına ağrı hissediyor.</afflictiondescription.pain_chest>
 
 <afflictionname.pain_abdominal>Karın Ağrısı</afflictionname.pain_abdominal>
-<afflictiondescription.pain_abdominal>The patient is expressing persistent pain in their abdomen.</afflictiondescription.pain_abdominal>
+<afflictiondescription.pain_abdominal>Hasta karın boşluğunda bitmek bilmez bir acı hissediyor.</afflictiondescription.pain_abdominal>
 
 <afflictionname.pain_extremity>Şiddetli Ağrı</afflictionname.pain_extremity>
-<afflictiondescription.pain_extremity>The patient is expressing intense pain in the affected area.</afflictiondescription.pain_extremity>
+<afflictiondescription.pain_extremity>Hasta ilgili bölgede şiddetli ağrı çekiyor.</afflictiondescription.pain_extremity>
 
 <afflictionname.sym_nausea>Mide bulantısı</afflictionname.sym_nausea>
-<afflictiondescription.sym_nausea>The skin is clammy and the patient is nauseous.</afflictiondescription.sym_nausea>
+<afflictiondescription.sym_nausea>Hastanın başı dönüyor ve derisi terli.</afflictiondescription.sym_nausea>
 
-<afflictionname.luabotomy>Lualess</afflictionname.luabotomy>
-<afflictiondescription.luabotomy>Lua isn't running. That means neurotrauma and any other mods that use it won't work. Please read the workshop pages of mods you plan to use.</afflictiondescription.luabotomy>
+<afflictionname.luabotomy>Luasızlık</afflictionname.luabotomy>
+<afflictiondescription.luabotomy>Lua çalışmıyor. Bu durum Neurotrauma ve diğer Lua bazlı modların düzgün çalışmamasına sebep olur. Lütfen mod listenizi kontrol edin</afflictiondescription.luabotomy>
 
 <afflictionname.analgesia>Analjezi</afflictionname.analgesia>
-<afflictiondescription.analgesia>Insensitivity to pain.</afflictiondescription.analgesia>
+<afflictiondescription.analgesia>Acı hissetmeme durumu.</afflictiondescription.analgesia>
 
 <afflictionname.anesthesia>Anestezi</afflictionname.anesthesia>
-<afflictiondescription.anesthesia>The patient has drug-induced amnesia and sedation.</afflictiondescription.anesthesia>
+<afflictiondescription.anesthesia>Hasta ilaç bazlı sedasyonda.</afflictiondescription.anesthesia>
 
 
 <afflictionname.burn_deg1>Birinci Derece Yanık</afflictionname.burn_deg1>
-<afflictiondescription.burn_deg1>The area is red and painful to the touch.</afflictiondescription.burn_deg1>
+<afflictiondescription.burn_deg1>Yanık bölge kırmızı ve dokununca çok acıyor.</afflictiondescription.burn_deg1>
 
 <afflictionname.burn_deg2>İkinci Derece Yanık</afflictionname.burn_deg2>
-<afflictiondescription.burn_deg2>There are very painful blisters littering the affected area.</afflictiondescription.burn_deg2>
+<afflictiondescription.burn_deg2>Yanık bölgede çok acı veren kabarcıklar var.</afflictiondescription.burn_deg2>
 
 <afflictionname.burn_deg3>Üçüncü Derece Yanık</afflictionname.burn_deg3>
-<afflictiondescription.burn_deg3>The patient doesn't feel pain in the now leathery, stiff area.</afflictiondescription.burn_deg3>
+<afflictiondescription.burn_deg3>Hastanın yanık bölgesi artık çok sert ve acı hissetmiyor.</afflictiondescription.burn_deg3>
 
 
 <!-- /// Surgery /// -->
