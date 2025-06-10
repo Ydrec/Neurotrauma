@@ -84,25 +84,25 @@
 <entityname.organscalpel_brain>Organ Tedarik Neşteri: Beyin</entityname.organscalpel_brain>
 <entitydescription.organscalpel_brain>Beyin dokusunu kesmek için özel üretilen neşter.</entitydescription.organscalpel_brain>
 
-<!--<entityname.multiscalpel>Multipurpose scalpel</entityname.multiscalpel>
-<entitydescription.multiscalpel>A scalpel you can choose what to do with, be it make an incision, extract organs, remove bandages, or do malpractice.</entitydescription.multiscalpel>
-<multiscalpel.incision>Mode: Surgery incision</multiscalpel.incision>
-<multiscalpel.kidneys>Mode: Extract kidneys</multiscalpel.kidneys>
-<multiscalpel.liver>Mode: Extract liver</multiscalpel.liver>
-<multiscalpel.lungs>Mode: Extract lungs</multiscalpel.lungs>
-<multiscalpel.heart>Mode: Extract heart</multiscalpel.heart>
-<multiscalpel.brain>Mode: Extract brain</multiscalpel.brain>
-<multiscalpel.bandage>Mode: Remove bandages and casts / malpractice</multiscalpel.bandage>
-<multiscalpel.speedflex>Mode: Adaptive organ extraction. Use on head for brain, left arm for kidneys, torso for liver, right arm for heart, left leg for lungs.</multiscalpel.speedflex>
+<entityname.multiscalpel>Çok Amaçlı Neşter</entityname.multiscalpel>
+<entitydescription.multiscalpel>Kesik atmak için, organları çıkarmak için, bandajları çıkarmak için yada kötüye kullanmak arasında geçiş yapılabilen neşter.</entitydescription.multiscalpel>
+<multiscalpel.incision>Cerrahi Kesim Modu</multiscalpel.incision>
+<multiscalpel.kidneys>Böbrekleri Çıkarma Modu</multiscalpel.kidneys>
+<multiscalpel.liver>Karaciğeri Çıkarma Modu</multiscalpel.liver>
+<multiscalpel.lungs>Akciğeri Çıkarma Modu</multiscalpel.lungs>
+<multiscalpel.heart>Kalbi Çıkarma Modu</multiscalpel.heart>
+<multiscalpel.brain>Beyni Çıkarma Modu</multiscalpel.brain>
+<multiscalpel.bandage>Bandaj ve Alçı Çıkarma Modu</multiscalpel.bandage>
+<multiscalpel.speedflex>Hızlı Uyum Sağlayan Organ Çıkarma Modu: Beyin için kafaya, Böbrek için sol kola, Karaciğer için gövdeye, Kalp için sağ kola, Akciğer için ise sol bacağı kesin</multiscalpel.speedflex>
 
-<multiscalpel.btn.incision>Incision</multiscalpel.btn.incision>
-<multiscalpel.btn.kidneys>Kidneys</multiscalpel.btn.kidneys>
-<multiscalpel.btn.liver>Liver</multiscalpel.btn.liver>
-<multiscalpel.btn.lungs>Lungs</multiscalpel.btn.lungs>
-<multiscalpel.btn.heart>Heart</multiscalpel.btn.heart>
-<multiscalpel.btn.brain>Brain</multiscalpel.btn.brain>
-<multiscalpel.btn.bandage>Bandages, casts, malpractice</multiscalpel.btn.bandage>
-<multiscalpel.btn.speedflex>Adaptive organ extraction</multiscalpel.btn.speedflex>-->
+<multiscalpel.btn.incision>Cerrahi Kesim</multiscalpel.btn.incision>
+<multiscalpel.btn.kidneys>Böbrek</multiscalpel.btn.kidneys>
+<multiscalpel.btn.liver>Karaciğer</multiscalpel.btn.liver>
+<multiscalpel.btn.lungs>Akciğer</multiscalpel.btn.lungs>
+<multiscalpel.btn.heart>Kalp</multiscalpel.btn.heart>
+<multiscalpel.btn.brain>Beyin</multiscalpel.btn.brain>
+<multiscalpel.btn.bandage>Bandaj ve Alçı</multiscalpel.btn.bandage>
+<multiscalpel.btn.speedflex>Hızlı Uyum Sağlayan Organ Çıkarma</multiscalpel.btn.speedflex>
 
 
 <!-- /// Treatments /// -->
@@ -140,10 +140,10 @@
 <entitydescription.ringerssolution>Düşük kan basıncını veya sıvı kaybını tedavi etmek amacıyla suda çözülmüş birkaç tuzun bir çözeltisi. Kan için izotonik.</entitydescription.ringerssolution>
 
 <entityname.antiseptic>Antiseptik</entityname.antiseptic>
-<!-- <entitydescription.antiseptic></entitydescription.antiseptic> -->
+<entitydescription.antiseptic>Antiseptik Sprey kullanarak enfekte olmuş yaraları tedavi edebilir.</entitydescription.antiseptic>
 
 <entityname.antisepticspray>Antiseptik Sprey</entityname.antisepticspray>
-<!-- <entitydescription.antisepticspray></entitydescription.antisepticspray> -->
+<entitydescription.antisepticspray>Used to apply antiseptic to infected wounds Enfekte yaraya antiseptik uygulamak için kullanılır.</entitydescription.antisepticspray>
 
 <entityname.propofol>Propofol</entityname.propofol>
 <entitydescription.propofol>Bilinç düzeyinde azalmaya ve olaylar için hafıza eksikliğine neden olan kısa etkili bir ilaç. Kullanımları genel anestezinin başlatılması ve sürdürülmesini içerir.</entitydescription.propofol>
@@ -151,98 +151,98 @@
 <entityname.gypsum>Alçıtaşı</entityname.gypsum>
 <entitydescription.gypsum>Bir alçıda uç kısımlardaki kırıkları kapatmak için kullanılan ince bir mineral tozu. Önce bir bandaj uygulayın.</entitydescription.gypsum>
 
-<!--<entityname.gelipack></entityname.gelipack>
-<entitydescription.gelipack></entitydescription.gelipack>-->
+<entityname.gelipack>Jel Buz Torbası</entityname.gelipack>
+<entitydescription.gelipack>Organik jelle doldurulmuş tekrar kullanılabilen soğutma torbası. Soğuk bir yerde saklanmadıkça etkisini kaybeder.</entitydescription.gelipack>
 
 <!-- /// Blood stuff /// -->
 
 <!--<entityname.bloodrefinery>Blood Refinery</entityname.bloodrefinery>-->
 <!-- <entitydescription.bloodrefinery></entitydescription.bloodrefinery> -->
 
-<entityname.emptybloodpack>Empty Blood Pack</entityname.emptybloodpack>
-<entitydescription.emptybloodpack>An empty blood pack for the drawing of blood.</entitydescription.emptybloodpack>
+<entityname.emptybloodpack>Boş Kan Torbası</entityname.emptybloodpack>
+<entitydescription.emptybloodpack>Kanı çekmek için boş bir kan torbası.</entitydescription.emptybloodpack>
 
-<entityname.bloodpackoplus>Blood Pack O+</entityname.bloodpackoplus>
-<entitydescription.bloodpackoplus>Administerable to: O+, A+, B+, AB+</entitydescription.bloodpackoplus>
+<entityname.bloodpackoplus>Orh+ Kan Torbası</entityname.bloodpackoplus>
+<entitydescription.bloodpackoplus>Orh+, Arh+, Brh+, ABrh+ Kan grubuna verilebilir</entitydescription.bloodpackoplus>
 
-<entityname.bloodpackominus>Blood Pack O-</entityname.bloodpackominus>
-<entitydescription.bloodpackominus>A blood pack that can be used on any patient.</entitydescription.bloodpackominus>
+<entityname.bloodpackominus>Orh- Kan Torbası</entityname.bloodpackominus>
+<entitydescription.bloodpackominus>Tüm kan gruplarına verilebilir.</entitydescription.bloodpackominus>
 
-<entityname.bloodpackaplus>Blood Pack A+</entityname.bloodpackaplus>
-<entitydescription.bloodpackaplus>Administerable to: A+, AB+</entitydescription.bloodpackaplus>
+<entityname.bloodpackaplus>Arh+ Kan Torbası</entityname.bloodpackaplus>
+<entitydescription.bloodpackaplus>Arh+, ABrh+ Kan grubuna verilebilir</entitydescription.bloodpackaplus>
 
-<entityname.bloodpackbplus>Blood Pack B+</entityname.bloodpackbplus>
-<entitydescription.bloodpackbplus>Administerable to: B+, AB+</entitydescription.bloodpackbplus>
+<entityname.bloodpackbplus>Brh+ Kan Torbası</entityname.bloodpackbplus>
+<entitydescription.bloodpackbplus>Brh+, ABrh+ Kan grubuna verilebilir</entitydescription.bloodpackbplus>
 
-<entityname.bloodpackabplus>Blood Pack AB+</entityname.bloodpackabplus>
-<entitydescription.bloodpackabplus>Administerable to: AB+</entitydescription.bloodpackabplus>
+<entityname.bloodpackabplus>ABrh+ Kan Torbası</entityname.bloodpackabplus>
+<entitydescription.bloodpackabplus>ABrh+ Kan grubuna verilebilir</entitydescription.bloodpackabplus>
 
-<entityname.bloodpackaminus>Blood Pack A-</entityname.bloodpackaminus>
-<entitydescription.bloodpackaminus>Administerable to: A-, A+, AB-, AB+</entitydescription.bloodpackaminus>
+<entityname.bloodpackaminus>Arh- Kan Torbası</entityname.bloodpackaminus>
+<entitydescription.bloodpackaminus>Arh-, Arh+, ABrh-, ABrh+ Kan grubuna verilebilir</entitydescription.bloodpackaminus>
 
-<entityname.bloodpackbminus>Blood Pack B-</entityname.bloodpackbminus>
-<entitydescription.bloodpackbminus>Administerable to: B-, B+, AB-, AB+</entitydescription.bloodpackbminus>
+<entityname.bloodpackbminus>Brh- Kan Torbası</entityname.bloodpackbminus>
+<entitydescription.bloodpackbminus>Brh-, Brh+, ABrh-, ABrh+ Kan grubuna verilebilir</entitydescription.bloodpackbminus>
 
-<entityname.bloodpackabminus>Blood Pack AB-</entityname.bloodpackabminus>
-<entitydescription.bloodpackabminus>Administerable to: AB-, AB+</entitydescription.bloodpackabminus>
+<entityname.bloodpackabminus>ABrh- Kan Torbası</entityname.bloodpackabminus>
+<entitydescription.bloodpackabminus>ABrh-, ABrh+ Kan grubuna verilebilir</entitydescription.bloodpackabminus>
 
 <Override>
-<entityname.antibloodloss2>Blood Pack O-</entityname.antibloodloss2>
-<entitydescription.antibloodloss2>A blood pack that can be used on any patient.</entitydescription.antibloodloss2>
+<entityname.antibloodloss2>Orh- Kan Torbası</entityname.antibloodloss2>
+<entitydescription.antibloodloss2>Tüm kan gruplarına verilebilir.</entitydescription.antibloodloss2>
 </Override>
 
-<entityname.ominuscard>Donor card O-</entityname.ominuscard>
-<entitydescription.ominuscard>Can take blood from: O-
-Can give blood to: all of them</entitydescription.ominuscard>
+<entityname.ominuscard>Orh- Donör Kartı</entityname.ominuscard>
+<entitydescription.ominuscard>Bu Kan Gruplarından Kan Alabilir: Orh-
+Tüm Kan Gruplarına Kan Verebilir</entitydescription.ominuscard>
 
-<entityname.opluscard>Donor card O+</entityname.opluscard>
-<entitydescription.opluscard>Can take blood from: O-, O+
-Can give blood to: O+, A+, B+, AB+</entitydescription.opluscard>
+<entityname.opluscard>Orh+ Donör Kartı</entityname.opluscard>
+<entitydescription.opluscard>Bu Kan Gruplarından Kan Alabilir: Orh-, Orh+
+Şu Kan Gruplarına Kan Verebilir: Orh+, Arh+, Brh+, ABrh+</entitydescription.opluscard>
 
-<entityname.aminuscard>Donor card A-</entityname.aminuscard>
-<entitydescription.aminuscard>Can take blood from: O-, A-
-Can give blood to: A-, A+, AB-, AB+</entitydescription.aminuscard>
+<entityname.aminuscard>Arh- Donör Kartı</entityname.aminuscard>
+<entitydescription.aminuscard>Bu Kan Gruplarından Kan Alabilir: Orh-, Arh-
+Şu Kan Gruplarına Kan Verebilir: Arh-, Arh+, ABrh-, ABrh+</entitydescription.aminuscard>
 
-<entityname.apluscard>Donor card A+</entityname.apluscard>
-<entitydescription.apluscard>Can take blood from: O-, O+, A-, A+
-Can give blood to: A+, AB+</entitydescription.apluscard>
+<entityname.apluscard>Arh+ Donör Kartı</entityname.apluscard>
+<entitydescription.apluscard>Bu Kan Gruplarından Kan Alabilir: Orh-, Orh+, Arh-, Arh+
+Şu Kan Gruplarına Kan Verebilir: Arh+, ABrh+</entitydescription.apluscard>
 
-<entityname.bminuscard>Donor card B-</entityname.bminuscard>
-<entitydescription.bminuscard>Can take blood from: O-, B-
-Can give blood to: B-, B+, AB-, AB+</entitydescription.bminuscard>
+<entityname.bminuscard>Brh- Donör Kartı</entityname.bminuscard>
+<entitydescription.bminuscard>Bu Kan Gruplarından Kan Alabilir: Orh-, Brh-
+Şu Kan Gruplarına Kan Verebilir: Brh-, Brh+, ABrh-, ABrh+</entitydescription.bminuscard>
 
-<entityname.bpluscard>Donor card B+</entityname.bpluscard>
-<entitydescription.bpluscard>Can take blood from: O-, O+, B-, B+
-Can give blood to: B+, AB+</entitydescription.bpluscard>
+<entityname.bpluscard>Brh+ Donör Kartı</entityname.bpluscard>
+<entitydescription.bpluscard>Bu Kan Gruplarından Kan Alabilir: Orh-, Orh+, Brh-, Brh+
+Şu Kan Gruplarına Kan Verebilir: Brh+, ABrh+</entitydescription.bpluscard>
 
-<entityname.abminuscard>Donor card AB-</entityname.abminuscard>
-<entitydescription.abminuscard>Can take blood from: O-, A-, B-, AB-
-Can give blood to: AB-, AB+</entitydescription.abminuscard>
+<entityname.abminuscard>ABrh- Donör Kartı</entityname.abminuscard>
+<entitydescription.abminuscard>Bu Kan Gruplarından Kan Alabilir: Orh-, Arh-, Brh-, ABrh-
+Şu Kan Gruplarına Kan Verebilir: ABrh-, ABrh+</entitydescription.abminuscard>
 
-<entityname.abpluscard>Donor card AB+</entityname.abpluscard>
-<entitydescription.abpluscard>Can take blood from: all of them
-Can give blood to: AB+</entitydescription.abpluscard>
+<entityname.abpluscard>ABrh+ Donör Kartı</entityname.abpluscard>
+<entitydescription.abpluscard>Tüm Kan Gruplarından Kan Alabilir
+Şu Kan Gruplarına Kan Verebilir: ABrh+</entitydescription.abpluscard>
 
 
 
 <!-- /// New containers /// -->
-<entityname.medtoolbox>Medical Container</entityname.medtoolbox> 
-<entitydescription.medtoolbox>Can store medicine and medical instruments</entitydescription.medtoolbox>
+<entityname.medtoolbox>Medikal Çanta</entityname.medtoolbox> 
+<entitydescription.medtoolbox>İlaç ve medikal alet taşımaya yarar.</entitydescription.medtoolbox>
 
-<entityname.surgerytoolbox>Surgery Toolbox</entityname.surgerytoolbox> 
-<entitydescription.surgerytoolbox>Can store many small items that are used during surgery</entitydescription.surgerytoolbox>
+<entityname.surgerytoolbox>Ameliyat Alet Çantası</entityname.surgerytoolbox> 
+<entitydescription.surgerytoolbox>Ameliyatta kullanılan küçük aletleri taşımaya yarar.</entitydescription.surgerytoolbox>
 
-<entityname.organcrate>Refrigerated Crate</entityname.organcrate> 
-<entitydescription.organcrate>A place to store your precious transplant-ready organs</entitydescription.organcrate>
+<entityname.organcrate>Soğutma Kapasiteli Kasa</entityname.organcrate> 
+<entitydescription.organcrate>Soğutmaya ihtiyaç duyan organları ve jel buz torbalarını taşır.</entitydescription.organcrate>
 
-<entityname.organtoolbox>Refrigerated container</entityname.organtoolbox> 
-<entitydescription.organtoolbox>A place to store your precious transplant-ready organs</entitydescription.organtoolbox>
+<entityname.organtoolbox>Soğutma Kapasiteli Çanta</entityname.organtoolbox> 
+<entitydescription.organtoolbox>Soğutmaya ihtiyaç duyan organları ve jel buz torbalarını taşır.</entitydescription.organtoolbox>
 
-<entityname.bodybag>Body bag</entityname.bodybag>
-<entitydescription.bodybag>Lets you drag people faster.</entitydescription.bodybag>
+<entityname.bodybag>Ceset Torbası</entityname.bodybag>
+<entitydescription.bodybag>Baygın/Ölü insanları hızlı taşımaya yarar.</entitydescription.bodybag>
 
-<entityname.stasisbag>Stasis Bag</entityname.stasisbag>
-<entitydescription.stasisbag>Çoğu biyolojik sürecin gerçekleşmesini durdurur.</entitydescription.stasisbag>
+<entityname.stasisbag>Biyolojik Aktivite Dondurucu Torba</entityname.stasisbag>
+<entitydescription.stasisbag>Çoğu biyolojik sürecin gerçekleşmesini durdurur ancak bazı medikal işlemlerin yapılması mümkün olmaz.</entitydescription.stasisbag>
 
 
 
@@ -324,7 +324,7 @@ Can give blood to: AB+</entitydescription.abpluscard>
 <afflictiondescription.fibrillation>Kalp çarpıntılı, titrek bir şekilde atıyor.</afflictiondescription.fibrillation>
 
 <afflictionname.cardiacarrest>Kalp Durması</afflictionname.cardiacarrest>
-<afflictiondescription.cardiacarrest></afflictiondescription.cardiacarrest>
+<afflictiondescription.cardiacarrest>Nabız yok.</afflictiondescription.cardiacarrest>
 
 <afflictionname.heartattack>Kalp Krizi</afflictionname.heartattack>
 <afflictiondescription.heartattack></afflictiondescription.heartattack>
@@ -714,18 +714,18 @@ Can give blood to: AB+</entitydescription.abpluscard>
 <afflictiondescription.bonecut>Kemik testere yardımıyla kesildi.</afflictiondescription.bonecut>
 
 <!-- /// SIGNALS /// -->
-<connection.aliveout>Alive</connection.aliveout>
-<connection.consciousout>Conscious</connection.consciousout>
-<connection.nameout>Patient_name</connection.nameout>
-<connection.vitalityout>Vitality</connection.vitalityout>
-<connection.heartrateout>Heartrate</connection.heartrateout>
-<connection.breathingrateout>Breathingrate</connection.breathingrateout>
-<connection.bloodpressureout>Bloodpressure</connection.bloodpressureout>
-<connection.bloodoxygenout>Bloodoxygen</connection.bloodoxygenout>
-<connection.neurotraumaout>Neurotrauma</connection.neurotraumaout>
-<connection.organdamageout>Organdamage</connection.organdamageout>
-<connection.insurgeryout>In_surgery</connection.insurgeryout>
-<connection.causeofdeathout>Cause_of_death</connection.causeofdeathout>
+<connection.aliveout>Yaşam_belirtisi</connection.aliveout>
+<connection.consciousout>Bilinç</connection.consciousout>
+<connection.nameout>Hasta_adı</connection.nameout>
+<connection.vitalityout>Canlılık</connection.vitalityout>
+<connection.heartrateout>Kalp_atış_hızı</connection.heartrateout>
+<connection.breathingrateout>Nefes_alma_hızı</connection.breathingrateout>
+<connection.bloodpressureout>Kan_basıncı</connection.bloodpressureout>
+<connection.bloodoxygenout>Oksijen_satürasyonu</connection.bloodoxygenout>
+<connection.neurotraumaout>Nörotravma</connection.neurotraumaout>
+<connection.organdamageout>Organ_hasarı</connection.organdamageout>
+<connection.insurgeryout>Ameliyatta</connection.insurgeryout>
+<connection.causeofdeathout>Ölüm_sebebi</connection.causeofdeathout>
 <connection.bloodphout>Kan_pH</connection.bloodphout>
 
 <!-- misc -->
