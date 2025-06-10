@@ -143,7 +143,7 @@
 <entitydescription.antiseptic>Antiseptik Sprey kullanarak enfekte olmuş yaraları tedavi edebilir.</entitydescription.antiseptic>
 
 <entityname.antisepticspray>Antiseptik Sprey</entityname.antisepticspray>
-<entitydescription.antisepticspray>Used to apply antiseptic to infected wounds Enfekte yaraya antiseptik uygulamak için kullanılır.</entitydescription.antisepticspray>
+<entitydescription.antisepticspray>Enfekte yaraya antiseptik uygulamak için kullanılır.</entitydescription.antisepticspray>
 
 <entityname.propofol>Propofol</entityname.propofol>
 <entitydescription.propofol>Bilinç düzeyinde azalmaya ve olaylar için hafıza eksikliğine neden olan kısa etkili bir ilaç. Kullanımları genel anestezinin başlatılması ve sürdürülmesini içerir.</entitydescription.propofol>
@@ -248,16 +248,16 @@ Tüm Kan Gruplarına Kan Verebilir</entitydescription.ominuscard>
 
 <!-- /// Limbs and organs /// -->
 <entityname.rarm>Sağ Kol</entityname.rarm>
-<entitydescription.rarm>A severed right arm. Can be surgically reattached.</entitydescription.rarm>
+<entitydescription.rarm>Kesilmiş sağ kol cerrahi olarak geri takılabilir.</entitydescription.rarm>
 
 <entityname.larm>Sol Kol</entityname.larm>
-<entitydescription.larm>A severed left arm. Can be surgically reattached.</entitydescription.larm>
+<entitydescription.larm>Kesilmiş sol kol cerrahi olarak geri takılabilir.</entitydescription.larm>
 
 <entityname.rleg>Sağ Bacak</entityname.rleg>
-<entitydescription.rleg>A severed right leg. Can be surgically reattached.</entitydescription.rleg>
+<entitydescription.rleg>Kesilmiş sağ bacak cerrahi olarak geri takılabilir.</entitydescription.rleg>
 
 <entityname.lleg>Sol Bacak</entityname.lleg>
-<entitydescription.lleg>A severed left leg. Can be surgically reattached.</entitydescription.lleg>
+<entitydescription.lleg>Kesilmiş sol bacak cerrahi olarak geri takılabilir.</entitydescription.lleg>
 
 <entityname.rarmp>Biyonik sağ kol protezi</entityname.rarmp>
 <entitydescription.rarmp>Biyonik sağ kol Amputasyonu tedavi etmede kullanılır.</entitydescription.rarmp>
