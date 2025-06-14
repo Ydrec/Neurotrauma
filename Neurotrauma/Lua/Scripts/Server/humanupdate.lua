@@ -103,7 +103,9 @@ NT.FetchWorldCharacters = function()
 	GetCharacters()
 end
 Timer.Wait(function()
-	NT.FetchWorldCharacters()
+	if Game.GameSession ~= nil then
+		NT.FetchWorldCharacters()
+	end
 end, 4000)
 Hook.Add("roundStart", "NT.RoundStart.fetchCharacters", function()
 	NT.FetchWorldCharacters()
