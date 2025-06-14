@@ -499,15 +499,15 @@ Tüm Kan Gruplarına Kan Verebilir</entitydescription.ominuscard>
 <afflictiondescription.th_amputation>Kafadaki deri dokusunun çoğu yırtılmış.</afflictiondescription.th_amputation>
 
 <afflictionname.sra_amputation>Amputasyon</afflictionname.sra_amputation>
-<afflictiondescription.sra_amputation>Sağ kolun cerrahi olarak ampute edildi.</afflictiondescription.sra_amputation>
+<afflictiondescription.sra_amputation>Sağ kol cerrahi olarak ampute edildi.</afflictiondescription.sra_amputation>
 <afflictionname.sla_amputation>Amputasyon</afflictionname.sla_amputation>
-<afflictiondescription.sla_amputation>Sol kolun cerrahi olarak ampute edildi.</afflictiondescription.sla_amputation>
+<afflictiondescription.sla_amputation>Sol kol cerrahi olarak ampute edildi.</afflictiondescription.sla_amputation>
 <afflictionname.srl_amputation>Amputasyon</afflictionname.srl_amputation>
-<afflictiondescription.srl_amputation>Sağ bacağın cerrahi olarak ampute edildi.</afflictiondescription.srl_amputation>
+<afflictiondescription.srl_amputation>Sağ bacak cerrahi olarak ampute edildi.</afflictiondescription.srl_amputation>
 <afflictionname.sll_amputation>Amputasyon</afflictionname.sll_amputation>
-<afflictiondescription.sll_amputation>Sol bacağın cerrahi olarak ampute edildi.</afflictiondescription.sll_amputation>
+<afflictiondescription.sll_amputation>Sol bacak cerrahi olarak ampute edildi.</afflictiondescription.sll_amputation>
 <afflictionname.sh_amputation>Amputasyon</afflictionname.sh_amputation>
-<afflictiondescription.sh_amputation>Kafan cerrahi olarak ampute edildi.</afflictiondescription.sh_amputation>
+<afflictiondescription.sh_amputation>Kafa cerrahi olarak ampute edildi.</afflictiondescription.sh_amputation>
 
 <afflictionname.t_paralysis>Omurilik Hasarı</afflictionname.t_paralysis>
 <afflictiondescription.t_paralysis>Hasta felç ve vücudunu hissetmiyor.</afflictiondescription.t_paralysis>
