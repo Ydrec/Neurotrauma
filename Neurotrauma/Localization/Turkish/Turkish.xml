@@ -365,7 +365,7 @@ Tüm Kan Gruplarına Kan Verebilir</entitydescription.ominuscard>
 <afflictionname.bloodpressure>Tansiyon</afflictionname.bloodpressure>
 <afflictiondescription.bloodpressure></afflictiondescription.bloodpressure>
 
-<afflictionname.hypoxemia>hipoksemi</afflictionname.hypoxemia>
+<afflictionname.hypoxemia>Hipoksemi</afflictionname.hypoxemia>
 <afflictiondescription.hypoxemia></afflictiondescription.hypoxemia>
 
 <!-- /// Lungs /// -->
@@ -488,15 +488,15 @@ Tüm Kan Gruplarına Kan Verebilir</entitydescription.ominuscard>
 <afflictiondescription.n_fracture>Boynun kırık.</afflictiondescription.n_fracture>
 
 <afflictionname.tra_amputation>Travmatik Amputasyon</afflictionname.tra_amputation>
-<afflictiondescription.tra_amputation>Sağ kolundaki deri dokusunun çoğu yırtılmış.</afflictiondescription.tra_amputation>
+<afflictiondescription.tra_amputation>Sağ koldaki deri dokusunun çoğu yırtılmış.</afflictiondescription.tra_amputation>
 <afflictionname.tla_amputation>Travmatik Amputasyon</afflictionname.tla_amputation>
-<afflictiondescription.tla_amputation>Sol kolundaki deri dokusunun çoğu yırtılmış.</afflictiondescription.tla_amputation>
+<afflictiondescription.tla_amputation>Sol koldaki deri dokusunun çoğu yırtılmış.</afflictiondescription.tla_amputation>
 <afflictionname.trl_amputation>Travmatik Amputasyon</afflictionname.trl_amputation>
-<afflictiondescription.trl_amputation>Sağ bacağındaki deri dokusunun çoğu yırtılmış.</afflictiondescription.trl_amputation>
+<afflictiondescription.trl_amputation>Sağ bacaktaki deri dokusunun çoğu yırtılmış.</afflictiondescription.trl_amputation>
 <afflictionname.tll_amputation>Travmatik Amputasyon</afflictionname.tll_amputation>
-<afflictiondescription.tll_amputation>Sol bacağındaki deri dokusunun çoğu yırtılmış.</afflictiondescription.tll_amputation>
+<afflictiondescription.tll_amputation>Sol bacaktaki deri dokusunun çoğu yırtılmış.</afflictiondescription.tll_amputation>
 <afflictionname.th_amputation>Travmatik Amputasyon</afflictionname.th_amputation>
-<afflictiondescription.th_amputation>Kafandaki deri dokusunun çoğu yırtılmış.</afflictiondescription.th_amputation>
+<afflictiondescription.th_amputation>Kafadaki deri dokusunun çoğu yırtılmış.</afflictiondescription.th_amputation>
 
 <afflictionname.sra_amputation>Amputasyon</afflictionname.sra_amputation>
 <afflictiondescription.sra_amputation>Sağ kolun cerrahi olarak ampute edildi.</afflictiondescription.sra_amputation>
