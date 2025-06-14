@@ -2528,7 +2528,7 @@
 	  <Effect minstrength="0" maxstrength="1" strengthchange="-1000">
       <StatusEffect  target="Character" multiplyafflictionsbymaxvitality="true" targetlimb="Head" disabledeltatime="True" stackable="false" delay="0.2">
         <Affliction identifier="th_amputation" amount="99999"/>
-        <SpawnItem identifier="heada" impulse="10"/>
+        <SpawnItem identifier="headta" impulse="10"/>
       </StatusEffect>
   	</Effect>
  
@@ -2612,7 +2612,21 @@
  
     <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="512,640,128,128" color="68,157,198,255" origin="0,0"/>
 	</Affliction>
-
+ 
+  <Affliction
+	  name="Traumatically amputating head"
+    identifier="gate_ta_h_2"
+    targets="human"
+    limbspecific="True"
+    showinhealthscannerthreshold="3"
+    showiconthreshold="3"
+    maxstrength="1">
+	  <Effect minstrength="0" maxstrength="1" strengthchange="-1000">
+      <StatusEffect  target="Character" multiplyafflictionsbymaxvitality="true" targetlimb="Head" disabledeltatime="True" stackable="false" delay="0.2">
+        <Affliction identifier="th_amputation" amount="99999"/>
+      </StatusEffect>
+  	</Effect>
+  </Affliction>
   
 
   <!-- ///// SYMPTOMS ///// -->

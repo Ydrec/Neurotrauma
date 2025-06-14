@@ -73,7 +73,7 @@ function NT.TraumamputateLimbMinusItem(character, limbtype)
 	limbtoaffliction[LimbType.LeftLeg] = "gate_ta_ll_2"
 	limbtoaffliction[LimbType.RightArm] = "gate_ta_ra_2"
 	limbtoaffliction[LimbType.LeftArm] = "gate_ta_la_2"
-	limbtoaffliction[LimbType.Head] = "gate_ta_h"
+	limbtoaffliction[LimbType.Head] = "gate_ta_h_2"
 	if limbtoaffliction[limbtype] == nil then
 		return
 	end

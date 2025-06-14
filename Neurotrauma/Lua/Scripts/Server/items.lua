@@ -705,7 +705,7 @@ NT.ItemMethods.suture = function(item, usingCharacter, targetCharacter, limb)
 				limbtoitem[LimbType.LeftLeg] = "lleg"
 				limbtoitem[LimbType.RightArm] = "rarm"
 				limbtoitem[LimbType.LeftArm] = "larm"
-				limbtoitem[LimbType.Head] = "heada"
+				limbtoitem[LimbType.Head] = "headsa"
 				if limbtoitem[limbtype] ~= nil then
 					HF.GiveItem(usingCharacter, limbtoitem[limbtype])
 					HF.GiveSurgerySkill(usingCharacter, 0.5)
