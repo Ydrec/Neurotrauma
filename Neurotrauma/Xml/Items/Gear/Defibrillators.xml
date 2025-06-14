@@ -7,9 +7,9 @@
         <Fabricate suitablefabricators="fabricator" requiredtime="10">
             <RequiredSkill identifier="electrical" level="40"/>
             <RequiredSkill identifier="medical" level="30"/>
-            <RequiredItem identifier="plastic" mincondition="0.5" usecondition="true"/>
+            <RequiredItem identifier="plastic" />
             <RequiredItem identifier="fpgacircuit"/>
-            <RequiredItem identifier="aluminium" mincondition="0.5" usecondition="true"/>
+            <RequiredItem identifier="aluminium" />
         </Fabricate>
 
         <Deconstruct time="5">
