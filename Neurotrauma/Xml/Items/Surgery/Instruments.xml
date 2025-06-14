@@ -3,13 +3,6 @@
     <Item name="" identifier="advhemostat" category="Equipment" cargocontaineridentifier="mediccrate" Tags="smallitem,medical,surgery,surgerytool" description="" useinhealthinterface="True" scale="0.250">
         <PreferredContainer primary="toxcontainer" spawnprobability="1"/>
         <PreferredContainer primary="locker"/>
-
-        <Fabricate suitablefabricators="fabricator">
-            <RequiredSkill identifier="medical" level="20"/>
-            <RequiredSkill identifier="mechanical" level="15"/>
-            <RequiredItem identifier="steel" mincondition="0.25" usecondition="true"/>
-            <RequiredItem identifier="zinc" mincondition="0.25" usecondition="true"/>
-        </Fabricate>
         
         <Deconstruct time="5"/>
 
@@ -27,13 +20,6 @@
         <PreferredContainer primary="toxcontainer" spawnprobability="1"/>
         <PreferredContainer primary="locker"/>
 
-        <Fabricate suitablefabricators="fabricator">
-            <RequiredSkill identifier="medical" level="20"/>
-            <RequiredSkill identifier="mechanical" level="15"/>
-            <RequiredItem identifier="steel" mincondition="0.25" usecondition="true"/>
-            <RequiredItem identifier="zinc" mincondition="0.25" usecondition="true"/>
-        </Fabricate>
-
         <Deconstruct time="5"/>
 
         <Price baseprice="35" soldbydefault="true">
@@ -50,14 +36,6 @@
     <Item name="" identifier="surgicaldrill" category="Equipment" cargocontaineridentifier="mediccrate" Tags="smallitem,medical,surgery,surgerytool" description="" useinhealthinterface="True" scale="0.250">
         <PreferredContainer primary="toxcontainer" spawnprobability="1"/>
         <PreferredContainer primary="locker"/>
-
-        <Fabricate suitablefabricators="fabricator">
-            <RequiredSkill identifier="medical" level="30"/>
-            <RequiredSkill identifier="mechanical" level="30"/>
-            <RequiredItem identifier="steel" mincondition="0.5" usecondition="true"/>
-            <RequiredItem identifier="zinc" mincondition="0.5" usecondition="true"/>
-            <RequiredItem identifier="fpgacircuit"/>
-        </Fabricate>
 
         <Deconstruct time="5"/>
 
@@ -85,12 +63,6 @@
     <Item name="" identifier="surgerysaw" category="Equipment" cargocontaineridentifier="mediccrate" Tags="smallitem,medical,surgery,surgerytool" description="" useinhealthinterface="True" scale="0.4">
         <PreferredContainer primary="toxcontainer" spawnprobability="1"/>
         <PreferredContainer primary="locker"/>
-
-        <Fabricate suitablefabricators="fabricator">
-            <RequiredSkill identifier="medical" level="30"/>
-            <RequiredSkill identifier="mechanical" level="30"/>
-            <RequiredItem identifier="titaniumaluminiumalloy" mincondition="0.5" usecondition="true"/>
-        </Fabricate>
 
         <Deconstruct time="5"/>
 
@@ -120,13 +92,6 @@
         <PreferredContainer primary="toxcontainer" spawnprobability="1"/>
         <PreferredContainer primary="locker"/>
 
-        <Fabricate suitablefabricators="fabricator">
-            <RequiredSkill identifier="medical" level="20"/>
-            <RequiredSkill identifier="mechanical" level="15"/>
-            <RequiredItem identifier="steel" mincondition="0.25" usecondition="true"/>
-            <RequiredItem identifier="zinc" mincondition="0.25" usecondition="true"/>
-        </Fabricate>
-
         <Deconstruct time="5"/>
 
         <Price baseprice="35" soldbydefault="true">
@@ -149,13 +114,6 @@
     <Item name="" identifier="traumashears" category="Equipment" cargocontaineridentifier="mediccrate" Tags="smallitem,medical,surgerytool" description="" useinhealthinterface="True" scale="0.5">
         <PreferredContainer primary="toxcontainer" spawnprobability="1"/>
         <PreferredContainer primary="locker"/>
-
-        <Fabricate suitablefabricators="fabricator">
-            <RequiredSkill identifier="medical" level="10"/>
-            <RequiredSkill identifier="mechanical" level="10"/>
-            <RequiredItem identifier="steel" mincondition="0.25" usecondition="true"/>
-            <RequiredItem identifier="plastic" mincondition="0.25" usecondition="true"/>
-        </Fabricate>
 
         <Deconstruct time="5"/>
 

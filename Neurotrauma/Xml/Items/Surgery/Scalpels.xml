@@ -4,13 +4,6 @@
         <PreferredContainer primary="toxcontainer" spawnprobability="1"/>
         <PreferredContainer primary="locker"/>
 
-        <Fabricate suitablefabricators="fabricator">
-            <RequiredSkill identifier="medical" level="20"/>
-            <RequiredSkill identifier="mechanical" level="15"/>
-            <RequiredItem identifier="steel" mincondition="0.25" usecondition="true"/>
-            <RequiredItem identifier="zinc" mincondition="0.25" usecondition="true"/>
-        </Fabricate>
-
         <Deconstruct/>
 
         <Price baseprice="35" soldbydefault="true">
