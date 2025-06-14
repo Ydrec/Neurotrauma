@@ -274,8 +274,11 @@ Can give blood to: AB+</entitydescription.abpluscard>
 <entityname.lleg>Left leg</entityname.lleg>
 <entitydescription.lleg>A severed left leg. Can be surgically reattached.</entitydescription.lleg>
 
-<entityname.heada>Head</entityname.heada>
-<entitydescription.heada>A severed head, or what's left of it.</entitydescription.heada>
+<entityname.headta>Head remains</entityname.headta>
+<entitydescription.headta>A severed head, or what's left of it.</entitydescription.headta>
+
+<entityname.headsa>Amputated head</entityname.headsa>
+<entitydescription.headsa>A severed head for recycling.</entitydescription.headsa>
 
 <entityname.rarmp>Right arm bionic prosthesis</entityname.rarmp>
 <entitydescription.rarmp>A bionic right arm. Can be used to treat amputation.</entitydescription.rarmp>

@@ -260,8 +260,11 @@
 <entityname.lleg>Левая нога</entityname.lleg>
 <entitydescription.lleg>Отсечённая левая нога. Может быть пришита обратно посредством операции.</entitydescription.lleg>
 
-<entityname.heada>Голова</entityname.heada>
-<entitydescription.heada>Отсечённая голова, или то что от неё осталось.</entitydescription.heada>
+<entityname.headta>Останки головы</entityname.headta>
+<entitydescription.headta>Отсечённая голова, или то, что от неё осталось.</entitydescription.headta>
+
+<entityname.headsa>Ампутированая голова</entityname.headsa>
+<entitydescription.headsa>Ампутированая голова для утилизации.</entitydescription.headsa>
 
 <entityname.rarmp>Бионический протез правой руки</entityname.rarmp>
 <entitydescription.rarmp>Бионическая правая рука. Устанавливается взамен ампутированной</entitydescription.rarmp>
