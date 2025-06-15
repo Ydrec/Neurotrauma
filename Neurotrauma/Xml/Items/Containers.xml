@@ -165,7 +165,7 @@
        
         <Fabricate suitablefabricators="fabricator" requiredtime="20">
             <RequiredSkill identifier="mechanical" level="20" />
-            <Item identifier="steel" amount="2"/>
+            <Item identifier="steel" amount="3"/>
             <Item identifier="zinc" amount="2"/>
             <Item identifier="fpgacircuit" amount="1"/>
             <Item identifier="titaniumaluminiumalloy" amount="1"/>
