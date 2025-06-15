@@ -387,7 +387,7 @@ NT.Afflictions = {
 			local skull = HF.HasAffliction(c.character, "h_fracture", 1) -- check for skullfracture
 			local skullmod = skull and 0 or 1 -- invert bool
 			local gain = (
-				-0.1 * c.stats.healingrate * (skullmod) -- passive regen and fractured skull
+				-0.1 * c.stats.healingrate * skullmod -- passive regen and fractured skull
 				+ c.afflictions.hypoxemia.strength / 100 -- from hypoxemia
 				+ HF.Clamp(c.afflictions.stroke.strength, 0, 20) * 0.1 -- from stroke
 				+ c.afflictions.sepsis.strength / 100 * 0.4 -- from sepsis
@@ -1421,9 +1421,13 @@ NT.LimbAfflictions = {
 			if limbaff[i].strength > 0 then
 				limbaff[i].strength = limbaff[i].strength - 1.7 * NT.Deltatime
 			end
-			-- iced slowdown
+			-- iced effects
 			if limbaff[i].strength > 0 then
-				c.stats.speedmultiplier = c.stats.speedmultiplier * 0.95
+				c.stats.speedmultiplier = c.stats.speedmultiplier * 0.95 -- 5% slow per limb
+				if type == LimbType.Torso then
+					c.afflictions.internalbleeding.strength = c.afflictions.internalbleeding.strength
+						- 0.2 * NT.Deltatime
+				end
 			end
 		end,
 	},
