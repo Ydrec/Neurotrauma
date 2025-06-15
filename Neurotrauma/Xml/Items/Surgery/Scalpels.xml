@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Items>
     <Item name="" identifier="advscalpel" category="Equipment" cargocontaineridentifier="mediccrate" Tags="smallitem,medical,surgery,surgerytool" description="" useinhealthinterface="True" scale="0.250">
-        <PreferredContainer primary="toxcontainer" spawnprobability="1"/>
         <PreferredContainer primary="locker"/>
 
         <Deconstruct/>

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Items>
     <Item name="" identifier="advhemostat" category="Equipment" cargocontaineridentifier="mediccrate" Tags="smallitem,medical,surgery,surgerytool" description="" useinhealthinterface="True" scale="0.250">
-        <PreferredContainer primary="toxcontainer" spawnprobability="1"/>
         <PreferredContainer primary="locker"/>
         
         <Deconstruct time="5"/>
@@ -17,7 +16,6 @@
     </Item>
 
     <Item name="" identifier="advretractors" category="Equipment" cargocontaineridentifier="mediccrate" Tags="smallitem,medical,surgery,surgerytool" description="" useinhealthinterface="True" scale="0.2">
-        <PreferredContainer primary="toxcontainer" spawnprobability="1"/>
         <PreferredContainer primary="locker"/>
 
         <Deconstruct time="5"/>
@@ -34,7 +32,6 @@
     </Item>
 
     <Item name="" identifier="surgicaldrill" category="Equipment" cargocontaineridentifier="mediccrate" Tags="smallitem,medical,surgery,surgerytool" description="" useinhealthinterface="True" scale="0.250">
-        <PreferredContainer primary="toxcontainer" spawnprobability="1"/>
         <PreferredContainer primary="locker"/>
 
         <Deconstruct time="5"/>
@@ -61,7 +58,6 @@
     </Item>
 
     <Item name="" identifier="surgerysaw" category="Equipment" cargocontaineridentifier="mediccrate" Tags="smallitem,medical,surgery,surgerytool" description="" useinhealthinterface="True" scale="0.4">
-        <PreferredContainer primary="toxcontainer" spawnprobability="1"/>
         <PreferredContainer primary="locker"/>
 
         <Deconstruct time="5"/>
@@ -89,7 +85,6 @@
     </Item>
 
     <Item name="" identifier="tweezers" category="Equipment" cargocontaineridentifier="mediccrate" Tags="smallitem,medical,surgery,surgerytool" description="" useinhealthinterface="True" scale="0.150">
-        <PreferredContainer primary="toxcontainer" spawnprobability="1"/>
         <PreferredContainer primary="locker"/>
 
         <Deconstruct time="5"/>
@@ -112,7 +107,6 @@
     </Item>
 
     <Item name="" identifier="traumashears" category="Equipment" cargocontaineridentifier="mediccrate" Tags="smallitem,medical,surgerytool" description="" useinhealthinterface="True" scale="0.5">
-        <PreferredContainer primary="toxcontainer" spawnprobability="1"/>
         <PreferredContainer primary="locker"/>
 
         <Deconstruct time="5"/>
