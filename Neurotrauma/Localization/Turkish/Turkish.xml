@@ -52,7 +52,7 @@
 <entitydescription.tweezers>Mermilerin yanı sıra hasarlı ve nekrotik dokuların çıkarılmasını sağlayan küçük bir alet.</entitydescription.tweezers>
 
 <entityname.surgerysaw>Cerrahi testere</entityname.surgerysaw>
-<entitydescription.surgerysaw>Kemikleri kesmek için kullanılan bir alet.</entitydescription.surgerysaw>		
+<entitydescription.surgerysaw>Kemikleri kesmek için kullanılan bir alet.</entitydescription.surgerysaw>
 
 <entityname.suture>Sütür</entityname.suture>
 <entitydescription.suture>Yaraları ve cerrahi insizyonları dikmek için biyolojik olarak parçalanabilen sütürler.</entitydescription.suture>
@@ -143,7 +143,7 @@
 <entitydescription.antiseptic>Antiseptik Sprey kullanarak enfekte olmuş yaraları tedavi edebilir.</entitydescription.antiseptic>
 
 <entityname.antisepticspray>Antiseptik Sprey</entityname.antisepticspray>
-<entitydescription.antisepticspray>Used to apply antiseptic to infected wounds Enfekte yaraya antiseptik uygulamak için kullanılır.</entitydescription.antisepticspray>
+<entitydescription.antisepticspray>Enfekte yaraya antiseptik uygulamak için kullanılır.</entitydescription.antisepticspray>
 
 <entityname.propofol>Propofol</entityname.propofol>
 <entitydescription.propofol>Bilinç düzeyinde azalmaya ve olaylar için hafıza eksikliğine neden olan kısa etkili bir ilaç. Kullanımları genel anestezinin başlatılması ve sürdürülmesini içerir.</entitydescription.propofol>
@@ -226,19 +226,19 @@ Tüm Kan Gruplarına Kan Verebilir</entitydescription.ominuscard>
 
 
 <!-- /// New containers /// -->
-<entityname.medtoolbox>Medikal Çanta</entityname.medtoolbox> 
+<entityname.medtoolbox>Medikal Çanta</entityname.medtoolbox>
 <entitydescription.medtoolbox>İlaç ve medikal alet taşımaya yarar.</entitydescription.medtoolbox>
 
-<entityname.surgerytoolbox>Ameliyat Alet Çantası</entityname.surgerytoolbox> 
+<entityname.surgerytoolbox>Ameliyat Alet Çantası</entityname.surgerytoolbox>
 <entitydescription.surgerytoolbox>Ameliyatta kullanılan küçük aletleri taşımaya yarar.</entitydescription.surgerytoolbox>
 
-<entityname.surgerytoolboxset>Ameliyat Alet Çantası (kit)</entityname.surgerytoolboxset> 
+<entityname.surgerytoolboxset>Ameliyat Alet Çantası (kit)</entityname.surgerytoolboxset>
 <entitydescription.surgerytoolboxset>Ameliyatta kullanılan küçük aletleri taşımaya yarar.</entitydescription.surgerytoolboxset>
 
-<entityname.organcrate>Soğutma Kapasiteli Kasa</entityname.organcrate> 
+<entityname.organcrate>Soğutma Kapasiteli Kasa</entityname.organcrate>
 <entitydescription.organcrate>Soğutmaya ihtiyaç duyan organları ve jel buz torbalarını taşır.</entitydescription.organcrate>
 
-<entityname.organtoolbox>Soğutma Kapasiteli Çanta</entityname.organtoolbox> 
+<entityname.organtoolbox>Soğutma Kapasiteli Çanta</entityname.organtoolbox>
 <entitydescription.organtoolbox>Soğutmaya ihtiyaç duyan organları ve jel buz torbalarını taşır.</entitydescription.organtoolbox>
 
 <entityname.bodybag>Ceset Torbası</entityname.bodybag>
@@ -251,16 +251,16 @@ Tüm Kan Gruplarına Kan Verebilir</entitydescription.ominuscard>
 
 <!-- /// Limbs and organs /// -->
 <entityname.rarm>Sağ Kol</entityname.rarm>
-<entitydescription.rarm>A severed right arm. Can be surgically reattached.</entitydescription.rarm>
+<entitydescription.rarm>Kesilmiş sağ kol cerrahi olarak geri takılabilir.</entitydescription.rarm>
 
 <entityname.larm>Sol Kol</entityname.larm>
-<entitydescription.larm>A severed left arm. Can be surgically reattached.</entitydescription.larm>
+<entitydescription.larm>Kesilmiş sol kol cerrahi olarak geri takılabilir.</entitydescription.larm>
 
 <entityname.rleg>Sağ Bacak</entityname.rleg>
-<entitydescription.rleg>A severed right leg. Can be surgically reattached.</entitydescription.rleg>
+<entitydescription.rleg>Kesilmiş sağ bacak cerrahi olarak geri takılabilir.</entitydescription.rleg>
 
 <entityname.lleg>Sol Bacak</entityname.lleg>
-<entitydescription.lleg>A severed left leg. Can be surgically reattached.</entitydescription.lleg>
+<entitydescription.lleg>Kesilmiş sol bacak cerrahi olarak geri takılabilir.</entitydescription.lleg>
 
 <entityname.rarmp>Biyonik sağ kol protezi</entityname.rarmp>
 <entitydescription.rarmp>Biyonik sağ kol Amputasyonu tedavi etmede kullanılır.</entitydescription.rarmp>
@@ -368,7 +368,7 @@ Tüm Kan Gruplarına Kan Verebilir</entitydescription.ominuscard>
 <afflictionname.bloodpressure>Tansiyon</afflictionname.bloodpressure>
 <afflictiondescription.bloodpressure></afflictiondescription.bloodpressure>
 
-<afflictionname.hypoxemia>hipoksemi</afflictionname.hypoxemia>
+<afflictionname.hypoxemia>Hipoksemi</afflictionname.hypoxemia>
 <afflictiondescription.hypoxemia></afflictiondescription.hypoxemia>
 
 <!-- /// Lungs /// -->
@@ -443,7 +443,7 @@ Tüm Kan Gruplarına Kan Verebilir</entitydescription.ominuscard>
 
 <afflictionname.surgeryincision>Cerrahi insizyon</afflictionname.surgeryincision>
 <afflictiondescription.surgeryincision>Bir neşter ile bir kesi yapıldı.</afflictiondescription.surgeryincision>
-  
+
 <afflictionname.clampedbleeders>Klemplenmiş Kanama</afflictionname.clampedbleeders>
 <afflictiondescription.clampedbleeders>Cerrahi kanamalar durduruldu.</afflictiondescription.clampedbleeders>
 
@@ -491,26 +491,26 @@ Tüm Kan Gruplarına Kan Verebilir</entitydescription.ominuscard>
 <afflictiondescription.n_fracture>Boynun kırık.</afflictiondescription.n_fracture>
 
 <afflictionname.tra_amputation>Travmatik Amputasyon</afflictionname.tra_amputation>
-<afflictiondescription.tra_amputation>Sağ kolundaki deri dokusunun çoğu yırtılmış.</afflictiondescription.tra_amputation>
+<afflictiondescription.tra_amputation>Sağ koldaki deri dokusunun çoğu yırtılmış.</afflictiondescription.tra_amputation>
 <afflictionname.tla_amputation>Travmatik Amputasyon</afflictionname.tla_amputation>
-<afflictiondescription.tla_amputation>Sol kolundaki deri dokusunun çoğu yırtılmış.</afflictiondescription.tla_amputation>
+<afflictiondescription.tla_amputation>Sol koldaki deri dokusunun çoğu yırtılmış.</afflictiondescription.tla_amputation>
 <afflictionname.trl_amputation>Travmatik Amputasyon</afflictionname.trl_amputation>
-<afflictiondescription.trl_amputation>Sağ bacağındaki deri dokusunun çoğu yırtılmış.</afflictiondescription.trl_amputation>
+<afflictiondescription.trl_amputation>Sağ bacaktaki deri dokusunun çoğu yırtılmış.</afflictiondescription.trl_amputation>
 <afflictionname.tll_amputation>Travmatik Amputasyon</afflictionname.tll_amputation>
-<afflictiondescription.tll_amputation>Sol bacağındaki deri dokusunun çoğu yırtılmış.</afflictiondescription.tll_amputation>
+<afflictiondescription.tll_amputation>Sol bacaktaki deri dokusunun çoğu yırtılmış.</afflictiondescription.tll_amputation>
 <afflictionname.th_amputation>Travmatik Amputasyon</afflictionname.th_amputation>
-<afflictiondescription.th_amputation>Kafandaki deri dokusunun çoğu yırtılmış.</afflictiondescription.th_amputation>
+<afflictiondescription.th_amputation>Kafadaki deri dokusunun çoğu yırtılmış.</afflictiondescription.th_amputation>
 
 <afflictionname.sra_amputation>Amputasyon</afflictionname.sra_amputation>
-<afflictiondescription.sra_amputation>Sağ kolun cerrahi olarak ampute edildi.</afflictiondescription.sra_amputation>
+<afflictiondescription.sra_amputation>Sağ kol cerrahi olarak ampute edildi.</afflictiondescription.sra_amputation>
 <afflictionname.sla_amputation>Amputasyon</afflictionname.sla_amputation>
-<afflictiondescription.sla_amputation>Sol kolun cerrahi olarak ampute edildi.</afflictiondescription.sla_amputation>
+<afflictiondescription.sla_amputation>Sol kol cerrahi olarak ampute edildi.</afflictiondescription.sla_amputation>
 <afflictionname.srl_amputation>Amputasyon</afflictionname.srl_amputation>
-<afflictiondescription.srl_amputation>Sağ bacağın cerrahi olarak ampute edildi.</afflictiondescription.srl_amputation>
+<afflictiondescription.srl_amputation>Sağ bacak cerrahi olarak ampute edildi.</afflictiondescription.srl_amputation>
 <afflictionname.sll_amputation>Amputasyon</afflictionname.sll_amputation>
-<afflictiondescription.sll_amputation>Sol bacağın cerrahi olarak ampute edildi.</afflictiondescription.sll_amputation>
+<afflictiondescription.sll_amputation>Sol bacak cerrahi olarak ampute edildi.</afflictiondescription.sll_amputation>
 <afflictionname.sh_amputation>Amputasyon</afflictionname.sh_amputation>
-<afflictiondescription.sh_amputation>Kafan cerrahi olarak ampute edildi.</afflictiondescription.sh_amputation>
+<afflictiondescription.sh_amputation>Kafa cerrahi olarak ampute edildi.</afflictiondescription.sh_amputation>
 
 <afflictionname.t_paralysis>Omurilik Hasarı</afflictionname.t_paralysis>
 <afflictiondescription.t_paralysis>Hasta felç ve vücudunu hissetmiyor.</afflictiondescription.t_paralysis>
@@ -740,7 +740,7 @@ Tüm Kan Gruplarına Kan Verebilir</entitydescription.ominuscard>
 <entityname.pressuremeds>Sodyum Nitroprussid</entityname.pressuremeds>
 <entitydescription.pressuremeds>Tansiyonu düşürmek için kullanılan bir ilaç.</entitydescription.pressuremeds>
 
-<entityname.medstartercrate>Tıbbi Başlangıç Sandığı</entityname.medstartercrate> 
-<entitydescription.medstartercrate>Tüm temel unsurları içeren, tek bir üretim tarifine uygun şekilde paketlenmiş bir sandık.</entitydescription.medstartercrate> 
+<entityname.medstartercrate>Tıbbi Başlangıç Sandığı</entityname.medstartercrate>
+<entitydescription.medstartercrate>Tüm temel unsurları içeren, tek bir üretim tarifine uygun şekilde paketlenmiş bir sandık.</entitydescription.medstartercrate>
 
 </infotexts>
