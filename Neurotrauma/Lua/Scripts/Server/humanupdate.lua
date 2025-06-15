@@ -68,10 +68,12 @@ local function UpdateIgnoredNPC()
 				+ character.CharacterHealth.GetAfflictionStrengthByType(type, true)
 			> 0
 	end
-	for mission in Game.GameSession.Missions do
-		if LuaUserData.IsTargetType(mission.Prefab.MissionClass, "Barotrauma.AbandonedOutpostMission") then
-			for character in mission.requireRescue do
-				rescuetargets[character.ID] = character
+	if Game.GameSession.Missions ~= nil then
+		for mission in Game.GameSession.Missions do
+			if LuaUserData.IsTargetType(mission.Prefab.MissionClass, "Barotrauma.AbandonedOutpostMission") then
+				for character in mission.requireRescue do
+					rescuetargets[character.ID] = character
+				end
 			end
 		end
 	end
@@ -103,9 +105,7 @@ NT.FetchWorldCharacters = function()
 	GetCharacters()
 end
 Timer.Wait(function()
-	if Game.GameSession ~= nil then
-		NT.FetchWorldCharacters()
-	end
+	NT.FetchWorldCharacters()
 end, 4000)
 Hook.Add("roundStart", "NT.RoundStart.fetchCharacters", function()
 	NT.FetchWorldCharacters()
