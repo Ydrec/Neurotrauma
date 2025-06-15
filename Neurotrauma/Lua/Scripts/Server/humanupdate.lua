@@ -68,7 +68,7 @@ local function UpdateIgnoredNPC()
 				+ character.CharacterHealth.GetAfflictionStrengthByType(type, true)
 			> 0
 	end
-	if Game.GameSession.Missions ~= nil then
+	if Game ~= nil and Game.GameSession ~= nil and Game.GameSession.Missions ~= nil then
 		for mission in Game.GameSession.Missions do
 			if LuaUserData.IsTargetType(mission.Prefab.MissionClass, "Barotrauma.AbandonedOutpostMission") then
 				for character in mission.requireRescue do
