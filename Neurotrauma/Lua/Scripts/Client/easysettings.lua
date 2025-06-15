@@ -50,15 +50,37 @@ easySettings.AddMenu = function(name, onOpen)
 	table.insert(easySettings.Settings, { Name = name, OnOpen = onOpen })
 end
 
+-- Overhauled Config GUI
 easySettings.BasicList = function(parent, size)
-	local menuContent = GUI.Frame(GUI.RectTransform(size or Vector2(0.3, 0.6), parent.RectTransform, GUI.Anchor.Center))
-	local menuList = GUI.ListBox(GUI.RectTransform(Vector2(1, 0.95), menuContent.RectTransform, GUI.Anchor.TopCenter))
+    -- Menu Frame
+    local menuContent = GUI.Frame(GUI.RectTransform(size or Vector2(0.4, 0.7), parent.RectTransform, GUI.Anchor.Center), "GUIFrame")
 
-	easySettings.SaveButton(menuContent)
-	easySettings.CloseButton(menuContent)
-	easySettings.ResetButton(menuContent)
+    -- Main Layout
+    local mainLayout = GUI.LayoutGroup(GUI.RectTransform(Vector2(0.95, 0.95), menuContent.RectTransform, GUI.Anchor.Center, GUI.Pivot.Center), false)
 
-	return menuList
+    -- Background 
+    local configBackground = GUI.Frame(GUI.RectTransform(Vector2(1, 0.95), mainLayout.RectTransform), "InnerFrame")
+
+    -- Shrink Inner layout 
+    local innerLayout = GUI.LayoutGroup(GUI.RectTransform(Vector2(0.95, 0.95), configBackground.RectTransform, GUI.Anchor.TopCenter), false)
+
+    -- Title block
+    local title = GUI.TextBlock(GUI.RectTransform(Vector2(1, 0.07), innerLayout.RectTransform), "Neurotrauma Config Settings", nil, GUI.GUIStyle.LargeFont)
+    title.TextAlignment = GUI.Alignment.TopCenter
+
+    -- Setting list
+    local menuList = GUI.ListBox(GUI.RectTransform(Vector2(1, 0.97), innerLayout.RectTransform))
+    menuList.Padding = Vector4(10, 15, 10, 10)
+    menuList.UpdateDimensions()
+
+    -- Button row
+    local buttonRow = GUI.LayoutGroup(GUI.RectTransform(Vector2(1, 0.1), mainLayout.RectTransform), true)
+    buttonRow.RelativeSpacing = 0.02
+    easySettings.SaveButton(buttonRow)
+    easySettings.CloseButton(buttonRow)
+    easySettings.ResetButton(buttonRow)
+
+    return menuList
 end
 
 easySettings.TickBox = function(parent, text, onSelected, state)
@@ -89,7 +111,7 @@ end
 --save and exit
 easySettings.SaveButton = function(parent)
 	local button = GUI.Button(
-		GUI.RectTransform(Vector2(0.33, 0.05), parent.RectTransform, GUI.Anchor.BottomLeft),
+		GUI.RectTransform(Vector2(0.32, 0.05), parent.RectTransform, GUI.Anchor.BottomLeft),
 		"Save and Exit",
 		GUI.Alignment.Center,
 		"GUIButton"
@@ -110,7 +132,7 @@ end
 --discard and exit
 easySettings.CloseButton = function(parent)
 	local button = GUI.Button(
-		GUI.RectTransform(Vector2(0.33, 0.05), parent.RectTransform, GUI.Anchor.BottomCenter),
+		GUI.RectTransform(Vector2(0.32, 0.05), parent.RectTransform, GUI.Anchor.BottomCenter),
 		"Discard and Exit",
 		GUI.Alignment.Center,
 		"GUIButton"
@@ -127,7 +149,7 @@ end
 --reset and exit
 easySettings.ResetButton = function(parent)
 	local button = GUI.Button(
-		GUI.RectTransform(Vector2(0.33, 0.05), parent.RectTransform, GUI.Anchor.BottomRight),
+		GUI.RectTransform(Vector2(0.32, 0.05), parent.RectTransform, GUI.Anchor.BottomRight),
 		"Reset Config",
 		GUI.Alignment.Center,
 		"GUIButton"

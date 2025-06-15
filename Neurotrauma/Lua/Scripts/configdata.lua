@@ -233,11 +233,11 @@ NT.ConfigData = {
 	},
 
 	NTCRE_header1 = { name = "Consent Required", type = "category" },
-	NTCRE_ConsentRequired = {
-		name = "Enable Consent Required",
-		default = true,
+	NTCRE_ConsentRequiredExtra = {
+		name = "Consent Required",
+		default = false,
 		type = "bool",
-		description = "Integrated consent required mod.\nIf disabled, none of NPCs will get aggravated by medical interactions.",
+		description = "Integrated consent required mod.\nIf enabled, NPCs will get aggravated by medical interactions.",
 	},
 
 	NTSCAN_header1 = { name = "Scanner Settings", type = "category" },

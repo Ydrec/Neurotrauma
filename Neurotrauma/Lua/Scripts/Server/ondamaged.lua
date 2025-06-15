@@ -237,15 +237,15 @@ NT.OnDamagedMethods.explosiondamage = function(character, strength, limbtype)
 
 	-- head
 	if strength >= 1 and limbtype == LimbType.Head then
-		local armor1 = character.Inventory.GetItemInLimbSlot(InvSlotType.OuterClothes)
-		local armor2 = character.Inventory.GetItemInLimbSlot(InvSlotType.Head)
-		local reduceddmg = math.max(
-			10
-				- getCalculatedConcussionReduction(armor1, 10, limbtype)
-				- getCalculatedConcussionReduction(armor2, 10, limbtype),
-			0
-		)
 		if strength >= 15 and HF.Chance(math.min(strength / 60, 0.7)) then
+			local armor1 = character.Inventory.GetItemInLimbSlot(InvSlotType.OuterClothes)
+			local armor2 = character.Inventory.GetItemInLimbSlot(InvSlotType.Head)
+			local reduceddmg = math.max(
+				10
+					- getCalculatedConcussionReduction(armor1, 10, limbtype)
+					- getCalculatedConcussionReduction(armor2, 10, limbtype),
+				0
+			)
 			HF.AddAfflictionResisted(character, "concussion", reduceddmg)
 		end
 		if
@@ -274,7 +274,7 @@ NT.OnDamagedMethods.explosiondamage = function(character, strength, limbtype)
 			if previtem ~= nil then
 				previtem.Drop(character, true)
 			end
-			HF.AddAfflictionLimb(character, "gate_ta_h", limbtype, 5)
+			NT.TraumamputateLimb(character, limbtype)
 		end
 	end
 
@@ -340,15 +340,15 @@ NT.OnDamagedMethods.bitewounds = function(character, strength, limbtype)
 
 	-- head
 	if strength >= 1 and limbtype == LimbType.Head then
-		local armor1 = character.Inventory.GetItemInLimbSlot(InvSlotType.OuterClothes)
-		local armor2 = character.Inventory.GetItemInLimbSlot(InvSlotType.Head)
-		local reduceddmg = math.max(
-			10
-				- getCalculatedConcussionReduction(armor1, 10, limbtype)
-				- getCalculatedConcussionReduction(armor2, 10, limbtype),
-			0
-		)
 		if strength >= 15 and HF.Chance(math.min(strength / 60, 0.7)) then
+			local armor1 = character.Inventory.GetItemInLimbSlot(InvSlotType.OuterClothes)
+			local armor2 = character.Inventory.GetItemInLimbSlot(InvSlotType.Head)
+			local reduceddmg = math.max(
+				10
+					- getCalculatedConcussionReduction(armor1, 10, limbtype)
+					- getCalculatedConcussionReduction(armor2, 10, limbtype),
+				0
+			)
 			HF.AddAfflictionResisted(character, "concussion", reduceddmg)
 		end
 		if
@@ -505,15 +505,15 @@ NT.OnDamagedMethods.blunttrauma = function(character, strength, limbtype)
 
 	-- head
 	if not fractureImmune and strength >= 1 and limbtype == LimbType.Head then
-		local armor1 = character.Inventory.GetItemInLimbSlot(InvSlotType.OuterClothes)
-		local armor2 = character.Inventory.GetItemInLimbSlot(InvSlotType.Head)
-		local reduceddmg = math.max(
-			10
-				- getCalculatedConcussionReduction(armor1, 10, limbtype)
-				- getCalculatedConcussionReduction(armor2, 10, limbtype),
-			0
-		)
 		if strength >= 15 and HF.Chance(math.min(strength / 60, 0.7)) then
+			local armor1 = character.Inventory.GetItemInLimbSlot(InvSlotType.OuterClothes)
+			local armor2 = character.Inventory.GetItemInLimbSlot(InvSlotType.Head)
+			local reduceddmg = math.max(
+				10
+					- getCalculatedConcussionReduction(armor1, 10, limbtype)
+					- getCalculatedConcussionReduction(armor2, 10, limbtype),
+				0
+			)
 			HF.AddAfflictionResisted(character, "concussion", reduceddmg)
 		end
 		if
@@ -612,15 +612,15 @@ NT.OnDamagedMethods.internaldamage = function(character, strength, limbtype)
 
 	-- head
 	if strength >= 1 and limbtype == LimbType.Head then
-		local armor1 = character.Inventory.GetItemInLimbSlot(InvSlotType.OuterClothes)
-		local armor2 = character.Inventory.GetItemInLimbSlot(InvSlotType.Head)
-		local reduceddmg = math.max(
-			10
-				- getCalculatedConcussionReduction(armor1, 10, limbtype)
-				- getCalculatedConcussionReduction(armor2, 10, limbtype),
-			0
-		)
 		if strength >= 15 and HF.Chance(math.min(strength / 60, 0.7)) then
+			local armor1 = character.Inventory.GetItemInLimbSlot(InvSlotType.OuterClothes)
+			local armor2 = character.Inventory.GetItemInLimbSlot(InvSlotType.Head)
+			local reduceddmg = math.max(
+				10
+					- getCalculatedConcussionReduction(armor1, 10, limbtype)
+					- getCalculatedConcussionReduction(armor2, 10, limbtype),
+				0
+			)
 			HF.AddAfflictionResisted(character, "concussion", reduceddmg)
 		end
 		if

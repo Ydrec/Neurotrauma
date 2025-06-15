@@ -150,7 +150,6 @@ local function limbLockedInitial(c, limbtype, key)
 	return not NTC.GetSymptomFalse(c.character, key)
 		and (
 			NTC.GetSymptom(c.character, key)
-			or c.afflictions.t_paralysis.strength > 0
 			or NT.LimbIsAmputated(c.character, limbtype)
 			or (HF.GetAfflictionStrengthLimb(c.character, limbtype, "bandaged", 0) <= 0 and HF.GetAfflictionStrengthLimb(
 				c.character,
@@ -293,7 +292,6 @@ NT.Afflictions = {
 					and (
 						NTC.GetSymptom(c.character, i)
 						or (c.stats.lockleftleg and c.stats.lockrightleg and not c.stats.wheelchaired)
-						or c.character.IsKeyDown(InputType.Attack)
 					),
 				2
 			)
@@ -467,8 +465,10 @@ NT.Afflictions = {
 				return
 			end
 			-- calculate new neurotrauma
+			local skull = HF.HasAffliction(c.character, "h_fracture", 1) -- check for skullfracture
+			local skullmod = skull and 0 or 1 -- invert bool
 			local gain = (
-				-0.1 * c.stats.healingrate -- passive regen
+				-0.1 * c.stats.healingrate * skullmod -- passive regen and fractured skull
 				+ c.afflictions.hypoxemia.strength / 100 -- from hypoxemia
 				+ HF.Clamp(c.afflictions.stroke.strength, 0, 20) * 0.1 -- from stroke
 				+ c.afflictions.sepsis.strength / 100 * 0.4 -- from sepsis
@@ -715,8 +715,7 @@ NT.Afflictions = {
 		update = function(c, i)
 			-- respiratory arrest? -> oxygen in lungs rapidly decreases
 			if c.afflictions.respiratoryarrest.strength > 0 then
-				c.afflictions.oxygenlow.strength = c.afflictions.oxygenlow.strength
-					+ 15 * (1 - HF.BoolToNum(HF.HasTalent(c.character, "thewaitinglist", 0.75))) * NT.Deltatime
+				c.afflictions.oxygenlow.strength = c.afflictions.oxygenlow.strength + 15 * NT.Deltatime
 			end
 		end,
 	},
@@ -1503,9 +1502,13 @@ NT.LimbAfflictions = {
 			if limbaff[i].strength > 0 then
 				limbaff[i].strength = limbaff[i].strength - 1.7 * NT.Deltatime
 			end
-			-- iced slowdown
+			-- iced effects
 			if limbaff[i].strength > 0 then
-				c.stats.speedmultiplier = c.stats.speedmultiplier * 0.95
+				c.stats.speedmultiplier = c.stats.speedmultiplier * 0.95 -- 5% slow per limb
+				if type == LimbType.Torso then
+					c.afflictions.internalbleeding.strength = c.afflictions.internalbleeding.strength
+						- 0.2 * NT.Deltatime
+				end
 			end
 		end,
 	},
@@ -1872,7 +1875,7 @@ NT.CharStats = {
 		getter = function(c)
 			return c.afflictions.analgesia.strength > 0
 				or c.afflictions.anesthesia.strength > 10
-				or c.afflictions.drunk.strength > 30
+				or c.afflictions.drunk.strength > 20
 				or c.stats.stasis
 		end,
 	},

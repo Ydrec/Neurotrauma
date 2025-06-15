@@ -22,8 +22,8 @@
             <RequiredItem identifier="aluminium"/>
         </Fabricate>
 
-        <InventoryIcon texture="Content/Map/Outposts/Art/MedBayAssets.png" sourcerect="96,304,416,192" origin="0.5,0.5"/>
-        <sprite texture="Content/Map/Outposts/Art/MedBayAssets.png" sourcerect="96,304,416,192" depth="0.75" premultiplyalpha="false" origin="0.5,0.5"/>
+        <InventoryIcon texture="%ModDir%/Images/MedBayAssets.png" sourcerect="96,304,416,192" origin="0.5,0.5"/>
+        <sprite texture="%ModDir%/Images/MedBayAssets.png" sourcerect="96,304,416,192" depth="0.75" premultiplyalpha="false" origin="0.5,0.5"/>
 
         <Holdable selectkey="Action" pickkey="Use" slots="RightHand+LeftHand" msg="ItemMsgDetach" PickingTime="5" aimpos="85,-10" handle1="0,0" attachable="true" aimable="true">
             <StatusEffect type="OnNotContained" target="NearbyCharacters" range="200" stackable="true">
@@ -36,7 +36,7 @@
         </Holdable>
 
         <LightComponent range="10.0" lightcolor="255,255,255,0" IsOn="true" castshadows="false" allowingameediting="false">
-            <sprite texture="Content/Map/Outposts/Art/MedBayAssets.png" depth="0.025" sourcerect="96,304,416,192" origin="0.5,0.5" alpha="1.0"/>
+            <sprite texture="%ModDir%/Images/MedBayAssets.png" depth="0.025" sourcerect="96,304,416,192" origin="0.5,0.5" alpha="1.0"/>
         </LightComponent>
 
         <Controller allowingameediting="false" UserPos="0,-300" direction="Right" hidehud="false" canbeselected="true">
@@ -53,6 +53,17 @@
                 <LuaHook name="surgerytable.forceon" />
             </StatusEffect>
             -->
+            <StatusEffect type="OnActive" target="Character">
+                <reduceaffliction identifier="nausea" strength="0.05"/>
+                <reduceaffliction identifier="opiatewithdrawal" strength="0.05"/>
+                <reduceaffliction identifier="opiateaddiction" strength="0.05"/>
+                <reduceaffliction identifier="chemwithdrawal" strength="0.05"/>
+                <reduceaffliction identifier="chemaddiction" strength="0.05"/>
+                <reduceaffliction identifier="alcoholwithdrawal" strength="0.05"/>
+                <reduceaffliction identifier="alcoholaddiction" strength="0.05"/>
+                <reduceaffliction identifier="drunk" strength="0.05"/>
+                <reduceaffliction identifier="concussion" strength="0.02"/>
+            </StatusEffect>
         </Controller>
 
         <!-- Controller output was made editable in v1.1.4.0, disallow it on surgery tables -->

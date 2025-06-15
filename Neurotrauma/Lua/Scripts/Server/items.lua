@@ -709,6 +709,7 @@ NT.ItemMethods.suture = function(item, usingCharacter, targetCharacter, limb)
 				limbtoitem[LimbType.LeftLeg] = "lleg"
 				limbtoitem[LimbType.RightArm] = "rarm"
 				limbtoitem[LimbType.LeftArm] = "larm"
+				limbtoitem[LimbType.Head] = "headsa"
 				if limbtoitem[limbtype] ~= nil then
 					HF.GiveItem(usingCharacter, limbtoitem[limbtype])
 					HF.GiveSurgerySkill(usingCharacter, 0.5)
@@ -2051,10 +2052,14 @@ NT.ItemMethods.autocpr = function(item, usingCharacter, targetCharacter, limb)
 			local lhand = HF.GetItemInLeftHand(usingCharacter)
 			local rhand = HF.GetItemInRightHand(usingCharacter)
 			if rhand ~= nil then
-				userInventory.TryPutItem(rhand, nil, { InvSlotType.Any })
+				if not userInventory.TryPutItem(rhand, nil, { InvSlotType.Any }) then
+					rhand.Drop(usingCharacter, true)
+				end
 			end
 			if lhand ~= nil then
-				userInventory.TryPutItem(lhand, nil, { InvSlotType.Any })
+				if not userInventory.TryPutItem(lhand, nil, { InvSlotType.Any }) then
+					lhand.Drop(usingCharacter, true)
+				end
 			end
 			userInventory.TryPutItem(targetItem, 5, true, true, usingCharacter, true, true)
 			if targetInventory.TryPutItem(item, 4, true, true, usingCharacter, true, true) then
@@ -2070,13 +2075,6 @@ NT.ItemMethods.gelipack = function(item, usingCharacter, targetCharacter, limb)
 	local limbtype = limb.type
 	local success = HF.BoolToNum(HF.GetSkillRequirementMet(usingCharacter, "medical", 40), 1)
 	HF.AddAfflictionLimb(targetCharacter, "iced", limbtype, 75 + success * 25, usingCharacter)
-
-	if success and limbtype == LimbType.Torso and HF.HasAffliction(targetCharacter, "internalbleeding", 1) then
-		local affAmount = HF.GetAfflictionStrengthLimb(targetCharacter, limbtype, "internalbleeding")
-		local healedamount = math.min(affAmount, 100)
-		HF.AddAfflictionLimb(targetCharacter, "internalbleeding", limbtype, -healedamount, usingCharacter)
-		HF.GiveSkillScaled(usingCharacter, "medical", healedamount * 1000)
-	end
 	HF.GiveItem(targetCharacter, "ntsfx_bandage")
 
 	item.Condition = item.Condition - 35

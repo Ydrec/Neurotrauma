@@ -54,9 +54,9 @@
             <Price storeidentifier="merchantmedical" sold="true" multiplier="0.9" minavailable="8"/>
         </Price>
 
-        <Fabricate suitablefabricators="fabricator" requiredtime="5">
+        <Fabricate suitablefabricators="fabricator" requiredtime="5" amount="4">
             <RequiredSkill identifier="medical" level="30"/>
-            <RequiredItem identifier="plastic" mincondition="0.25" usecondition="true"/>
+            <RequiredItem identifier="plastic" />
         </Fabricate>
 
         <Deconstruct/>
