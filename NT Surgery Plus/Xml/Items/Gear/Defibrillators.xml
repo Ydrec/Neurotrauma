@@ -3,17 +3,16 @@
   <Items>
     <Item name="" identifier="aed" category="Equipment" cargocontaineridentifier="mediccrate" Tags="smallitem,medical" description="" useinhealthinterface="True" scale="0.3">
       <PreferredContainer primary="medcab" />
-      <Fabricate suitablefabricators="fabricator" requiredtime="60" requiresrecipe="true">
-        <RequiredSkill identifier="electrical" level="80" />
-        <RequiredSkill identifier="medical" level="70" />
+      <Fabricate suitablefabricators="fabricator" requiredtime="40" requiresrecipe="true">
+        <RequiredSkill identifier="electrical" level="50" />
+        <RequiredSkill identifier="medical" level="40" />
         <RequiredItem identifier="plastic" />
         <RequiredItem identifier="fpgacircuit" />
-        <RequiredItem identifier="batterycell" />
-        <RequiredItem identifier="oxygeniteshard" />
+        <RequiredItem identifier="fulgurium" />
       </Fabricate>
-      <Deconstruct time="10">
+      <Deconstruct time="5">
         <Item identifier="plastic" />
-        <Item identifier="fpgacircuit" />
+        <Item identifier="copper" />
       </Deconstruct>
       <Price baseprice="400" soldbydefault="false" />
       <InventoryIcon texture="%ModDir:3190189044%/Images/InventoryItemIconAtlas.png" sourcerect="64,0,64,64" origin="0.5,0.5" />
