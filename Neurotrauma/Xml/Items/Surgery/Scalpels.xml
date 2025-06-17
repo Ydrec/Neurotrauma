@@ -32,7 +32,7 @@
             <RequiredSkill identifier="mechanical" level="20"/>
             <RequiredItem identifier="advscalpel"/>
             <RequiredItem identifier="traumashears"/>
-						<RequiredItem identifier="zinc"/>
+            <RequiredItem identifier="zinc"/>
         </Fabricate>
 
         <Deconstruct>
