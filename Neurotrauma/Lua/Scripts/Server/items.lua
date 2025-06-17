@@ -691,26 +691,7 @@ NT.ItemMethods.suture = function(item, usingCharacter, targetCharacter, limb)
 		-- terminating surgeries
 		-- amputations
 		if HF.HasAfflictionLimb(targetCharacter, "bonecut", limbtype, 1) then
-			local droplimb = not NT.LimbIsAmputated(targetCharacter, limbtype)
-				and not HF.HasAfflictionLimb(targetCharacter, "gangrene", limbtype, 15)
-			-- drop previously held item
-			local previtem = HF.GetHeadWear(targetCharacter)
-			if previtem ~= nil and limbtype == LimbType.Head then
-				previtem.Drop(character, true)
-			end
-			NT.SurgicallyAmputateLimb(targetCharacter, limbtype)
-			if droplimb then
-				local limbtoitem = {}
-				limbtoitem[LimbType.RightLeg] = "rleg"
-				limbtoitem[LimbType.LeftLeg] = "lleg"
-				limbtoitem[LimbType.RightArm] = "rarm"
-				limbtoitem[LimbType.LeftArm] = "larm"
-				limbtoitem[LimbType.Head] = "headsa"
-				if limbtoitem[limbtype] ~= nil then
-					HF.GiveItem(usingCharacter, limbtoitem[limbtype])
-					HF.GiveSurgerySkill(usingCharacter, 0.5)
-				end
-			end
+			NT.SurgicallyAmputateLimbAndGenerateItem(usingCharacter, targetCharacter, limbtype)
 		end
 
 		-- the other stuff
@@ -1867,14 +1848,12 @@ local function reattachLimb(item, user, target, limb, itemlimbtype)
 		return
 	end
 
-	if NT.LimbIsAmputated(target, limbtype) and HF.HasAfflictionLimb(target, "bonecut", limbtype, 99) then
+	if HF.HasAfflictionLimb(target, "bonecut", limbtype, 99) then
+		if not NT.LimbIsAmputated(target, limbtype) then
+			NT.SurgicallyAmputateLimbAndGenerateItem(user, target, limbtype)
+		end
 		HF.SetAfflictionLimb(target, "bonecut", limbtype, 0, user)
 		NT.SurgicallyAmputateLimb(target, limbtype, 0, 0)
-		if NTSP ~= nil and NTConfig.Get("NTSP_enableSurgerySkill", true) then
-			HF.GiveSkillScaled(usingCharacter, "surgery", 8000)
-		else
-			HF.GiveSkillScaled(usingCharacter, "medical", 4000)
-		end
 		HF.RemoveItem(item)
 	end
 end
