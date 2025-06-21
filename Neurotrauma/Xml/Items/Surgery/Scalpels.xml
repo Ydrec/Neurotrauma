@@ -30,16 +30,17 @@
         <Fabricate suitablefabricators="fabricator">
             <RequiredSkill identifier="medical" level="60"/>
             <RequiredSkill identifier="mechanical" level="20"/>
-            <RequiredItem identifier="advscalpel"/>
-            <RequiredItem identifier="traumashears"/>
-            <RequiredItem identifier="zinc"/>
+            <RequiredItem identifier="steel"/>
+            <RequiredItem identifier="fpgacircuit"/>
+            <RequiredItem identifier="plastic"/>
+            <RequiredItem identifier="zinc" amount="2"/>
         </Fabricate>
 
         <Deconstruct>
             <Item identifier="steel"/>
         </Deconstruct>
 
-        <Price baseprice="100" soldbydefault="true">
+        <Price baseprice="210" soldbydefault="true">
             <Price storeidentifier="merchantmedical" sold="true" multiplier="0.9" minavailable="2"/>
         </Price>
 
