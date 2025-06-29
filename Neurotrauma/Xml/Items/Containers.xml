@@ -78,7 +78,7 @@
         <aitarget sightrange="1000" soundrange="1000" fadeouttime="2" />
     </Item>
    
-    <Item name="" identifier="medtoolbox" category="Equipment" tags="smallitem,mobilecontainer,tool,toolbox" cargocontaineridentifier="" showcontentsintooltip="true" Scale="0.5" fireproof="true" impactsoundtag="impact_metal_heavy" RequireAimToUse="True" description="">
+    <Item name="" identifier="medtoolbox" category="Equipment" tags="mediumitem,mobilecontainer,tool,toolbox" cargocontaineridentifier="" showcontentsintooltip="true" Scale="0.5" fireproof="true" impactsoundtag="impact_metal_heavy" RequireAimToUse="True" description="">
         <PreferredContainer primary="medcab" minamount="2" maxamount="2"/>
         <PreferredContainer secondary="wreckstoragecab" spawnprobability="0.05"/>
         <PreferredContainer secondary="locker"/>
