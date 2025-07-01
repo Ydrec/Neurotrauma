@@ -196,9 +196,9 @@
     </Item>
 
     <Item name="" identifier="headsa" description="" category="Medical" scale="0.4" useinhealthinterface="True" impactsoundtag="impact_soft" cargocontaineridentifier="organcrate" impacttolerance="5.5" Tags="smallitem,organ,petfood1,petfood2,petfood3,monsterfood">
-        <InventoryIcon texture="%ModDir%/Images/limbs.png" sourcerect="224,52,61,68" origin="0.5,0.5"/>
-        <Sprite texture="%ModDir%/Images/limbs.png" sourcerect="224,52,61,68" depth="0.6" origin="0.5,0.5"/>
-        <Body width="61" height="68" density="20"/>
+        <InventoryIcon texture="%ModDir%/Images/limbs.png" sourcerect="195,18,58,66" origin="0.5,0.5"/>
+        <Sprite texture="%ModDir%/Images/limbs.png" sourcerect="195,18,58,66" depth="0.6" origin="0.5,0.5"/>
+        <Body width="58" height="66" density="20"/>
 
         <Deconstruct time="10">
             <Item identifier="calcium" amount="1" />

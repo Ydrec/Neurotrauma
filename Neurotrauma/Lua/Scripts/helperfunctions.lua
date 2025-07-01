@@ -49,6 +49,7 @@ function NT.SurgicallyAmputateLimbAndGenerateItem(usingCharacter, targetCharacte
 		limbtoitem[LimbType.LeftLeg] = "lleg"
 		limbtoitem[LimbType.RightArm] = "rarm"
 		limbtoitem[LimbType.LeftArm] = "larm"
+		limbtoitem[LimbType.Head] = "headsa"
 		if limbtoitem[limbtype] ~= nil then
 			HF.GiveItem(usingCharacter, limbtoitem[limbtype])
 			HF.GiveSurgerySkill(usingCharacter, 0.5)
