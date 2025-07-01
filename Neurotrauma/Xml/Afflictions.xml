@@ -3883,9 +3883,7 @@ thats what the vomiting symptom is for -->
       </StatusEffect>
     </Effect>
 
-    <Effect minstrength="80" maxstrength="100" strengthchange="-0.05"
-      minvitalitydecrease="0"
-      maxvitalitydecrease="20">
+    <Effect minstrength="80" maxstrength="100" strengthchange="-0.05">
       <StatusEffect target="Character" multiplyafflictionsbymaxvitality="true">
         <conditional ishuman="true"/>
         <Affliction identifier="alcoholwithdrawal" strength="0.5"/>
