@@ -2451,7 +2451,7 @@
         <Affliction identifier="tll_amputation" amount="9999"/>
         <Affliction identifier="ll_fracture" amount="99999"/>
         <Affliction identifier="ll_arterialcut" amount="99999"/>
-        <SpawnItem identifier="lleg" impulse="11"/>
+        <SpawnItem identifier="lleg" impulse="11" aimspread="180"/>
       </StatusEffect>
   	</Effect>
  
@@ -2471,7 +2471,7 @@
         <Affliction identifier="trl_amputation" amount="9999"/>
         <Affliction identifier="rl_fracture" amount="99999"/>
         <Affliction identifier="rl_arterialcut" amount="99999"/>
-        <SpawnItem identifier="rleg" impulse="11"/>
+        <SpawnItem identifier="rleg" impulse="11" aimspread="180"/>
       </StatusEffect>
   	</Effect>
  
@@ -2491,7 +2491,7 @@
         <Affliction identifier="tla_amputation" amount="99999"/>
         <Affliction identifier="la_fracture" amount="99999"/>
         <Affliction identifier="la_arterialcut" amount="99999"/>
-        <SpawnItem identifier="larm" impulse="10"/>
+        <SpawnItem identifier="larm" impulse="10" aimspread="180"/>
       </StatusEffect>
   	</Effect>
  
@@ -2511,7 +2511,7 @@
         <Affliction identifier="tra_amputation" amount="99999"/>
         <Affliction identifier="ra_fracture" amount="99999"/>
         <Affliction identifier="ra_arterialcut" amount="99999"/>
-        <SpawnItem identifier="rarm" impulse="10"/>
+        <SpawnItem identifier="rarm" impulse="10" aimspread="180"/>
       </StatusEffect>
   	</Effect>
  
@@ -2528,7 +2528,7 @@
 	  <Effect minstrength="0" maxstrength="1" strengthchange="-1000">
       <StatusEffect  target="Character" multiplyafflictionsbymaxvitality="true" targetlimb="Head" disabledeltatime="True" stackable="false" delay="0.2">
         <Affliction identifier="th_amputation" amount="99999"/>
-        <SpawnItem identifier="headta" impulse="10"/>
+        <SpawnItem identifier="headta" impulse="10" aimspread="180"/>
       </StatusEffect>
   	</Effect>
  
