@@ -18,6 +18,17 @@ Hook.Add("think", "NT.update", function()
 
 	NT.TickUpdate()
 end)
+Hook.Add("roundStart", "NT.RoundStart.fetchCharacters", function()
+	-- Apply 5 minute traumatic shock immunity to those who happen to be in surgery
+	for key, character in pairs(Character.CharacterList) do
+		if not character.IsDead then
+			if character.IsHuman and HF.HasAffliction(character, "retractedskin") then
+				HF.SetAfflictionLimb(character, "tshocktimeout", LimbType.Torso, 15)
+			end
+		end
+	end
+	NT.FetchWorldCharacters()
+end)
 
 -- gets run once every two seconds
 function NT.Update()

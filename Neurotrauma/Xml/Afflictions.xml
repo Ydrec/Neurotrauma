@@ -41,6 +41,29 @@
     <icon texture="%ModDir%/Images/AfflictionIcons2.png" sheetindex="7,0" sheetelementsize="128,128" origin="0,0"/>
   </Affliction>
 
+  <Affliction
+    name=""
+    identifier="tshocktimeout"
+    description=""
+    limbspecific="false"
+    indicatorlimb="Head"
+    showiconthreshold="100"
+    showinhealthscannerthreshold="100"
+    maxstrength="15"
+    targets="human"
+    type="gaze"
+    isbuff="false"
+    healableinmedicalclinic="false"
+    iconcolors="255,255,255,255;255,255,255,255">
+    <Effect minstrength="0" maxstrength="15" 
+      resistancefor="traumaticshock"
+      minresistance="1"
+      maxresistance="1" 
+      strengthchange="-0.05"/>
+
+    <icon texture="%ModDir%/Images/AfflictionIcons2.png" sheetindex="5,0" sheetelementsize="128,128" origin="0,0"/>
+  </Affliction>
+
   <!-- /// Heart Stuff /// -->
   
   <!-- Ventricular Tachycardia / Rapid Heartbeat
