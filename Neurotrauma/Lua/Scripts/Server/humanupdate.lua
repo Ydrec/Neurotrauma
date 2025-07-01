@@ -27,7 +27,6 @@ Hook.Add("roundStart", "NT.RoundStart.fetchCharacters", function()
 			end
 		end
 	end
-	NT.FetchWorldCharacters()
 end)
 
 -- gets run once every two seconds
