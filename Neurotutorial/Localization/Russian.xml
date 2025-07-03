@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<infotexts language="English" nowhitespace="false" translatedname="English">
+  <!-- ITEMS -->
+  <!-- signal components -->
+  <entityname.nttut_subjectcomponent>Компонент для сценария</entityname.nttut_subjectcomponent>
+  <entitydescription.nttut_subjectcomponent>Требует Луа. Управляет сценариями.</entitydescription.nttut_subjectcomponent>
+  <!-- connections -->
+  <connection.subject_scenario_in>назначить_сценарий</connection.subject_scenario_in>
+  <connection.subject_scenario_out>сценарий_из</connection.subject_scenario_out>
+  <connection.subject_state_out>состояние_из</connection.subject_state_out>
+  <connection.subject_special_out>специальное_из</connection.subject_special_out>
+  <roomname.simulacrum>Симулякрум</roomname.simulacrum>
+  <roomname.garden>Сад</roomname.garden>
+</infotexts>
