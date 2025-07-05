@@ -3722,7 +3722,7 @@ thats what the vomiting symptom is for -->
     type="resistance"
     isbuff="true"
     limbspecific="false"
-    showiconthreshold="10"
+    showiconthreshold="0"
     maxstrength="200">
     <Effect minstrength="0" maxstrength="5"
       resistancefor="damage"
