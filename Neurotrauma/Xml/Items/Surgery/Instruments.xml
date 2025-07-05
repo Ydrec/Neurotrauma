@@ -13,7 +13,9 @@
         <InventoryIcon texture="%ModDir%/Images/InventoryItemIconAtlas.png" sourcerect="192,0,64,64" origin="0.5,0.5"/>
         <Sprite texture="%ModDir%/Images/InGameItemIconAtlas.png" sourcerect="384,0,128,128" depth="0.55" origin="0.5,0.5"/>
         <Body width="120" height="110" density="50"/>
-        <MeleeWeapon slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="0,-5" holdangle="-90" reload="1.0"/>
+        <SuitableTreatment identifier="analgesia" suitability="100"/>
+        <SuitableTreatment identifier="sym_unconsciousness" suitability="100"/>
+        <MeleeWeapon slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="0,-13" holdangle="-90" reload="1.0"/>
     </Item>
 
     <Item name="" identifier="advretractors" category="Equipment" cargocontaineridentifier="mediccrate" Tags="smallitem,medical,surgery,surgerytool" description="" useinhealthinterface="True" scale="0.2">
@@ -28,7 +30,9 @@
         <InventoryIcon texture="%ModDir%/Images/InventoryItemIconAtlas.png" sourcerect="256,0,64,64" origin="0.5,0.5"/>
         <Sprite texture="%ModDir%/Images/InGameItemIconAtlas.png" sourcerect="0,128,128,128" depth="0.55" origin="0.5,0.5"/>
         <Body width="120" height="110" density="50"/>
-        <MeleeWeapon slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="0,-5" holdangle="-90" reload="1.0"/>
+        <SuitableTreatment identifier="analgesia" suitability="100"/>
+        <SuitableTreatment identifier="sym_unconsciousness" suitability="100"/>
+        <MeleeWeapon slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="0,-13" holdangle="-90" reload="1.0"/>
         <SkillRequirementHint identifier="medical" level="30"/>
     </Item>
 
@@ -97,6 +101,8 @@
         <InventoryIcon texture="%ModDir%/Images/InventoryItemIconAtlas.png" sourcerect="448,0,64,64" origin="0.5,0.5"/>
         <Sprite texture="%ModDir%/Images/InGameItemIconAtlas.png" sourcerect="0,256,128,128" depth="0.55" origin="0.5,0.5"/>
         <Body width="65" height="65" density="50"/>
+        <SuitableTreatment identifier="analgesia" suitability="100"/>
+        <SuitableTreatment identifier="sym_unconsciousness" suitability="100"/>
 
         <MeleeWeapon slots="Any,RightHand,LeftHand" aimpos="5,0" handle1="-5,-5" holdangle="10" reload="1.0">
             <StatusEffect type="OnUse" target="Limb" comparison="And" disabledeltatime="True">
@@ -127,7 +133,7 @@
         <SuitableTreatment identifier="triagetag_red" suitability="100"/>
         <SuitableTreatment identifier="triagetag_black" suitability="100"/>
 
-        <MeleeWeapon slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="10,-10" holdangle="210" reload="1.0">
+        <MeleeWeapon slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="12,-2" holdangle="210" reload="1.0">
             <StatusEffect type="OnUse" target="Limb" comparison="and"/>
         </MeleeWeapon>
 
