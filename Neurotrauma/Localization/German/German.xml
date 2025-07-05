@@ -240,8 +240,9 @@ Kann spenden an: AB+</entitydescription.abpluscard>
 <entityname.surgerytoolbox>Chirurgische Werkzeugkiste</entityname.surgerytoolbox>
 <entitydescription.surgerytoolbox>Kann viele kleine Gegenstände aufbewahren, die während einer Operation verwendet werden.</entitydescription.surgerytoolbox>
 
-<entityname.surgerytoolboxset>Chirurgische Werkzeugkiste (der sachgesamtheit)</entityname.surgerytoolboxset>
+<entityname.surgerytoolboxset>Chirurgische Werkzeugkiste</entityname.surgerytoolboxset>
 <entitydescription.surgerytoolboxset>Kann viele kleine Gegenstände aufbewahren, die während einer Operation verwendet werden.</entitydescription.surgerytoolboxset>
+<displayname.surgeryset>[itemname] (der sachgesamtheit)</displayname.surgeryset>
 
 <entityname.organcrate>Tiefkühlkoffer</entityname.organcrate> 
 <entitydescription.organcrate>Wird genutzt um Organe zu lagern und am Leben zu halten.</entitydescription.organcrate>

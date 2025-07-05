@@ -235,8 +235,9 @@ Can give blood to: AB+</entitydescription.abpluscard>
 <entityname.surgerytoolbox>Surgery toolbox</entityname.surgerytoolbox>
 <entitydescription.surgerytoolbox>Can store many small items that are used during surgery</entitydescription.surgerytoolbox>
 
-<entityname.surgerytoolboxset>Surgery toolbox (kit) </entityname.surgerytoolboxset>
+<entityname.surgerytoolboxset>Surgery toolbox</entityname.surgerytoolboxset>
 <entitydescription.surgerytoolboxset>Can store many small items that are used during surgery</entitydescription.surgerytoolboxset>
+<displayname.surgeryset>[itemname] (kit)</displayname.surgeryset>
 
 <entityname.organcrate>Refrigerated crate</entityname.organcrate> 
 <entitydescription.organcrate>A place to store your precious transplant-ready organs</entitydescription.organcrate>

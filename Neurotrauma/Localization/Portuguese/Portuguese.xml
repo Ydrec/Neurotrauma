@@ -162,8 +162,9 @@ Pode dar sangue para: AB+</entitydescription.abpluscard>
 <entitydescription.medtoolbox>Pode armazenar medicamentos e instrumentos médicos.</entitydescription.medtoolbox>
 <entityname.surgerytoolbox>Caixa de Equipamento Cirúrgico</entityname.surgerytoolbox> 
 <entitydescription.surgerytoolbox>Pode armazenar muitos itens pequenos que são usados ​​durante uma cirurgia.</entitydescription.surgerytoolbox>
-<entityname.surgerytoolboxset>Caixa de Equipamento Cirúrgico (kit)</entityname.surgerytoolboxset> 
+<entityname.surgerytoolboxset>Caixa de Equipamento Cirúrgico</entityname.surgerytoolboxset> 
 <entitydescription.surgerytoolboxset>Pode armazenar muitos itens pequenos que são usados ​​durante uma cirurgia.</entitydescription.surgerytoolboxset>
+<displayname.surgeryset>[itemname] (kit)</displayname.surgeryset>
 <entityname.organcrate>Caixa Refrigerada</entityname.organcrate> 
 <entitydescription.organcrate>Um lugar para armazenar seus preciosos órgãos, prontos para transplante... né?</entitydescription.organcrate>
 <entityname.organtoolbox>Contêiner Refrigerado</entityname.organtoolbox> 

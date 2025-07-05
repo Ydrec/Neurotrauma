@@ -223,8 +223,9 @@
 <entityname.surgerytoolbox>Ящик для хирургических инструментов</entityname.surgerytoolbox>
 <entitydescription.surgerytoolbox>Может вмещать в себя маленькие предметы для хирургии</entitydescription.surgerytoolbox> 
 
-<entityname.surgerytoolboxset>Ящик для хирургических инструментов (набор)</entityname.surgerytoolboxset>
+<entityname.surgerytoolboxset>Ящик для хирургических инструментов</entityname.surgerytoolboxset>
 <entitydescription.surgerytoolboxset>Может вмещать в себя маленькие предметы для хирургии</entitydescription.surgerytoolboxset> 
+<displayname.surgeryset>[itemname] (набор)</displayname.surgeryset>
 
 <entityname.organcrate>Холодильный ящик</entityname.organcrate>
 <entitydescription.organcrate>Место для хранения ваших драгоценных готовых к трансплантации органов</entitydescription.organcrate>

@@ -231,8 +231,9 @@ Biorcy: AB+</entitydescription.abpluscard>
 <entityname.surgerytoolbox>Przybornik chirurgiczny</entityname.surgerytoolbox> 
 <entitydescription.surgerytoolbox>Pomieści wiele małych narzędzi chirurgicznych.</entitydescription.surgerytoolbox>
 
-<entityname.surgerytoolboxset>Przybornik chirurgiczny (zestaw)</entityname.surgerytoolboxset> 
+<entityname.surgerytoolboxset>Przybornik chirurgiczny</entityname.surgerytoolboxset> 
 <entitydescription.surgerytoolboxset>Pomieści wiele małych narzędzi chirurgicznych.</entitydescription.surgerytoolboxset>
+<displayname.surgeryset>[itemname] (zestaw)</displayname.surgeryset>
 
 <entityname.organcrate>Skrzynia chłodnicza</entityname.organcrate> 
 <entitydescription.organcrate>Miejsce do przechowywania cennych narządów gotowych do przeszczepu.</entitydescription.organcrate>

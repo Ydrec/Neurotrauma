@@ -164,7 +164,7 @@
             <Item identifier="steel" />
         </Deconstruct>
        
-        <Fabricate suitablefabricators="fabricator" requiredtime="20">
+        <Fabricate suitablefabricators="fabricator" displayname="surgeryset" requiredtime="20">
             <RequiredSkill identifier="mechanical" level="20" />
             <Item identifier="steel" amount="3"/>
             <Item identifier="zinc" amount="2"/>

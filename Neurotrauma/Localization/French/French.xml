@@ -229,8 +229,9 @@ Peut donner du sang à: AB+</entitydescription.abpluscard>
 <entityname.surgerytoolbox>Boîte à outils chirurgicaux</entityname.surgerytoolbox> 
 <entitydescription.surgerytoolbox>Peut stocker de nombreux petits objets utilisés lors d'une chirurgie.</entitydescription.surgerytoolbox>
 
-<entityname.surgerytoolboxset>Boîte à outils chirurgicaux (l'ensemble)</entityname.surgerytoolboxset> 
+<entityname.surgerytoolboxset>Boîte à outils chirurgicaux</entityname.surgerytoolboxset> 
 <entitydescription.surgerytoolboxset>Peut stocker de nombreux petits objets utilisés lors d'une chirurgie.</entitydescription.surgerytoolboxset>
+<displayname.surgeryset>[itemname] (l'ensemble)</displayname.surgeryset>
 
 <entityname.organcrate>Caisse réfrigérée</entityname.organcrate> 
 <entitydescription.organcrate>Une caisse pour entreposer vos précieux organes prêts à être greffés.</entitydescription.organcrate>

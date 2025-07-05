@@ -228,8 +228,9 @@ Puede dar sangre a: AB+</entitydescription.abpluscard>
 <entityname.surgerytoolbox>Caja de herramientas de cirugía</entityname.surgerytoolbox> 
 <entitydescription.surgerytoolbox>Puede almacenar muchos artículos pequeños que se usan durante la cirugía.</entitydescription.surgerytoolbox>
 
-<entityname.surgerytoolboxset>Caja de herramientas de cirugía (equipo)</entityname.surgerytoolboxset> 
+<entityname.surgerytoolboxset>Caja de herramientas de cirugía</entityname.surgerytoolboxset> 
 <entitydescription.surgerytoolboxset>Puede almacenar muchos artículos pequeños que se usan durante la cirugía.</entitydescription.surgerytoolboxset>
+<displayname.surgeryset>[itemname] (equipo)</displayname.surgeryset>
 
 <entityname.organcrate>Caja refrigerada</entityname.organcrate> 
 <entitydescription.organcrate>Un lugar para almacenar sus preciados órganos listos para trasplante.</entitydescription.organcrate>

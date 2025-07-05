@@ -178,8 +178,9 @@
 <entitydescription.medtoolbox>약 및 의료기구를 보관할 수 있습니다.</entitydescription.medtoolbox>
 <entityname.surgerytoolbox>수술도구 보관함</entityname.surgerytoolbox>
 <entitydescription.surgerytoolbox>수술 중 사용하는 많은 작은 물건을 보관할 수 있습니다.</entitydescription.surgerytoolbox>
-<entityname.surgerytoolboxset>수술도구 보관함 (전부)</entityname.surgerytoolboxset>
+<entityname.surgerytoolboxset>수술도구 보관함</entityname.surgerytoolboxset>
 <entitydescription.surgerytoolboxset>수술 중 사용하는 많은 작은 물건을 보관할 수 있습니다.</entitydescription.surgerytoolboxset>
+<displayname.surgeryset>[itemname] (전부)</displayname.surgeryset>
 
 <entityname.organcrate>저온 상자</entityname.organcrate>
 <entitydescription.organcrate>소중한 이식용 장기를 보관하는 곳</entitydescription.organcrate>
