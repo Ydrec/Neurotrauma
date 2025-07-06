@@ -652,6 +652,7 @@ NT.SutureAfflictions = {
 	h_arterialcut = { xpgain = 3, case = "retractedskin" },
 	t_arterialcut = { xpgain = 6, case = "retractedskin" },
 	arteriesclamp = { xpgain = 0, case = "retractedskin" },
+	tshocktimeout = { xpgain = 0, case = "retractedskin" },
 	tamponade = { xpgain = 3, case = "retractedskin" },
 	internalbleeding = { xpgain = 3, case = "retractedskin" },
 	stroke = { xpgain = 6, case = "retractedskin" },
