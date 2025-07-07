@@ -976,6 +976,7 @@
     type="resistance"
     showiconthreshold="0.1"
     showinhealthscannerthreshold="200"
+    treatmentthreshold="0.1"
     isbuff="true"> 
     <Effect minstrength="0" maxstrength="100"/>
 		<icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="0,4" sheetelementsize="128,128" origin="0,0"/>
@@ -1010,6 +1011,7 @@
     maxstrength="100"
     showiconthreshold="0.1"
     showinhealthscannerthreshold="200"
+    treatmentthreshold="0.1"
     isbuff="false">
 		<icon texture="%ModDir%/Images/AfflictionIcons2.png" sheetindex="3,0" sheetelementsize="128,128" origin="0,0"/>
   </Affliction>
@@ -3719,6 +3721,7 @@ thats what the vomiting symptom is for -->
     isbuff="true"
     limbspecific="false"
     showiconthreshold="0"
+    treatmentthreshold="0.1"
     maxstrength="200">
     <Effect minstrength="0" maxstrength="5"
       resistancefor="damage"
