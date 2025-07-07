@@ -638,6 +638,7 @@ NT.Afflictions = {
 		end,
 	},
 	hemotransfusionshock = {},
+	tshocktimeout = {},
 	-- Other
 	oxygenlow = {
 		max = 200,
