@@ -2382,12 +2382,14 @@ NT.ItemStartsWithMethods.kidneytransplant = function(item, usingCharacter, targe
 			HF.RemoveItem(item)
 			return
 		end
-		if damage == 100 or damage == 50 then
-			HF.SetAffliction(targetCharacter, "kidneyremoved", 0, usingCharacter)
+		if damage > 50 then
+			Timer.Wait(function()
+				HF.SetAffliction(targetCharacter, "kidneyremoved", 0, usingCharacter)
+			end, 4000)
 			HF.AddAffliction(targetCharacter, "kidneydamage", -workcondition / 2, usingCharacter)
 			HF.AddAffliction(targetCharacter, "organdamage", -workcondition / 5, usingCharacter)
 			HF.RemoveItem(item)
-		elseif damage < 51 then -- swap the organs and its generic and specific organ damage, to avoid unintentionally reducing the patients health
+		else
 			local newdamage = HF.Clamp(((100 - damage) - workcondition) / 2, -100, 100)
 			HF.SetAffliction(targetCharacter, "kidneyremoved", 0, usingCharacter)
 			HF.SetAffliction(targetCharacter, "kidneydamage", 50 - workcondition / 2, usingCharacter)
@@ -2397,7 +2399,7 @@ NT.ItemStartsWithMethods.kidneytransplant = function(item, usingCharacter, targe
 				transplantidentifier = "kidneytransplant"
 			end
 			HF.RemoveItem(item)
-			if damage < 45 then
+			if damage < 45 then -- swap the organs and its generic and specific organ damage, to avoid unintentionally reducing the patients health
 				-- add acidosis, alkalosis and sepsis to the bloodpack if the donor has them
 				local function postSpawnFunc(args)
 					local tags = {}
@@ -2436,56 +2438,57 @@ NT.ItemStartsWithMethods.kidneytransplant = function(item, usingCharacter, targe
 
 				HF.SpawnItemPlusFunction(transplantidentifier, postSpawnFunc, params, parentInventory, inventorySpot)
 			end
-		elseif damage < 100 then -- same as above with slight damage adjustments
-			local newdamage = HF.Clamp(((100 - damage) - workcondition) / 2, -100, 100)
-			HF.SetAffliction(targetCharacter, "kidneyremoved", 0, usingCharacter)
-			HF.SetAffliction(targetCharacter, "kidneydamage", 100 - workcondition / 2, usingCharacter)
-			HF.AddAffliction(targetCharacter, "organdamage", newdamage / 10, usingCharacter) -- (100 - damage) / 5
-			local transplantidentifier = "kidneytransplant_q1"
-			if NTC.HasTag(usingCharacter, "organssellforfull") then
-				transplantidentifier = "kidneytransplant"
-			end
-			HF.RemoveItem(item)
-			if damage < 95 then
-				-- add acidosis, alkalosis and sepsis to the bloodpack if the donor has them
-				local function postSpawnFunc(args)
-					local tags = {}
-
-					if args.acidosis > 0 then
-						table.insert(tags, "acid:" .. tostring(HF.Round(args.acidosis)))
-					elseif args.alkalosis > 0 then
-						table.insert(tags, "alkal:" .. tostring(HF.Round(args.alkalosis)))
-					end
-					if args.sepsis > 10 then
-						table.insert(tags, "sepsis")
-					end
-
-					local tagstring = ""
-					for index, value in ipairs(tags) do
-						tagstring = tagstring .. value
-						if index < #tags then
-							tagstring = tagstring .. ","
-						end
-					end
-
-					args.item.Tags = tagstring
-					args.item.Condition = args.condition
-				end
-				local params = {
-					acidosis = HF.GetAfflictionStrength(targetCharacter, "acidosis"),
-					alkalosis = HF.GetAfflictionStrength(targetCharacter, "alkalosis"),
-					sepsis = HF.GetAfflictionStrength(targetCharacter, "sepsis"),
-					condition = 100 - (damage - 50) * 2,
-				}
-				local inventorySpot = nil
-				local parentInventory = item.ParentInventory
-				if parentInventory then
-					inventorySpot = parentInventory.FindIndex(item)
-				end
-
-				HF.SpawnItemPlusFunction(transplantidentifier, postSpawnFunc, params, parentInventory, inventorySpot)
-			end
 		end
+		--elseif damage < 100 then -- same as above with slight damage adjustments
+		--	local newdamage = HF.Clamp(((100 - damage) - workcondition) / 2, -100, 100)
+		--	HF.SetAffliction(targetCharacter, "kidneyremoved", 0, usingCharacter)
+		--	HF.SetAffliction(targetCharacter, "kidneydamage", 100 - workcondition / 2, usingCharacter)
+		--	HF.AddAffliction(targetCharacter, "organdamage", newdamage / 10, usingCharacter) -- (100 - damage) / 5
+		--	local transplantidentifier = "kidneytransplant_q1"
+		--	if NTC.HasTag(usingCharacter, "organssellforfull") then
+		--		transplantidentifier = "kidneytransplant"
+		--	end
+		--	HF.RemoveItem(item)
+		--	if damage < 95 then
+		--		-- add acidosis, alkalosis and sepsis to the bloodpack if the donor has them
+		--		local function postSpawnFunc(args)
+		--			local tags = {}
+		--
+		--			if args.acidosis > 0 then
+		--				table.insert(tags, "acid:" .. tostring(HF.Round(args.acidosis)))
+		--			elseif args.alkalosis > 0 then
+		--				table.insert(tags, "alkal:" .. tostring(HF.Round(args.alkalosis)))
+		--			end
+		--			if args.sepsis > 10 then
+		--				table.insert(tags, "sepsis")
+		--			end
+		--
+		--			local tagstring = ""
+		--			for index, value in ipairs(tags) do
+		--				tagstring = tagstring .. value
+		--				if index < #tags then
+		--					tagstring = tagstring .. ","
+		--				end
+		--			end
+		--
+		--			args.item.Tags = tagstring
+		--			args.item.Condition = args.condition
+		--		end
+		--		local params = {
+		--			acidosis = HF.GetAfflictionStrength(targetCharacter, "acidosis"),
+		--			alkalosis = HF.GetAfflictionStrength(targetCharacter, "alkalosis"),
+		--			sepsis = HF.GetAfflictionStrength(targetCharacter, "sepsis"),
+		--			condition = 100 - (damage - 50) * 2,
+		--		}
+		--		local inventorySpot = nil
+		--		local parentInventory = item.ParentInventory
+		--		if parentInventory then
+		--			inventorySpot = parentInventory.FindIndex(item)
+		--		end
+		--
+		--		HF.SpawnItemPlusFunction(transplantidentifier, postSpawnFunc, params, parentInventory, inventorySpot)
+		--	end
+		--end
 	end
 end
 
