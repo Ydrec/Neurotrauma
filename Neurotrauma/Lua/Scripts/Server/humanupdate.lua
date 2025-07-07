@@ -1610,7 +1610,7 @@ NT.LimbAfflictions = {
 			end
 
 			if infectindex > 0 then
-				infectindex = infectindex * NTConfig.Get("NT_infectionRate", 1)
+				infectindex = infectindex * NTConfig.Get("NT_infectionRate", 1) * HF.Clamp(limbaff.iced.strength, 1, 10)
 			end
 
 			limbaff[i].strength = limbaff[i].strength + infectindex / 5
