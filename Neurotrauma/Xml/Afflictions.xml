@@ -44,24 +44,20 @@
   <Affliction
     name=""
     identifier="tshocktimeout"
-    description=""
-    limbspecific="false"
-    indicatorlimb="Head"
-    showiconthreshold="100"
-    showinhealthscannerthreshold="100"
-    maxstrength="15"
-    targets="human"
-    type="gaze"
-    isbuff="false"
     healableinmedicalclinic="false"
-    iconcolors="255,255,255,255;255,255,255,255">
-    <Effect minstrength="0" maxstrength="15" 
-      resistancefor="traumaticshock"
-      minresistance="1"
-      maxresistance="1" 
+    targets="human"
+    description=""
+    causeofdeathdescription=""
+    selfcauseofdeathdescription=""
+    limbspecific="False"
+    indicatorlimb="Head"
+    showinhealthscannerthreshold="100"
+    showiconthreshold="0"
+    maxstrength="15">
+    <Effect minstrength="0" maxstrength="15"
       strengthchange="-0.05"/>
 
-    <icon texture="%ModDir%/Images/AfflictionIcons2.png" sheetindex="5,0" sheetelementsize="128,128" origin="0,0"/>
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="2,1" sheetelementsize="128,128" origin="0,0"/>
   </Affliction>
 
   <!-- /// Heart Stuff /// -->

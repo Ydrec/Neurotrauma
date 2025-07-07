@@ -674,6 +674,9 @@
 <afflictionname.luabotomy>Без Lua</afflictionname.luabotomy>
 <afflictiondescription.luabotomy>Lua не работает. Это значит, что Нейротравма и прочие модификации, использующие Lua не будут функционировать. Для инструкции по установке прочитайте страницу в Мастерской для Lua for Barotrauma.</afflictiondescription.luabotomy>
 
+<afflictionname.tshocktimeout>Иммунитет к травматическому шоку</afflictionname.tshocktimeout>
+<afflictiondescription.tshocktimeout>Пациента оставили без присмотра, на некоторое время он не будет осознавать о том, что он вскрыт.</afflictiondescription.tshocktimeout>
+
 <afflictionname.analgesia>Анальгезия</afflictionname.analgesia>
 <afflictiondescription.analgesia>Нечувствительность к боли</afflictiondescription.analgesia>
 

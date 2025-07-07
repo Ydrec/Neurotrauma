@@ -652,11 +652,9 @@ NT.SutureAfflictions = {
 	h_arterialcut = { xpgain = 3, case = "retractedskin" },
 	t_arterialcut = { xpgain = 6, case = "retractedskin" },
 	arteriesclamp = { xpgain = 0, case = "retractedskin" },
-	tshocktimeout = { xpgain = 0, case = "retractedskin" },
 	tamponade = { xpgain = 3, case = "retractedskin" },
 	internalbleeding = { xpgain = 3, case = "retractedskin" },
 	stroke = { xpgain = 6, case = "retractedskin" },
-
 	heartremoved = {
 		xpgain = 0,
 		case = "retractedskin",
@@ -997,6 +995,7 @@ NT.ItemMethods.suture = function(item, usingCharacter, targetCharacter, limb)
 		if HF.HasAfflictionLimb(targetCharacter, "bonecut", limbtype, 1) then
 			NT.SurgicallyAmputateLimbAndGenerateItem(usingCharacter, targetCharacter, limbtype)
 		end
+		HF.AddAffliction(targetCharacter, "tshocktimeout", -100)
 
 		-- the other stuff
 		local function removeAfflictionPlusGainSkill(affidentifier, skillgain)
