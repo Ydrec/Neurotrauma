@@ -172,7 +172,7 @@
             <Item identifier="titaniumaluminiumalloy" amount="1"/>
         </Fabricate>
        
-        <Price baseprice="25">
+        <Price baseprice="200">
             <Price storeidentifier="merchantmedical" sold="true" multiplier="0.9" minavailable="2"/>
         </Price>
         
