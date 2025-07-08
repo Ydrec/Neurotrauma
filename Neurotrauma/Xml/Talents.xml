@@ -7,7 +7,6 @@
             <Icon texture="Content/UI/TalentsIcons3.png" sheetindex="1,4" sheetelementsize="128,128"/>
             <Description tag="talentdescription.itemgiveslessaffliction" >
                 <Replace tag="[amount]" value="50" color="gui.green"/>
-                <Replace tag="[amount2]" value="95" color="gui.green"/>
             </Description>
             <Description tag="talentdescription.bloodybusiness">
                 <Replace tag="[item]" value="entityname.alienblood" color="gui.orange"/>
@@ -22,9 +21,9 @@
                             <!-- counter half of the psychosis applied by alien blood -->
                             <!-- also counter most of the hemo shock -->
                             <!-- this still causes approximately 5% bloodloss and 2.5% organ damage -->
-                            <StatusEffect tags="medical" type="OnAbility" target="UseTarget" duration="1.0">
-                                <ReduceAffliction identifier="psychosis" amount="30" />
-                                <ReduceAffliction identifier="hemotransfusionshock" amount="95" />
+                            <StatusEffect tags="medical" type="OnAbility" target="UseTarget" multiplyafflictionsbymaxvitality="true" disabledeltatime="true">
+                                <ReduceAffliction identifier="psychosis" amount="15" />
+                                <ReduceAffliction identifier="hemotransfusionshock" amount="90" />
                             </StatusEffect>
                         </StatusEffects>
                     </CharacterAbilityApplyStatusEffects>
