@@ -40,16 +40,6 @@ Hook.Add("character.applyDamage", "NT.ondamaged", function(characterHealth, atta
 		return
 	end
 
-	local ignoreOnDamaged = false
-	for var in attackResult.Afflictions do
-		if var.name == "Affliction (ignoreme)" then
-			ignoreOnDamaged = true
-			break
-		end
-	end
-	if ignoreOnDamaged then
-		return
-	end
 	if not HF.HasAffliction(characterHealth.Character, "updateme") then
 		HF.SetAffliction(characterHealth.Character, "updateme", 1)
 	end

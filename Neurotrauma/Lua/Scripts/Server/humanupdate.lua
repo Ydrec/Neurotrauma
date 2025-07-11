@@ -1984,9 +1984,6 @@ function NT.UpdateHuman(character)
 		end
 	end
 	local function ApplyLimb(type)
-		local recalculateVitality = false
-		local limb = character.AnimController.GetLimb(type)
-		local afflictions = {}
 		local keystring = tostring(type) .. "afflictions"
 		for identifier, data in pairs(charData[keystring]) do
 			local newval = HF.Clamp(
@@ -1996,25 +1993,12 @@ function NT.UpdateHuman(character)
 			)
 			if newval ~= data.prev then
 				if NT.LimbAfflictions[identifier].apply == nil then
-					if NTC.AfflictionsAffectingVitality[identifier] ~= nil and recalculateVitality == false then
-						recalculateVitality = true
-					end
-					local prefab = AfflictionPrefab.Prefabs[identifier]
-					local resistance = character.CharacterHealth.GetResistance(prefab, type)
-					if resistance >= 1 then
-						break
-					end
-					local strength = newval * character.CharacterHealth.MaxVitality / 100 / (1 - resistance)
-					table.insert(afflictions, prefab.Instantiate(strength, nil))
+					HF.SetAfflictionLimb(character, identifier, type, newval)
 				else
 					NT.LimbAfflictions[identifier].apply(charData, identifier, type, newval)
 				end
 			end
 		end
-		local prefabIgnore = AfflictionPrefab.Prefabs["ignoreme"]
-		table.insert(afflictions, prefabIgnore.Instantiate(2, nil))
-		local attackResult = _G.AttackResult(afflictions, nil, {})
-		charData.character.CharacterHealth.ApplyDamage(limb, attackResult, false, recalculateVitality)
 	end
 
 	-- stasis completely halts activity in limbs
@@ -2038,34 +2022,17 @@ function NT.UpdateHuman(character)
 	end
 
 	-- apply non-limb-specific changes
-	local recalculateVitality = false
-	local limb = character.AnimController.GetLimb(LimbType.Torso)
-	local afflictions = {}
 	for identifier, data in pairs(charData.afflictions) do
 		local newval =
 			HF.Clamp(data.strength, NT.Afflictions[identifier].min or 0, NT.Afflictions[identifier].max or 100)
 		if newval ~= data.prev then
 			if NT.Afflictions[identifier].apply == nil then
-				if NTC.AfflictionsAffectingVitality[identifier] ~= nil and recalculateVitality == false then
-					recalculateVitality = true
-				end
-				local prefab = AfflictionPrefab.Prefabs[identifier]
-				local resistance = character.CharacterHealth.GetResistance(prefab, LimbType.Torso)
-				if resistance >= 1 then
-					break
-				end
-				local strength = newval * character.CharacterHealth.MaxVitality / 100 / (1 - resistance)
-				table.insert(afflictions, prefab.Instantiate(strength, nil))
-				--attackResult.Afflictions.Add(prefab.Instantiate(strength, nil))
+				HF.SetAffliction(character, identifier, newval)
 			else
 				NT.Afflictions[identifier].apply(charData, identifier, newval)
 			end
 		end
 	end
-	local prefabIgnore = AfflictionPrefab.Prefabs["ignoreme"]
-	table.insert(afflictions, prefabIgnore.Instantiate(2, nil))
-	local attackResult = _G.AttackResult(afflictions, nil, {})
-	charData.character.CharacterHealth.ApplyDamage(limb, attackResult, false, recalculateVitality)
 
 	-- compatibility
 	NTC.TickCharacter(character)
