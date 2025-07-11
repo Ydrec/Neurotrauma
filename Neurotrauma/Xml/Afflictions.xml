@@ -12,7 +12,7 @@
     indicatorlimb="Head"
     showiconthreshold="28"
     showinhealthscannerthreshold="100"
-    maxstrength="15"
+    maxstrength="30"
     targets="human"
     type="gaze"
     isbuff="false"
