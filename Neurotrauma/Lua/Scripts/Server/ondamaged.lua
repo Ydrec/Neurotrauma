@@ -22,6 +22,50 @@ local function getCalculatedConcussionReduction(armor, strength)
 	end
 	return reduction
 end
+local monstersToFix = {
+	"Mudraptor",
+	"Mudraptor_unarmored",
+	"Mudraptor_veteran",
+	"Spineling_giant",
+}
+Hook.Add(
+	"character.damageLimb",
+	"NT.ondamagedby",
+	function(
+		character,
+		worldPosition,
+		hitLimb,
+		afflictions,
+		stun,
+		playSound,
+		attackImpulse,
+		attacker,
+		damageMultiplier,
+		allowStacking,
+		penetration,
+		shouldImplode
+	)
+		if -- invalid attack data, don't do anything
+			character == nil
+			or character.IsDead
+			or not character.IsHuman
+			or afflictions == nil
+			or hitLimb == nil
+			or hitLimb.IsSevered
+			or attacker == nil
+			or not NTConfig.Get("NT_Calculations", true)
+		then
+			return
+		end
+		-- they make the game miserable with falldamage on
+		for val in monstersToFix do
+			if attacker.Name == val then
+				HF.AddAffliction(character, "cpr_fracturebuff", 2)
+				break
+			end
+		end
+	end
+)
 Hook.Add("character.applyDamage", "NT.ondamaged", function(characterHealth, attackResult, hitLimb)
 	--print(hitLimb.HealthIndex or hitLimb ~= nil)
 

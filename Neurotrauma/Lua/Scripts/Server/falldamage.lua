@@ -96,6 +96,11 @@ local function getCalculatedConcussionReduction(armor, strength)
 	return reduction
 end
 Hook.Add("changeFallDamage", "NT.falldamage", function(impactDamage, character, impactPos, velocity)
+	-- don't run the code if we ignore the code
+	if not NTConfig.Get("NT_Calculations", true) then
+		return
+	end
+
 	-- dont bother with creatures
 	if not character.IsHuman then
 		return
@@ -111,7 +116,8 @@ Hook.Add("changeFallDamage", "NT.falldamage", function(impactDamage, character, 
 		return 0
 	end
 
-	if not NTConfig.Get("NT_Calculations", true) then
+	-- don't apply fall damage if were specifically immune to it
+	if HF.HasAffliction(character, "cpr_fracturebuff") then
 		return
 	end
 
