@@ -98,3 +98,5 @@ dofile(NT.Path .. "/Lua/Scripts/Shared/surgerytable.lua") -- Heelge: fix for htt
 -- Consent Required Extended with adjustments
 -- mod page: https://steamcommunity.com/sharedfiles/filedetails/?id=2892602084
 dofile(NT.Path .. "/Lua/ConsentRequiredExtended/init.lua")
+
+dofile(NT.Path .. "/Lua/Scripts/testing.lua")
