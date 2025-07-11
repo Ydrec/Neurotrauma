@@ -8,8 +8,8 @@ Hook.Add("item.applyTreatment", "NT.itemused", function(item, usingCharacter, ta
 		return
 	end
 
-	if not HF.HasAffliction(targetCharacter, "updateme") then
-		HF.SetAffliction(targetCharacter, "updateme", 1)
+	if not HF.HasAffliction(targetCharacter, "luabotomy") then
+		HF.SetAffliction(targetCharacter, "luabotomy", 1)
 	end
 
 	local identifier = item.Prefab.Identifier.Value

@@ -121,8 +121,8 @@ Hook.Add("changeFallDamage", "NT.falldamage", function(impactDamage, character, 
 		return
 	end
 
-	if not HF.HasAffliction(character, "updateme") then
-		HF.SetAffliction(character, "updateme", 1)
+	if not HF.HasAffliction(character, "luabotomy") then
+		HF.SetAffliction(character, "luabotomy", 1)
 	end
 
 	local velocityMagnitude = HF.Magnitude(velocity)

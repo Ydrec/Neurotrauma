@@ -84,8 +84,8 @@ Hook.Add("character.applyDamage", "NT.ondamaged", function(characterHealth, atta
 		return
 	end
 
-	if not HF.HasAffliction(characterHealth.Character, "updateme") then
-		HF.SetAffliction(characterHealth.Character, "updateme", 1)
+	if not HF.HasAffliction(characterHealth.Character, "luabotomy") then
+		HF.SetAffliction(characterHealth.Character, "luabotomy", 1)
 	end
 
 	local afflictions = attackResult.Afflictions

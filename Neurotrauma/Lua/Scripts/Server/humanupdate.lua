@@ -1931,9 +1931,9 @@ NT.CharStats = {
 }
 
 function NT.UpdateHuman(character)
-	if not HF.HasAffliction(character, "updateme") then
+	if not HF.HasAffliction(character, "luabotomy") then
 		if character.TeamID == 1 or character.TeamID == 2 then
-			HF.SetAffliction(character, "updateme", 1)
+			HF.SetAffliction(character, "luabotomy", 1)
 		else
 			return
 		end
@@ -2080,9 +2080,8 @@ function NT.AddTickTask(type, duration, character)
 end
 
 -- optimization stuff
-Hook.Add("character.created", "NT.updateme", function(character)
-	if character.TeamID == 1 or character.TeamID == 2 then
-		HF.SetAffliction(character, "updateme", 1)
-		HF.SetAffliction(character, "luabotomy", 1)
+Hook.Add("character.created", "NT.cleanbotomy", function(character)
+	if not (character.TeamID == 1 or character.TeamID == 2) then
+		HF.AddAffliction(character, "luabotomy", -100)
 	end
 end)

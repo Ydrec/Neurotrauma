@@ -60,23 +60,6 @@
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="2,1" sheetelementsize="128,128" origin="0,0"/>
   </Affliction>
 
-  <Affliction
-    name=""
-    identifier="updateme"
-    healableinmedicalclinic="false"
-    targets="human"
-    description=""
-    causeofdeathdescription=""
-    selfcauseofdeathdescription=""
-    limbspecific="False"
-    indicatorlimb="Head"
-    showinhealthscannerthreshold="100"
-    showiconthreshold="100"
-    maxstrength="2">
-
-    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="2,1" sheetelementsize="128,128" origin="0,0"/>
-  </Affliction>
-
   <!-- /// Heart Stuff /// -->
   
   <!-- Ventricular Tachycardia / Rapid Heartbeat
