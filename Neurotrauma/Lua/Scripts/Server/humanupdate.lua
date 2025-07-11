@@ -13,10 +13,23 @@ Hook.Add("think", "NT.update", function()
 	NT.UpdateCooldown = NT.UpdateCooldown - 1
 	if NT.UpdateCooldown <= 0 then
 		NT.UpdateCooldown = NT.UpdateInterval
-		NT.Update()
+		if NTConfig.Get("NT_Calculations", true) then
+			NT.Update()
+		end
 	end
 
-	NT.TickUpdate()
+	-- I'm not entirely sure this should even exist, but lets keep it for reference
+	--NT.TickUpdate()
+end)
+Hook.Add("roundStart", "NT.RoundStart.fetchCharacters", function()
+	-- Apply 5 minute traumatic shock immunity to those who happen to be in surgery
+	for key, character in pairs(Character.CharacterList) do
+		if not character.IsDead then
+			if character.IsHuman and HF.HasAffliction(character, "retractedskin") then
+				HF.SetAfflictionLimb(character, "tshocktimeout", LimbType.Torso, 15)
+			end
+		end
+	end
 end)
 
 -- gets run once every two seconds
@@ -628,6 +641,7 @@ NT.Afflictions = {
 		end,
 	},
 	hemotransfusionshock = {},
+	tshocktimeout = {},
 	-- Other
 	oxygenlow = {
 		max = 200,
@@ -851,7 +865,8 @@ NT.Afflictions = {
 			local shouldReduce = (c.stats.sedated and c.afflictions.table.strength > 0)
 				or c.afflictions.anesthesia.strength > 15
 			c.afflictions[i].strength = c.afflictions[i].strength
-				- (0.5 + HF.BoolToNum(shouldReduce, 1.5)) * NT.Deltatime
+				- (0.5 + HF.BoolToNum(shouldReduce, 1.5) + c.afflictions.tshocktimeout.strength * 100)
+					* NT.Deltatime
 
 			if c.afflictions[i].strength > 5 and c.afflictions.sym_unconsciousness.strength < 0.1 then
 				HF.AddAffliction(c.character, "shockpain", 10 * NT.Deltatime)
@@ -1368,7 +1383,7 @@ NT.Afflictions = {
 	},
 	luabotomy = {
 		update = function(c, i)
-			c.afflictions[i].strength = 0
+			c.afflictions[i].strength = 1
 		end,
 	},
 	modconflict = {
@@ -1598,7 +1613,7 @@ NT.LimbAfflictions = {
 			end
 
 			if infectindex > 0 then
-				infectindex = infectindex * NTConfig.Get("NT_infectionRate", 1)
+				infectindex = infectindex * NTConfig.Get("NT_infectionRate", 1) * HF.Clamp(limbaff.iced.strength, 1, 10)
 			end
 
 			limbaff[i].strength = limbaff[i].strength + infectindex / 5
@@ -1916,6 +1931,14 @@ NT.CharStats = {
 }
 
 function NT.UpdateHuman(character)
+	if not HF.HasAffliction(character, "updateme") then
+		if character.TeamID == 1 or character.TeamID == 2 then
+			HF.SetAffliction(character, "updateme", 1)
+		else
+			return
+		end
+	end
+
 	-- pre humanupdate hooks
 	for key, val in pairs(NTC.PreHumanUpdateHooks) do
 		val(character)
@@ -2055,3 +2078,11 @@ function NT.AddTickTask(type, duration, character)
 	NT.tickTasks[NT.tickTaskID] = newtask
 	NT.tickTaskID = NT.tickTaskID + 1
 end
+
+-- optimization stuff
+Hook.Add("character.created", "NT.updateme", function(character)
+	if character.TeamID == 1 or character.TeamID == 2 then
+		HF.SetAffliction(character, "updateme", 1)
+		HF.SetAffliction(character, "luabotomy", 1)
+	end
+end)

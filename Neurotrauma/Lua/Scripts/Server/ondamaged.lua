@@ -35,8 +35,13 @@ Hook.Add("character.applyDamage", "NT.ondamaged", function(characterHealth, atta
 		or #attackResult.Afflictions <= 0
 		or hitLimb == nil
 		or hitLimb.IsSevered
+		or not NTConfig.Get("NT_Calculations", true)
 	then
 		return
+	end
+
+	if not HF.HasAffliction(characterHealth.Character, "updateme") then
+		HF.SetAffliction(characterHealth.Character, "updateme", 1)
 	end
 
 	local afflictions = attackResult.Afflictions
@@ -263,7 +268,7 @@ NT.OnDamagedMethods.explosiondamage = function(character, strength, limbtype)
 		then
 			HF.AddAffliction(character, "n_fracture", 5)
 		end
-		if strength >= 25 and HF.Chance(0.25) then
+		if strength >= 75 and HF.Chance(0.25) then
 			-- drop previously held item
 			local previtem = HF.GetHeadWear(character)
 			if previtem ~= nil then

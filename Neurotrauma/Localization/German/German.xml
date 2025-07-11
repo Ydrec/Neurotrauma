@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <infotexts language="German" nowhitespace="false" translatedname="Deutsch">
+<Override>
 <!-- Translation reworked, mistakes corrected, and new strings added by liatoast. -->
 <!-- Originally translated by Profole and Mannatu -->
   
@@ -34,10 +35,8 @@
 
 <entityname.blahaj>Blahaj</entityname.blahaj>
 
-<Override>
 <entityname.healthscanner>Vitalitätsscanner</entityname.healthscanner>
 <entitydescription.healthscanner>Verwendet um die Ursachen von Symptomen zu erkennen.</entitydescription.healthscanner>
-</Override>
 
 <stasisbagequipconfirmation>Wenn du das ausrüstest wirst du bewusstlos. Bist du sicher?</stasisbagequipconfirmation>
 <!--<emergencysuitequipconfirmation>Equipping this will cause you to go immobile. Are you sure?</emergencysuitequipconfirmation>-->
@@ -241,8 +240,9 @@ Kann spenden an: AB+</entitydescription.abpluscard>
 <entityname.surgerytoolbox>Chirurgische Werkzeugkiste</entityname.surgerytoolbox>
 <entitydescription.surgerytoolbox>Kann viele kleine Gegenstände aufbewahren, die während einer Operation verwendet werden.</entitydescription.surgerytoolbox>
 
-<entityname.surgerytoolboxset>Chirurgische Werkzeugkiste (der sachgesamtheit)</entityname.surgerytoolboxset>
+<entityname.surgerytoolboxset>Chirurgische Werkzeugkiste</entityname.surgerytoolboxset>
 <entitydescription.surgerytoolboxset>Kann viele kleine Gegenstände aufbewahren, die während einer Operation verwendet werden.</entitydescription.surgerytoolboxset>
+<displayname.surgeryset>[itemname] (der sachgesamtheit)</displayname.surgeryset>
 
 <entityname.organcrate>Tiefkühlkoffer</entityname.organcrate> 
 <entitydescription.organcrate>Wird genutzt um Organe zu lagern und am Leben zu halten.</entitydescription.organcrate>
@@ -753,5 +753,5 @@ Kann spenden an: AB+</entitydescription.abpluscard>
 
 <!-- misc -->
 <roomname.surgical>OP-Raum</roomname.surgical>
-
+</Override>
 </infotexts>

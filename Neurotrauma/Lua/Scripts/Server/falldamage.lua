@@ -111,6 +111,14 @@ Hook.Add("changeFallDamage", "NT.falldamage", function(impactDamage, character, 
 		return 0
 	end
 
+	if not NTConfig.Get("NT_Calculations", true) then
+		return
+	end
+
+	if not HF.HasAffliction(character, "updateme") then
+		HF.SetAffliction(character, "updateme", 1)
+	end
+
 	local velocityMagnitude = HF.Magnitude(velocity)
 	velocityMagnitude = velocityMagnitude ^ 1.5
 

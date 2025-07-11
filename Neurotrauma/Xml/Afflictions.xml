@@ -10,7 +10,7 @@
     description=""
     limbspecific="false"
     indicatorlimb="Head"
-    showiconthreshold="13"
+    showiconthreshold="14"
     showinhealthscannerthreshold="100"
     maxstrength="15"
     targets="human"
@@ -18,7 +18,7 @@
     isbuff="false"
     healableinmedicalclinic="false"
     iconcolors="255,255,255,255;255,255,255,255">
-    <Effect minstrength="0" maxstrength="15" strengthchange="-0.001"/>
+    <Effect minstrength="0" maxstrength="15" strengthchange="1"/>
     <!--<afflictionoverlay texture="%ModDir%/Images/luabotomy.png"/>-->
     <icon texture="%ModDir%/Images/AfflictionIcons2.png" sheetindex="5,0" sheetelementsize="128,128" origin="0,0"/>
   </Affliction>
@@ -39,6 +39,42 @@
 
     <!--<afflictionoverlay texture="%ModDir%/Images/luabotomy.png"/>-->
     <icon texture="%ModDir%/Images/AfflictionIcons2.png" sheetindex="7,0" sheetelementsize="128,128" origin="0,0"/>
+  </Affliction>
+
+  <Affliction
+    name=""
+    identifier="tshocktimeout"
+    healableinmedicalclinic="false"
+    targets="human"
+    description=""
+    causeofdeathdescription=""
+    selfcauseofdeathdescription=""
+    limbspecific="False"
+    indicatorlimb="Head"
+    showinhealthscannerthreshold="100"
+    showiconthreshold="0"
+    maxstrength="15">
+    <Effect minstrength="0" maxstrength="15"
+      strengthchange="-0.05"/>
+
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="2,1" sheetelementsize="128,128" origin="0,0"/>
+  </Affliction>
+
+  <Affliction
+    name=""
+    identifier="updateme"
+    healableinmedicalclinic="false"
+    targets="human"
+    description=""
+    causeofdeathdescription=""
+    selfcauseofdeathdescription=""
+    limbspecific="False"
+    indicatorlimb="Head"
+    showinhealthscannerthreshold="100"
+    showiconthreshold="100"
+    maxstrength="2">
+
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="2,1" sheetelementsize="128,128" origin="0,0"/>
   </Affliction>
 
   <!-- /// Heart Stuff /// -->
@@ -957,6 +993,7 @@
     type="resistance"
     showiconthreshold="0.1"
     showinhealthscannerthreshold="200"
+    treatmentthreshold="0.1"
     isbuff="true"> 
     <Effect minstrength="0" maxstrength="100"/>
 		<icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="0,4" sheetelementsize="128,128" origin="0,0"/>
@@ -991,6 +1028,7 @@
     maxstrength="100"
     showiconthreshold="0.1"
     showinhealthscannerthreshold="200"
+    treatmentthreshold="0.1"
     isbuff="false">
 		<icon texture="%ModDir%/Images/AfflictionIcons2.png" sheetindex="3,0" sheetelementsize="128,128" origin="0,0"/>
   </Affliction>
@@ -2313,7 +2351,7 @@
     showiconthreshold="0"
     maxstrength="100">
     <Effect minstrength="0" maxstrength="100">
-      <StatusEffect target="Character" multiplyafflictionsbymaxvitality="true">
+      <StatusEffect target="Character" multiplyafflictionsbymaxvitality="true" comparison="and">
         <Conditional analgesia="lte 4.5" />
         <Conditional ishuman="true" />
         <Affliction identifier="analgesia" amount="1" />
@@ -2428,7 +2466,7 @@
         <Affliction identifier="tll_amputation" amount="9999"/>
         <Affliction identifier="ll_fracture" amount="99999"/>
         <Affliction identifier="ll_arterialcut" amount="99999"/>
-        <SpawnItem identifier="lleg" impulse="11"/>
+        <SpawnItem identifier="lleg" impulse="11" aimspread="180"/>
       </StatusEffect>
   	</Effect>
  
@@ -2448,7 +2486,7 @@
         <Affliction identifier="trl_amputation" amount="9999"/>
         <Affliction identifier="rl_fracture" amount="99999"/>
         <Affliction identifier="rl_arterialcut" amount="99999"/>
-        <SpawnItem identifier="rleg" impulse="11"/>
+        <SpawnItem identifier="rleg" impulse="11" aimspread="180"/>
       </StatusEffect>
   	</Effect>
  
@@ -2468,7 +2506,7 @@
         <Affliction identifier="tla_amputation" amount="99999"/>
         <Affliction identifier="la_fracture" amount="99999"/>
         <Affliction identifier="la_arterialcut" amount="99999"/>
-        <SpawnItem identifier="larm" impulse="10"/>
+        <SpawnItem identifier="larm" impulse="10" aimspread="180"/>
       </StatusEffect>
   	</Effect>
  
@@ -2488,7 +2526,7 @@
         <Affliction identifier="tra_amputation" amount="99999"/>
         <Affliction identifier="ra_fracture" amount="99999"/>
         <Affliction identifier="ra_arterialcut" amount="99999"/>
-        <SpawnItem identifier="rarm" impulse="10"/>
+        <SpawnItem identifier="rarm" impulse="10" aimspread="180"/>
       </StatusEffect>
   	</Effect>
  
@@ -2505,7 +2543,7 @@
 	  <Effect minstrength="0" maxstrength="1" strengthchange="-1000">
       <StatusEffect  target="Character" multiplyafflictionsbymaxvitality="true" targetlimb="Head" disabledeltatime="True" stackable="false" delay="0.2">
         <Affliction identifier="th_amputation" amount="99999"/>
-        <SpawnItem identifier="headta" impulse="10"/>
+        <SpawnItem identifier="headta" impulse="10" aimspread="180"/>
       </StatusEffect>
   	</Effect>
  
@@ -3699,7 +3737,8 @@ thats what the vomiting symptom is for -->
     type="resistance"
     isbuff="true"
     limbspecific="false"
-    showiconthreshold="10"
+    showiconthreshold="0"
+    treatmentthreshold="0.1"
     maxstrength="200">
     <Effect minstrength="0" maxstrength="5"
       resistancefor="damage"
@@ -3860,9 +3899,7 @@ thats what the vomiting symptom is for -->
       </StatusEffect>
     </Effect>
 
-    <Effect minstrength="80" maxstrength="100" strengthchange="-0.05"
-      minvitalitydecrease="0"
-      maxvitalitydecrease="20">
+    <Effect minstrength="80" maxstrength="100" strengthchange="-0.05">
       <StatusEffect target="Character" multiplyafflictionsbymaxvitality="true">
         <conditional ishuman="true"/>
         <Affliction identifier="alcoholwithdrawal" strength="0.5"/>
@@ -4518,9 +4555,7 @@ thats what the vomiting symptom is for -->
         </StatusEffect>
       </Effect>
 
-      <Effect minstrength="80" maxstrength="100" strengthchange="-0.1"
-        minvitalitydecrease="0"
-        maxvitalitydecrease="20">
+      <Effect minstrength="80" maxstrength="100" strengthchange="-0.1">
         <StatusEffect target="Character" interval="1" disabledeltatime="true">
           <Affliction identifier="opiatewithdrawal" strength="0.5"/>
         </StatusEffect>

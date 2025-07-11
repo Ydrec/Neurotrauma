@@ -198,11 +198,17 @@ NT.ConfigData = {
 		type = "float",
 		difficultyCharacteristics = { multiplier = 0.5, max = 5 },
 	},
+	NT_Calculations = {
+		name = "Enable character calculations",
+		default = true,
+		type = "bool",
+		description = "Runs various calculations necessary for the functionality of the mod. Shouldn't be disabled unless the server is dying.",
+	},
 	NT_vanillaSkillCheck = {
 		name = "Vanilla skill check formula",
 		default = false,
 		type = "bool",
-		description = "Changes the chance to succeed a lua skillcheck from skill/requiredskill to 100-(requiredskill-skill))/100",
+		description = "Changes the chance to succeed a lua skillcheck from skill/requiredskill to 100-(requiredskill-skill))/100 .",
 	},
 	NT_disableBotAlgorithms = {
 		name = "Disable bot treatment algorithms",
@@ -378,7 +384,7 @@ NT.ConfigData = {
 
 	NTSCAN_CustomCategory = {
 		name = "Custom Affliction Category",
-		default = {""},
+		default = { "" },
 		style = "identifier,identifier",
 		type = "string",
 		boxsize = 0.1,

@@ -232,8 +232,9 @@ Tüm Kan Gruplarına Kan Verebilir</entitydescription.ominuscard>
 <entityname.surgerytoolbox>Ameliyat Alet Çantası</entityname.surgerytoolbox>
 <entitydescription.surgerytoolbox>Ameliyatta kullanılan küçük aletleri taşımaya yarar.</entitydescription.surgerytoolbox>
 
-<entityname.surgerytoolboxset>Ameliyat Alet Çantası (kit)</entityname.surgerytoolboxset>
+<entityname.surgerytoolboxset>Ameliyat Alet Çantası</entityname.surgerytoolboxset>
 <entitydescription.surgerytoolboxset>Ameliyatta kullanılan küçük aletleri taşımaya yarar.</entitydescription.surgerytoolboxset>
+<displayname.surgeryset>[itemname] (kit)</displayname.surgeryset>
 
 <entityname.organcrate>Soğutma Kapasiteli Kasa</entityname.organcrate>
 <entitydescription.organcrate>Soğutmaya ihtiyaç duyan organları ve jel buz torbalarını taşır.</entitydescription.organcrate>
