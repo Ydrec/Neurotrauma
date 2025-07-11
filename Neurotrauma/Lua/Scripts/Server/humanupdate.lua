@@ -13,10 +13,13 @@ Hook.Add("think", "NT.update", function()
 	NT.UpdateCooldown = NT.UpdateCooldown - 1
 	if NT.UpdateCooldown <= 0 then
 		NT.UpdateCooldown = NT.UpdateInterval
-		NT.Update()
+		if NTConfig.Get("NT_Calculations", true) then
+			NT.Update()
+		end
 	end
 
-	NT.TickUpdate()
+	-- I'm not entirely sure this should even exist, but lets keep it for reference
+	--NT.TickUpdate()
 end)
 Hook.Add("roundStart", "NT.RoundStart.fetchCharacters", function()
 	-- Apply 5 minute traumatic shock immunity to those who happen to be in surgery
@@ -1380,7 +1383,7 @@ NT.Afflictions = {
 	},
 	luabotomy = {
 		update = function(c, i)
-			c.afflictions[i].strength = 0
+			c.afflictions[i].strength = 1
 		end,
 	},
 	modconflict = {
@@ -1928,6 +1931,14 @@ NT.CharStats = {
 }
 
 function NT.UpdateHuman(character)
+	if not HF.HasAffliction(character, "updateme") then
+		if character.TeamID == 1 or character.TeamID == 2 then
+			HF.SetAffliction(character, "updateme", 1)
+		else
+			return
+		end
+	end
+
 	-- pre humanupdate hooks
 	for key, val in pairs(NTC.PreHumanUpdateHooks) do
 		val(character)
@@ -1973,6 +1984,9 @@ function NT.UpdateHuman(character)
 		end
 	end
 	local function ApplyLimb(type)
+		local recalculateVitality = false
+		local limb = character.AnimController.GetLimb(type)
+		local afflictions = {}
 		local keystring = tostring(type) .. "afflictions"
 		for identifier, data in pairs(charData[keystring]) do
 			local newval = HF.Clamp(
@@ -1982,12 +1996,25 @@ function NT.UpdateHuman(character)
 			)
 			if newval ~= data.prev then
 				if NT.LimbAfflictions[identifier].apply == nil then
-					HF.SetAfflictionLimb(character, identifier, type, newval)
+					if NTC.AfflictionsAffectingVitality[identifier] ~= nil and recalculateVitality == false then
+						recalculateVitality = true
+					end
+					local prefab = AfflictionPrefab.Prefabs[identifier]
+					local resistance = character.CharacterHealth.GetResistance(prefab, type)
+					if resistance >= 1 then
+						break
+					end
+					local strength = newval * character.CharacterHealth.MaxVitality / 100 / (1 - resistance)
+					table.insert(afflictions, prefab.Instantiate(strength, nil))
 				else
 					NT.LimbAfflictions[identifier].apply(charData, identifier, type, newval)
 				end
 			end
 		end
+		local prefabIgnore = AfflictionPrefab.Prefabs["ignoreme"]
+		table.insert(afflictions, prefabIgnore.Instantiate(2, nil))
+		local attackResult = _G.AttackResult(afflictions, nil, {})
+		charData.character.CharacterHealth.ApplyDamage(limb, attackResult, false, recalculateVitality)
 	end
 
 	-- stasis completely halts activity in limbs
@@ -2011,17 +2038,34 @@ function NT.UpdateHuman(character)
 	end
 
 	-- apply non-limb-specific changes
+	local recalculateVitality = false
+	local limb = character.AnimController.GetLimb(LimbType.Torso)
+	local afflictions = {}
 	for identifier, data in pairs(charData.afflictions) do
 		local newval =
 			HF.Clamp(data.strength, NT.Afflictions[identifier].min or 0, NT.Afflictions[identifier].max or 100)
 		if newval ~= data.prev then
 			if NT.Afflictions[identifier].apply == nil then
-				HF.SetAffliction(character, identifier, newval)
+				if NTC.AfflictionsAffectingVitality[identifier] ~= nil and recalculateVitality == false then
+					recalculateVitality = true
+				end
+				local prefab = AfflictionPrefab.Prefabs[identifier]
+				local resistance = character.CharacterHealth.GetResistance(prefab, LimbType.Torso)
+				if resistance >= 1 then
+					break
+				end
+				local strength = newval * character.CharacterHealth.MaxVitality / 100 / (1 - resistance)
+				table.insert(afflictions, prefab.Instantiate(strength, nil))
+				--attackResult.Afflictions.Add(prefab.Instantiate(strength, nil))
 			else
 				NT.Afflictions[identifier].apply(charData, identifier, newval)
 			end
 		end
 	end
+	local prefabIgnore = AfflictionPrefab.Prefabs["ignoreme"]
+	table.insert(afflictions, prefabIgnore.Instantiate(2, nil))
+	local attackResult = _G.AttackResult(afflictions, nil, {})
+	charData.character.CharacterHealth.ApplyDamage(limb, attackResult, false, recalculateVitality)
 
 	-- compatibility
 	NTC.TickCharacter(character)
@@ -2067,3 +2111,11 @@ function NT.AddTickTask(type, duration, character)
 	NT.tickTasks[NT.tickTaskID] = newtask
 	NT.tickTaskID = NT.tickTaskID + 1
 end
+
+-- optimization stuff
+Hook.Add("character.created", "NT.updateme", function(character)
+	if character.TeamID == 1 or character.TeamID == 2 then
+		HF.SetAffliction(character, "updateme", 1)
+		HF.SetAffliction(character, "luabotomy", 1)
+	end
+end)

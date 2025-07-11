@@ -10,7 +10,7 @@
     description=""
     limbspecific="false"
     indicatorlimb="Head"
-    showiconthreshold="13"
+    showiconthreshold="14"
     showinhealthscannerthreshold="100"
     maxstrength="15"
     targets="human"
@@ -18,7 +18,7 @@
     isbuff="false"
     healableinmedicalclinic="false"
     iconcolors="255,255,255,255;255,255,255,255">
-    <Effect minstrength="0" maxstrength="15" strengthchange="-0.001"/>
+    <Effect minstrength="0" maxstrength="15" strengthchange="1"/>
     <!--<afflictionoverlay texture="%ModDir%/Images/luabotomy.png"/>-->
     <icon texture="%ModDir%/Images/AfflictionIcons2.png" sheetindex="5,0" sheetelementsize="128,128" origin="0,0"/>
   </Affliction>
@@ -56,6 +56,40 @@
     maxstrength="15">
     <Effect minstrength="0" maxstrength="15"
       strengthchange="-0.05"/>
+
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="2,1" sheetelementsize="128,128" origin="0,0"/>
+  </Affliction>
+
+  <Affliction
+    name="ignoreme"
+    identifier="ignoreme"
+    healableinmedicalclinic="false"
+    targets="human"
+    description=""
+    causeofdeathdescription=""
+    selfcauseofdeathdescription=""
+    limbspecific="False"
+    indicatorlimb="Torso"
+    showinhealthscannerthreshold="100"
+    showiconthreshold="100"
+    maxstrength="2">
+
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="2,1" sheetelementsize="128,128" origin="0,0"/>
+  </Affliction>
+
+  <Affliction
+    name=""
+    identifier="updateme"
+    healableinmedicalclinic="false"
+    targets="human"
+    description=""
+    causeofdeathdescription=""
+    selfcauseofdeathdescription=""
+    limbspecific="False"
+    indicatorlimb="Head"
+    showinhealthscannerthreshold="100"
+    showiconthreshold="100"
+    maxstrength="2">
 
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="2,1" sheetelementsize="128,128" origin="0,0"/>
   </Affliction>

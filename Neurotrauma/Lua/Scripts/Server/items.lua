@@ -8,6 +8,10 @@ Hook.Add("item.applyTreatment", "NT.itemused", function(item, usingCharacter, ta
 		return
 	end
 
+	if not HF.HasAffliction(targetCharacter, "updateme") then
+		HF.SetAffliction(targetCharacter, "updateme", 1)
+	end
+
 	local identifier = item.Prefab.Identifier.Value
 
 	local methodtorun = NT.ItemMethods[identifier] -- get the function associated with the identifier
