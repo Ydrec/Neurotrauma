@@ -677,8 +677,8 @@ Tüm Kan Gruplarına Kan Verebilir</entitydescription.ominuscard>
 <afflictionname.sym_nausea>Mide bulantısı</afflictionname.sym_nausea>
 <afflictiondescription.sym_nausea>Hastanın başı dönüyor ve derisi terli.</afflictiondescription.sym_nausea>
 
-<afflictionname.luabotomy>Luasızlık</afflictionname.luabotomy>
-<afflictiondescription.luabotomy>Lua çalışmıyor. Bu durum Neurotrauma ve diğer Lua bazlı modların düzgün çalışmamasına sebep olur. Lütfen mod listenizi kontrol edin</afflictiondescription.luabotomy>
+<afflictionname.serversideluaneuro>Luasızlık</afflictionname.serversideluaneuro>
+<afflictiondescription.serversideluaneuro>Lua çalışmıyor. Bu durum Neurotrauma ve diğer Lua bazlı modların düzgün çalışmamasına sebep olur. Lütfen mod listenizi kontrol edin</afflictiondescription.serversideluaneuro>
 
 <afflictionname.analgesia>Analjezi</afflictionname.analgesia>
 <afflictiondescription.analgesia>Acı hissetmeme durumu.</afflictiondescription.analgesia>

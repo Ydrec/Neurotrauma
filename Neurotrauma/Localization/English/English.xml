@@ -51,7 +51,7 @@
 <entitydescription.tweezers>A small tool that allows the removal of bullets as well as damaged and necrotic tissue.</entitydescription.tweezers>
 
 <entityname.surgerysaw>Surgical saw</entityname.surgerysaw>
-<entitydescription.surgerysaw>A tool used to saw through bones.</entitydescription.surgerysaw>		
+<entitydescription.surgerysaw>A tool used to saw through bones.</entitydescription.surgerysaw>
 
 <entityname.suture>Suture</entityname.suture>
 <entitydescription.suture>Biodegradeable sutures for stitching up wounds and surgical incisions alike.</entitydescription.suture>
@@ -229,7 +229,7 @@ Can give blood to: AB+</entitydescription.abpluscard>
 
 
 <!-- /// New containers /// -->
-<entityname.medtoolbox>Medical container</entityname.medtoolbox> 
+<entityname.medtoolbox>Medical container</entityname.medtoolbox>
 <entitydescription.medtoolbox>Can store medicine and medical instruments</entitydescription.medtoolbox>
 
 <entityname.surgerytoolbox>Surgery toolbox</entityname.surgerytoolbox>
@@ -239,13 +239,13 @@ Can give blood to: AB+</entitydescription.abpluscard>
 <entitydescription.surgerytoolboxset>Can store many small items that are used during surgery</entitydescription.surgerytoolboxset>
 <displayname.surgeryset>[itemname] (kit)</displayname.surgeryset>
 
-<entityname.organcrate>Refrigerated crate</entityname.organcrate> 
+<entityname.organcrate>Refrigerated crate</entityname.organcrate>
 <entitydescription.organcrate>A place to store your precious transplant-ready organs</entitydescription.organcrate>
 
-<entityname.medstartercrate>Medical starter crate</entityname.medstartercrate> 
+<entityname.medstartercrate>Medical starter crate</entityname.medstartercrate>
 <entitydescription.medstartercrate>A crate that contains all the essentials, conveniently packaged into a single crafting recipe</entitydescription.medstartercrate>
 
-<entityname.organtoolbox>Refrigerated container</entityname.organtoolbox> 
+<entityname.organtoolbox>Refrigerated container</entityname.organtoolbox>
 <entitydescription.organtoolbox>A place to store your precious transplant-ready organs</entitydescription.organtoolbox>
 
 <entityname.bodybag>Body bag</entityname.bodybag>
@@ -695,8 +695,8 @@ Can give blood to: AB+</entitydescription.abpluscard>
 <afflictionname.sym_nausea>Nausea</afflictionname.sym_nausea>
 <afflictiondescription.sym_nausea>The skin is clammy and the patient is nauseous.</afflictiondescription.sym_nausea>
 
-<afflictionname.luabotomy>Lualess</afflictionname.luabotomy>
-<afflictiondescription.luabotomy>Lua isn't running. That means neurotrauma and any other mods that use it won't work. Please read the workshop pages of mods you plan to use.</afflictiondescription.luabotomy>
+<afflictionname.serversideluaneuro>Lualess</afflictionname.serversideluaneuro>
+<afflictiondescription.serversideluaneuro>Lua isn't running. That means neurotrauma and any other mods that use it won't work. Please read the workshop pages of mods you plan to use.</afflictiondescription.serversideluaneuro>
 
 <afflictionname.modconflict>Mod conflict</afflictionname.modconflict>
 <afflictiondescription.modconflict>There is a mod conflict. A different mod is overriding some of the same items Neurotrauma does. Some things may not function correctly. Please adjust your load order.</afflictiondescription.modconflict>

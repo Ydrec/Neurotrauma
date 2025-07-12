@@ -36,7 +36,7 @@
 <entityname.tweezers>Pinça</entityname.tweezers>
 <entitydescription.tweezers>Uma pequena ferramenta que permite a remoção de balas, assim como tecido danificado e infectado.</entitydescription.tweezers>
 <entityname.surgerysaw>Serra Cirúrgica</entityname.surgerysaw>
-<entitydescription.surgerysaw>Uma ferramenta usada para serrar ossos.</entitydescription.surgerysaw>		
+<entitydescription.surgerysaw>Uma ferramenta usada para serrar ossos.</entitydescription.surgerysaw>
 <entityname.suture>Sutura</entityname.suture>
 <entitydescription.suture>Suturas biodegradáveis ​​para costurar feridas e incisões cirúrgicas.</entitydescription.suture>
 <entityname.surgicaldrill>Furadeira Cirúrgica</entityname.surgicaldrill>
@@ -158,16 +158,16 @@ Pode dar sangue para: AB-, AB+</entitydescription.abminuscard>
 <entitydescription.abpluscard>Pode receber sangue de: Todos tipos
 Pode dar sangue para: AB+</entitydescription.abpluscard>
 <!-- /// New containers /// -->
-<entityname.medtoolbox>Contêiner Médico</entityname.medtoolbox> 
+<entityname.medtoolbox>Contêiner Médico</entityname.medtoolbox>
 <entitydescription.medtoolbox>Pode armazenar medicamentos e instrumentos médicos.</entitydescription.medtoolbox>
-<entityname.surgerytoolbox>Caixa de Equipamento Cirúrgico</entityname.surgerytoolbox> 
+<entityname.surgerytoolbox>Caixa de Equipamento Cirúrgico</entityname.surgerytoolbox>
 <entitydescription.surgerytoolbox>Pode armazenar muitos itens pequenos que são usados ​​durante uma cirurgia.</entitydescription.surgerytoolbox>
-<entityname.surgerytoolboxset>Caixa de Equipamento Cirúrgico</entityname.surgerytoolboxset> 
+<entityname.surgerytoolboxset>Caixa de Equipamento Cirúrgico</entityname.surgerytoolboxset>
 <entitydescription.surgerytoolboxset>Pode armazenar muitos itens pequenos que são usados ​​durante uma cirurgia.</entitydescription.surgerytoolboxset>
 <displayname.surgeryset>[itemname] (kit)</displayname.surgeryset>
-<entityname.organcrate>Caixa Refrigerada</entityname.organcrate> 
+<entityname.organcrate>Caixa Refrigerada</entityname.organcrate>
 <entitydescription.organcrate>Um lugar para armazenar seus preciosos órgãos, prontos para transplante... né?</entitydescription.organcrate>
-<entityname.organtoolbox>Contêiner Refrigerado</entityname.organtoolbox> 
+<entityname.organtoolbox>Contêiner Refrigerado</entityname.organtoolbox>
 <entitydescription.organtoolbox>Um lugar para armazenar seus preciosos órgãos recém-tirados.</entitydescription.organtoolbox>
 <entityname.bodybag>Saco para Cadáver</entityname.bodybag>
 <entitydescription.bodybag>Permite arrastar pessoas mais rapidamente.</entitydescription.bodybag>
@@ -472,8 +472,8 @@ Pode dar sangue para: AB+</entitydescription.abpluscard>
 <afflictiondescription.pain_extremity>O paciente está expressando dor intensa na área afetada.</afflictiondescription.pain_extremity>
 <afflictionname.sym_nausea>Náusea</afflictionname.sym_nausea>
 <afflictiondescription.sym_nausea>A pele está úmida e o paciente está enjoado.</afflictiondescription.sym_nausea>
-<afflictionname.luabotomy>Falta de Lua</afflictionname.luabotomy>
-<afflictiondescription.luabotomy>Lua não está rodando. Isso significa que neurotrauma e quaisquer outros mods que o usem não funcionarão. Por favor, leia as páginas da oficina de mods que você planeja usar.</afflictiondescription.luabotomy>
+<afflictionname.serversideluaneuro>Falta de Lua</afflictionname.serversideluaneuro>
+<afflictiondescription.serversideluaneuro>Lua não está rodando. Isso significa que neurotrauma e quaisquer outros mods que o usem não funcionarão. Por favor, leia as páginas da oficina de mods que você planeja usar.</afflictiondescription.serversideluaneuro>
 <afflictionname.traumaticshock>Choque Traumático</afflictionname.traumaticshock>
 <afflictiondescription.traumaticshock>O paciente sente dor intensa e estresse.</afflictiondescription.traumaticshock>
 <afflictionname.analgesia>Analgesia</afflictionname.analgesia>

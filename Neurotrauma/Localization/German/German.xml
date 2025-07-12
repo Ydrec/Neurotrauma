@@ -3,14 +3,14 @@
 <Override>
 <!-- Translation reworked, mistakes corrected, and new strings added by liatoast. -->
 <!-- Originally translated by Profole and Mannatu -->
-  
+
 <!-- ITEMS -->
 
 <!-- /// Ausrüstung /// -->
 
 <entityname.defibrillator>Manueller Defibrillator</entityname.defibrillator>
 <entitydescription.defibrillator>Ein medizinisches Gerät, das einen elektrischen Schock an das Herz abgibt, um Herzrhythmusstörungen zu stabilisieren. Anwendung bei einem Patienten mit Herzstillstand.</entitydescription.defibrillator>
-  
+
 <entityname.aed>Automatischer externer Defibrillator</entityname.aed>
 <entitydescription.aed>Ein medizinisches Gerät für die Stabilisierung von Arhytmien. Benutze auf Patienten mit Herzstillstand.</entitydescription.aed>
 
@@ -26,8 +26,8 @@
 <entityname.bloodcollector>Blutspenderausweis</entityname.bloodcollector>
 <entitydescription.bloodcollector>Leere Blutspenderkarte. Wird vom Hämatologie-Analysator verwendet.</entitydescription.bloodcollector>
 
-<entityname.traumashears>Rettungsschere</entityname.traumashears>  
-<entitydescription.traumashears>Ein Werkzeug zum Entfernen von Verbänden und Gipsverbänden.</entitydescription.traumashears> 
+<entityname.traumashears>Rettungsschere</entityname.traumashears>
+<entitydescription.traumashears>Ein Werkzeug zum Entfernen von Verbänden und Gipsverbänden.</entitydescription.traumashears>
 
 
 <entityname.wheelchair>Rollstuhl</entityname.wheelchair>
@@ -55,7 +55,7 @@
 <entitydescription.tweezers>Ein kleines Wekzeug um Fremdkörper während Operation zu entfernen</entitydescription.tweezers>
 
 <entityname.surgerysaw>Chirurgische Säge</entityname.surgerysaw>
-<entitydescription.surgerysaw>Eine Säge um Knochen an- oder durchzusägen</entitydescription.surgerysaw>		
+<entitydescription.surgerysaw>Eine Säge um Knochen an- oder durchzusägen</entitydescription.surgerysaw>
 
 <entityname.suture>Nadel und Faden</entityname.suture>
 <entitydescription.suture>Biodegradierbarer Faden für die Behandlung von offenen Wunden und chirurgischen Einschnitten.</entitydescription.suture>
@@ -90,22 +90,22 @@
 <entityname.multiscalpel>Vielzweck-Skalpell</entityname.multiscalpel>
 <entitydescription.multiscalpel>Ein Skalpell, mit dem du wählen kannst, was du tun möchtest, sei es einen Einschnitt machen, Organe entnehmen, Verbände entfernen oder Sabotage zu machen.</entitydescription.multiscalpel>
 <multiscalpel.incision>Modus: Chirurgischer Einschnitt</multiscalpel.incision>
-<multiscalpel.kidneys>Modus: Nieren entnehmen</multiscalpel.kidneys>  
-<multiscalpel.liver>Modus: Leber entnehmen</multiscalpel.liver>  
-<multiscalpel.lungs>Modus: Lungen entnehmen</multiscalpel.lungs>  
-<multiscalpel.heart>Modus: Herz entnehmen</multiscalpel.heart>  
-<multiscalpel.brain>Modus: Gehirn entnehmen</multiscalpel.brain>  
-<multiscalpel.bandage>Modus: Verbände und Gipsverbände entfernen / Sabotage</multiscalpel.bandage>  
-<multiscalpel.speedflex>Modus: Adaptive Organentnahme. Verwende am Kopf für das Gehirn, am linken Arm für die Nieren, am Rumpf für die Leber, am rechten Arm für das Herz, am linken Bein für die Lungen.</multiscalpel.speedflex>  
+<multiscalpel.kidneys>Modus: Nieren entnehmen</multiscalpel.kidneys>
+<multiscalpel.liver>Modus: Leber entnehmen</multiscalpel.liver>
+<multiscalpel.lungs>Modus: Lungen entnehmen</multiscalpel.lungs>
+<multiscalpel.heart>Modus: Herz entnehmen</multiscalpel.heart>
+<multiscalpel.brain>Modus: Gehirn entnehmen</multiscalpel.brain>
+<multiscalpel.bandage>Modus: Verbände und Gipsverbände entfernen / Sabotage</multiscalpel.bandage>
+<multiscalpel.speedflex>Modus: Adaptive Organentnahme. Verwende am Kopf für das Gehirn, am linken Arm für die Nieren, am Rumpf für die Leber, am rechten Arm für das Herz, am linken Bein für die Lungen.</multiscalpel.speedflex>
 
-<multiscalpel.btn.incision>Einschnitt</multiscalpel.btn.incision>  
-<multiscalpel.btn.kidneys>Nieren</multiscalpel.btn.kidneys>  
-<multiscalpel.btn.liver>Leber</multiscalpel.btn.liver>  
-<multiscalpel.btn.lungs>Lungen</multiscalpel.btn.lungs>  
-<multiscalpel.btn.heart>Herz</multiscalpel.btn.heart>  
-<multiscalpel.btn.brain>Gehirn</multiscalpel.btn.brain>  
-<multiscalpel.btn.bandage>Verbände, Gipsverbände, Sabotage</multiscalpel.btn.bandage>  
-<multiscalpel.btn.speedflex>Adaptive Organentnahme</multiscalpel.btn.speedflex>  
+<multiscalpel.btn.incision>Einschnitt</multiscalpel.btn.incision>
+<multiscalpel.btn.kidneys>Nieren</multiscalpel.btn.kidneys>
+<multiscalpel.btn.liver>Leber</multiscalpel.btn.liver>
+<multiscalpel.btn.lungs>Lungen</multiscalpel.btn.lungs>
+<multiscalpel.btn.heart>Herz</multiscalpel.btn.heart>
+<multiscalpel.btn.brain>Gehirn</multiscalpel.btn.brain>
+<multiscalpel.btn.bandage>Verbände, Gipsverbände, Sabotage</multiscalpel.btn.bandage>
+<multiscalpel.btn.speedflex>Adaptive Organentnahme</multiscalpel.btn.speedflex>
 
 
 
@@ -234,7 +234,7 @@ Kann spenden an: AB+</entitydescription.abpluscard>
 
 
 <!-- /// New containers /// -->
-<entityname.medtoolbox>Medizinkoffer</entityname.medtoolbox> 
+<entityname.medtoolbox>Medizinkoffer</entityname.medtoolbox>
 <entitydescription.medtoolbox>Kann Medikamente und medizinische Geräte lagern.</entitydescription.medtoolbox>
 
 <entityname.surgerytoolbox>Chirurgische Werkzeugkiste</entityname.surgerytoolbox>
@@ -244,13 +244,13 @@ Kann spenden an: AB+</entitydescription.abpluscard>
 <entitydescription.surgerytoolboxset>Kann viele kleine Gegenstände aufbewahren, die während einer Operation verwendet werden.</entitydescription.surgerytoolboxset>
 <displayname.surgeryset>[itemname] (der sachgesamtheit)</displayname.surgeryset>
 
-<entityname.organcrate>Tiefkühlkoffer</entityname.organcrate> 
+<entityname.organcrate>Tiefkühlkoffer</entityname.organcrate>
 <entitydescription.organcrate>Wird genutzt um Organe zu lagern und am Leben zu halten.</entitydescription.organcrate>
 
 <entityname.medstartercrate>Medizin-Starterkiste</entityname.medstartercrate>
 <entitydescription.medstartercrate>Eine Kiste mit allen wichtigen Utensilien, praktisch in einem einzigen Rezept verpackt.</entitydescription.medstartercrate>
 
-<entityname.organtoolbox>Tiefkühlkiste</entityname.organtoolbox> 
+<entityname.organtoolbox>Tiefkühlkiste</entityname.organtoolbox>
 <entitydescription.organtoolbox>Wird genutzt um Organge zu lagern und am Leben zu halten.</entitydescription.organtoolbox>
 
 <entityname.bodybag>Leichensack</entityname.bodybag>
@@ -694,8 +694,8 @@ Kann spenden an: AB+</entitydescription.abpluscard>
 <afflictionname.sym_nausea>Übelkeit</afflictionname.sym_nausea>
 <afflictiondescription.sym_nausea>Der Patient gibt an, er fühle sich schlecht und als ob er sich gleich übergeben müsste.</afflictiondescription.sym_nausea>
 
-<afflictionname.luabotomy>Lualess</afflictionname.luabotomy>
-<afflictiondescription.luabotomy>Lua läuft nicht. Das bedeutet, dass Neurotrauma und andere Mods, die es verwenden, nicht funktionieren. Bitte lese die Workshop-Seiten der Mods, die du verwenden möchtest.</afflictiondescription.luabotomy>
+<afflictionname.serversideluaneuro>Lualess</afflictionname.serversideluaneuro>
+<afflictiondescription.serversideluaneuro>Lua läuft nicht. Das bedeutet, dass Neurotrauma und andere Mods, die es verwenden, nicht funktionieren. Bitte lese die Workshop-Seiten der Mods, die du verwenden möchtest.</afflictiondescription.serversideluaneuro>
 
 <afflictionname.traumaticshock>Traumatischer Schock</afflictionname.traumaticshock>
 <afflictiondescription.traumaticshock>Der Patient ist wach! Er erfährt extreme Angst, intensiven Stress und befindet sich in einem Schockzustand. Beende die Operation, sofort!</afflictiondescription.traumaticshock>
@@ -730,7 +730,7 @@ Kann spenden an: AB+</entitydescription.abpluscard>
 <afflictionname.drilledbones>Durchbohrte Knochen</afflictionname.drilledbones>
 <afflictiondescription.drilledbones>Die Knochen wurden für orthopädische Verfahren vorbereitet.</afflictiondescription.drilledbones>
 
-<afflictionname.suturedi>Genähte Inzision</afflictionname.suturedi> 
+<afflictionname.suturedi>Genähte Inzision</afflictionname.suturedi>
 <afflictiondescription.suturedi>Eine Inzision wurde mit Nähten verschlossen.</afflictiondescription.suturedi>
 
 <afflictionname.bonecut>Durchtrennte Knochen</afflictionname.bonecut>

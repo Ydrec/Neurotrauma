@@ -6,20 +6,20 @@
   <!-- /// Meta /// -->
   <Affliction
     name=""
-    identifier="luabotomy"
+    identifier="serversideluaneuro"
     description=""
     limbspecific="false"
     indicatorlimb="Head"
-    showiconthreshold="28"
+    showiconthreshold="14"
     showinhealthscannerthreshold="100"
-    maxstrength="30"
+    maxstrength="15"
     targets="human"
     type="gaze"
     isbuff="false"
     healableinmedicalclinic="false"
     iconcolors="255,255,255,255;255,255,255,255">
-    <Effect minstrength="0" maxstrength="30" strengthchange="1"/>
-    <!--<afflictionoverlay texture="%ModDir%/Images/luabotomy.png"/>-->
+    <Effect minstrength="0" maxstrength="15" strengthchange="1"/>
+    <!--<afflictionoverlay texture="%ModDir%/Images/serversideluaneuro.png"/>-->
     <icon texture="%ModDir%/Images/AfflictionIcons2.png" sheetindex="5,0" sheetelementsize="128,128" origin="0,0"/>
   </Affliction>
 
@@ -37,7 +37,7 @@
     healableinmedicalclinic="false"
     iconcolors="255,255,255,255;255,255,255,255">
 
-    <!--<afflictionoverlay texture="%ModDir%/Images/luabotomy.png"/>-->
+    <!--<afflictionoverlay texture="%ModDir%/Images/serversideluaneuro.png"/>-->
     <icon texture="%ModDir%/Images/AfflictionIcons2.png" sheetindex="7,0" sheetelementsize="128,128" origin="0,0"/>
   </Affliction>
 

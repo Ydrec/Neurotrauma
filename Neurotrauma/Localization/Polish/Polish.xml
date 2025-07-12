@@ -50,7 +50,7 @@
 <entitydescription.tweezers>Narzędzie, które umożliwia usuwanie odłamków oraz martwych tkanek.</entitydescription.tweezers>
 
 <entityname.surgerysaw>Piła chirurgiczna</entityname.surgerysaw>
-<entitydescription.surgerysaw>Narzędzie używane do przecinania kości.</entitydescription.surgerysaw>		
+<entitydescription.surgerysaw>Narzędzie używane do przecinania kości.</entitydescription.surgerysaw>
 
 <entityname.suture>Szew</entityname.suture>
 <entitydescription.suture>Biodegradowalne szwy do zszywania ran i nacięć chirurgicznych.</entitydescription.suture>
@@ -225,20 +225,20 @@ Biorcy: AB+</entitydescription.abpluscard>
 
 
 <!-- /// New containers /// -->
-<entityname.medtoolbox>Pojemnik medyczny</entityname.medtoolbox> 
+<entityname.medtoolbox>Pojemnik medyczny</entityname.medtoolbox>
 <entitydescription.medtoolbox>Może przechowywać lekarstwa i instrumenty medyczne</entitydescription.medtoolbox>
 
-<entityname.surgerytoolbox>Przybornik chirurgiczny</entityname.surgerytoolbox> 
+<entityname.surgerytoolbox>Przybornik chirurgiczny</entityname.surgerytoolbox>
 <entitydescription.surgerytoolbox>Pomieści wiele małych narzędzi chirurgicznych.</entitydescription.surgerytoolbox>
 
-<entityname.surgerytoolboxset>Przybornik chirurgiczny</entityname.surgerytoolboxset> 
+<entityname.surgerytoolboxset>Przybornik chirurgiczny</entityname.surgerytoolboxset>
 <entitydescription.surgerytoolboxset>Pomieści wiele małych narzędzi chirurgicznych.</entitydescription.surgerytoolboxset>
 <displayname.surgeryset>[itemname] (zestaw)</displayname.surgeryset>
 
-<entityname.organcrate>Skrzynia chłodnicza</entityname.organcrate> 
+<entityname.organcrate>Skrzynia chłodnicza</entityname.organcrate>
 <entitydescription.organcrate>Miejsce do przechowywania cennych narządów gotowych do przeszczepu.</entitydescription.organcrate>
 
-<entityname.organtoolbox>Pojemnik chłodniczy</entityname.organtoolbox> 
+<entityname.organtoolbox>Pojemnik chłodniczy</entityname.organtoolbox>
 <entitydescription.organtoolbox>Miejsce do przechowywania cennych narządów gotowych do przeszczepu.</entitydescription.organtoolbox>
 
 <entityname.bodybag>Worek na ciało</entityname.bodybag>
@@ -440,7 +440,7 @@ Biorcy: AB+</entitydescription.abpluscard>
 
 <afflictionname.surgeryincision>Nacięcie chirurgiczne</afflictionname.surgeryincision>
 <afflictiondescription.surgeryincision>Nacięcie zostało wykonane skalpelem.</afflictiondescription.surgeryincision>
-  
+
 <afflictionname.clampedbleeders>Zaciśnięte krwawienie</afflictionname.clampedbleeders>
 <afflictiondescription.clampedbleeders>Krwawienia operacyjne zostały zatamowane.</afflictiondescription.clampedbleeders>
 
@@ -673,13 +673,13 @@ Biorcy: AB+</entitydescription.abpluscard>
 <afflictionname.sym_nausea>Mdłości</afflictionname.sym_nausea>
 <afflictiondescription.sym_nausea>Skóra jest wilgotna, a pacjent ma mdłości.</afflictiondescription.sym_nausea>
 
-<afflictionname.luabotomy>Lualess</afflictionname.luabotomy>
-<afflictiondescription.luabotomy>Lua nie działa. Oznacza to, że Neurotrauma i inne mody, które jej używają, nie będą działać. Prosimy o zapoznanie się ze stronami warsztatów modów, których planujecie użyć.</afflictiondescription.luabotomy>
+<afflictionname.serversideluaneuro>Lualess</afflictionname.serversideluaneuro>
+<afflictiondescription.serversideluaneuro>Lua nie działa. Oznacza to, że Neurotrauma i inne mody, które jej używają, nie będą działać. Prosimy o zapoznanie się ze stronami warsztatów modów, których planujecie użyć.</afflictiondescription.serversideluaneuro>
 
 
 <afflictionname.traumaticshock>Szok traumatyczny</afflictionname.traumaticshock>
 <afflictiondescription.traumaticshock>Pacjent odczuwa silny ból i stres.</afflictiondescription.traumaticshock>
-  
+
 <afflictionname.analgesia>Znieczulenie</afflictionname.analgesia>
 <afflictiondescription.analgesia>Niewrażliwość na ból.</afflictiondescription.analgesia>
 
@@ -740,7 +740,7 @@ Biorcy: AB+</entitydescription.abpluscard>
 <entityname.pressuremeds>Nitroprusydek sodu</entityname.pressuremeds>
 <entitydescription.pressuremeds>Lek stosowany w doraźnym obniżaniu ciśnienia tętniczego.</entitydescription.pressuremeds>
 
-<entityname.medstartercrate>Medyczna skrzynia startowa</entityname.medstartercrate> 
+<entityname.medstartercrate>Medyczna skrzynia startowa</entityname.medstartercrate>
 <entitydescription.medstartercrate>Skrzynia, która zawiera wszystkie niezbędne rzeczy, wygodnie zamknięte w jednym przepisie craftingowym.</entitydescription.medstartercrate>
 </Override>
 </infotexts>

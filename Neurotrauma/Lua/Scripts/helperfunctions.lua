@@ -412,6 +412,7 @@ function HF.SetAfflictionLimb(character, identifier, limbtype, strength, aggress
 		character.AnimController.GetLimb(limbtype),
 		affliction,
 		false,
+		false,
 		recalculateVitality
 	)
 

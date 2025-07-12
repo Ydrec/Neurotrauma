@@ -1381,6 +1381,11 @@ NT.Afflictions = {
 			)
 		end,
 	},
+	serversideluaneuro = {
+		update = function(c, i)
+			c.afflictions[i].strength = 1
+		end,
+	},
 	modconflict = {
 		update = function(c, i)
 			c.afflictions[i].strength = HF.BoolToNum(NT.modconflict, 1)
@@ -1926,12 +1931,12 @@ NT.CharStats = {
 }
 
 function NT.UpdateHuman(character)
-	if HF.HasAffliction(character, "luabotomy") then
-		HF.SetAffliction(character, "luabotomy", 1)
-	elseif character.TeamID == 1 or character.TeamID == 2 then
-		HF.SetAffliction(character, "luabotomy", 1)
-	else
-		return
+	if not HF.HasAffliction(character, "serversideluaneuro") then
+		if character.TeamID == 1 or character.TeamID == 2 then
+			HF.SetAffliction(character, "serversideluaneuro", 1)
+		else
+			return
+		end
 	end
 
 	-- pre humanupdate hooks
@@ -2077,6 +2082,6 @@ end
 -- optimization stuff
 Hook.Add("character.created", "NT.cleanbotomy", function(character)
 	if not (character.TeamID == 1 or character.TeamID == 2) then
-		HF.AddAffliction(character, "luabotomy", -100)
+		HF.AddAffliction(character, "serversideluaneuro", -100)
 	end
 end)
