@@ -117,7 +117,7 @@ Hook.Add("changeFallDamage", "NT.falldamage", function(impactDamage, character, 
 	end
 
 	-- don't apply fall damage if were specifically immune to it
-	if HF.HasAffliction(character, "cpr_fracturebuff") then
+	if HF.HasAffliction(character, "cpr_fracturebuff") or HF.HasAffliction(character, "stopcreatureabuse") then
 		return
 	end
 

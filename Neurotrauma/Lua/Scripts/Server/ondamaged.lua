@@ -60,7 +60,7 @@ Hook.Add(
 		-- they make the game miserable with falldamage on
 		for val in monstersToFix do
 			if attacker.Name == val then
-				HF.AddAffliction(character, "cpr_fracturebuff", 2)
+				HF.AddAffliction(character, "stopcreatureabuse", 2)
 				break
 			end
 		end
