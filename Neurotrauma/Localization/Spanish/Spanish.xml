@@ -670,8 +670,8 @@ Puede dar sangre a: AB+</entitydescription.abpluscard>
 <afflictionname.sym_nausea>Náuseas</afflictionname.sym_nausea>
 <afflictiondescription.sym_nausea>La piel está húmeda y el paciente tiene náuseas.</afflictiondescription.sym_nausea>
 
-<afflictionname.serversideluaneuro>Sin lua</afflictionname.serversideluaneuro>
-<afflictiondescription.serversideluaneuro>Lua no está corriendo. Eso significa que neurotrauma y cualquier otra modificación que lo use no funcionará. Lea las páginas del taller de las modificaciones que planea usar.</afflictiondescription.serversideluaneuro>
+<afflictionname.luabotomy>Sin lua</afflictionname.luabotomy>
+<afflictiondescription.luabotomy>Lua no está corriendo. Eso significa que neurotrauma y cualquier otra modificación que lo use no funcionará. Lea las páginas del taller de las modificaciones que planea usar.</afflictiondescription.luabotomy>
 
 
 <afflictionname.traumaticshock>Choque traumático</afflictionname.traumaticshock>

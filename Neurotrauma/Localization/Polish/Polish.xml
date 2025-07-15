@@ -673,8 +673,8 @@ Biorcy: AB+</entitydescription.abpluscard>
 <afflictionname.sym_nausea>Mdłości</afflictionname.sym_nausea>
 <afflictiondescription.sym_nausea>Skóra jest wilgotna, a pacjent ma mdłości.</afflictiondescription.sym_nausea>
 
-<afflictionname.serversideluaneuro>Lualess</afflictionname.serversideluaneuro>
-<afflictiondescription.serversideluaneuro>Lua nie działa. Oznacza to, że Neurotrauma i inne mody, które jej używają, nie będą działać. Prosimy o zapoznanie się ze stronami warsztatów modów, których planujecie użyć.</afflictiondescription.serversideluaneuro>
+<afflictionname.luabotomy>Lualess</afflictionname.luabotomy>
+<afflictiondescription.luabotomy>Lua nie działa. Oznacza to, że Neurotrauma i inne mody, które jej używają, nie będą działać. Prosimy o zapoznanie się ze stronami warsztatów modów, których planujecie użyć.</afflictiondescription.luabotomy>
 
 
 <afflictionname.traumaticshock>Szok traumatyczny</afflictionname.traumaticshock>

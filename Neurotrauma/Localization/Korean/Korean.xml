@@ -507,8 +507,8 @@
 <afflictiondescription.pain_extremity>환자는 환부에 심한 통증을 호소하고 있습니다.</afflictiondescription.pain_extremity>
 <afflictionname.sym_nausea>메스꺼움</afflictionname.sym_nausea>
 <afflictiondescription.sym_nausea>환자는 메스꺼움을 느끼며 피부가 축축합니다.</afflictiondescription.sym_nausea>
-<afflictionname.serversideluaneuro>Lua 없음</afflictionname.serversideluaneuro>
-<afflictiondescription.serversideluaneuro>Lua가 실행되지 않습니다. 즉, Neurotrauma 및 이를 사용하는 다른 모드가 작동하지 않습니다. 사용하려는 모드의 워크샵 페이지를 읽으십시오.</afflictiondescription.serversideluaneuro>
+<afflictionname.luabotomy>Lua 없음</afflictionname.luabotomy>
+<afflictiondescription.luabotomy>Lua가 실행되지 않습니다. 즉, Neurotrauma 및 이를 사용하는 다른 모드가 작동하지 않습니다. 사용하려는 모드의 워크샵 페이지를 읽으십시오.</afflictiondescription.luabotomy>
 <afflictionname.analgesia>무통</afflictionname.analgesia>
 <afflictiondescription.analgesia>통증을 느끼지 않습니다.</afflictiondescription.analgesia>
 <afflictionname.anesthesia>마취</afflictionname.anesthesia>

@@ -694,8 +694,8 @@ Kann spenden an: AB+</entitydescription.abpluscard>
 <afflictionname.sym_nausea>Übelkeit</afflictionname.sym_nausea>
 <afflictiondescription.sym_nausea>Der Patient gibt an, er fühle sich schlecht und als ob er sich gleich übergeben müsste.</afflictiondescription.sym_nausea>
 
-<afflictionname.serversideluaneuro>Lualess</afflictionname.serversideluaneuro>
-<afflictiondescription.serversideluaneuro>Lua läuft nicht. Das bedeutet, dass Neurotrauma und andere Mods, die es verwenden, nicht funktionieren. Bitte lese die Workshop-Seiten der Mods, die du verwenden möchtest.</afflictiondescription.serversideluaneuro>
+<afflictionname.luabotomy>Lualess</afflictionname.luabotomy>
+<afflictiondescription.luabotomy>Lua läuft nicht. Das bedeutet, dass Neurotrauma und andere Mods, die es verwenden, nicht funktionieren. Bitte lese die Workshop-Seiten der Mods, die du verwenden möchtest.</afflictiondescription.luabotomy>
 
 <afflictionname.traumaticshock>Traumatischer Schock</afflictionname.traumaticshock>
 <afflictiondescription.traumaticshock>Der Patient ist wach! Er erfährt extreme Angst, intensiven Stress und befindet sich in einem Schockzustand. Beende die Operation, sofort!</afflictiondescription.traumaticshock>

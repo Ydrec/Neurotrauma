@@ -17,7 +17,7 @@ DisableDistance="25000" SoundInterval="10">
     <!--
   <StatusEffect type="always" target="This" delay="1" stackable="false" disabledeltatime="true">
     <Conditional IsDead="false"/>
-    <Affliction identifier="serversideluaneuro" amount="1" />
+    <Affliction identifier="luabotomy" amount="1" />
   </StatusEffect>-->
     <!--
   <StatusEffect type="always" target="This" comparison="And">

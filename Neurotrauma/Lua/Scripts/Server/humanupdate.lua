@@ -21,16 +21,6 @@ Hook.Add("think", "NT.update", function()
 	-- I'm not entirely sure this should even exist, but lets keep it for reference
 	--NT.TickUpdate()
 end)
-Hook.Add("roundStart", "NT.RoundStart.fetchCharacters", function()
-	-- Apply 5 minute traumatic shock immunity to those who happen to be in surgery
-	for key, character in pairs(Character.CharacterList) do
-		if not character.IsDead then
-			if character.IsHuman and HF.HasAffliction(character, "retractedskin") then
-				HF.SetAfflictionLimb(character, "tshocktimeout", LimbType.Torso, 15)
-			end
-		end
-	end
-end)
 
 -- gets run once every two seconds
 function NT.Update()
@@ -1381,9 +1371,9 @@ NT.Afflictions = {
 			)
 		end,
 	},
-	serversideluaneuro = {
+	luabotomy = {
 		update = function(c, i)
-			c.afflictions[i].strength = 1
+			c.afflictions[i].strength = 0.1
 		end,
 	},
 	modconflict = {
@@ -1931,12 +1921,8 @@ NT.CharStats = {
 }
 
 function NT.UpdateHuman(character)
-	if not HF.HasAffliction(character, "serversideluaneuro") then
-		if character.TeamID == 1 or character.TeamID == 2 then
-			HF.SetAffliction(character, "serversideluaneuro", 1)
-		else
-			return
-		end
+	if not HF.HasAffliction(character, "luabotomy") then
+		return
 	end
 
 	-- pre humanupdate hooks
@@ -2081,7 +2067,15 @@ end
 
 -- optimization stuff
 Hook.Add("character.created", "NT.cleanbotomy", function(character)
-	if not (character.TeamID == 1 or character.TeamID == 2) then
-		HF.AddAffliction(character, "serversideluaneuro", -100)
+	-- Apply 5 minute traumatic shock immunity to those who happen to be in surgery after a starting the round
+	if HF.HasAffliction(character, "surgeryincision") then
+		HF.SetAfflictionLimb(character, "tshocktimeout", LimbType.Torso, 15)
+	end
+	-- unfuck shit and add our ""update/debug flag""
+	if character.TeamID == 1 or character.TeamID == 2 then
+		HF.AddAffliction(character, "luabotomypurger", 2)
+		Timer.Wait(function()
+			HF.SetAffliction(character, "luabotomy", 0.1)
+		end, 8000)
 	end
 end)

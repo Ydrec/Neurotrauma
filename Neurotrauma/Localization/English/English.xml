@@ -695,8 +695,8 @@ Can give blood to: AB+</entitydescription.abpluscard>
 <afflictionname.sym_nausea>Nausea</afflictionname.sym_nausea>
 <afflictiondescription.sym_nausea>The skin is clammy and the patient is nauseous.</afflictiondescription.sym_nausea>
 
-<afflictionname.serversideluaneuro>Lualess</afflictionname.serversideluaneuro>
-<afflictiondescription.serversideluaneuro>Lua isn't running. That means neurotrauma and any other mods that use it won't work. Please read the workshop pages of mods you plan to use.</afflictiondescription.serversideluaneuro>
+<afflictionname.luabotomy>Lualess</afflictionname.luabotomy>
+<afflictiondescription.luabotomy>Lua isn't running. That means neurotrauma and any other mods that use it won't work. Please read the workshop pages of mods you plan to use.</afflictiondescription.luabotomy>
 
 <afflictionname.modconflict>Mod conflict</afflictionname.modconflict>
 <afflictiondescription.modconflict>There is a mod conflict. A different mod is overriding some of the same items Neurotrauma does. Some things may not function correctly. Please adjust your load order.</afflictiondescription.modconflict>

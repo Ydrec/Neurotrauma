@@ -13,7 +13,7 @@ Hook.Add("chatMessage", "NT.testing", function(msg, client)
 		HF.SetAfflictionLimb(client.Character, "gate_ta_ll", LimbType.LeftLeg, 100)
 
 		return true -- hide message
-	elseif msg == "nt unfuck" then -- a command to remove non-sensical extremity amputations on the head and torso
+	elseif msg == "nt unfuck" then -- a command to remove non-sensical stuff
 		if client.Character == nil then
 			return true
 		end
@@ -27,6 +27,19 @@ Hook.Add("chatMessage", "NT.testing", function(msg, client)
 		HF.SetAfflictionLimb(client.Character, "trl_amputation", LimbType.Torso, 0)
 		HF.SetAfflictionLimb(client.Character, "tla_amputation", LimbType.Torso, 0)
 		HF.SetAfflictionLimb(client.Character, "tra_amputation", LimbType.Torso, 0)
+
+		for key, character in pairs(Character.CharacterList) do
+			if not character.IsDead then
+				if character.IsHuman then
+					HF.AddAffliction(character, "luabotomypurger", 2)
+					if character.TeamID == 1 or character.TeamID == 2 then
+						Timer.Wait(function()
+							HF.SetAffliction(character, "luabotomy", 0.1)
+						end, 4000)
+					end
+				end
+			end
+		end
 
 		return true -- hide message
 	elseif msg == "nt1" then

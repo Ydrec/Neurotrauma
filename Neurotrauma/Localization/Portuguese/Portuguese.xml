@@ -472,8 +472,8 @@ Pode dar sangue para: AB+</entitydescription.abpluscard>
 <afflictiondescription.pain_extremity>O paciente está expressando dor intensa na área afetada.</afflictiondescription.pain_extremity>
 <afflictionname.sym_nausea>Náusea</afflictionname.sym_nausea>
 <afflictiondescription.sym_nausea>A pele está úmida e o paciente está enjoado.</afflictiondescription.sym_nausea>
-<afflictionname.serversideluaneuro>Falta de Lua</afflictionname.serversideluaneuro>
-<afflictiondescription.serversideluaneuro>Lua não está rodando. Isso significa que neurotrauma e quaisquer outros mods que o usem não funcionarão. Por favor, leia as páginas da oficina de mods que você planeja usar.</afflictiondescription.serversideluaneuro>
+<afflictionname.luabotomy>Falta de Lua</afflictionname.luabotomy>
+<afflictiondescription.luabotomy>Lua não está rodando. Isso significa que neurotrauma e quaisquer outros mods que o usem não funcionarão. Por favor, leia as páginas da oficina de mods que você planeja usar.</afflictiondescription.luabotomy>
 <afflictionname.traumaticshock>Choque Traumático</afflictionname.traumaticshock>
 <afflictiondescription.traumaticshock>O paciente sente dor intensa e estresse.</afflictiondescription.traumaticshock>
 <afflictionname.analgesia>Analgesia</afflictionname.analgesia>

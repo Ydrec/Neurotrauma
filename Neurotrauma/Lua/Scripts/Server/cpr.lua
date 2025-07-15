@@ -10,8 +10,8 @@ Hook.Add("human.CPRSuccess", "NT.CPRSuccess", function(animcontroller)
 	end
 	local character = animcontroller.Character.SelectedCharacter
 
-	if not HF.HasAffliction(character, "serversideluaneuro") then
-		HF.SetAffliction(character, "serversideluaneuro", 1)
+	if not HF.HasAffliction(character, "luabotomy") then
+		HF.SetAffliction(character, "luabotomy", 1)
 	end
 
 	if not HF.HasAffliction(character, "cpr_buff_auto") then
@@ -30,8 +30,8 @@ Hook.Add("human.CPRFailed", "NT.CPRFailed", function(animcontroller)
 	end
 	local character = animcontroller.Character.SelectedCharacter
 
-	if not HF.HasAffliction(character, "serversideluaneuro") then
-		HF.SetAffliction(character, "serversideluaneuro", 1)
+	if not HF.HasAffliction(character, "luabotomy") then
+		HF.SetAffliction(character, "luabotomy", 1)
 	end
 
 	HF.AddAffliction(character, "cpr_fracturebuff", 2) -- prevent fractures during CPR (fuck baro physics)

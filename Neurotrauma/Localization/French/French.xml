@@ -671,8 +671,8 @@ Peut donner du sang à: AB+</entitydescription.abpluscard>
 <afflictionname.sym_nausea>Nausées</afflictionname.sym_nausea>
 <afflictiondescription.sym_nausea>Le patient se sent mal, a des vertiges et sa peau semble moite.</afflictiondescription.sym_nausea>
 
-<afflictionname.serversideluaneuro>Sans Lua</afflictionname.serversideluaneuro>
-<afflictiondescription.serversideluaneuro>Le Lua n'est pas activé. Cela signifie que Neurotrauma et tous les autres mods qui l'utilisent ne fonctionnent pas. Merci de lire les pages workshop des mods que vous voulez utiliser.</afflictiondescription.serversideluaneuro>
+<afflictionname.luabotomy>Sans Lua</afflictionname.luabotomy>
+<afflictiondescription.luabotomy>Le Lua n'est pas activé. Cela signifie que Neurotrauma et tous les autres mods qui l'utilisent ne fonctionnent pas. Merci de lire les pages workshop des mods que vous voulez utiliser.</afflictiondescription.luabotomy>
 
 
 <afflictionname.traumaticshock>Choc traumatique</afflictionname.traumaticshock>
