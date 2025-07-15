@@ -659,308 +659,6 @@ NT.SutureAfflictions = {
 	tamponade = { xpgain = 3, case = "retractedskin" },
 	internalbleeding = { xpgain = 3, case = "retractedskin" },
 	stroke = { xpgain = 6, case = "retractedskin" },
-	heartremoved = {
-		xpgain = 0,
-		case = "retractedskin",
-		func = function(item, usingCharacter, targetCharacter, limb)
-			local damage = HF.GetAfflictionStrength(targetCharacter, "heartdamage", 0)
-			if damage == 100 or not HF.HasAffliction(targetCharacter, "heartremoved") then
-				return
-			else
-				HF.SetAffliction(targetCharacter, "heartdamage", 100, targetCharacter)
-				HF.SetAffliction(targetCharacter, "cardiacarrest", 100, targetCharacter)
-
-				HF.SetAffliction(targetCharacter, "tamponade", 0, targetCharacter)
-				HF.SetAffliction(targetCharacter, "heartattack", 0, targetCharacter)
-				HF.AddAffliction(targetCharacter, "organdamage", (100 - damage) / 5, targetCharacter)
-				local transplantidentifier = "hearttransplant_q1"
-				if NTC.HasTag(usingCharacter, "organssellforfull") then
-					transplantidentifier = "hearttransplant"
-				end
-				if damage < 90 then
-					-- add acidosis, alkalosis and sepsis to the bloodpack if the donor has them
-					local function postSpawnFunc(args)
-						local tags = {}
-
-						if args.acidosis > 0 then
-							table.insert(tags, "acid:" .. tostring(HF.Round(args.acidosis)))
-						elseif args.alkalosis > 0 then
-							table.insert(tags, "alkal:" .. tostring(HF.Round(args.alkalosis)))
-						end
-						if args.sepsis > 10 then
-							table.insert(tags, "sepsis")
-						end
-
-						local tagstring = ""
-						for index, value in ipairs(tags) do
-							tagstring = tagstring .. value
-							if index < #tags then
-								tagstring = tagstring .. ","
-							end
-						end
-
-						args.item.Tags = tagstring
-						args.item.Condition = args.condition
-					end
-					local params = {
-						acidosis = HF.GetAfflictionStrength(targetCharacter, "acidosis"),
-						alkalosis = HF.GetAfflictionStrength(targetCharacter, "alkalosis"),
-						sepsis = HF.GetAfflictionStrength(targetCharacter, "sepsis"),
-						condition = 100 - damage,
-					}
-
-					HF.GiveItemPlusFunction(transplantidentifier, postSpawnFunc, params, usingCharacter)
-				end
-			end
-		end,
-	},
-	lungremoved = {
-		xpgain = 0,
-		case = "retractedskin",
-		func = function(item, usingCharacter, targetCharacter, limb)
-			local damage = HF.GetAfflictionStrength(targetCharacter, "lungdamage", 0)
-			if damage == 100 or not HF.HasAffliction(targetCharacter, "lungremoved") then
-				return
-			else
-				HF.SetAffliction(targetCharacter, "lungdamage", 100, targetCharacter)
-				HF.SetAffliction(targetCharacter, "respiratoryarrest", 100, targetCharacter)
-
-				HF.SetAffliction(targetCharacter, "pneumothorax", 0, targetCharacter)
-				HF.SetAffliction(targetCharacter, "needlec", 0, targetCharacter)
-
-				HF.AddAffliction(targetCharacter, "organdamage", (100 - damage) / 5, targetCharacter)
-				local transplantidentifier = "lungtransplant_q1"
-				if NTC.HasTag(usingCharacter, "organssellforfull") then
-					transplantidentifier = "lungtransplant"
-				end
-				if damage < 90 then
-					-- add acidosis, alkalosis and sepsis to the bloodpack if the donor has them
-					local function postSpawnFunc(args)
-						local tags = {}
-
-						if args.acidosis > 0 then
-							table.insert(tags, "acid:" .. tostring(HF.Round(args.acidosis)))
-						elseif args.alkalosis > 0 then
-							table.insert(tags, "alkal:" .. tostring(HF.Round(args.alkalosis)))
-						end
-						if args.sepsis > 10 then
-							table.insert(tags, "sepsis")
-						end
-
-						local tagstring = ""
-						for index, value in ipairs(tags) do
-							tagstring = tagstring .. value
-							if index < #tags then
-								tagstring = tagstring .. ","
-							end
-						end
-
-						args.item.Tags = tagstring
-						args.item.Condition = args.condition
-					end
-					local params = {
-						acidosis = HF.GetAfflictionStrength(targetCharacter, "acidosis"),
-						alkalosis = HF.GetAfflictionStrength(targetCharacter, "alkalosis"),
-						sepsis = HF.GetAfflictionStrength(targetCharacter, "sepsis"),
-						condition = 100 - damage,
-					}
-
-					HF.GiveItemPlusFunction(transplantidentifier, postSpawnFunc, params, usingCharacter)
-				end
-			end
-		end,
-	},
-	kidneyremoved = {
-		xpgain = 0,
-		case = "retractedskin",
-		func = function(item, usingCharacter, targetCharacter, limb)
-			local damage = HF.GetAfflictionStrength(targetCharacter, "kidneydamage", 0)
-			if damage == 100 or not HF.HasAffliction(targetCharacter, "kidneyremoved") then
-				return
-			else
-				HF.SetAffliction(targetCharacter, "kidneydamage", 100, usingCharacter)
-				HF.AddAffliction(targetCharacter, "organdamage", (100 - damage) / 5, usingCharacter)
-				local transplantidentifier = "kidneytransplant_q1"
-				if NTC.HasTag(usingCharacter, "organssellforfull") then
-					transplantidentifier = "kidneytransplant"
-				end
-				if damage < 50 then
-					-- add acidosis, alkalosis and sepsis to the bloodpack if the donor has them
-					local function postSpawnFunc(args)
-						local tags = {}
-
-						if args.acidosis > 0 then
-							table.insert(tags, "acid:" .. tostring(HF.Round(args.acidosis)))
-						elseif args.alkalosis > 0 then
-							table.insert(tags, "alkal:" .. tostring(HF.Round(args.alkalosis)))
-						end
-						if args.sepsis > 10 then
-							table.insert(tags, "sepsis")
-						end
-
-						local tagstring = ""
-						for index, value in ipairs(tags) do
-							tagstring = tagstring .. value
-							if index < #tags then
-								tagstring = tagstring .. ","
-							end
-						end
-
-						args.item.Tags = tagstring
-						args.item.Condition = args.condition
-					end
-					local params = {
-						acidosis = HF.GetAfflictionStrength(targetCharacter, "acidosis"),
-						alkalosis = HF.GetAfflictionStrength(targetCharacter, "alkalosis"),
-						sepsis = HF.GetAfflictionStrength(targetCharacter, "sepsis"),
-						condition = 100,
-					}
-
-					HF.GiveItemPlusFunction(transplantidentifier, postSpawnFunc, params, usingCharacter)
-					damage = damage + 50
-				end
-				if damage < 95 then
-					-- add acidosis, alkalosis and sepsis to the bloodpack if the donor has them
-					local function postSpawnFunc(args)
-						local tags = {}
-
-						if args.acidosis > 0 then
-							table.insert(tags, "acid:" .. tostring(HF.Round(args.acidosis)))
-						elseif args.alkalosis > 0 then
-							table.insert(tags, "alkal:" .. tostring(HF.Round(args.alkalosis)))
-						end
-						if args.sepsis > 10 then
-							table.insert(tags, "sepsis")
-						end
-
-						local tagstring = ""
-						for index, value in ipairs(tags) do
-							tagstring = tagstring .. value
-							if index < #tags then
-								tagstring = tagstring .. ","
-							end
-						end
-
-						args.item.Tags = tagstring
-						args.item.Condition = args.condition
-					end
-					local params = {
-						acidosis = HF.GetAfflictionStrength(targetCharacter, "acidosis"),
-						alkalosis = HF.GetAfflictionStrength(targetCharacter, "alkalosis"),
-						sepsis = HF.GetAfflictionStrength(targetCharacter, "sepsis"),
-						condition = 100 - (damage - 50) * 2,
-					}
-
-					HF.GiveItemPlusFunction(transplantidentifier, postSpawnFunc, params, usingCharacter)
-				end
-			end
-		end,
-	},
-	liverremoved = {
-		xpgain = 0,
-		case = "retractedskin",
-		func = function(item, usingCharacter, targetCharacter, limb)
-			local damage = HF.GetAfflictionStrength(targetCharacter, "liverdamage", 0)
-			if damage == 100 or not HF.HasAffliction(targetCharacter, "liverremoved") then
-				return
-			else
-				HF.SetAffliction(targetCharacter, "liverdamage", 100, usingCharacter)
-
-				HF.AddAffliction(targetCharacter, "organdamage", (100 - damage) / 5, usingCharacter)
-				local transplantidentifier = "livertransplant_q1"
-				if NTC.HasTag(usingCharacter, "organssellforfull") then
-					transplantidentifier = "livertransplant"
-				end
-				if damage < 90 then
-					-- add acidosis, alkalosis and sepsis to the bloodpack if the donor has them
-					local function postSpawnFunc(args)
-						local tags = {}
-
-						if args.acidosis > 0 then
-							table.insert(tags, "acid:" .. tostring(HF.Round(args.acidosis)))
-						elseif args.alkalosis > 0 then
-							table.insert(tags, "alkal:" .. tostring(HF.Round(args.alkalosis)))
-						end
-						if args.sepsis > 10 then
-							table.insert(tags, "sepsis")
-						end
-
-						local tagstring = ""
-						for index, value in ipairs(tags) do
-							tagstring = tagstring .. value
-							if index < #tags then
-								tagstring = tagstring .. ","
-							end
-						end
-
-						args.item.Tags = tagstring
-						args.item.Condition = args.condition
-					end
-					local params = {
-						acidosis = HF.GetAfflictionStrength(targetCharacter, "acidosis"),
-						alkalosis = HF.GetAfflictionStrength(targetCharacter, "alkalosis"),
-						sepsis = HF.GetAfflictionStrength(targetCharacter, "sepsis"),
-						condition = 100 - damage,
-					}
-
-					HF.GiveItemPlusFunction(transplantidentifier, postSpawnFunc, params, usingCharacter)
-				end
-			end
-		end,
-	},
-	brainremoved = {
-		xpgain = 0,
-		case = "retractedskin",
-		func = function(item, usingCharacter, targetCharacter, limb)
-			local damage = HF.GetAfflictionStrength(targetCharacter, "cerebralhypoxia", 0)
-			if damage == 100 or not HF.HasAffliction(targetCharacter, "brainremoved") then
-				return
-			else
-				HF.AddAffliction(targetCharacter, "cerebralhypoxia", 100, usingCharacter)
-
-				if NTSP ~= nil then
-					if HF.HasAffliction(targetCharacter, "artificialbrain") then
-						HF.SetAffliction(targetCharacter, "artificialbrain", 0, usingCharacter)
-						damage = 100
-					end
-				end
-
-				if damage < 90 then
-					local postSpawnFunction = function(item, donor, client)
-						item.Condition = 100 - damage
-						if client ~= nil then
-							item.Description = client.Name
-						end
-					end
-
-					if SERVER then
-						-- use server spawn method
-						local prefab = ItemPrefab.GetItemPrefab("braintransplant")
-						local client = HF.CharacterToClient(targetCharacter)
-						Entity.Spawner.AddItemToSpawnQueue(
-							prefab,
-							usingCharacter.WorldPosition,
-							nil,
-							nil,
-							function(item)
-								usingCharacter.Inventory.TryPutItem(item, nil, { InvSlotType.Any })
-								postSpawnFunction(item, targetCharacter, client)
-							end
-						)
-
-						if client ~= nil then
-							client.SetClientCharacter(nil)
-						end
-					else
-						-- use client spawn method
-						local item = Item(ItemPrefab.GetItemPrefab("braintransplant"), usingCharacter.WorldPosition)
-						usingCharacter.Inventory.TryPutItem(item, nil, { InvSlotType.Any })
-						postSpawnFunction(item, targetCharacter, nil)
-					end
-				end
-			end
-		end,
-	},
 
 	clampedbleeders = {},
 	surgeryincision = {},
@@ -1598,6 +1296,53 @@ NT.ItemMethods.organscalpel_liver = function(item, usingCharacter, targetCharact
 			end
 
 			HF.GiveItem(targetCharacter, "ntsfx_slash")
+		else -- organ extraction
+			local damage = HF.GetAfflictionStrength(targetCharacter, "liverdamage", 0)
+			if damage == 100 then
+				return
+			elseif HF.GetSurgerySkillRequirementMet(usingCharacter, 50) then
+				HF.SetAffliction(targetCharacter, "liverdamage", 100, usingCharacter)
+
+				HF.AddAffliction(targetCharacter, "organdamage", (100 - damage) / 5, usingCharacter)
+				local transplantidentifier = "livertransplant_q1"
+				if NTC.HasTag(usingCharacter, "organssellforfull") then
+					transplantidentifier = "livertransplant"
+				end
+				if damage < 90 then
+					-- add acidosis, alkalosis and sepsis to the bloodpack if the donor has them
+					local function postSpawnFunc(args)
+						local tags = {}
+
+						if args.acidosis > 0 then
+							table.insert(tags, "acid:" .. tostring(HF.Round(args.acidosis)))
+						elseif args.alkalosis > 0 then
+							table.insert(tags, "alkal:" .. tostring(HF.Round(args.alkalosis)))
+						end
+						if args.sepsis > 10 then
+							table.insert(tags, "sepsis")
+						end
+
+						local tagstring = ""
+						for index, value in ipairs(tags) do
+							tagstring = tagstring .. value
+							if index < #tags then
+								tagstring = tagstring .. ","
+							end
+						end
+
+						args.item.Tags = tagstring
+						args.item.Condition = args.condition
+					end
+					local params = {
+						acidosis = HF.GetAfflictionStrength(targetCharacter, "acidosis"),
+						alkalosis = HF.GetAfflictionStrength(targetCharacter, "alkalosis"),
+						sepsis = HF.GetAfflictionStrength(targetCharacter, "sepsis"),
+						condition = 100 - damage,
+					}
+
+					HF.GiveItemPlusFunction(transplantidentifier, postSpawnFunc, params, usingCharacter)
+				end
+			end
 		end
 	end
 end
@@ -1616,6 +1361,57 @@ NT.ItemMethods.organscalpel_lungs = function(item, usingCharacter, targetCharact
 			end
 
 			HF.GiveItem(targetCharacter, "ntsfx_slash")
+		else -- organ extraction
+			local damage = HF.GetAfflictionStrength(targetCharacter, "lungdamage", 0)
+			if damage == 100 then
+				return
+			else
+				HF.SetAffliction(targetCharacter, "lungdamage", 100, targetCharacter)
+				HF.SetAffliction(targetCharacter, "respiratoryarrest", 100, targetCharacter)
+
+				HF.SetAffliction(targetCharacter, "pneumothorax", 0, targetCharacter)
+				HF.SetAffliction(targetCharacter, "needlec", 0, targetCharacter)
+
+				HF.AddAffliction(targetCharacter, "organdamage", (100 - damage) / 5, targetCharacter)
+				local transplantidentifier = "lungtransplant_q1"
+				if NTC.HasTag(usingCharacter, "organssellforfull") then
+					transplantidentifier = "lungtransplant"
+				end
+				if damage < 90 then
+					-- add acidosis, alkalosis and sepsis to the bloodpack if the donor has them
+					local function postSpawnFunc(args)
+						local tags = {}
+
+						if args.acidosis > 0 then
+							table.insert(tags, "acid:" .. tostring(HF.Round(args.acidosis)))
+						elseif args.alkalosis > 0 then
+							table.insert(tags, "alkal:" .. tostring(HF.Round(args.alkalosis)))
+						end
+						if args.sepsis > 10 then
+							table.insert(tags, "sepsis")
+						end
+
+						local tagstring = ""
+						for index, value in ipairs(tags) do
+							tagstring = tagstring .. value
+							if index < #tags then
+								tagstring = tagstring .. ","
+							end
+						end
+
+						args.item.Tags = tagstring
+						args.item.Condition = args.condition
+					end
+					local params = {
+						acidosis = HF.GetAfflictionStrength(targetCharacter, "acidosis"),
+						alkalosis = HF.GetAfflictionStrength(targetCharacter, "alkalosis"),
+						sepsis = HF.GetAfflictionStrength(targetCharacter, "sepsis"),
+						condition = 100 - damage,
+					}
+
+					HF.GiveItemPlusFunction(transplantidentifier, postSpawnFunc, params, usingCharacter)
+				end
+			end
 		end
 	end
 end
@@ -1634,6 +1430,56 @@ NT.ItemMethods.organscalpel_heart = function(item, usingCharacter, targetCharact
 			end
 
 			HF.GiveItem(targetCharacter, "ntsfx_slash")
+		else -- organ extraction
+			local damage = HF.GetAfflictionStrength(targetCharacter, "heartdamage", 0)
+			if damage == 100 then
+				return
+			else
+				HF.SetAffliction(targetCharacter, "heartdamage", 100, targetCharacter)
+				HF.SetAffliction(targetCharacter, "cardiacarrest", 100, targetCharacter)
+
+				HF.SetAffliction(targetCharacter, "tamponade", 0, targetCharacter)
+				HF.SetAffliction(targetCharacter, "heartattack", 0, targetCharacter)
+				HF.AddAffliction(targetCharacter, "organdamage", (100 - damage) / 5, targetCharacter)
+				local transplantidentifier = "hearttransplant_q1"
+				if NTC.HasTag(usingCharacter, "organssellforfull") then
+					transplantidentifier = "hearttransplant"
+				end
+				if damage < 90 then
+					-- add acidosis, alkalosis and sepsis to the bloodpack if the donor has them
+					local function postSpawnFunc(args)
+						local tags = {}
+
+						if args.acidosis > 0 then
+							table.insert(tags, "acid:" .. tostring(HF.Round(args.acidosis)))
+						elseif args.alkalosis > 0 then
+							table.insert(tags, "alkal:" .. tostring(HF.Round(args.alkalosis)))
+						end
+						if args.sepsis > 10 then
+							table.insert(tags, "sepsis")
+						end
+
+						local tagstring = ""
+						for index, value in ipairs(tags) do
+							tagstring = tagstring .. value
+							if index < #tags then
+								tagstring = tagstring .. ","
+							end
+						end
+
+						args.item.Tags = tagstring
+						args.item.Condition = args.condition
+					end
+					local params = {
+						acidosis = HF.GetAfflictionStrength(targetCharacter, "acidosis"),
+						alkalosis = HF.GetAfflictionStrength(targetCharacter, "alkalosis"),
+						sepsis = HF.GetAfflictionStrength(targetCharacter, "sepsis"),
+						condition = 100 - damage,
+					}
+
+					HF.GiveItemPlusFunction(transplantidentifier, postSpawnFunc, params, usingCharacter)
+				end
+			end
 		end
 	end
 end
@@ -1652,6 +1498,88 @@ NT.ItemMethods.organscalpel_kidneys = function(item, usingCharacter, targetChara
 			end
 
 			HF.GiveItem(targetCharacter, "ntsfx_slash")
+		else -- organ extraction, one-by-one
+			local damage = HF.GetAfflictionStrength(targetCharacter, "kidneydamage", 0)
+			if damage == 100 then
+				return
+			else
+				local transplantidentifier = "kidneytransplant_q1"
+				if NTC.HasTag(usingCharacter, "organssellforfull") then
+					transplantidentifier = "kidneytransplant"
+				end
+				if damage < 50 then
+					HF.SetAffliction(targetCharacter, "kidneydamage", 50, usingCharacter)
+					HF.AddAffliction(targetCharacter, "organdamage", (100 - damage) / 5, usingCharacter)
+					-- add acidosis, alkalosis and sepsis to the bloodpack if the donor has them
+					local function postSpawnFunc(args)
+						local tags = {}
+
+						if args.acidosis > 0 then
+							table.insert(tags, "acid:" .. tostring(HF.Round(args.acidosis)))
+						elseif args.alkalosis > 0 then
+							table.insert(tags, "alkal:" .. tostring(HF.Round(args.alkalosis)))
+						end
+						if args.sepsis > 10 then
+							table.insert(tags, "sepsis")
+						end
+
+						local tagstring = ""
+						for index, value in ipairs(tags) do
+							tagstring = tagstring .. value
+							if index < #tags then
+								tagstring = tagstring .. ","
+							end
+						end
+
+						args.item.Tags = tagstring
+						args.item.Condition = args.condition
+					end
+					local params = {
+						acidosis = HF.GetAfflictionStrength(targetCharacter, "acidosis"),
+						alkalosis = HF.GetAfflictionStrength(targetCharacter, "alkalosis"),
+						sepsis = HF.GetAfflictionStrength(targetCharacter, "sepsis"),
+						condition = 100,
+					}
+
+					HF.GiveItemPlusFunction(transplantidentifier, postSpawnFunc, params, usingCharacter)
+					damage = damage + 50
+				elseif damage < 95 then
+					HF.SetAffliction(targetCharacter, "kidneydamage", 100, usingCharacter)
+					HF.AddAffliction(targetCharacter, "organdamage", (100 - damage) / 5, usingCharacter)
+					-- add acidosis, alkalosis and sepsis to the bloodpack if the donor has them
+					local function postSpawnFunc(args)
+						local tags = {}
+
+						if args.acidosis > 0 then
+							table.insert(tags, "acid:" .. tostring(HF.Round(args.acidosis)))
+						elseif args.alkalosis > 0 then
+							table.insert(tags, "alkal:" .. tostring(HF.Round(args.alkalosis)))
+						end
+						if args.sepsis > 10 then
+							table.insert(tags, "sepsis")
+						end
+
+						local tagstring = ""
+						for index, value in ipairs(tags) do
+							tagstring = tagstring .. value
+							if index < #tags then
+								tagstring = tagstring .. ","
+							end
+						end
+
+						args.item.Tags = tagstring
+						args.item.Condition = args.condition
+					end
+					local params = {
+						acidosis = HF.GetAfflictionStrength(targetCharacter, "acidosis"),
+						alkalosis = HF.GetAfflictionStrength(targetCharacter, "alkalosis"),
+						sepsis = HF.GetAfflictionStrength(targetCharacter, "sepsis"),
+						condition = 100 - (damage - 50) * 2,
+					}
+
+					HF.GiveItemPlusFunction(transplantidentifier, postSpawnFunc, params, usingCharacter)
+				end
+			end
 		end
 	end
 end
@@ -1669,6 +1597,54 @@ NT.ItemMethods.organscalpel_brain = function(item, usingCharacter, targetCharact
 			end
 
 			HF.GiveItem(targetCharacter, "ntsfx_slash")
+		else -- organ extraction
+			local damage = HF.GetAfflictionStrength(targetCharacter, "cerebralhypoxia", 0)
+			if damage == 100 then
+				return
+			else
+				HF.AddAffliction(targetCharacter, "cerebralhypoxia", 100, usingCharacter)
+
+				if NTSP ~= nil then
+					if HF.HasAffliction(targetCharacter, "artificialbrain") then
+						HF.SetAffliction(targetCharacter, "artificialbrain", 0, usingCharacter)
+						damage = 100
+					end
+				end
+
+				if damage < 90 then
+					local postSpawnFunction = function(item, donor, client)
+						item.Condition = 100 - damage
+						if client ~= nil then
+							item.Description = client.Name
+						end
+					end
+
+					if SERVER then
+						-- use server spawn method
+						local prefab = ItemPrefab.GetItemPrefab("braintransplant")
+						local client = HF.CharacterToClient(targetCharacter)
+						Entity.Spawner.AddItemToSpawnQueue(
+							prefab,
+							usingCharacter.WorldPosition,
+							nil,
+							nil,
+							function(item)
+								usingCharacter.Inventory.TryPutItem(item, nil, { InvSlotType.Any })
+								postSpawnFunction(item, targetCharacter, client)
+							end
+						)
+
+						if client ~= nil then
+							client.SetClientCharacter(nil)
+						end
+					else
+						-- use client spawn method
+						local item = Item(ItemPrefab.GetItemPrefab("braintransplant"), usingCharacter.WorldPosition)
+						usingCharacter.Inventory.TryPutItem(item, nil, { InvSlotType.Any })
+						postSpawnFunction(item, targetCharacter, nil)
+					end
+				end
+			end
 		end
 	end
 end
