@@ -2389,7 +2389,7 @@ NT.ItemStartsWithMethods.kidneytransplant = function(item, usingCharacter, targe
 		if damage > 50 then
 			Timer.Wait(function()
 				HF.SetAffliction(targetCharacter, "kidneyremoved", 0, usingCharacter)
-			end, 4000)
+			end, 3000)
 			HF.AddAffliction(targetCharacter, "kidneydamage", -workcondition / 2, usingCharacter)
 			HF.AddAffliction(targetCharacter, "organdamage", -workcondition / 5, usingCharacter)
 			HF.RemoveItem(item)
