@@ -237,6 +237,19 @@ NT.ConfigData = {
 		difficultyCharacteristics = { multiplier = 0.5 },
 		description = "When receiving damage that would cause a fracture, remove plaster casts on the limb",
 	},
+	NT_creatureNoFallDamage = {
+		name = "Excluded creatures that abuse the fall damage mechanic",
+		default = {
+			"Mudraptor",
+			"Mudraptor_unarmored",
+			"Mudraptor_veteran",
+			"Spineling_giant",
+		},
+		style = "SpeciesName,SpeciesName",
+		type = "string",
+		boxsize = 0.1,
+		description = "You can add or remove creatures to customize this list to your liking. Use debug command `nt_listcreatures` to list the SpeciesName of the creature you are patching in your game. Report creatures that abuse fall damage to the discord server to improve this default list.",
+	},
 
 	NTCRE_header1 = { name = "Consent Required", type = "category" },
 	NTCRE_ConsentRequiredExtra = {

@@ -22,12 +22,6 @@ local function getCalculatedConcussionReduction(armor, strength)
 	end
 	return reduction
 end
-local monstersToFix = {
-	"Mudraptor",
-	"Mudraptor_unarmored",
-	"Mudraptor_veteran",
-	"Spineling_giant",
-}
 Hook.Add(
 	"character.damageLimb",
 	"NT.ondamagedby",
@@ -57,8 +51,9 @@ Hook.Add(
 		then
 			return
 		end
+		local creatureCategory = NTConfig.Get("NT_creatureNoFallDamage", 1)
 		-- they make the game miserable with falldamage on
-		for val in monstersToFix do
+		for val in creatureCategory do
 			if attacker.SpeciesName == val then
 				HF.AddAffliction(character, "stopcreatureabuse", 2)
 				break
