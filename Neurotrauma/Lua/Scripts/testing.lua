@@ -183,6 +183,84 @@ local function registerDebugCommands()
 	)
 
 	Game.AddCommand(
+		"nt_listcreatures",
+		"nt_listcreatures [printafflictionsgeneric/printafflictionsfull]: Lists all non-human creatures currently on the server",
+		function(args)
+			if CLIENT and Game.IsMultiplayer then
+				Game.client.SendConsoleCommand("nt_listcreatures " .. '"' .. args[1] .. '"')
+				return
+			end
+
+			local function printAfflictions(target, args)
+				local genericafflictions, limbafflictions = {}, {}
+				for kvp in target.CharacterHealth.afflictions do
+					if kvp.Value then
+						if not limbafflictions[kvp.Value] then
+							limbafflictions[kvp.Value] = {}
+						end
+						table.insert(limbafflictions[kvp.Value], kvp.Key)
+					else
+						table.insert(genericafflictions, kvp.Key)
+					end
+				end
+				if args[1] == "printafflictionsgeneric" or args[1] == "printafflictionsfull" then
+					print("Generic afflictions")
+					for affliction in genericafflictions do
+						print(
+							"# ",
+							affliction.Name,
+							" = ",
+							affliction.Strength,
+							" (vitality decrease: ",
+							affliction.GetVitalityDecrease(target.CharacterHealth),
+							")"
+						)
+					end
+				end
+				if args[1] == "printafflictionsfull" then
+					print("Limb afflictions")
+					for limbhealth, afflictions in pairs(limbafflictions) do
+						print(limbhealth.Name or "Unnamed limb")
+						for affliction in afflictions do
+							print(
+								"#  ",
+								affliction.Name,
+								" = ",
+								affliction.Strength,
+								" (vitality decrease: ",
+								target.CharacterHealth.GetVitalityDecreaseWithVitalityMultipliers(affliction),
+								")"
+							)
+						end
+					end
+				end
+			end
+
+			for key, character in pairs(Character.CharacterList) do
+				if not character.IsHuman then
+					print(
+						character.SpeciesName,
+						" vitality: ",
+						character.Vitality,
+						"/",
+						character.MaxVitality,
+						" Mass: ",
+						character.Mass
+					)
+					if args[1] == "printafflictionsgeneric" or args[1] == "printafflictionsfull" then
+						printAfflictions(character, args)
+					end
+				end
+			end
+		end,
+		--GetValidArguments
+		function()
+			return { { "printafflictionsgeneric", "printafflictionsfull" } }
+		end,
+		true
+	)
+
+	Game.AddCommand(
 		"nt_nugget",
 		"nt_nugget [character name]: Nuggets the character",
 		function(args)
