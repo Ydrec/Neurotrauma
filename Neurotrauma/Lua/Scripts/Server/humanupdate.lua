@@ -2069,11 +2069,11 @@ end
 Hook.Add("character.created", "NT.cleanbotomy", function(character)
 	-- Apply 5 minute traumatic shock immunity to those who happen to be in surgery after a starting the round
 	if HF.HasAffliction(character, "surgeryincision") then
-		HF.SetAfflictionLimb(character, "tshocktimeout", LimbType.Torso, 15)
+		HF.SetAffliction(character, "tshocktimeout", 15)
 	end
-	-- unfuck shit and add our ""update/debug flag""
+	-- unfuck shit in the crewmate and add our ""update/debug flag""
 	if character.TeamID == 1 or character.TeamID == 2 then
-		HF.AddAffliction(character, "luabotomypurger", 2)
+		HF.SetAffliction(character, "luabotomypurger", 2)
 		Timer.Wait(function()
 			HF.SetAffliction(character, "luabotomy", 0.1)
 		end, 8000)
