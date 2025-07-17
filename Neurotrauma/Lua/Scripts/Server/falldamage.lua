@@ -98,12 +98,12 @@ end
 Hook.Add("changeFallDamage", "NT.falldamage", function(impactDamage, character, impactPos, velocity)
 	-- don't run the code if we ignore the code
 	if not NTConfig.Get("NT_Calculations", true) then
-		return
+		return 0
 	end
 
 	-- dont bother with creatures
 	if not character.IsHuman then
-		return
+		return 0
 	end
 
 	-- dont apply fall damage in water
@@ -118,7 +118,7 @@ Hook.Add("changeFallDamage", "NT.falldamage", function(impactDamage, character, 
 
 	-- don't apply fall damage if were specifically immune to it
 	if HF.HasAffliction(character, "cpr_fracturebuff") or HF.HasAffliction(character, "stopcreatureabuse") then
-		return
+		return 0
 	end
 
 	if not HF.HasAffliction(character, "luabotomy") then
@@ -126,7 +126,7 @@ Hook.Add("changeFallDamage", "NT.falldamage", function(impactDamage, character, 
 	end
 
 	local velocityMagnitude = HF.Magnitude(velocity)
-	velocityMagnitude = velocityMagnitude ^ 1.5
+	velocityMagnitude = velocityMagnitude ^ 1.3
 
 	-- apply fall damage to all limbs based on fall direction
 	local mainlimbPos = character.AnimController.MainLimb.WorldPosition
