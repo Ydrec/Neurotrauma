@@ -184,6 +184,21 @@ NT.ConfigData = {
 		type = "float",
 		difficultyCharacteristics = { multiplier = 0.5, max = 5 },
 	},
+	--NT_velocityWeight = {
+	--	name = "Velocity weight",
+	--	default = 1,
+	--	range = { 0, 100 },
+	--	type = "float",
+	--	difficultyCharacteristics = { multiplier = 0.5, max = 5 },
+	--	description = "How much fall velocity is allowed for sharing damage into other limbs.",
+	--},
+	NT_falldamageCeiling = {
+		name = "Maximum fall damage",
+		default = 1,
+		range = { 0, 100 },
+		type = "float",
+		difficultyCharacteristics = { multiplier = 0.5, max = 5 },
+	},
 	NT_falldamage = {
 		name = "Falldamage",
 		default = 1,

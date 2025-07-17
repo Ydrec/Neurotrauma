@@ -181,7 +181,7 @@ Hook.Add("changeFallDamage", "NT.falldamage", function(impactDamage, character, 
 		-- lets limit the numbers to the max value of blunttrauma so that resistances make sense
 		local damageInflictedToThisLimb = math.min(
 			relativeWeight * math.max(0, velocityMagnitude - 10) ^ 1.5 * NTConfig.Get("NT_falldamage", 1) * 0.5,
-			200
+			NTConfig.Get("NT_falldamageCeiling", 1) * 60
 		)
 		NT.CauseFallDamage(character, type, damageInflictedToThisLimb)
 	end
@@ -282,7 +282,7 @@ NT.CauseFallDamage = function(character, limbtype, strength)
 		if
 			strength >= 55
 			and HF.Chance(
-				math.min((strength - 55) / 100, 0.7)
+				math.min((strength - 15) / 100, 0.7)
 					* NTC.GetMultiplier(character, "anyfracturechance")
 					* NTConfig.Get("NT_fractureChance", 1)
 					* injuryChanceMultiplier
