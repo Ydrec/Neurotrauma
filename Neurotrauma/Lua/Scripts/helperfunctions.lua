@@ -671,21 +671,39 @@ function HF.SpawnItemPlusFunction(identifier, func, params, inventory, targetslo
 	-- use server spawn method
 	Timer.Wait(function()
 		local prefab = ItemPrefab.GetItemPrefab(identifier)
-		Entity.Spawner.AddItemToSpawnQueue(
-			prefab,
-			position or inventory.Container.Item.WorldPosition,
-			nil,
-			nil,
-			function(newitem)
-				if inventory ~= nil then
-					inventory.TryPutItem(newitem, targetslot, true, true, nil)
+		if tostring(inventory) == "Barotrauma.CharacterInventory" then
+			Entity.Spawner.AddItemToSpawnQueue(
+				prefab,
+				position or inventory.Owner.AnimController.WorldPosition,
+				nil,
+				nil,
+				function(newitem)
+					if inventory ~= nil then
+						inventory.TryPutItem(newitem, targetslot, true, true, nil)
+					end
+					params["item"] = newitem
+					if func ~= nil then
+						func(params)
+					end
 				end
-				params["item"] = newitem
-				if func ~= nil then
-					func(params)
+			)
+		else
+			Entity.Spawner.AddItemToSpawnQueue(
+				prefab,
+				position or inventory.Container.Item.WorldPosition,
+				nil,
+				nil,
+				function(newitem)
+					if inventory ~= nil then
+						inventory.TryPutItem(newitem, targetslot, true, true, nil)
+					end
+					params["item"] = newitem
+					if func ~= nil then
+						func(params)
+					end
 				end
-			end
-		)
+			)
+		end
 	end, 35)
 end
 
