@@ -1440,7 +1440,9 @@ NT.LimbAfflictions = {
 		update = function(c, limbaff, i, type)
 			-- gypsum slowdown and fracture healing
 			if limbaff[i].strength > 0 then
-				c.stats.speedmultiplier = c.stats.speedmultiplier * 0.8
+				if type == LimbType.LeftLeg or type == LimbType.RightLeg then
+					c.stats.speedmultiplier = c.stats.speedmultiplier * 0.8
+				end
 				NT.BreakLimb(c.character, type, -(100 / 300) * NT.Deltatime)
 			end
 		end,
