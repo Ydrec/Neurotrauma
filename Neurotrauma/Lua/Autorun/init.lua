@@ -55,7 +55,7 @@ if (Game.IsMultiplayer and SERVER) or not Game.IsMultiplayer then
 	dofile(NT.Path .. "/Lua/Scripts/Server/humanupdate.lua")
 	dofile(NT.Path .. "/Lua/Scripts/Server/ondamaged.lua")
 	dofile(NT.Path .. "/Lua/Scripts/Server/items.lua")
-	dofile(NT.Path .. "/Lua/Scripts/Server/onfire.lua")
+	--dofile(NT.Path .. "/Lua/Scripts/Server/onfire.lua") -- we got onfire in vanilla, plus it has severe perf issues
 	dofile(NT.Path .. "/Lua/Scripts/Server/cpr.lua")
 	--dofile(NT.Path.."/Lua/Scripts/Server/surgerytable.lua")
 	dofile(NT.Path .. "/Lua/Scripts/Server/fuckbots.lua")
