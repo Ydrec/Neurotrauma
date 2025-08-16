@@ -852,11 +852,13 @@ NT.Afflictions = {
 	},
 	traumaticshock = {
 		update = function(c, i)
+			if c.afflictions.tshocktimeout.strength > 0 then
+				c.afflictions[i].strength = 0
+				return
+			end
 			local shouldReduce = (c.stats.sedated and c.afflictions.table.strength > 0)
 				or c.afflictions.anesthesia.strength > 15
-			c.afflictions[i].strength = c.afflictions[i].strength
-				- (0.5 + HF.BoolToNum(shouldReduce, 1.5) + c.afflictions.tshocktimeout.strength * 100)
-					* NT.Deltatime
+			c.afflictions[i].strength = c.afflictions[i].strength - 0.5 + HF.BoolToNum(shouldReduce, 1.5) * NT.Deltatime
 
 			if c.afflictions[i].strength > 5 and c.afflictions.sym_unconsciousness.strength < 0.1 then
 				HF.AddAffliction(c.character, "shockpain", 10 * NT.Deltatime)
