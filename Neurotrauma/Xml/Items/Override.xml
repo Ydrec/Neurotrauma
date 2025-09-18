@@ -133,6 +133,9 @@
             <Price baseprice="10">
                 <Price storeidentifier="merchantoutpost" minavailable="4" />
                 <Price storeidentifier="merchantcity" minavailable="6" />
+                <Price storeidentifier="merchantresearch" minavailable="4" />
+                <Price storeidentifier="merchantmilitary" minavailable="4" />
+                <Price storeidentifier="merchantmine" minavailable="4" />
             </Price>
 
             <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="192,64,64,64" origin="0.5,0.5" />
