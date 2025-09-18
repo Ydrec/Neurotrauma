@@ -313,7 +313,7 @@
             <PreferredContainer secondary="outpostmedcompartment" amount="1" spawnprobability="0.1" />
             <PreferredContainer secondary="researchcontainer" spawnprobability="0.02"/>
 
-            <Price baseprice="100">
+            <Price baseprice="50">
                 <Price storeidentifier="merchantmedical" minavailable="12" />
             </Price>
 
@@ -862,7 +862,7 @@
             <PreferredContainer secondary="abandonedmedcab,wreckmedcab" minamount="0" maxamount="2" spawnprobability="0.5" />
             <PreferredContainer primary="medfabcab" secondary="medcontainer"/>
 
-            <Price baseprice="40">
+            <Price baseprice="60">
                 <Price storeidentifier="merchantoutpost" minavailable="6" />
                 <Price storeidentifier="merchantcity" multiplier="0.9" minavailable="12" />
                 <Price storeidentifier="merchantresearch" multiplier="0.9" minavailable="10" />
@@ -1187,7 +1187,7 @@
             <PreferredContainer secondary="outpostmedcab" amount="1" spawnprobability="0.2" />
             <PreferredContainer secondary="outpostmedcompartment" amount="1" spawnprobability="0.05" />
 
-            <Price baseprice="190">
+            <Price baseprice="220">
                 <Price storeidentifier="merchantmedical" multiplier="0.9" minavailable="10" minleveldifficulty="25" />
             </Price>
 
@@ -1217,18 +1217,18 @@
                     <Sound file="Content/Items/Medical/Bandage2.ogg" range="500" />
                 </StatusEffect>
                 <StatusEffect statuseffecttags="medical" type="OnSuccess" target="This, Limb" duration="2.0">
-                    <ReduceAffliction type="bleeding" amount="40" />
-                    <ReduceAffliction type="burn" amount="20" />
+                    <ReduceAffliction type="bleeding" amount="30" />
+                    <ReduceAffliction type="burn" amount="7.5" />
                 </StatusEffect>
-                <StatusEffect statuseffecttags="medical" type="OnSuccess" target="This, Limb" duration="60.0">
-                    <ReduceAffliction type="infectedwound" amount="10" />
+                <StatusEffect statuseffecttags="medical" type="OnSuccess" target="This, Limb" duration="30.0"> <!-- scaled to NT's infection -->
+                    <ReduceAffliction type="infectedwound" amount="7.5" />
                 </StatusEffect>
                 <StatusEffect statuseffecttags="medical" type="OnFailure" target="This, Limb" duration="2.0">
-                    <ReduceAffliction type="bleeding" amount="30" />
-                    <ReduceAffliction type="burn" amount="15" />
+                    <ReduceAffliction type="bleeding" amount="20" />
+                    <ReduceAffliction type="burn" amount="5" />
                 </StatusEffect>
-                <StatusEffect statuseffecttags="medical" type="OnFailure" target="This, Limb" duration="60.0">
-                    <ReduceAffliction type="infectedwound" amount="8" />
+                <StatusEffect statuseffecttags="medical" type="OnFailure" target="This, Limb" duration="30.0">
+                    <ReduceAffliction type="infectedwound" amount="5" />
                 </StatusEffect>
                 <StatusEffect statuseffecttags="medical" multiplyafflictionsbymaxvitality="true" type="OnFailure" target="This, Limb" disabledeltatime="true" delay="20">
                     <Affliction identifier="heartattack" amount="100" probability="0.5" />
