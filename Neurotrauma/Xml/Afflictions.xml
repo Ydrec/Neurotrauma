@@ -5252,7 +5252,7 @@ thats what the vomiting symptom is for -->
         minspeedmultiplier="1.0"
         maxspeedmultiplier="0.6">
       </Effect>
-      <PeriodicEffect mininterval="12" maxinterval="16">
+      <PeriodicEffect mininterval="12" maxinterval="16" minstrength="50" maxstrength="100">
         <StatusEffect target="Character" SpeedMultiplier="0.0" setvalue="true" duration="1.7" />
         <StatusEffect target="Character" comparison="and">
           <Conditional ishuman="true" />
