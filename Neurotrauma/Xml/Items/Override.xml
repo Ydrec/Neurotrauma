@@ -1143,7 +1143,7 @@
                     <ReduceAffliction type="internaldamage" amount="1" />
                     <ReduceAffliction identifier="hypoxemia" amount="5" />
                     <ReduceAffliction identifier="bloodloss" amount="2.5" />
-                    <ReduceAffliction identifier="bleeding" amount="2.5" />
+                    <ReduceAffliction type="bleeding" amount="2.5" />
                     <ReduceAffliction identifier="stun" amount="0.3" />
                 </StatusEffect>
                 <StatusEffect statuseffecttags="medical" type="OnSuccess" target="UseTarget" disabledeltatime="true">
@@ -1156,7 +1156,7 @@
                     <ReduceAffliction type="internaldamage" amount="0.5" />
                     <ReduceAffliction identifier="hypoxemia" amount="2" />
                     <ReduceAffliction identifier="bloodloss" amount="1.25" />
-                    <ReduceAffliction identifier="bleeding" amount="0.5" />
+                    <ReduceAffliction type="bleeding" amount="0.5" />
                     <ReduceAffliction identifier="stun" amount="0.15" />
                 </StatusEffect>
                 <StatusEffect statuseffecttags="medical" type="OnFailure" target="UseTarget" disabledeltatime="true">

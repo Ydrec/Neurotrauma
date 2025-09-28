@@ -930,7 +930,7 @@
     iconcolors="127,127,127,255;127,127,127,255">
     <Effect minstrength="0" maxstrength="100" strengthchange="0">
       <StatusEffect target="limb">
-        <ReduceAffliction identifier="bleeding" strength="0.5"/>
+        <ReduceAffliction type="bleeding" strength="0.5"/>
       </StatusEffect>
     </Effect>
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="1,4" sheetelementsize="128,128" origin="0,0"/>
@@ -949,16 +949,16 @@
     iconcolors="127,127,127,255;127,127,127,255">
     <Effect minstrength="0" maxstrength="100">
       <StatusEffect target="Character" targetlimb="LeftArm">
-        <ReduceAffliction identifier="bleeding" strength="2"/>
+        <ReduceAffliction type="bleeding" strength="2"/>
       </StatusEffect>
       <StatusEffect target="Character" targetlimb="RightArm">
-        <ReduceAffliction identifier="bleeding" strength="2"/>
+        <ReduceAffliction type="bleeding" strength="2"/>
       </StatusEffect>
       <StatusEffect target="Character" targetlimb="LeftLeg">
-        <ReduceAffliction identifier="bleeding" strength="2"/>
+        <ReduceAffliction type="bleeding" strength="2"/>
       </StatusEffect>
       <StatusEffect target="Character" targetlimb="RightLeg">
-        <ReduceAffliction identifier="bleeding" strength="2"/>
+        <ReduceAffliction type="bleeding" strength="2"/>
       </StatusEffect>
       <StatusEffect target="Character" multiplyafflictionsbymaxvitality="true">
         <Affliction identifier="organdamage" strength="0.5"/>
@@ -5188,7 +5188,7 @@ thats what the vomiting symptom is for -->
         <ReduceAffliction type="damage" strength="0.1"/>
         <ReduceAffliction type="burn" strength="0.1"/>
         <ReduceAffliction identifier="bloodloss" strength="0.1"/>
-        <ReduceAffliction identifier="bleeding" strength="0.1"/>
+        <ReduceAffliction type="bleeding" strength="0.1"/>
         <ReduceAffliction identifier="internalbleeding" strength="0.1"/>
         <ReduceAffliction identifier="chemwithdrawal" strength="0.1"/>
       </StatusEffect>
