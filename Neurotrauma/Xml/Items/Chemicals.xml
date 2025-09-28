@@ -285,33 +285,42 @@
 
     <!-- Ointment / heals infected wound -->
     <!-- Maybe it's worth moving to Consumables.xml. By: TheManyFacedDemon -->
-    <Item name="" identifier="ointment" category="Medical" Tags="smallitem,medical" maxstacksize="8" maxstacksizecharacterinventory="1" useinhealthinterface="true" cargocontaineridentifier="mediccrate" scale="0.265" impactsoundtag="impact_soft">
-        <PreferredContainer primary="medcab" minamount="1" maxamount="3" spawnprobability="1"/>
+    <Item name="" identifier="ointment" category="Medical" Tags="smallitem,medical" maxstacksize="32" maxstacksizecharacterinventory="8" useinhealthinterface="true" cargocontaineridentifier="mediccrate" scale="0.265" impactsoundtag="impact_soft">
+        <PreferredContainer primary="medcab" minamount="10" maxamount="16" spawnprobability="1"/>
         <PreferredContainer primary="supplycab" minamount="1" maxamount="2" spawnprobability="0.1"/>
-        <PreferredContainer primary="wreckmedcab,abandonedmedcab" minamount="0" maxamount="3" spawnprobability="0.12"/>
-        <PreferredContainer primary="outpostmedcompartment" minamount="0" maxamount="3" spawnprobability="0.25"/>
+        <PreferredContainer primary="wreckmedcab,abandonedmedcab" minamount="0" maxamount="8" spawnprobability="0.12"/>
+        <PreferredContainer primary="outpostmedcompartment" minamount="0" maxamount="10" spawnprobability="0.25"/>
 
-        <Price baseprice="216">
-            <Price storeidentifier="merchantmedical" sold="true" multiplier="0.9" minavailable="6"/>
+        <Price baseprice="54">
+            <Price storeidentifier="merchantmedical" sold="true" multiplier="0.9" minavailable="18"/>
         </Price>
 
-        <Fabricate suitablefabricators="medicalfabricator" requiredtime="15">
+        <Fabricate suitablefabricators="medicalfabricator" requiredtime="15" amount="8">
             <RequiredSkill identifier="medical" level="10"/>
             <RequiredItem identifier="stabilozine" amount="2"/>
             <RequiredItem identifier="antibiotics" amount="2"/>
         </Fabricate>
 
-        <Deconstruct time="5">
-            <Item identifier="stabilozine" mincondition="0.1"/>
-        </Deconstruct>
+        <Deconstruct/>
 
-        <SuitableTreatment identifier="infectedwound" suitability="20"/>
-        <SuitableTreatment identifier="burn" suitability="15"/>
+        <SuitableTreatment identifier="infectedwound" suitability="100"/>
         <InventoryIcon texture="%ModDir%/Images/InventoryItemIconAtlas.png" sourcerect="64,64,64,64" origin="0.5,0.5"/>
         <Sprite texture="%ModDir%/Images/InGameItemIconAtlas.png" sourcerect="128,256,128,128" depth="0.6" origin="0.5,0.5"/>
         <Body width="60" height="20" density="20"/>
 
         <MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="5,0" handle1="-5,0" holdangle="10" reload="1.0" msg="ItemMsgPickUpSelect">
+            <RequiredSkill identifier="medical" level="55" />
+            <StatusEffect type="OnUse" target="This" Condition="-100.0" setvalue="true">
+                <Sound file="%ModDir%/Sound/ointment.ogg" range="500" />
+            </StatusEffect>
+            <StatusEffect statuseffecttags="medical" type="OnSuccess" target="This, Limb" duration="1.0">
+                <ReduceAffliction type="infectedwound" amount="60" />
+                <Affliction identifier="ointmented" amount="100" />
+            </StatusEffect>
+            <StatusEffect statuseffecttags="medical" type="OnFailure" target="This, Limb" duration="1.0">
+                <ReduceAffliction type="infectedwound" amount="30" />
+                <Affliction identifier="ointmented" amount="80" />
+            </StatusEffect>
             <StatusEffect type="OnBroken" target="This">
                 <Remove/>
             </StatusEffect>

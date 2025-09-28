@@ -864,21 +864,6 @@ end
 local function limbHasThirdDegreeBurns(char, limbtype)
 	return HF.GetAfflictionStrengthLimb(char, limbtype, "burn", 0) > 50
 end
-NT.ItemMethods.ointment = function(item, usingCharacter, targetCharacter, limb)
-	local limbtype = limb.type
-
-	local success = HF.BoolToNum(HF.GetSkillRequirementMet(usingCharacter, "medical", 10), 1)
-
-	HF.AddAfflictionLimb(targetCharacter, "ointmented", limbtype, 60 * (success + 1), usingCharacter)
-	if not limbHasThirdDegreeBurns(targetCharacter, limbtype) then
-		HF.AddAfflictionLimb(targetCharacter, "burn", limbtype, -7.2 - success * 4.8, usingCharacter)
-	end
-	HF.AddAfflictionLimb(targetCharacter, "infectedwound", limbtype, -24 - success * 48, usingCharacter)
-
-	-- HF.RemoveItem(item)
-	item.Condition = item.Condition - 12.5
-	HF.GiveItem(targetCharacter, "ntsfx_ointment")
-end
 NT.ItemMethods.antibleeding1 = function(item, usingCharacter, targetCharacter, limb)
 	local limbtype = limb.type
 	local success = HF.BoolToNum(HF.GetSkillRequirementMet(usingCharacter, "medical", 10), 1)
