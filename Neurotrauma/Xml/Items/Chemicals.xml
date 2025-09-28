@@ -59,7 +59,7 @@
             <Price storeidentifier="merchantmedical" sold="true" multiplier="0.9" minavailable="1"/>
         </Price>
 
-        <Fabricate suitablefabricators="medicalfabricator" requiredtime="60">
+        <Fabricate suitablefabricators="medicalfabricator" requiredtime="40">
             <RequiredSkill identifier="medical" level="80"/>
             <RequiredItem identifier="adrenaline"/>
             <RequiredItem identifier="ethanol"/>
@@ -170,7 +170,7 @@
             <Price storeidentifier="merchantmedical" sold="true" multiplier="0.9" minavailable="2"/>
         </Price>
 
-        <Fabricate suitablefabricators="medicalfabricator" requiredtime="20" amount="3">
+        <Fabricate suitablefabricators="medicalfabricator" requiredtime="25" amount="5">
             <RequiredSkill identifier="medical" level="40"/>
             <RequiredItem identifier="carbon" amount="2"/>
             <RequiredItem identifier="sulphuricacid"/>
