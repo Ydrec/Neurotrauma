@@ -1183,27 +1183,25 @@
         </Item>
 
         <!-- antibiotic glue -->
-        <Item name="" identifier="antibleeding3" category="Medical" Tags="smallitem,medical" maxstacksize="8" maxstacksizecharacterinventory="1" cargocontaineridentifier="mediccrate" description="" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True">
+        <Item name="" identifier="antibleeding3" category="Medical" Tags="smallitem,medical" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="mediccrate" description="" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True">
             <Upgrade gameversion="0.10.0.0" scale="0.5" />
             <PreferredContainer primary="medcab" secondary="medcontainer"/>
-            <PreferredContainer secondary="wreckmedcab,abandonedmedcab" amount="1" spawnprobability="0.3" />
-            <PreferredContainer secondary="outpostmedcab" amount="1" spawnprobability="0.2" />
-            <PreferredContainer secondary="outpostmedcompartment" amount="1" spawnprobability="0.05" />
+            <PreferredContainer secondary="wreckmedcab,abandonedmedcab" amount="2" spawnprobability="0.3" />
+            <PreferredContainer secondary="outpostmedcab" amount="4" spawnprobability="0.2" />
+            <PreferredContainer secondary="outpostmedcompartment" amount="2" spawnprobability="0.05" />
 
-            <Price baseprice="220">
+            <Price baseprice="80">
                 <Price storeidentifier="merchantmedical" multiplier="0.9" minavailable="10" minleveldifficulty="25" />
             </Price>
 
-            <Fabricate suitablefabricators="medicalfabricator" requiredtime="45" amount="1">
+            <Fabricate suitablefabricators="medicalfabricator" requiredtime="45" amount="8">
                 <RequiredSkill identifier="medical" level="48" />
                 <RequiredItem identifier="stabilozine" amount="1" />
                 <RequiredItem identifier="antibiotics" amount="2" />
                 <RequiredItem identifier="elastin" amount="1" />
             </Fabricate>
 
-            <Deconstruct time="10">
-                <Item identifier="antibiotics" />
-            </Deconstruct>
+            <Deconstruct/>
 
             <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="0,448,64,64" origin="0.5,0.5" />
             <Sprite texture="Content/Items/Medical/Medicines.png" sourcerect="312,8,63,22" depth="0.6" origin="0.5,0.5" />
@@ -1215,25 +1213,21 @@
 
             <MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="0,0" holdangle="10" reload="1.0" msg="ItemMsgPickUpSelect" HitOnlyCharacters="true">
                 <RequiredSkill identifier="medical" level="55" />
-                <StatusEffect type="OnUse" target="This" Condition="-12.5">
-                    <Sound file="Content/Items/Medical/Bandage1.ogg" range="500" />
-                    <Sound file="Content/Items/Medical/Bandage2.ogg" range="500" />
+                <StatusEffect type="OnUse" target="This" Condition="-100.0" setvalue="true">
+                    <Sound file="%ModDir%/Sound/ointment.ogg" range="500" />
                 </StatusEffect>
                 <StatusEffect statuseffecttags="medical" type="OnSuccess" target="This, Limb" duration="2.0">
                     <ReduceAffliction type="bleeding" amount="30" />
                     <ReduceAffliction type="burn" amount="7.5" />
-                </StatusEffect>
-                <StatusEffect statuseffecttags="medical" type="OnSuccess" target="This, Limb" duration="30.0"> <!-- scaled to NT's infection -->
-                    <ReduceAffliction type="infectedwound" amount="7.5" />
+                    <ReduceAffliction type="infectedwound" amount="100" />
                 </StatusEffect>
                 <StatusEffect statuseffecttags="medical" type="OnFailure" target="This, Limb" duration="2.0">
                     <ReduceAffliction type="bleeding" amount="20" />
                     <ReduceAffliction type="burn" amount="5" />
+                    <ReduceAffliction type="infectedwound" amount="100" />
                 </StatusEffect>
-                <StatusEffect statuseffecttags="medical" type="OnFailure" target="This, Limb" duration="30.0">
-                    <ReduceAffliction type="infectedwound" amount="5" />
-                </StatusEffect>
-                <StatusEffect statuseffecttags="medical" multiplyafflictionsbymaxvitality="true" type="OnFailure" target="This, Limb" disabledeltatime="true" delay="20">
+                <StatusEffect statuseffecttags="medical" type="OnFailure" target="This, Limb">
+                    <Conditional bleeding="gt 0.1" />
                     <Affliction identifier="heartattack" amount="100" probability="0.5" />
                 </StatusEffect>
                 <StatusEffect type="OnBroken" target="This">
