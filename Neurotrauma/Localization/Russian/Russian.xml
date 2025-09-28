@@ -111,7 +111,7 @@
 <entitydescription.immunosuppressant>Иммунодепрессант для профилактики отторжения органов.</entitydescription.immunosuppressant>
 
 <entityname.ointment>Антибиотическая мазь</entityname.ointment>
-<entitydescription.ointment>Гель с мощными антисептическими свойствами, помогает в восстановлении после ожогов так же хорошо, как и от инфицирования.</entitydescription.ointment>
+<entitydescription.ointment>Гель с мощными антибиотическими свойствами, убивает и защищает от бактерий.</entitydescription.ointment>
 
 <entityname.endovascballoon>Эндоваскулярный баллон</entityname.endovascballoon>
 <entitydescription.endovascballoon>Баллон, вставляемый в крупные артерии при их разрыве. Это остановит как кровоток, так и кровотечение.</entitydescription.endovascballoon>
@@ -467,7 +467,7 @@
 <afflictiondescription.gypsumcast>Лечит и защищает от переломов. Замедляет движение. Удалять с помощью медицинских ножниц.</afflictiondescription.gypsumcast>
 
 <afflictionname.ointmented>Мазь</afflictionname.ointmented>
-<afflictiondescription.ointmented>Слой антибиотической мази защищает от заражения и сохраняет рану стерильной.</afflictiondescription.ointmented>
+<afflictiondescription.ointmented>Гель из антибиотического вещества защищает от заражения и поддерживает стерильность.</afflictiondescription.ointmented>
 
 <afflictionname.needlec>Игла</afflictionname.needlec>
 <afflictiondescription.needlec>Нормализует давление в плевральной полости</afflictiondescription.needlec>

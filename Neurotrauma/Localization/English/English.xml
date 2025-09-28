@@ -122,7 +122,7 @@
 <entitydescription.pressuremeds>A medication used to lower blood pressure.</entitydescription.pressuremeds>
 
 <entityname.ointment>Antibiotic ointment</entityname.ointment>
-<entitydescription.ointment>A highly antiseptic gel that promotes the recovery from burns as well as from minor infections.</entitydescription.ointment>
+<entitydescription.ointment>A potent antibiotic gel that promotes the recovery from minor infections and makes the applied area sterile.</entitydescription.ointment>
 
 <entityname.endovascballoon>Endovascular balloon</entityname.endovascballoon>
 <entitydescription.endovascballoon>A balloon inserted into major arteries following their rupture. It will cut off bloodflow, but it will stop the bleeding.</entitydescription.endovascballoon>
