@@ -1941,7 +1941,11 @@
   <Affliction name="" identifier="stasis" isbuff="True" limbspecific="False" type="ambulance"
   showinhealthscannerthreshold="100" showiconthreshold="100" maxstrength="3"
     healableinmedicalclinic="false">
-    <Effect minstrength="0" maxstrength="3" strengthchange="-1"/>
+    <Effect minstrength="0" maxstrength="3" strengthchange="-1">
+      <StatusEffect target="Character">
+        <Conditional ishuman="true"/>
+        <ReduceAffliction identifier="huskinfection" amount="0.3"/>
+      </StatusEffect>/>
   </Affliction>
 
   <!-- Locked hands / used as a symptom if both hands have gone unusable
