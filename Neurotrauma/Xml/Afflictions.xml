@@ -1946,6 +1946,7 @@
         <Conditional ishuman="true"/>
         <ReduceAffliction identifier="huskinfection" amount="0.3"/>
       </StatusEffect>/>
+    </Effect>
   </Affliction>
 
   <!-- Locked hands / used as a symptom if both hands have gone unusable
