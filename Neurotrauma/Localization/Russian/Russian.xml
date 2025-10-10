@@ -228,12 +228,12 @@
 <displayname.surgeryset>[itemname] (набор)</displayname.surgeryset>
 
 <entityname.organcrate>Холодильный ящик</entityname.organcrate>
-<entitydescription.organcrate>Место для хранения ваших драгоценных готовых к трансплантации органов</entitydescription.organcrate>
+<entitydescription.organcrate>Место для хранения ваших драгоценных и готовых к трансплантации органов</entitydescription.organcrate>
 
 <entityname.organtoolbox>Холодильный контейнер</entityname.organtoolbox>
-<entitydescription.organtoolbox>Место для хранения ваших драгоценных готовых к трансплантации органов</entitydescription.organtoolbox>
+<entitydescription.organtoolbox>Место для хранения ваших драгоценных и готовых к трансплантации органов</entitydescription.organtoolbox>
 
-<entityname.bodybag>Мешок для трупа</entityname.bodybag>
+<entityname.bodybag>Мешок для трупов</entityname.bodybag>
 <entitydescription.bodybag>Позволяет перемещать тела быстрее.</entitydescription.bodybag>
 
 <entityname.stasisbag>Стазис-мешок</entityname.stasisbag>
@@ -260,7 +260,7 @@
 <entityname.headta>Останки головы</entityname.headta>
 <entitydescription.headta>Отсечённая голова, или то, что от неё осталось.</entitydescription.headta>
 
-<entityname.headsa>Ампутированая голова</entityname.headsa>
+<entityname.headsa>Ампутированная голова</entityname.headsa>
 <entitydescription.headsa>Ампутированая голова для утилизации.</entitydescription.headsa>
 
 <entityname.rarmp>Бионический протез правой руки</entityname.rarmp>
@@ -306,7 +306,7 @@
 <entityname.braintransplant>Мозг</entityname.braintransplant>
 
 <entityname.armlock1>Нерабочая правая рука</entityname.armlock1>
-<entityname.armlock2>Нерабочая левая рукаd</entityname.armlock2>
+<entityname.armlock2>Нерабочая левая рука</entityname.armlock2>
 
 
 <!-- AFFLICTIONS -->
@@ -427,7 +427,7 @@
 <afflictiondescription.bonedeath></afflictiondescription.bonedeath>
 
 <afflictionname.bonegrowth>Стимулированный рост костей</afflictionname.bonegrowth>
-<afflictiondescription.bonegrowth>Простимулированное отрастание костей. Для лечения умерших костей, этот эффект должен быть на каждой части тела.</afflictiondescription.bonegrowth>
+<afflictiondescription.bonegrowth>Простимулированное отрастание костей. Для лечения умерших костей этот эффект должен быть на каждой части тела.</afflictiondescription.bonegrowth>
 
 <!-- /// Печень /// -->
 
@@ -451,7 +451,7 @@
 <afflictionname.arteriesclamp>Сжатые артерии</afflictionname.arteriesclamp>
 <afflictiondescription.arteriesclamp>Артериальное кровотечение остановлено, приток крови к конечности значительно снизился</afflictiondescription.arteriesclamp>
 
-<afflictionname.balloonedaorta>Закупореная баллоном аорта</afflictionname.balloonedaorta>
+<afflictionname.balloonedaorta>Закупоренная баллоном аорта</afflictionname.balloonedaorta>
 <afflictiondescription.balloonedaorta>Аортальное кровотечение остановлено, нет притока к конечностям и органам.</afflictiondescription.balloonedaorta>
 
 <afflictionname.boneclamp>Шина</afflictionname.boneclamp>
@@ -461,16 +461,16 @@
 <afflictiondescription.bandaged>Защищает от инфицирования, стабилизирует вывихи и переломы</afflictiondescription.bandaged>
 
 <afflictionname.dirtybandage>Грязный бинт</afflictionname.dirtybandage>
-<afflictiondescription.dirtybandage>Ранее защищавший от инфекций, теперь бинт может послужить их причиной</afflictiondescription.dirtybandage>
+<afflictiondescription.dirtybandage>Ранее защищавший от инфекций, теперь уже грязный бинт может послужить их причиной</afflictiondescription.dirtybandage>
 
 <afflictionname.gypsumcast>Гипсовый слепок</afflictionname.gypsumcast>
 <afflictiondescription.gypsumcast>Лечит и защищает от переломов. Замедляет движение. Удалять с помощью медицинских ножниц.</afflictiondescription.gypsumcast>
 
 <afflictionname.ointmented>Мазь</afflictionname.ointmented>
-<afflictiondescription.ointmented>Гель из антибиотического вещества защищает от заражения и поддерживает стерильность.</afflictiondescription.ointmented>
+<afflictiondescription.ointmented>Слой антибиотического геля защищает от заражения и сохраняет рану стерильной.</afflictiondescription.ointmented>
 
 <afflictionname.needlec>Игла</afflictionname.needlec>
-<afflictiondescription.needlec>Нормализует давление в плевральной полости</afflictiondescription.needlec>
+<afflictiondescription.needlec>Предотвращает пневмоторакс в лёгких</afflictiondescription.needlec>
 
 <afflictionname.iced>Охлаждено</afflictionname.iced>
 <afflictiondescription.iced>Лечит сильные ушибы. Замедляет движение.</afflictiondescription.iced>
@@ -651,7 +651,7 @@
 <afflictiondescription.inflammation>Область покрасневшая, тёплая и отёкшая.</afflictiondescription.inflammation>
 
 <afflictionname.spasm>Спазм</afflictionname.spasm>
-<afflictiondescription.spasm>Пациент не контроллирует поведение конечности.</afflictiondescription.spasm>
+<afflictiondescription.spasm>Пациент испытывает хаотические движения конечностей.</afflictiondescription.spasm>
 
 <afflictionname.sym_craving>Ломка</afflictionname.sym_craving>
 <afflictiondescription.sym_craving>Пациент вполне счастлив... пока получает то, что хочет.</afflictiondescription.sym_craving>
@@ -672,13 +672,13 @@
 <afflictiondescription.sym_nausea>Кожа липкая, пациента тошнит.</afflictiondescription.sym_nausea>
 
 <afflictionname.luabotomy>Без Lua</afflictionname.luabotomy>
-<afflictiondescription.luabotomy>Lua не работает. Это значит, что Нейротравма и прочие модификации, использующие Lua не будут функционировать. Для инструкции по установке прочитайте страницу в Мастерской для Lua for Barotrauma.</afflictiondescription.luabotomy>
+<afflictiondescription.luabotomy>Lua не работает. Это значит, что Neurotrauma и прочие модификации, использующие Lua, не будут функционировать. Для инструкции по установке прочитайте страницу в Мастерской для Lua for Barotrauma.</afflictiondescription.luabotomy>
 
 <afflictionname.tshocktimeout>Иммунитет к травматическому шоку</afflictionname.tshocktimeout>
 <afflictiondescription.tshocktimeout>Пациента оставили без присмотра, на некоторое время он не будет осознавать о том, что он вскрыт.</afflictiondescription.tshocktimeout>
 
 <afflictionname.analgesia>Анальгезия</afflictionname.analgesia>
-<afflictiondescription.analgesia>Нечувствительность к боли</afflictiondescription.analgesia>
+<afflictiondescription.analgesia>Невосприимчивость к боли</afflictiondescription.analgesia>
 
 <afflictionname.anesthesia>Анестезия</afflictionname.anesthesia>
 <afflictiondescription.anesthesia>У пациента медикаментозная амнезия.</afflictiondescription.anesthesia>
@@ -739,7 +739,7 @@
 <entitydescription.streptokinase>Тромболитический фермент, разжижающий сгустки крови. Применяется для лечения сердечных приступов. Ухудшает свёртываемость крови</entitydescription.streptokinase>
 
 <entityname.thiamine>Тиамин</entityname.thiamine>
-<entitydescription.thiamine>Также известный как витамин B1, этот препарат способствуют восстановлению органов</entitydescription.thiamine>
+<entitydescription.thiamine>Так же известный как витамин B1, этот препарат способствуют восстановлению органов</entitydescription.thiamine>
 
 <afflictionname.afstreptokinase>Разжижение тромбов</afflictionname.afstreptokinase>
 <afflictiondescription.afstreptokinase></afflictiondescription.afstreptokinase>
@@ -758,31 +758,31 @@
 
 <loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Неврачебный персонал может вылечить остановку сердца используя адреналин или АвтоПульс.</loadingscreentip>
 
-<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Горите? Подводный костюм может оказаться ближе, чем балласт или огнетушитель.</loadingscreentip>
+<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Горите? Водолазный скафандр может оказаться ближе, чем балласт или огнетушитель.</loadingscreentip>
 
-<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Если Вы не можете безопасно вылечить дислокацию, бинт сможет вернуть подвижность конечности.</loadingscreentip>
+<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Если Вы не можете безопасно вправить вывих, бинт сможет вернуть подвижность конечности.</loadingscreentip>
 
 <loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Анальгезия не ограничена использованием перед операцией. Обезболивание увеличивает сопротивляемость к урону и оглушению.</loadingscreentip>
 
 <loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Автоматизированный внешний дефибриллятор всегда сбрасывает фибрилляцию независимо от подготовки.</loadingscreentip>
 
-<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Препараты всё так же вводятся в пациента в стазис мешке.</loadingscreentip>
+<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Препараты всё так же вводятся в пациента, даже если он в стазис-мешке.</loadingscreentip>
 
-<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Жидкий кислородит предотвращает без сознание, вызванное гипоксемией.</loadingscreentip>
+<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Жидкий кислородит предотвращает потерю сознания, вызванную гипоксемией.</loadingscreentip>
 
 <loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Не забывайте о своей конечности после того, как она травматически ампутируется.</loadingscreentip>
 
 <loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Повреждение почек и печени может вызвать нейротравму.</loadingscreentip>
 
-<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Для полной диагности не забывайте проверять Интерфейс Здоровья и показания со сканера здоровья, гематологического анализатора.</loadingscreentip>
+<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Для полной диагностики не забывайте проверять интерфейс здоровья, показания со сканера здоровья или гематологического анализатора.</loadingscreentip>
 
-<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Несколько симптомов исключительны для гемотрансфузионного шока.</loadingscreentip>
+<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Некоторые симптомы исключительны во время гемотрансфузионного шока.</loadingscreentip>
 
 <loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Если ваша конечность получила слишком много урона, она может перестать регенерировать естественным путём. Бинты и холодные пакеты ускоряют естественную регенерацию вместо лечения.</loadingscreentip>
 
-<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Вы можете снарядить пациента АвтоПульсом через Интерфейс Здоровья. Снять АвтоПульс можно гаечным ключом.</loadingscreentip>
+<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Вы можете снарядить пациента АвтоПульсом через интерфейс здоровья. Снять АвтоПульс можно гаечным ключом.</loadingscreentip>
 
-<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Присмотритесь на свои визуальные эффекты на экране. Ранняя диагностика возможна по текущей ситуации.</loadingscreentip>
+<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Присмотритесь на свои визуальные эффекты на экране. Можно произвести раннюю диагностику по текущей ситуации.</loadingscreentip>
 
 <loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Перелом шеи может вызвать повреждение позвоночного столба до того, как он появится в Интерфейсе Здоровья.</loadingscreentip>
 
@@ -790,7 +790,7 @@
 
 <loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Гипоксемия это недостаток кислорода в крови. Не путать с гипоксией, которая является недостатком кислорода (в лёгких).</loadingscreentip>
 
-<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Маннитол лечит нейротравму только тогда, когда кровяное давление выше 70% и гипоксемия ниже 30%. В ином случае препарат замедлит прогресс нейротравмы.</loadingscreentip>
+<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Маннитол лечит нейротравму только тогда, когда кровяное давление выше 70% и гипоксемия ниже 30%. В ином случае препарат замедлит прогрессию нейротравмы.</loadingscreentip>
 
 <loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Боты не предупреждают о своем состоянии здоровья. Своевременно проверяйте их.</loadingscreentip>
 
@@ -798,43 +798,43 @@
 
 <loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Фибрилляция всегда опасна. Кровяное давление падает гораздо быстрее, чем поднимается.</loadingscreentip>
 
-<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Контузия не опасна, но вызывает несколько симптомов, которые можно спутать с опасными состояниями здоровья.</loadingscreentip>
+<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Контузия сама по себе не опасна, но вызывает несколько симптомов, которые можно спутать с опасными для здоровья состояниями.</loadingscreentip>
 
 <loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Тело человека всегда будет отторгать инопланетную кровь, независимо от силы иммунитета.</loadingscreentip>
 
-<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Иммунитет вляет на естественную регенерацию заражения ран, отторгания органов и несовместимой крови.</loadingscreentip>
+<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Иммунитет влияет на естественную регенерацию заражённых ран, отторжение имплантированных органов и несовместимой крови.</loadingscreentip>
 
 <loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Если Вы используете руководство Trello, то проверьте, чтобы у Вас была версия от сообщества Neurotrauma Fork.</loadingscreentip>
 
 <loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Внутренние травмы, такие как травма тупым предметом, не приводят к риску инфекции.</loadingscreentip>
 
-<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Сепсис может быть вылечен только антибиотиком широкого спектра. Всегда имейте запас этого препарата.</loadingscreentip>
+<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Сепсис может быть вылечен только антибиотиками широкого спектра. Всегда имейте запас этого препарата.</loadingscreentip>
 
 <loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Любая кровать, кроме хирургической и госпитальной, будет предотвращать травматический шок только в том случае, если пациент лежит на ней.</loadingscreentip>
 
 <loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Вы можете без последствий собрать один пакет крови за раз из здоровых людей, и только в случае успешного применения.</loadingscreentip>
 
-<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Что бы вылечить больше 15% гангрены, Вам надо трансплантировать конечность если она отсутствует, зашить, ампутировать, транспланитровать новую конечность, зашить.</loadingscreentip>
+<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Чтобы вылечить больше 15% гангрены, Вам надо трансплантировать конечность, если она отсутствует, далее зашить, ампутировать, транспланитровать новую конечность, зашить.</loadingscreentip>
 
-<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Большинство шансов получения состояний и скорости прогрессирования могут быть настроены. Что бы найти окно настроек, откройте меню Esc после запущенной игры. Крики, поведение гипсовых слепков и отторгание органов тоже могут быть настроены.</loadingscreentip>
+<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Большинство шансов получения состояний и скорости прогрессирования могут быть настроены. Чтобы найти окно настроек, откройте меню Esc в лобби запущенной игры. Крики, поведение гипсовых слепков и отторжение органов тоже могут быть настроены.</loadingscreentip>
 
 <loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Мод позволяет, но с умственным трудом, играть без сканера здоровья или гематологического анализатора. Огромная часть состояний могут быть диагностированы через контекст, симптомы и визуальные эффекты.</loadingscreentip>
 
-<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Дислокации получают очень часто из-за попадания под взрыв.</loadingscreentip>
+<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Вывихи очень часто случаются из-за попадания под взрыв.</loadingscreentip>
 
 <loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Вероятность получения большинства состояний, таких как переломы или сердечной тампонады, зависит от полученного урона. Если вы получаете меньше урона, вам нужно меньше врачебного ухода.</loadingscreentip>
 
 <loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Мало гипса? Все конечности могут быть переработаны на кальций.</loadingscreentip>
 
-<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Химическая и опиатная ломка никогда не летальна, но алкогольная ломка может.</loadingscreentip>
+<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Химическая и опиатная ломка никогда не летальна, но алкогольная ломка может доставить проблемы.</loadingscreentip>
 
-<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Повреждения сердца и лёгких никогда не летальны, пока они не достигли 100% силы.</loadingscreentip>
+<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Повреждения сердца и лёгких никогда не летальны, пока они не достигли 100% прогрессии.</loadingscreentip>
 
-<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Носите с собой голубую акулу. Никогда не знаешь, когда она Вам может пригодиться.</loadingscreentip>
+<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Носите с собой голубую акулу. Никогда не знаешь, когда она может пригодиться.</loadingscreentip>
 
 <loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Некоторые симптомы берут вверх друг друга. Вы не услышите пальпитации сердца, если оно не стучит.</loadingscreentip>
 
-<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Нейротравма синоним повреждения мозга. 200% нейротравмы означает смерть мозга.</loadingscreentip>
+<loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ Нейротравма - синоним повреждения мозга. 200% нейротравмы означает смерть мозга.</loadingscreentip>
 
 <!-- <loadingscreentip>‖color:gui.blue‖Neurotrauma:‖end‖ </loadingscreentip> -->
 </Override>
