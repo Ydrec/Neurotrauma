@@ -11,7 +11,7 @@
 <entitydescription.aed>Медицинское устройство, автоматически доставляющее к сердцу электрический разряд для стабилизации сердечной аритмии. Не требует подготовки. Используйте на пациентах с остановкой сердца</entitydescription.aed>
 
 <entityname.bvm>Мешок амбу</entityname.bvm>
-<entitydescription.bvm>Маска с мешковым клапаном, ручное устройство, обычно используемое для создания положительного лёгочного давления у пациентов, которые не дышат или дышат недостаточно.</entitydescription.bvm>
+<entitydescription.bvm>Маска с мешковым клапаном. Ручное устройство, обычно используемое для искусственной вентиляции лёгких у пациентов, которые не дышат или дышат недостаточно.</entitydescription.bvm>
 
 <entityname.autocpr>АвтоПульс</entityname.autocpr>
 <entitydescription.autocpr>Автоматизированный портативный питаемый от батарейки аппарат сердечно-легочной реанимации.</entitydescription.autocpr>
@@ -47,8 +47,8 @@
 <entityname.advretractors>Расширитель</entityname.advretractors>
 <entitydescription.advretractors>Операционный инструмент для оттягивания рассечённой кожи.</entitydescription.advretractors>
 
-<entityname.tweezers>Полустерильный пинцет</entityname.tweezers>
-<entitydescription.tweezers>Небольшой инструмент, позволяющий удалять как пули, так и затронутую некрозом ткань.</entitydescription.tweezers>
+<entityname.tweezers>Пинцет</entityname.tweezers>
+<entitydescription.tweezers>Небольшой инструмент, позволяющий удалять пули, осколочные фрагменты взрывов и поврежденную внутреннюю ткань.</entitydescription.tweezers>
 
 <entityname.surgerysaw>Хирургическая пила</entityname.surgerysaw>
 <entitydescription.surgerysaw>Пила для распиливания костей.</entitydescription.surgerysaw>
@@ -84,15 +84,21 @@
 <entitydescription.organscalpel_brain>Специализированный скальпель для удаления мозга.</entitydescription.organscalpel_brain>
 
 <entityname.multiscalpel>Универсальный скальпель</entityname.multiscalpel>
-<entitydescription.multiscalpel>Передовой скальпель. Выключен и требует активации. В руках практикующего врача, кнопочная панель может использоваться для активации режимов и переключения между операциями: выполнением надрезов, извлечением органов, снятием повязок или совершением зловредной практики.</entitydescription.multiscalpel>
+<entitydescription.multiscalpel>Передовой скальпель. Выключен и требует активации. В руках практикующего врача, кнопочная панель может использоваться для активации режимов и переключения между операциями: выполнением надрезов, пересадкой и извлечением органов, снятием повязок или совершением зловредной практики.</entitydescription.multiscalpel>
 <multiscalpel.incision>Активный режим: Хирургический надрез.</multiscalpel.incision>
 <multiscalpel.kidneys>Активный режим: Извлечь почки</multiscalpel.kidneys>
 <multiscalpel.liver>Активный режим: Извлечь печень</multiscalpel.liver>
 <multiscalpel.lungs>Активный режим: Извлечь легкие</multiscalpel.lungs>
 <multiscalpel.heart>Активный режим: Извлечь сердце</multiscalpel.heart>
 <multiscalpel.brain>Активный режим: Извлечь мозг</multiscalpel.brain>
-<multiscalpel.bandage>Активный режим: Снять бинт, гипсовый слепок, небрежная практика.</multiscalpel.bandage>
-<multiscalpel.speedflex>Активный режим: Адаптивное извлечение органов. Применение на голове извлекает мозг, левая рука - почки, торс - печень, правая рука - сердце, левая нога - легкие.</multiscalpel.speedflex>
+<multiscalpel.bandage>Активный режим: Снять повязку или гипсовый слепок, зловредная практика.</multiscalpel.bandage>
+<multiscalpel.speedflex>Активный режим: Адаптивные пересадка и извлечение органов.
+Применение на вскрытой голове - мозг. 
+Для манипуляции с остальными органами нужно вскрыть торс, затем применить на часть: 
+Левая рука - почки, 
+Торс - печень, 
+Правая рука - сердце, 
+Левая нога - легкие.</multiscalpel.speedflex>
 
 <multiscalpel.btn.incision>Надрез</multiscalpel.btn.incision>
 <multiscalpel.btn.kidneys>Почки</multiscalpel.btn.kidneys>
@@ -100,8 +106,8 @@
 <multiscalpel.btn.lungs>Легкие</multiscalpel.btn.lungs>
 <multiscalpel.btn.heart>Сердце</multiscalpel.btn.heart>
 <multiscalpel.btn.brain>Мозг</multiscalpel.btn.brain>
-<multiscalpel.btn.bandage>Бинт, гипсовые слепки, небрежная практика</multiscalpel.btn.bandage>
-<multiscalpel.btn.speedflex>Адаптивное извлечение органов</multiscalpel.btn.speedflex>
+<multiscalpel.btn.bandage>Повязки, гипсовые слепки, небрежная практика</multiscalpel.btn.bandage>
+<multiscalpel.btn.speedflex>Адаптивные пересадка и извлечение органов</multiscalpel.btn.speedflex>
 
 <!-- /// Средства /// -->
 <entityname.mannitol>Маннитол</entityname.mannitol>
@@ -111,7 +117,7 @@
 <entitydescription.immunosuppressant>Иммунодепрессант для профилактики отторжения органов.</entitydescription.immunosuppressant>
 
 <entityname.ointment>Антибиотическая мазь</entityname.ointment>
-<entitydescription.ointment>Гель с мощными антибиотическими свойствами, убивает и защищает от бактерий.</entitydescription.ointment>
+<entitydescription.ointment>Мазь с мощными антибиотическими свойствами, убивает и защищает от бактерий.</entitydescription.ointment>
 
 <entityname.endovascballoon>Эндоваскулярный баллон</entityname.endovascballoon>
 <entitydescription.endovascballoon>Баллон, вставляемый в крупные артерии при их разрыве. Это остановит как кровоток, так и кровотечение.</entitydescription.endovascballoon>
@@ -120,19 +126,19 @@
 <entitydescription.medstent>Пластиковая трубка, вставляемая после эндоваскулярного баллона при разрыве аорты.</entitydescription.medstent>
 
 <entityname.tourniquet>Жгут</entityname.tourniquet>
-<entitydescription.tourniquet>Устройство, сдавливающее часть тела, ограничивая кровоток. Обычно используется при обильных кровотечениях из конечностей. Не рекомендуется применять к голове.</entitydescription.tourniquet>
+<entitydescription.tourniquet>Устройство для пережатия кровотока к части тела. Обычно используется при обильных кровотечениях из конечностей. Не рекомендуется применять к голове.</entitydescription.tourniquet>
 
 <entityname.drainage>Дренаж</entityname.drainage>
-<entitydescription.drainage>Удаляет воздух из плевральной полости во время корректирующей операции при пневмотораксе.</entitydescription.drainage>
+<entitydescription.drainage>Система для устранения воздуха из плевральной полости при пневмотораксе.</entitydescription.drainage>
 
 <entityname.needle>Игла</entityname.needle>
-<entitydescription.needle>Игла с декомпрессионным клапаном для удаления жидкости или воздуха из плевральной полости или перикарда</entitydescription.needle>
+<entitydescription.needle>Игла с декомпрессионным клапаном для удаления жидкости или воздуха из плевральной полости или перикарда.</entitydescription.needle>
 
 <entityname.ringerssolution>Раствор Рингера</entityname.ringerssolution>
-<entitydescription.ringerssolution>Водный раствор нескольких солей, предназначенный для лечения низкого кровяного давления или потери жидкости. Изотоничен крови.</entitydescription.ringerssolution>
+<entitydescription.ringerssolution>Водный раствор из нескольких солей, изотоничный крови человека. Предназначен для лечения низкого кровяного давления или потери крови.</entitydescription.ringerssolution>
 
 <entityname.antiseptic>Антисептик</entityname.antiseptic>
-<entitydescription.antiseptic>Используется для лечения заражения ран, распыляя его при помощи антисептического спрея.</entitydescription.antiseptic>
+<entitydescription.antiseptic>Жидкость для лечения зараженных ран. Наносится при помощи антисептического спрея.</entitydescription.antiseptic>
 
 <entityname.antisepticspray>Антисептический спрей</entityname.antisepticspray>
 <entitydescription.antisepticspray>Используется для нанесения антисептика на зараженные раны.</entitydescription.antisepticspray>
@@ -141,7 +147,7 @@
 <entitydescription.propofol>Препарат кратковременного действия, приводящий к депривации сознания и вызывающий потерю памяти о произошедших событиях. Использования включают в себя введение в общую анестезию и её поддержание.</entitydescription.propofol>
 
 <entityname.gypsum>Гипс</entityname.gypsum>
-<entitydescription.gypsum>Мелкозернистый минеральный порошок, используемый для покрытия и фиксации переломов конечностей. Сначала наложите бинт.</entitydescription.gypsum>
+<entitydescription.gypsum>Мелкозернистый минеральный порошок, используемый для покрытия и фиксации переломов конечностей. Сначала наложите повязку.</entitydescription.gypsum>
 
 <entityname.gelipack>Гелевый охладительный пакет</entityname.gelipack>
 <entitydescription.gelipack>Многоразовый охлаждающий пакет с органическим гелем. Теряет эффективность охлаждающего действия вне холодильника.</entitydescription.gelipack>
@@ -218,20 +224,20 @@
 
 <!-- /// Новые контейнеры /// -->
 <entityname.medtoolbox>Медицинский контейнер</entityname.medtoolbox>
-<entitydescription.medtoolbox>Может хранить препараты и медицинские инструменты</entitydescription.medtoolbox>
+<entitydescription.medtoolbox>Может хранить препараты и медицинские инструменты.</entitydescription.medtoolbox>
 
 <entityname.surgerytoolbox>Ящик для хирургических инструментов</entityname.surgerytoolbox>
-<entitydescription.surgerytoolbox>Может вмещать в себя маленькие предметы для хирургии</entitydescription.surgerytoolbox> 
+<entitydescription.surgerytoolbox>Может вмещать в себя маленькие предметы для хирургии.</entitydescription.surgerytoolbox> 
 
 <entityname.surgerytoolboxset>Ящик для хирургических инструментов</entityname.surgerytoolboxset>
-<entitydescription.surgerytoolboxset>Может вмещать в себя маленькие предметы для хирургии</entitydescription.surgerytoolboxset> 
+<entitydescription.surgerytoolboxset>Может вмещать в себя маленькие предметы для хирургии.</entitydescription.surgerytoolboxset> 
 <displayname.surgeryset>[itemname] (набор)</displayname.surgeryset>
 
 <entityname.organcrate>Холодильный ящик</entityname.organcrate>
-<entitydescription.organcrate>Место для хранения ваших драгоценных и готовых к трансплантации органов</entitydescription.organcrate>
+<entitydescription.organcrate>Место для хранения ваших драгоценных и готовых к трансплантации органов.</entitydescription.organcrate>
 
 <entityname.organtoolbox>Холодильный контейнер</entityname.organtoolbox>
-<entitydescription.organtoolbox>Место для хранения ваших драгоценных и готовых к трансплантации органов</entitydescription.organtoolbox>
+<entitydescription.organtoolbox>Место для хранения ваших драгоценных и готовых к трансплантации органов.</entitydescription.organtoolbox>
 
 <entityname.bodybag>Мешок для трупов</entityname.bodybag>
 <entitydescription.bodybag>Позволяет перемещать тела быстрее.</entitydescription.bodybag>
@@ -423,11 +429,11 @@
 <afflictionname.bonedamage>Повреждения костных тканей</afflictionname.bonedamage>
 <afflictiondescription.bone></afflictiondescription.bone>
 
-<afflictionname.bonedeath>Смерть костных тканей</afflictionname.bonedeath>
+<afflictionname.bonedeath>Распад костных тканей</afflictionname.bonedeath>
 <afflictiondescription.bonedeath></afflictiondescription.bonedeath>
 
-<afflictionname.bonegrowth>Стимулированный рост костей</afflictionname.bonegrowth>
-<afflictiondescription.bonegrowth>Простимулированное отрастание костей. Для лечения умерших костей этот эффект должен быть на каждой части тела.</afflictiondescription.bonegrowth>
+<afflictionname.bonegrowth>Стимулированная регенерация костей</afflictionname.bonegrowth>
+<afflictiondescription.bonegrowth>Простимулированная регенерация костей. Для лечения распада костных тканей этот эффект должен быть на каждой части тела.</afflictiondescription.bonegrowth>
 
 <!-- /// Печень /// -->
 
@@ -457,11 +463,11 @@
 <afflictionname.boneclamp>Шина</afflictionname.boneclamp>
 <afflictiondescription.boneclamp>На перелом наложена шина.</afflictiondescription.boneclamp>
 
-<afflictionname.bandaged>Перевязка</afflictionname.bandaged>
-<afflictiondescription.bandaged>Защищает от инфицирования, стабилизирует вывихи и переломы</afflictiondescription.bandaged>
+<afflictionname.bandaged>Повязка</afflictionname.bandaged>
+<afflictiondescription.bandaged>Защищает от заражения, обездвиживает вывихи и переломы</afflictiondescription.bandaged>
 
-<afflictionname.dirtybandage>Грязный бинт</afflictionname.dirtybandage>
-<afflictiondescription.dirtybandage>Ранее защищавший от инфекций, теперь уже грязный бинт может послужить их причиной</afflictiondescription.dirtybandage>
+<afflictionname.dirtybandage>Грязная повязка</afflictionname.dirtybandage>
+<afflictiondescription.dirtybandage>Ранее защищавшая от инфекций, теперь уже грязная повязка может послужить их причиной.</afflictiondescription.dirtybandage>
 
 <afflictionname.gypsumcast>Гипсовый слепок</afflictionname.gypsumcast>
 <afflictiondescription.gypsumcast>Лечит и защищает от переломов. Замедляет движение. Удалять с помощью медицинских ножниц.</afflictiondescription.gypsumcast>
@@ -470,7 +476,7 @@
 <afflictiondescription.ointmented>Слой антибиотического геля защищает от заражения и сохраняет рану стерильной.</afflictiondescription.ointmented>
 
 <afflictionname.needlec>Игла</afflictionname.needlec>
-<afflictiondescription.needlec>Предотвращает пневмоторакс в лёгких</afflictiondescription.needlec>
+<afflictiondescription.needlec>Нормализует давление в плевральном пространстве.</afflictiondescription.needlec>
 
 <afflictionname.iced>Охлаждено</afflictionname.iced>
 <afflictiondescription.iced>Лечит сильные ушибы. Замедляет движение.</afflictiondescription.iced>
@@ -513,10 +519,10 @@
 <afflictionname.sh_amputation>Ампутация</afflictionname.sh_amputation>
 <afflictiondescription.sh_amputation>Голова хирургически ампутирована.</afflictiondescription.sh_amputation>
 
-<afflictionname.t_paralysis>Травма позвоночного столба</afflictionname.t_paralysis>
+<afflictionname.t_paralysis>Травма спинного мозга</afflictionname.t_paralysis>
 <afflictiondescription.t_paralysis>Пациент парализован и не чувствует своё тело.</afflictiondescription.t_paralysis>
-<afflictioncauseofdeath.t_paralysis>Умер от паралича</afflictioncauseofdeath.t_paralysis>
-<afflictioncauseofdeathself.t_paralysis>Вы умерли от паралича.</afflictioncauseofdeathself.t_paralysis>
+<afflictioncauseofdeath.t_paralysis>Умер от кринжа.</afflictioncauseofdeath.t_paralysis>
+<afflictioncauseofdeathself.t_paralysis>Вы умерли от кринжа.</afflictioncauseofdeathself.t_paralysis>
 
 
 
@@ -542,7 +548,7 @@
 <afflictiondescription.h_arterialcut>Артерия повреждена и вызывает серьёзное кровотечение.</afflictiondescription.h_arterialcut>
 
 <afflictionname.suturedw>Зашитая рана</afflictionname.suturedw>
-<afflictiondescription.suturedw>Рана была зашита.</afflictiondescription.suturedw>
+<afflictiondescription.suturedw>Рана закрыта швами.</afflictiondescription.suturedw>
 
 <afflictionname.immunity>Иммунитет</afflictionname.immunity>
 <afflictiondescription.immunity></afflictiondescription.immunity>
@@ -597,7 +603,7 @@
 <afflictiondescription.sym_cough>Пациент периодически кашляет.</afflictiondescription.sym_cough>
 
 <afflictionname.sym_paleskin>Бледная кожа</afflictionname.sym_paleskin>
-<afflictiondescription.sym_paleskin>Кожа пациента неестественно бледна.</afflictiondescription.sym_paleskin>
+<afflictiondescription.sym_paleskin>Кожа пациента неестественно бледная.</afflictiondescription.sym_paleskin>
 
 <afflictionname.sym_lightheadedness>Головокружение</afflictionname.sym_lightheadedness>
 <afflictiondescription.sym_lightheadedness>Пациент испытывает головокружение.</afflictiondescription.sym_lightheadedness>
@@ -606,7 +612,7 @@
 <afflictiondescription.sym_blurredvision>Зрение пациента размыто.</afflictiondescription.sym_blurredvision>
 
 <afflictionname.sym_confusion>Спутанность сознания</afflictionname.sym_confusion>
-<afflictiondescription.sym_confusion>Пациент дизориентирован, сознание спутанно.</afflictiondescription.sym_confusion>
+<afflictiondescription.sym_confusion>Пациент дизориентирован, сознание спутанное.</afflictiondescription.sym_confusion>
 
 <afflictionname.sym_headache>Головная боль</afflictionname.sym_headache>
 <afflictiondescription.sym_headache>Пациент испытывает головную боль.</afflictiondescription.sym_headache>
@@ -636,10 +642,10 @@
 <afflictiondescription.sym_bloating>Живот пациента вздут.</afflictiondescription.sym_bloating>
 
 <afflictionname.sym_jaundice>Желтуха</afflictionname.sym_jaundice>
-<afflictiondescription.sym_jaundice>Кожа пациента окрасилась в болезненно жёлтый цвет.</afflictiondescription.sym_jaundice>
+<afflictiondescription.sym_jaundice>Кожа пациента окрасилась в неестественно жёлтый цвет.</afflictiondescription.sym_jaundice>
 
 <afflictionname.sym_sweating>Потеет</afflictionname.sym_sweating>
-<afflictiondescription.sym_sweating>Пациент усиленно потеет.</afflictiondescription.sym_sweating>
+<afflictiondescription.sym_sweating>Пациент обильно потеет.</afflictiondescription.sym_sweating>
 
 <afflictionname.sym_palpitations>Тремор</afflictionname.sym_palpitations>
 <afflictiondescription.sym_palpitations>Пациент отмечает дрожь.</afflictiondescription.sym_palpitations>
@@ -678,7 +684,7 @@
 <afflictiondescription.tshocktimeout>Пациента оставили без присмотра, на некоторое время он не будет осознавать о том, что он вскрыт.</afflictiondescription.tshocktimeout>
 
 <afflictionname.analgesia>Анальгезия</afflictionname.analgesia>
-<afflictiondescription.analgesia>Невосприимчивость к боли</afflictiondescription.analgesia>
+<afflictiondescription.analgesia>Нечувствительность к боли</afflictiondescription.analgesia>
 
 <afflictionname.anesthesia>Анестезия</afflictionname.anesthesia>
 <afflictiondescription.anesthesia>У пациента медикаментозная амнезия.</afflictiondescription.anesthesia>
