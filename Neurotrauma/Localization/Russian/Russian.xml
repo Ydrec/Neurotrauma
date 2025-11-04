@@ -612,7 +612,7 @@
 <afflictiondescription.sym_blurredvision>Зрение пациента размыто.</afflictiondescription.sym_blurredvision>
 
 <afflictionname.sym_confusion>Спутанность сознания</afflictionname.sym_confusion>
-<afflictiondescription.sym_confusion>Пациент дизориентирован, сознание спутанное.</afflictiondescription.sym_confusion>
+<afflictiondescription.sym_confusion>Пациент дизориентирован, его сознание спутанное.</afflictiondescription.sym_confusion>
 
 <afflictionname.sym_headache>Головная боль</afflictionname.sym_headache>
 <afflictiondescription.sym_headache>Пациент испытывает головную боль.</afflictiondescription.sym_headache>
