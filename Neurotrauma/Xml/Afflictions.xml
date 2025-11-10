@@ -1915,6 +1915,7 @@
     <Effect minstrength="0" maxstrength="100" strengthchange="-0.5">
       <StatusEffect target="Character" comparison="and">
         <Conditional ishuman="true"/>
+        <Conditional huskinfection="lt 75.0"/>
         <ReduceAffliction identifier="huskinfection" amount="0.5"/>
         <Affliction identifier="organdamage" amount="0.2"/>
         <Affliction identifier="kidneydamage" amount="0.175"/>
@@ -1928,8 +1929,15 @@
 
   <!-- Lets you drag people around at full speed
   Invisible -->
-  <Affliction name="" identifier="stretchers" isbuff="True" limbspecific="False" type="ambulance"
-  showinhealthscannerthreshold="200" showiconthreshold="200" maxstrength="100"
+  <Affliction
+    name=""
+    identifier="stretchers"
+    isbuff="True"
+    limbspecific="False"
+    type="ambulance"
+    showinhealthscannerthreshold="200"
+    showiconthreshold="200"
+    maxstrength="100"
     healableinmedicalclinic="false">
     <Effect minstrength="0" maxstrength="100" strengthchange="-100">
       <AbilityFlag flagtype="MoveNormallyWhileDragging" />
@@ -1938,21 +1946,42 @@
   </Affliction>
 
   <!-- stasis -->
-  <Affliction name="" identifier="stasis" isbuff="True" limbspecific="False" type="ambulance"
-  showinhealthscannerthreshold="100" showiconthreshold="100" maxstrength="3"
+  <Affliction
+    name=""
+    identifier="stasis"
+    isbuff="True"
+    limbspecific="False"
+    type="ambulance"
+    showinhealthscannerthreshold="100"
+    showiconthreshold="100"
+    maxstrength="3"
     healableinmedicalclinic="false">
     <Effect minstrength="0" maxstrength="3" strengthchange="-1">
-      <StatusEffect target="Character">
+      <StatusEffect target="Character" comparison="and">
         <Conditional ishuman="true"/>
-        <ReduceAffliction identifier="huskinfection" amount="0.3"/>
-      </StatusEffect>/>
+        <Conditional huskinfection="lte 99.9"/>
+        <ReduceAffliction identifier="huskinfection" amount="0.15"/>
+      </StatusEffect>
+      <StatusEffect target="Character" comparison="and">
+        <Conditional ishuman="true"/>
+        <Conditional huskinfection="lte 99.9"/>
+        <Conditional huskinfectionresistance="lte 0"/>
+        <ReduceAffliction identifier="huskinfection" amount="0.15"/>
+      </StatusEffect>
     </Effect>
   </Affliction>
 
   <!-- Locked hands / used as a symptom if both hands have gone unusable
   Invisible -->
-  <Affliction name="" identifier="lockedhands" isbuff="False" limbspecific="False" type=""
-  showinhealthscannerthreshold="200" showiconthreshold="200" maxstrength="100"
+  <Affliction
+    name="" 
+    identifier="lockedhands"
+    isbuff="False"
+    limbspecific="False"
+    type=""
+    showinhealthscannerthreshold="200"
+    showiconthreshold="200"
+    maxstrength="100"
     healableinmedicalclinic="false">
     <Effect minstrength="0" maxstrength="10">
       <StatusEffect target="Character" lockhands="true" setvalue="true"/>
