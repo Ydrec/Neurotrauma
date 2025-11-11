@@ -1914,9 +1914,10 @@
     maxstrength="100">
     <Effect minstrength="0" maxstrength="100" strengthchange="-0.5">
       <StatusEffect target="Character" comparison="and">
-        <Conditional ishuman="true"/>
         <Conditional huskinfection="lt 75.0"/>
         <ReduceAffliction identifier="huskinfection" amount="0.5"/>
+      </StatusEffect>
+      <StatusEffect target="Character">
         <Affliction identifier="organdamage" amount="0.2"/>
         <Affliction identifier="kidneydamage" amount="0.175"/>
         <Affliction identifier="liverdamage" amount="0.175"/>
