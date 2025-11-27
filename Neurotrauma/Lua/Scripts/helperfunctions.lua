@@ -80,7 +80,8 @@ function NT.SurgicallyAmputateLimb(character, limbtype, strength, traumampstreng
 	HF.SetAffliction(character, limbtoaffliction[limbtype], traumampstrength)
 	HF.SetAfflictionLimb(character, "gangrene", limbtype, 0)
 end
-function NT.TraumamputateLimb(character, limbtype)
+function NT.TraumamputateLimb(character, limbtype, attacker)
+	limbtype = HF.NormalizeLimbType(limbtype)
 	local limbtoaffliction = {}
 	limbtoaffliction[LimbType.RightLeg] = "gate_ta_rl"
 	limbtoaffliction[LimbType.LeftLeg] = "gate_ta_ll"
@@ -90,9 +91,24 @@ function NT.TraumamputateLimb(character, limbtype)
 	if limbtoaffliction[limbtype] == nil then
 		return
 	end
-	HF.AddAfflictionLimb(character, limbtoaffliction[limbtype], limbtype, 10)
+	local limbtoitem = {}
+	limbtoitem[LimbType.RightLeg] = "rleg"
+	limbtoitem[LimbType.LeftLeg] = "lleg"
+	limbtoitem[LimbType.RightArm] = "rarm"
+	limbtoitem[LimbType.LeftArm] = "larm"
+	limbtoitem[LimbType.Head] = "headta"
+	-- (optional parameter) if attacker is a monster with free inventory slot, give them the limb instead
+	if limbtoitem[limbtype] ~= nil then
+		if attacker ~= nil and not attacker.IsHuman and attacker.Inventory.IsFull() == false then
+			HF.GiveItem(attacker, limbtoitem[limbtype])
+			HF.AddAfflictionLimb(character, limbtoaffliction[limbtype] .. "_2", limbtype, 10)
+		else
+			HF.AddAfflictionLimb(character, limbtoaffliction[limbtype], limbtype, 10)
+		end
+	end
 end
 function NT.TraumamputateLimbMinusItem(character, limbtype)
+	limbtype = HF.NormalizeLimbType(limbtype)
 	local limbtoaffliction = {}
 	limbtoaffliction[LimbType.RightLeg] = "gate_ta_rl_2"
 	limbtoaffliction[LimbType.LeftLeg] = "gate_ta_ll_2"
