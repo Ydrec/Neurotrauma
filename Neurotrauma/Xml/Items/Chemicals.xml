@@ -457,8 +457,8 @@
 
         <SuitableTreatment identifier="blunttrauma" suitability="30"/>
         <SuitableTreatment type="burn" suitability="40"/>
-        <InventoryIcon texture="%ModDir%/Images/InventoryItemIconAtlas.png" sourcerect="64,64,64,64" origin="0.5,0.5"/>
-        <Sprite texture="%ModDir%/Images/InGameItemIconAtlas.png" sourcerect="128,256,128,128" depth="0.6" origin="0.5,0.5"/>
+        <InventoryIcon texture="%ModDir%/Images/InventoryItemIconAtlas.png" sourcerect="128,256,64,64" origin="0.5,0.5"/>
+        <Sprite texture="%ModDir%/Images/InGameItemIconAtlas.png" sourcerect="640,512,128,128" depth="0.6" origin="0.5,0.5"/>
         <Body width="60" height="20" density="20"/>
 
         <MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="5,0" handle1="-5,0" holdangle="10" reload="1.0" msg="ItemMsgPickUpSelect">
@@ -467,10 +467,10 @@
                 <Sound file="%ModDir%/Sound/ointment.ogg" range="500" />
             </StatusEffect>
             <StatusEffect statuseffecttags="medical" type="OnSuccess" target="This, Limb" duration="1.0">
-                <Affliction identifier="skinointment" amount="100" />
+                <Affliction identifier="skinointmented" amount="100" />
             </StatusEffect>
             <StatusEffect statuseffecttags="medical" type="OnFailure" target="This, Limb" duration="1.0">
-                <Affliction identifier="skinointment" amount="80" />
+                <Affliction identifier="skinointmented" amount="80" />
             </StatusEffect>
             <StatusEffect type="OnBroken" target="This">
                 <Remove/>

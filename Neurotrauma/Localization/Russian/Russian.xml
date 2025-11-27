@@ -119,6 +119,9 @@
 <entityname.ointment>Антибиотическая мазь</entityname.ointment>
 <entitydescription.ointment>Мазь с мощными антибиотическими свойствами, убивает и защищает от бактерий.</entitydescription.ointment>
 
+<entityname.skinaid>Регенеративная мазь</entityname.skinaid>
+<entitydescription.skinaid>Мазь с мощными регенеративными свойствами, ускоряет процесс заживления большинства наружных травм.</entitydescription.skinaid>
+
 <entityname.endovascballoon>Эндоваскулярный баллон</entityname.endovascballoon>
 <entitydescription.endovascballoon>Баллон, вставляемый в крупные артерии при их разрыве. Это остановит как кровоток, так и кровотечение.</entitydescription.endovascballoon>
 
@@ -487,8 +490,11 @@
 <afflictionname.gypsumcast>Гипсовый слепок</afflictionname.gypsumcast>
 <afflictiondescription.gypsumcast>Лечит и защищает от переломов. Замедляет движение. Удалять с помощью медицинских ножниц.</afflictiondescription.gypsumcast>
 
-<afflictionname.ointmented>Мазь</afflictionname.ointmented>
+<afflictionname.ointmented>Антибиотическая мазь</afflictionname.ointmented>
 <afflictiondescription.ointmented>Слой антибиотического геля защищает от заражения и сохраняет рану стерильной.</afflictiondescription.ointmented>
+
+<afflictionname.skinointmented>Регенеративная мазь</afflictionname.skinointmented>
+<afflictiondescription.skinointmented>Слой регенеративного геля ускоряет процесс заживления большинства наружных травм.</afflictiondescription.skinointmented>
 
 <afflictionname.needlec>Игла</afflictionname.needlec>
 <afflictiondescription.needlec>Нормализует давление в плевральном пространстве.</afflictiondescription.needlec>

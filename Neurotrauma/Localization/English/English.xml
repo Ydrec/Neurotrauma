@@ -124,6 +124,9 @@
 <entityname.ointment>Antibiotic ointment</entityname.ointment>
 <entitydescription.ointment>A potent antibiotic gel that promotes the recovery from minor infections and makes the applied area sterile.</entitydescription.ointment>
 
+<entityname.skinaid>Regenerative ointment</entityname.skinaid>
+<entitydescription.skinaid>A potent regenerative gel that promotes natural healing of most trauma on the surface.</entitydescription.skinaid>
+
 <entityname.endovascballoon>Endovascular balloon</entityname.endovascballoon>
 <entitydescription.endovascballoon>A balloon inserted into major arteries following their rupture. It will cut off bloodflow, but it will stop the bleeding.</entitydescription.endovascballoon>
 
@@ -496,8 +499,11 @@ Can give blood to: AB+</entitydescription.abpluscard>
 <afflictionname.gypsumcast>Plaster cast</afflictionname.gypsumcast>
 <afflictiondescription.gypsumcast>Heals and protects from fractures. Movement is slowed. Remove using trauma shears.</afflictiondescription.gypsumcast>
 
-<afflictionname.ointmented>Ointment</afflictionname.ointmented>
+<afflictionname.ointmented>Antibiotic ointment</afflictionname.ointmented>
 <afflictiondescription.ointmented>A layer of antibiotic gel protects and cleans the wound from any germs.</afflictiondescription.ointmented>
+
+<afflictionname.skinointmented>Regenerative ointment</afflictionname.skinointmented>
+<afflictiondescription.skinointmented>A layer of regenerative gel speeds the healing process of burns and blunt force trauma.</afflictiondescription.skinointmented>
 
 <afflictionname.needlec>Needle</afflictionname.needlec>
 <afflictiondescription.needlec>Normalizes the pressure in the pleural cavity</afflictiondescription.needlec>

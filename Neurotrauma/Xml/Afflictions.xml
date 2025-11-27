@@ -4100,7 +4100,7 @@ thats what the vomiting symptom is for -->
     Exposed, regenerates moderate burn damage and blunt trauma -->
     <Affliction
       name=""
-      identifier="skinointment"
+      identifier="skinointmented"
       description=""
       healableinmedicalclinic="false"
       targets="human"
@@ -4110,16 +4110,7 @@ thats what the vomiting symptom is for -->
       showiconthreshold="1"
       showinhealthscannerthreshold="2000"
       isbuff="true">
-      <Effect minstrength="0" maxstrength="100" strengthchange="-1.0">
-        <StatusEffect target="Limb">
-          <Conditional burn="lte 50"/>
-          <ReduceAffliction identifier="burn" amount="0.4"/>
-        </StatusEffect>
-        <StatusEffect target="Limb">
-          <Conditional blunttrauma="lte 100"/>
-          <ReduceAffliction identifier="blunttrauma" amount="0.3"/>
-        </StatusEffect>
-      </Effect>
+
       <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="3,4" sheetelementsize="128,128" origin="0,0"/>
     </Affliction>
 

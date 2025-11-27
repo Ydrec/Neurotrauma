@@ -788,7 +788,11 @@ NT.Afflictions = {
 	stun = {
 		max = 30,
 		update = function(c, i)
-			if c.afflictions.t_paralysis.strength > 0 or c.afflictions.anesthesia.strength > 15 or c.afflictions.sym_unconsciousness.strength > 0 then
+			if
+				c.afflictions.t_paralysis.strength > 0
+				or c.afflictions.anesthesia.strength > 15
+				or c.afflictions.sym_unconsciousness.strength > 0
+			then
 				c.afflictions[i].strength = math.max(5, c.afflictions[i].strength)
 			end
 		end,
@@ -1436,6 +1440,13 @@ NT.LimbAfflictions = {
 			end
 		end,
 	},
+	skinointmented = {
+		update = function(c, limbaff, i, type)
+			if limbaff[i].strength > 0 then
+				limbaff[i].strength = limbaff[i].strength - 0.2 * NT.Deltatime
+			end
+		end,
+	},
 	gypsumcast = {
 		update = function(c, limbaff, i, type)
 			-- gypsum slowdown and fracture healing
@@ -1472,7 +1483,11 @@ NT.LimbAfflictions = {
 		update = function(c, limbaff, i)
 			if limbaff[i].strength < 50 then
 				limbaff[i].strength = limbaff[i].strength
-					- (c.afflictions.immunity.prev / 3000 + HF.Clamp(limbaff.bandaged.strength, 0, 1) * 0.1)
+					- (
+							c.afflictions.immunity.prev / 3000
+							+ HF.Clamp(limbaff.bandaged.strength, 0, 1) * 0.1
+							+ HF.Clamp(limbaff.skinointmented.strength, 0, 1) * 0.12
+						)
 						* c.stats.healingrate
 						* NT.Deltatime
 			end
@@ -1493,7 +1508,11 @@ NT.LimbAfflictions = {
 		update = function(c, limbaff, i)
 			if limbaff[i].strength < 50 then
 				limbaff[i].strength = limbaff[i].strength
-					- (c.afflictions.immunity.prev / 3000 + HF.Clamp(limbaff.bandaged.strength, 0, 1) * 0.1)
+					- (
+							c.afflictions.immunity.prev / 3000
+							+ HF.Clamp(limbaff.bandaged.strength, 0, 1) * 0.1
+							+ HF.Clamp(limbaff.skinointmented.strength, 0, 1) * 0.12
+						)
 						* c.stats.healingrate
 						* NT.Deltatime
 			end
@@ -1504,7 +1523,11 @@ NT.LimbAfflictions = {
 		update = function(c, limbaff, i)
 			if limbaff[i].strength < 50 then
 				limbaff[i].strength = limbaff[i].strength
-					- (c.afflictions.immunity.prev / 3000 + HF.Clamp(limbaff.bandaged.strength, 0, 1) * 0.1)
+					- (
+							c.afflictions.immunity.prev / 3000
+							+ HF.Clamp(limbaff.bandaged.strength, 0, 1) * 0.1
+							+ HF.Clamp(limbaff.skinointmented.strength, 0, 1) * 0.12
+						)
 						* c.stats.healingrate
 						* NT.Deltatime
 			end
@@ -1515,7 +1538,11 @@ NT.LimbAfflictions = {
 		update = function(c, limbaff, i)
 			if limbaff[i].strength < 100 then
 				limbaff[i].strength = limbaff[i].strength
-					- (c.afflictions.immunity.prev / 3000 + HF.Clamp(limbaff.bandaged.strength, 0, 1) * 0.1)
+					- (
+							c.afflictions.immunity.prev / 3000
+							+ HF.Clamp(limbaff.bandaged.strength, 0, 1) * 0.1
+							+ HF.Clamp(limbaff.skinointmented.strength, 0, 1) * 0.12
+						)
 						* c.stats.healingrate
 						* NT.Deltatime
 			end
@@ -1526,7 +1553,11 @@ NT.LimbAfflictions = {
 		update = function(c, limbaff, i)
 			if limbaff[i].strength < 50 then
 				limbaff[i].strength = limbaff[i].strength
-					- (c.afflictions.immunity.prev / 3000 + HF.Clamp(limbaff.bandaged.strength, 0, 1) * 0.1)
+					- (
+							c.afflictions.immunity.prev / 3000
+							+ HF.Clamp(limbaff.bandaged.strength, 0, 1) * 0.1
+							+ HF.Clamp(limbaff.skinointmented.strength, 0, 1) * 0.12
+						)
 						* c.stats.healingrate
 						* NT.Deltatime
 			end
@@ -1541,6 +1572,7 @@ NT.LimbAfflictions = {
 							c.afflictions.immunity.prev / 8000
 							+ HF.Clamp(limbaff.bandaged.strength, 0, 1) * 0.1
 							+ HF.Clamp(limbaff.iced.strength, 0, 1) * 0.3
+							+ HF.Clamp(limbaff.skinointmented.strength, 0, 1) * 0.12
 						)
 						* c.stats.healingrate
 						* NT.Deltatime
