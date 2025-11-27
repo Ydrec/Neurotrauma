@@ -788,7 +788,7 @@ NT.Afflictions = {
 	stun = {
 		max = 30,
 		update = function(c, i)
-			if c.afflictions.t_paralysis.strength > 0 or c.afflictions.anesthesia.strength > 15 then
+			if c.afflictions.t_paralysis.strength > 0 or c.afflictions.anesthesia.strength > 15 or c.afflictions.sym_unconsciousness.strength > 0 then
 				c.afflictions[i].strength = math.max(5, c.afflictions[i].strength)
 			end
 		end,
@@ -957,9 +957,6 @@ NT.Afflictions = {
 					or c.afflictions.opiateoverdose.strength > 60
 				)
 			c.afflictions[i].strength = HF.BoolToNum(isUnconscious, 2)
-			if isUnconscious then
-				c.afflictions.stun.strength = math.max(7, c.afflictions.stun.strength)
-			end
 		end,
 	},
 	tachycardia = {
