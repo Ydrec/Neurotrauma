@@ -648,6 +648,11 @@ end
 NT.SutureAfflictions = {
 	bonecut = { xpgain = 0, case = "surgeryincision" },
 	drilledbones = { xpgain = 0, case = "surgeryincision" },
+	liverswap = { xpgain = 0, case = "surgeryincision" },
+	heartswap = { xpgain = 0, case = "surgeryincision" },
+	lungswap = { xpgain = 0, case = "surgeryincision" },
+	kidneyswap = { xpgain = 0, case = "surgeryincision" },
+	brainswap = { xpgain = 0, case = "surgeryincision" },
 
 	ll_arterialcut = { xpgain = 3, case = "retractedskin" },
 	rl_arterialcut = { xpgain = 3, case = "retractedskin" },
@@ -1269,11 +1274,16 @@ end
 NT.ItemMethods.organscalpel_liver = function(item, usingCharacter, targetCharacter, limb)
 	local limbtype = limb.type
 
-	local removed = HF.GetAfflictionStrength(targetCharacter, "liverremoved", 0)
+	local procureready = HF.GetAfflictionStrength(targetCharacter, "liverremoved", 0) <= 0
+		and HF.GetAfflictionStrength(targetCharacter, "liverswap", 0) >= 0.1
 	if limbtype == LimbType.Torso and HF.HasAfflictionLimb(targetCharacter, "retractedskin", limbtype, 1) then
-		if removed <= 0 then
+		if not procureready then
 			if HF.GetSurgerySkillRequirementMet(usingCharacter, 40) then
-				HF.SetAffliction(targetCharacter, "liverremoved", 100, usingCharacter)
+				if HF.GetAfflictionStrength(targetCharacter, "liverdamage", 0) >= 100 then
+					HF.SetAffliction(targetCharacter, "liverremoved", 100, usingCharacter)
+				else
+					HF.SetAffliction(targetCharacter, "liverswap", 100, usingCharacter)
+				end
 			else
 				HF.AddAfflictionLimb(targetCharacter, "bleeding", limbtype, 15, usingCharacter)
 				HF.AddAfflictionLimb(targetCharacter, "organdamage", limbtype, 5, usingCharacter)
@@ -1286,6 +1296,8 @@ NT.ItemMethods.organscalpel_liver = function(item, usingCharacter, targetCharact
 			if damage == 100 then
 				return
 			elseif HF.GetSurgerySkillRequirementMet(usingCharacter, 50) then
+				HF.SetAffliction(targetCharacter, "liverremoved", 100, usingCharacter)
+				HF.SetAffliction(targetCharacter, "liverswap", 0, usingCharacter)
 				HF.SetAffliction(targetCharacter, "liverdamage", 100, usingCharacter)
 
 				HF.AddAffliction(targetCharacter, "organdamage", (100 - damage) / 5, usingCharacter)
@@ -1334,11 +1346,16 @@ end
 NT.ItemMethods.organscalpel_lungs = function(item, usingCharacter, targetCharacter, limb)
 	local limbtype = limb.type
 
-	local removed = HF.GetAfflictionStrength(targetCharacter, "lungremoved", 0)
+	local procureready = HF.GetAfflictionStrength(targetCharacter, "lungremoved", 0) <= 0
+		and HF.GetAfflictionStrength(targetCharacter, "lungswap", 0) >= 0.1
 	if limbtype == LimbType.Torso and HF.HasAfflictionLimb(targetCharacter, "retractedskin", limbtype, 1) then
-		if removed <= 0 then
-			if HF.GetSurgerySkillRequirementMet(usingCharacter, 50) then
-				HF.SetAffliction(targetCharacter, "lungremoved", 100, usingCharacter)
+		if not procureready then
+			if HF.GetSurgerySkillRequirementMet(usingCharacter, 40) then
+				if HF.GetAfflictionStrength(targetCharacter, "lungdamage", 0) >= 100 then
+					HF.SetAffliction(targetCharacter, "lungremoved", 100, usingCharacter)
+				else
+					HF.SetAffliction(targetCharacter, "lungswap", 100, usingCharacter)
+				end
 			else
 				HF.AddAfflictionLimb(targetCharacter, "bleeding", limbtype, 15, usingCharacter)
 				HF.AddAfflictionLimb(targetCharacter, "organdamage", limbtype, 5, usingCharacter)
@@ -1351,6 +1368,8 @@ NT.ItemMethods.organscalpel_lungs = function(item, usingCharacter, targetCharact
 			if damage == 100 then
 				return
 			else
+				HF.SetAffliction(targetCharacter, "lungremoved", 100, usingCharacter)
+				HF.SetAffliction(targetCharacter, "lungswap", 0, usingCharacter)
 				HF.SetAffliction(targetCharacter, "lungdamage", 100, targetCharacter)
 				HF.SetAffliction(targetCharacter, "respiratoryarrest", 100, targetCharacter)
 
@@ -1403,11 +1422,16 @@ end
 NT.ItemMethods.organscalpel_heart = function(item, usingCharacter, targetCharacter, limb)
 	local limbtype = limb.type
 
-	local removed = HF.GetAfflictionStrength(targetCharacter, "heartremoved", 0)
+	local procureready = HF.GetAfflictionStrength(targetCharacter, "heartremoved", 0) <= 0
+		and HF.GetAfflictionStrength(targetCharacter, "heartswap", 0) >= 0.1
 	if limbtype == LimbType.Torso and HF.HasAfflictionLimb(targetCharacter, "retractedskin", limbtype, 1) then
-		if removed <= 0 then
-			if HF.GetSurgerySkillRequirementMet(usingCharacter, 60) then
-				HF.SetAffliction(targetCharacter, "heartremoved", 100, usingCharacter)
+		if not procureready then
+			if HF.GetSurgerySkillRequirementMet(usingCharacter, 40) then
+				if HF.GetAfflictionStrength(targetCharacter, "heartdamage", 0) >= 100 then
+					HF.SetAffliction(targetCharacter, "heartremoved", 100, usingCharacter)
+				else
+					HF.SetAffliction(targetCharacter, "heartswap", 100, usingCharacter)
+				end
 			else
 				HF.AddAfflictionLimb(targetCharacter, "bleeding", limbtype, 15, usingCharacter)
 				HF.AddAfflictionLimb(targetCharacter, "organdamage", limbtype, 5, usingCharacter)
@@ -1420,6 +1444,8 @@ NT.ItemMethods.organscalpel_heart = function(item, usingCharacter, targetCharact
 			if damage == 100 then
 				return
 			else
+				HF.SetAffliction(targetCharacter, "heartremoved", 100, usingCharacter)
+				HF.SetAffliction(targetCharacter, "heartswap", 0, usingCharacter)
 				HF.SetAffliction(targetCharacter, "heartdamage", 100, targetCharacter)
 				HF.SetAffliction(targetCharacter, "cardiacarrest", 100, targetCharacter)
 
@@ -1471,15 +1497,20 @@ end
 NT.ItemMethods.organscalpel_kidneys = function(item, usingCharacter, targetCharacter, limb)
 	local limbtype = limb.type
 
-	local removed = HF.GetAfflictionStrength(targetCharacter, "kidneyremoved", 0)
+	local procureready = HF.GetAfflictionStrength(targetCharacter, "kidneyremoved", 0) <= 0
+		and HF.GetAfflictionStrength(targetCharacter, "kidneyswap", 0) >= 0.1
 	if limbtype == LimbType.Torso and HF.HasAfflictionLimb(targetCharacter, "retractedskin", limbtype, 1) then
-		if removed <= 0 then
-			if HF.GetSurgerySkillRequirementMet(usingCharacter, 30) then
-				HF.SetAffliction(targetCharacter, "kidneyremoved", 100, usingCharacter)
+		if not procureready then
+			if HF.GetSurgerySkillRequirementMet(usingCharacter, 40) then
+				if HF.GetAfflictionStrength(targetCharacter, "kidneydamage", 0) >= 100 then
+					HF.SetAffliction(targetCharacter, "kidneyremoved", 100, usingCharacter)
+				else
+					HF.SetAffliction(targetCharacter, "kidneyswap", 100, usingCharacter)
+				end
 			else
 				HF.AddAfflictionLimb(targetCharacter, "bleeding", limbtype, 15, usingCharacter)
 				HF.AddAfflictionLimb(targetCharacter, "organdamage", limbtype, 5, usingCharacter)
-				HF.AddAffliction(targetCharacter, "kidneydamage", 20, usingCharacter)
+				HF.AddAffliction(targetCharacter, "kidneydamage", 10, usingCharacter)
 			end
 
 			HF.GiveItem(targetCharacter, "ntsfx_slash")
@@ -1529,6 +1560,8 @@ NT.ItemMethods.organscalpel_kidneys = function(item, usingCharacter, targetChara
 					HF.GiveItemPlusFunction(transplantidentifier, postSpawnFunc, params, usingCharacter)
 					damage = damage + 50
 				elseif damage < 95 then
+					HF.SetAffliction(targetCharacter, "kidneyremoved", 100, usingCharacter)
+					HF.SetAffliction(targetCharacter, "kidneyswap", 0, usingCharacter)
 					HF.SetAffliction(targetCharacter, "kidneydamage", 100, usingCharacter)
 					HF.AddAffliction(targetCharacter, "organdamage", (100 - damage) / 5, usingCharacter)
 					-- add acidosis, alkalosis and sepsis to the bloodpack if the donor has them
@@ -1571,11 +1604,16 @@ end
 NT.ItemMethods.organscalpel_brain = function(item, usingCharacter, targetCharacter, limb)
 	local limbtype = limb.type
 
-	local removed = HF.GetAfflictionStrength(targetCharacter, "brainremoved", 0)
+	local procureready = HF.GetAfflictionStrength(targetCharacter, "brainremoved", 0) <= 0
+		and HF.GetAfflictionStrength(targetCharacter, "brainswap", 0) >= 0.1
 	if limbtype == LimbType.Head and HF.HasAfflictionLimb(targetCharacter, "retractedskin", limbtype, 1) then
-		if removed <= 0 then
-			if HF.GetSurgerySkillRequirementMet(usingCharacter, 100) then
-				HF.SetAffliction(targetCharacter, "brainremoved", 100, usingCharacter)
+		if not procureready then
+			if HF.GetSurgerySkillRequirementMet(usingCharacter, 40) then
+				if HF.GetAfflictionStrength(targetCharacter, "cerebralhypoxia", 0) >= 100 then
+					HF.SetAffliction(targetCharacter, "brainremoved", 100, usingCharacter)
+				else
+					HF.SetAffliction(targetCharacter, "brainswap", 100, usingCharacter)
+				end
 			else
 				HF.AddAfflictionLimb(targetCharacter, "bleeding", limbtype, 15, usingCharacter)
 				HF.AddAffliction(targetCharacter, "cerebralhypoxia", 50, usingCharacter)
@@ -1588,6 +1626,8 @@ NT.ItemMethods.organscalpel_brain = function(item, usingCharacter, targetCharact
 				return
 			else
 				HF.AddAffliction(targetCharacter, "cerebralhypoxia", 100, usingCharacter)
+				HF.SetAffliction(targetCharacter, "brainremoved", 100, usingCharacter)
+				HF.SetAffliction(targetCharacter, "brainswap", 0, usingCharacter)
 
 				if NTSP ~= nil then
 					if HF.HasAffliction(targetCharacter, "artificialbrain") then
@@ -2083,19 +2123,22 @@ NT.ItemStartsWithMethods.livertransplant = function(item, usingCharacter, target
 	local damage = HF.GetAfflictionStrength(targetCharacter, "liverdamage", 0)
 	local workcondition = HF.Clamp(item.Condition + conditionmodifier, 0, 100)
 	if
-		HF.HasAffliction(targetCharacter, "liverremoved", 1)
+		(HF.HasAffliction(targetCharacter, "liverremoved", 1) or HF.HasAffliction(targetCharacter, "liverswap", 1))
 		and limbtype == LimbType.Torso
 		and HF.HasAfflictionLimb(targetCharacter, "retractedskin", limbtype, 99)
 	then
+		HF.AddAffliction(targetCharacter, "liverdamage", -workcondition, usingCharacter)
 		if damage == 100 then
 			HF.AddAffliction(targetCharacter, "liverdamage", -workcondition, usingCharacter)
 			HF.AddAffliction(targetCharacter, "organdamage", -workcondition / 5, usingCharacter)
 			HF.SetAffliction(targetCharacter, "liverremoved", 0, usingCharacter)
+			HF.SetAffliction(targetCharacter, "liverswap", 0, usingCharacter)
 			HF.RemoveItem(item)
 		else -- swap the organs and its generic and specific organ damage, avoiding unintentionally reducing the patients health
 			local newdamage = HF.Clamp((100 - damage) - workcondition, -100, 100)
 			HF.SetAffliction(targetCharacter, "liverdamage", 100 - workcondition, usingCharacter)
 			HF.SetAffliction(targetCharacter, "liverremoved", 0, usingCharacter)
+			HF.SetAffliction(targetCharacter, "liverswap", 0, usingCharacter)
 			HF.AddAffliction(targetCharacter, "organdamage", newdamage / 5, usingCharacter)
 			local transplantidentifier = "livertransplant_q1"
 			if NTC.HasTag(usingCharacter, "organssellforfull") then
@@ -2163,7 +2206,7 @@ NT.ItemStartsWithMethods.hearttransplant = function(item, usingCharacter, target
 	local damage = HF.GetAfflictionStrength(targetCharacter, "heartdamage", 0)
 	local workcondition = HF.Clamp(item.Condition + conditionmodifier, 0, 100)
 	if
-		HF.HasAffliction(targetCharacter, "heartremoved", 1)
+		(HF.HasAffliction(targetCharacter, "heartremoved", 1) or HF.HasAffliction(targetCharacter, "heartswap", 1))
 		and limbtype == LimbType.Torso
 		and HF.HasAfflictionLimb(targetCharacter, "retractedskin", limbtype, 99)
 	then
@@ -2171,11 +2214,13 @@ NT.ItemStartsWithMethods.hearttransplant = function(item, usingCharacter, target
 			HF.AddAffliction(targetCharacter, "heartdamage", -workcondition, usingCharacter)
 			HF.AddAffliction(targetCharacter, "organdamage", -workcondition / 5, usingCharacter)
 			HF.SetAffliction(targetCharacter, "heartremoved", 0, usingCharacter)
+			HF.SetAffliction(targetCharacter, "heartswap", 0, usingCharacter)
 			HF.RemoveItem(item)
 		else -- swap the organs and its generic and specific organ damage, avoiding unintentionally reducing the patients health
 			local newdamage = HF.Clamp((100 - damage) - workcondition, -100, 100)
 			HF.SetAffliction(targetCharacter, "heartdamage", 100 - workcondition, targetCharacter)
 			HF.SetAffliction(targetCharacter, "heartremoved", 0, usingCharacter)
+			HF.SetAffliction(targetCharacter, "heartswap", 0, usingCharacter)
 			HF.SetAffliction(targetCharacter, "cardiacarrest", 100, targetCharacter)
 
 			HF.SetAffliction(targetCharacter, "tamponade", 0, targetCharacter)
@@ -2247,7 +2292,7 @@ NT.ItemStartsWithMethods.lungtransplant = function(item, usingCharacter, targetC
 	local damage = HF.GetAfflictionStrength(targetCharacter, "lungdamage", 0)
 	local workcondition = HF.Clamp(item.Condition + conditionmodifier, 0, 100)
 	if
-		HF.HasAffliction(targetCharacter, "lungremoved", 1)
+		(HF.HasAffliction(targetCharacter, "lungremoved", 1) or HF.HasAffliction(targetCharacter, "lungswap", 1))
 		and limbtype == LimbType.Torso
 		and HF.HasAfflictionLimb(targetCharacter, "retractedskin", limbtype, 99)
 	then
@@ -2255,11 +2300,13 @@ NT.ItemStartsWithMethods.lungtransplant = function(item, usingCharacter, targetC
 			HF.AddAffliction(targetCharacter, "lungdamage", -workcondition, usingCharacter)
 			HF.AddAffliction(targetCharacter, "organdamage", -workcondition / 5, usingCharacter)
 			HF.SetAffliction(targetCharacter, "lungremoved", 0, usingCharacter)
+			HF.SetAffliction(targetCharacter, "lungswap", 0, usingCharacter)
 			HF.RemoveItem(item)
 		else -- swap the organs and its generic and specific organ damage, avoiding unintentionally reducing the patients health
 			local newdamage = HF.Clamp((100 - damage) - workcondition, -100, 100)
 			HF.SetAffliction(targetCharacter, "lungdamage", 100 - workcondition, targetCharacter)
 			HF.SetAffliction(targetCharacter, "lungremoved", 0, usingCharacter)
+			HF.SetAffliction(targetCharacter, "lungswap", 0, usingCharacter)
 			HF.SetAffliction(targetCharacter, "respiratoryarrest", 100, targetCharacter)
 
 			HF.SetAffliction(targetCharacter, "pneumothorax", 0, targetCharacter)
@@ -2332,7 +2379,7 @@ NT.ItemStartsWithMethods.kidneytransplant = function(item, usingCharacter, targe
 	local damage = HF.GetAfflictionStrength(targetCharacter, "kidneydamage", 0) -- floating point number really fucks the logic I made here so I just floor it
 	local workcondition = HF.Clamp(item.Condition + conditionmodifier, 0, 100)
 	if
-		HF.HasAffliction(targetCharacter, "kidneyremoved", 1)
+		(HF.HasAffliction(targetCharacter, "kidneyremoved", 1) or HF.HasAffliction(targetCharacter, "kidneyswap", 1))
 		and limbtype == LimbType.Torso
 		and HF.HasAfflictionLimb(targetCharacter, "retractedskin", limbtype, 99)
 	then
@@ -2350,6 +2397,7 @@ NT.ItemStartsWithMethods.kidneytransplant = function(item, usingCharacter, targe
 		if damage > 50 then
 			Timer.Wait(function()
 				HF.SetAffliction(targetCharacter, "kidneyremoved", 0, usingCharacter)
+				HF.SetAffliction(targetCharacter, "kidneyswap", 0, usingCharacter)
 			end, 3000)
 			HF.AddAffliction(targetCharacter, "kidneydamage", -workcondition / 2, usingCharacter)
 			HF.AddAffliction(targetCharacter, "organdamage", -workcondition / 5, usingCharacter)
@@ -2357,6 +2405,7 @@ NT.ItemStartsWithMethods.kidneytransplant = function(item, usingCharacter, targe
 		else
 			local newdamage = HF.Clamp(((100 - damage) - workcondition) / 2, -100, 100)
 			HF.SetAffliction(targetCharacter, "kidneyremoved", 0, usingCharacter)
+			HF.SetAffliction(targetCharacter, "kidneyswap", 0, usingCharacter)
 			HF.SetAffliction(targetCharacter, "kidneydamage", 50 - workcondition / 2, usingCharacter)
 			HF.AddAffliction(targetCharacter, "organdamage", newdamage / 5, usingCharacter)
 			local transplantidentifier = "kidneytransplant_q1"

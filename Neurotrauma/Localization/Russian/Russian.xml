@@ -348,6 +348,9 @@
 <afflictionname.heartremoved>Сердце удалено</afflictionname.heartremoved>
 <afflictiondescription.heartremoved>Сердце хирургически удалено.</afflictiondescription.heartremoved>
 
+<afflictionname.heartswap>Сердце обменивается на новое</afflictionname.heartswap>
+<afflictiondescription.heartswap>Старое сердце хирургически подготовлено для замены новым трансплантатом.</afflictiondescription.heartswap>
+
 <!-- /// Мозг /// -->
 
 <afflictionname.cerebralhypoxia>Нейротравмa</afflictionname.cerebralhypoxia>
@@ -366,6 +369,9 @@
 
 <afflictionname.brainremoved>Мозг удалён</afflictionname.brainremoved>
 <afflictiondescription.brainremoved>Мозг хирургически удалён</afflictiondescription.brainremoved>
+
+<afflictionname.brainswap>Мозг обменивается на новый</afflictionname.brainswap>
+<afflictiondescription.brainswap>Старый мозг хирургически подготовлен для замены новым трансплантатом.</afflictiondescription.brainswap>
 
 <afflictionname.traumaticshock>Травматический шок</afflictionname.traumaticshock>
 <afflictiondescription.traumaticshock>Операции проводятся не так! Совсем  не так!</afflictiondescription.traumaticshock>
@@ -413,6 +419,9 @@
 <afflictionname.lungremoved>Удалённые лёгкие</afflictionname.lungremoved>
 <afflictiondescription.lungremoved>Лёгкие хирургически удалены.</afflictiondescription.lungremoved>
 
+<afflictionname.lungswap>Лёгкие обмениваются на новые</afflictionname.lungswap>
+<afflictiondescription.lungswap>Старые лёгкие хирургически подготовлены для замены новым трансплантатом.</afflictiondescription.lungswap>
+
 <!-- /// Почки /// -->
 
 <afflictionname.kidneydamage>Повреждение почек</afflictionname.kidneydamage>
@@ -423,6 +432,9 @@
 
 <afflictionname.kidneyremoved>Удалённые почки</afflictionname.kidneyremoved>
 <afflictiondescription.kidneyremoved>Почки хирургически удалены.</afflictiondescription.kidneyremoved>
+
+<afflictionname.kidneyswap>Почки обменивается на новые</afflictionname.kidneyswap>
+<afflictiondescription.kidneyswap>Старые почки хирургически подготовлены для замены новым трансплантатом.</afflictiondescription.kidneyswap>
 
 <!-- /// Кости /// -->
 
@@ -445,6 +457,9 @@
 
 <afflictionname.liverremoved>Печень удалена</afflictionname.liverremoved>
 <afflictiondescription.liverremoved>Печень хирургически удалена.</afflictiondescription.liverremoved>
+
+<afflictionname.liverswap>Печень обменивается на новую</afflictionname.liverswap>
+<afflictiondescription.liverswap>Старая печень хирургически подготовлена для замены новым трансплантатом.</afflictiondescription.liverswap>
 
 <!-- /// Хирургия и связанное /// -->
 

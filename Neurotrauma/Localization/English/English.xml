@@ -357,6 +357,9 @@ Can give blood to: AB+</entitydescription.abpluscard>
 <afflictionname.heartremoved>Heart removed</afflictionname.heartremoved>
 <afflictiondescription.heartremoved>The heart has been surgically removed.</afflictiondescription.heartremoved>
 
+<afflictionname.heartswap>Replacing heart</afflictionname.heartswap>
+<afflictiondescription.heartswap>Old heart has been surgically prepared for a new transplant.</afflictiondescription.heartswap>
+
 <!-- /// Brain /// -->
 
 <afflictionname.cerebralhypoxia>Neurotrauma</afflictionname.cerebralhypoxia>
@@ -375,6 +378,9 @@ Can give blood to: AB+</entitydescription.abpluscard>
 
 <afflictionname.brainremoved>Brain removed</afflictionname.brainremoved>
 <afflictiondescription.brainremoved>The brain has been surgically removed.</afflictiondescription.brainremoved>
+
+<afflictionname.brainswap>Replacing brain</afflictionname.brainswap>
+<afflictiondescription.brainswap>Old brain has been surgically prepared for a new transplant.</afflictiondescription.brainswap>
 
 <afflictionname.traumaticshock>Traumatic shock</afflictionname.traumaticshock>
 <afflictiondescription.traumaticshock>You shouldn't be getting dug into like this! This is very wrong!</afflictiondescription.traumaticshock>
@@ -422,6 +428,9 @@ Can give blood to: AB+</entitydescription.abpluscard>
 <afflictionname.lungremoved>Lungs removed</afflictionname.lungremoved>
 <afflictiondescription.lungremoved>The lungs have been surgically removed.</afflictiondescription.lungremoved>
 
+<afflictionname.lungswap>Replacing lungs</afflictionname.lungswap>
+<afflictiondescription.lungswap>Old lungs have been surgically prepared for a new transplant.</afflictiondescription.lungswap>
+
 <!-- /// kidneys /// -->
 
 <afflictionname.kidneydamage>Kidney damage</afflictionname.kidneydamage>
@@ -432,6 +441,9 @@ Can give blood to: AB+</entitydescription.abpluscard>
 
 <afflictionname.kidneyremoved>Kidneys removed</afflictionname.kidneyremoved>
 <afflictiondescription.kidneyremoved>The kidneys have been surgically removed.</afflictiondescription.kidneyremoved>
+
+<afflictionname.kidneyswap>Replacing kidneys</afflictionname.kidneyswap>
+<afflictiondescription.kidneyswap>Old kidneys have been surgically prepared for a new transplant.</afflictiondescription.kidneyswap>
 
 <!-- /// bones /// -->
 
@@ -454,6 +466,9 @@ Can give blood to: AB+</entitydescription.abpluscard>
 
 <afflictionname.liverremoved>Liver removed</afflictionname.liverremoved>
 <afflictiondescription.liverremoved>The liver has been surgically removed.</afflictiondescription.liverremoved>
+
+<afflictionname.liverswap>Replacing liver</afflictionname.liverswap>
+<afflictiondescription.liverswap>Old liver has been surgically prepared for a new transplant.</afflictiondescription.liverswap>
 
 <!-- /// surgery and related /// -->
 
