@@ -27,7 +27,7 @@
         <SuitableTreatment identifier="bitewounds" suitability="20"/>
         <SuitableTreatment identifier="explosiondamage" suitability="20"/>
         <SuitableTreatment identifier="gunshotwound" suitability="20"/>
-        <SuitableTreatment identifier="bleeding" suitability="40"/>
+        <SuitableTreatment type="bleeding" suitability="40"/>
         <SuitableTreatment identifier="surgeryincision" suitability="100"/>
 
         <MeleeWeapon slots="Any,RightHand,LeftHand" aimpos="5,0" handle1="-5,0" holdangle="10" reload="1.0">

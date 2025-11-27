@@ -331,7 +331,7 @@
             <Sprite texture="Content/Items/Medical/Medicines.png" sourcerect="340,33,26,42" depth="0.6" origin="0.5,0.5" />
             <Body width="25" height="40" density="10.05" />
             <SuitableTreatment type="bleeding" suitability="32"/>
-            <SuitableTreatment identifier="burn" suitability="35"/>
+            <SuitableTreatment type="burn" suitability="35"/>
             <SuitableTreatment identifier="infectedwound" suitability="6"/>
             <SuitableTreatment identifier="dirtybandage" suitability="100"/>
 
