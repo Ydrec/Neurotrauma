@@ -4097,7 +4097,7 @@ thats what the vomiting symptom is for -->
     </Affliction>
 
     <!-- Skin ointment
-    Exposed, regenerates moderate burn damage and blunt trauma -->
+    Exposed, increases natural healing of most surface trauma -->
     <Affliction
       name=""
       identifier="skinointmented"
