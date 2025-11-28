@@ -496,19 +496,19 @@
                 <!-- First Slot (Tanks) -->
                 <SubContainer capacity="1">
                     <SlotIcon texture="%ModDir%/Images/InventoryItemIconAtlas.png" sourcerect="869,964,25,56" origin="0.5,0.5" />
-                    <Containable items="analgesictank,weldingfuel" itempos="102, -57" rotation="270" /> <!-- Put analgesic tank on the surgerytable sprite. -->
+                    <Containable items="analgesictank,weldingfuel" itempos="127, -74" rotation="270" /> <!-- Put analgesic tank on the surgerytable sprite. -->
                 </SubContainer>
 
                 <!-- Second Slot (Filters) -->
                 <SubContainer capacity="1">
                     <SlotIcon texture="%ModDir%/Images/InventoryItemIconAtlas.png" sourcerect="978,967,41,52" origin="0.5,0.5" />
-                    <Containable items="dialyzer,toxfilter" itempos="23, -63" rotation="-270" /> <!-- Put the filters on the surgerytable sprite -->
+                    <Containable items="dialyzer,toxfilter" itempos="30, -82" rotation="-270" /> <!-- Put the filters on the surgerytable sprite -->
                 </SubContainer>
 
                 <!-- Third Slot (Organ Storage) -->
                 <SubContainer capacity="1">
                     <SlotIcon texture="%ModDir%/Images/InventoryItemIconAtlas.png" sourcerect="898,972,75,42" origin="0.5,0.5" />
-                    <Containable items="organcrate" itempos="115, -27" /> <!-- Slot container in the back -->
+                    <Containable items="organcrate" itempos="110, -45" /> <!-- Slot container in the back -->
                 </SubContainer>
             </ItemContainer>
 
