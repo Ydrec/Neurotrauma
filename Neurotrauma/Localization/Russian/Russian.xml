@@ -30,6 +30,18 @@
 
 <entityname.blahaj>Синяя акула</entityname.blahaj>
 
+<entityname.analgesictank>Баллон с анальгетиком</entityname.analgesictank>
+<entitydescription.analgesictank>Баллон содержащий анальгетик в газообразном состоянии. Может быть установлен в хирургический стол или использован в мешке амбу.</entitydescription.analgesictank>
+
+<entityname.anesthetictank>Баллон с анестетиком</entityname.anesthetictank>
+<entitydescription.anesthetictank>Баллон содержащий анестетик в газообразном состоянии. Может быть установлен в хирургический стол или использован в мешке амбу.</entitydescription.anesthetictank>
+
+<entityname.dialyzer>Фильтр для диализа</entityname.dialyzer>
+<entitydescription.dialyzer>Улучшенный кровеносный фильтр для установки в хирургический стол, который постепенно уравновешиавет кислотность крови если пациент страдает от ацидоза или алкалоза.</entitydescription.dialyzer>
+
+<entityname.toxfilter>Фильтр любых ядов</entityname.toxfilter>
+<entitydescription.toxfilter>Улучшенный кровеносный фильтр для установки в хирургический стол, который постепенно удаляет любой яд из кровотока пациента.</entitydescription.toxfilter>
+
 <entityname.healthscanner>Сканер здоровья</entityname.healthscanner>
 <entitydescription.healthscanner>Используется для выявления скрытых причин симптомов</entitydescription.healthscanner>
 
