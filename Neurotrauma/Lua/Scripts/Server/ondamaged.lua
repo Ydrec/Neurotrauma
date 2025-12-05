@@ -22,6 +22,45 @@ local function getCalculatedConcussionReduction(armor, strength)
 	end
 	return reduction
 end
+Hook.Add(
+	"character.damageLimb",
+	"NT.ondamagedby",
+	function(
+		character,
+		worldPosition,
+		hitLimb,
+		afflictions,
+		stun,
+		playSound,
+		attackImpulse,
+		attacker,
+		damageMultiplier,
+		allowStacking,
+		penetration,
+		shouldImplode
+	)
+		if -- invalid attack data, don't do anything
+			character == nil
+			or character.IsDead
+			or not character.IsHuman
+			or afflictions == nil
+			or hitLimb == nil
+			or hitLimb.IsSevered
+			or attacker == nil
+			or not NTConfig.Get("NT_Calculations", true)
+		then
+			return
+		end
+		local creatureCategory = NTConfig.Get("NT_creatureNoFallDamage", 1)
+		-- they make the game miserable with falldamage on
+		for val in creatureCategory do
+			if attacker.SpeciesName == val then
+				HF.AddAffliction(character, "stopcreatureabuse", 2)
+				break
+			end
+		end
+	end
+)
 Hook.Add("character.applyDamage", "NT.ondamaged", function(characterHealth, attackResult, hitLimb)
 	--print(hitLimb.HealthIndex or hitLimb ~= nil)
 
@@ -40,8 +79,8 @@ Hook.Add("character.applyDamage", "NT.ondamaged", function(characterHealth, atta
 		return
 	end
 
-	if not HF.HasAffliction(characterHealth.Character, "updateme") then
-		HF.SetAffliction(characterHealth.Character, "updateme", 1)
+	if not HF.HasAffliction(characterHealth.Character, "luabotomy") then
+		HF.SetAffliction(characterHealth.Character, "luabotomy", 1)
 	end
 
 	local afflictions = attackResult.Afflictions
@@ -161,7 +200,12 @@ NT.OnDamagedMethods.gunshotwound = function(character, strength, limbtype)
 		if
 			NT.LimbIsBroken(character, limbtype)
 			and not NT.LimbIsAmputated(character, limbtype)
-			and HF.Chance(strength / 60 * NTC.GetMultiplier(character, "traumamputatechance"))
+			and HF.Chance(
+				strength
+					/ 60
+					* NTC.GetMultiplier(character, "traumamputatechance")
+					* NTConfig.Get("NT_traumaticAmputationChance", 1)
+			)
 		then
 			NT.TraumamputateLimb(character, limbtype)
 		end
@@ -283,7 +327,12 @@ NT.OnDamagedMethods.explosiondamage = function(character, strength, limbtype)
 		if
 			NT.LimbIsBroken(character, limbtype)
 			and not NT.LimbIsAmputated(character, limbtype)
-			and HF.Chance(strength / 60 * NTC.GetMultiplier(character, "traumamputatechance"))
+			and HF.Chance(
+				strength
+					/ 60
+					* NTC.GetMultiplier(character, "traumamputatechance")
+					* NTConfig.Get("NT_traumaticAmputationChance", 1)
+			)
 		then
 			NT.TraumamputateLimb(character, limbtype)
 		end
@@ -368,9 +417,14 @@ NT.OnDamagedMethods.bitewounds = function(character, strength, limbtype)
 		if
 			NT.LimbIsBroken(character, limbtype)
 			and not NT.LimbIsAmputated(character, limbtype)
-			and HF.Chance((strength - 5) / 60 * NTC.GetMultiplier(character, "traumamputatechance"))
+			and HF.Chance(
+				(strength - 5)
+					/ 60
+					* NTC.GetMultiplier(character, "traumamputatechance")
+					* NTConfig.Get("NT_traumaticAmputationChance", 1)
+			)
 		then
-			NT.TraumamputateLimb(character, limbtype)
+			NT.TraumamputateLimb(character, limbtype, character.LastAttacker)
 		end
 		if
 			HF.Chance(
@@ -450,7 +504,12 @@ NT.OnDamagedMethods.lacerations = function(character, strength, limbtype)
 		if
 			NT.LimbIsBroken(character, limbtype)
 			and not NT.LimbIsAmputated(character, limbtype)
-			and HF.Chance(strength / 60 * NTC.GetMultiplier(character, "traumamputatechance"))
+			and HF.Chance(
+				strength
+					/ 60
+					* NTC.GetMultiplier(character, "traumamputatechance")
+					* NTConfig.Get("NT_traumaticAmputationChance", 1)
+			)
 		then
 			NT.TraumamputateLimb(character, limbtype)
 		end
@@ -547,7 +606,12 @@ NT.OnDamagedMethods.blunttrauma = function(character, strength, limbtype)
 			strength > 15
 			and NT.LimbIsBroken(character, limbtype)
 			and not NT.LimbIsAmputated(character, limbtype)
-			and HF.Chance(strength / 100 * NTC.GetMultiplier(character, "traumamputatechance"))
+			and HF.Chance(
+				strength
+					/ 100
+					* NTC.GetMultiplier(character, "traumamputatechance")
+					* NTConfig.Get("NT_traumaticAmputationChance", 1)
+			)
 		then
 			NT.TraumamputateLimb(character, limbtype)
 		end
@@ -651,7 +715,12 @@ NT.OnDamagedMethods.internaldamage = function(character, strength, limbtype)
 			strength > 10
 			and NT.LimbIsBroken(character, limbtype)
 			and not NT.LimbIsAmputated(character, limbtype)
-			and HF.Chance((strength - 10) / 60 * NTC.GetMultiplier(character, "traumamputatechance"))
+			and HF.Chance(
+				(strength - 10)
+					/ 60
+					* NTC.GetMultiplier(character, "traumamputatechance")
+					* NTConfig.Get("NT_traumaticAmputationChance", 1)
+			)
 		then
 			NT.TraumamputateLimb(character, limbtype)
 		end

@@ -3,3 +3,5 @@ NeurotraumaLua.code-workspace
 types/
 Guide/Images/
 gitignore/
+*.png~
+*.kra

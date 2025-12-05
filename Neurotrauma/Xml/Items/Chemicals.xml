@@ -59,7 +59,7 @@
             <Price storeidentifier="merchantmedical" sold="true" multiplier="0.9" minavailable="1"/>
         </Price>
 
-        <Fabricate suitablefabricators="medicalfabricator" requiredtime="60">
+        <Fabricate suitablefabricators="medicalfabricator" requiredtime="40">
             <RequiredSkill identifier="medical" level="80"/>
             <RequiredItem identifier="adrenaline"/>
             <RequiredItem identifier="ethanol"/>
@@ -170,7 +170,7 @@
             <Price storeidentifier="merchantmedical" sold="true" multiplier="0.9" minavailable="2"/>
         </Price>
 
-        <Fabricate suitablefabricators="medicalfabricator" requiredtime="20" amount="3">
+        <Fabricate suitablefabricators="medicalfabricator" requiredtime="25" amount="5">
             <RequiredSkill identifier="medical" level="40"/>
             <RequiredItem identifier="carbon" amount="2"/>
             <RequiredItem identifier="sulphuricacid"/>
@@ -293,35 +293,44 @@
         </Projectile>
     </Item>
 
-    <!-- Ointment / heals infected wound -->
+    <!-- Antibiotic ointment / heals infected wound -->
     <!-- Maybe it's worth moving to Consumables.xml. By: TheManyFacedDemon -->
-    <Item name="" identifier="ointment" category="Medical" Tags="smallitem,medical" maxstacksize="8" maxstacksizecharacterinventory="1" useinhealthinterface="true" cargocontaineridentifier="mediccrate" scale="0.265" impactsoundtag="impact_soft">
-        <PreferredContainer primary="medcab" minamount="1" maxamount="3" spawnprobability="1"/>
+    <Item name="" identifier="ointment" category="Medical" Tags="smallitem,medical" maxstacksize="32" maxstacksizecharacterinventory="8" useinhealthinterface="true" cargocontaineridentifier="mediccrate" scale="0.265" impactsoundtag="impact_soft">
+        <PreferredContainer primary="medcab" minamount="10" maxamount="16" spawnprobability="1"/>
         <PreferredContainer primary="supplycab" minamount="1" maxamount="2" spawnprobability="0.1"/>
-        <PreferredContainer primary="wreckmedcab,abandonedmedcab" minamount="0" maxamount="3" spawnprobability="0.12"/>
-        <PreferredContainer primary="outpostmedcompartment" minamount="0" maxamount="3" spawnprobability="0.25"/>
+        <PreferredContainer primary="wreckmedcab,abandonedmedcab" minamount="0" maxamount="8" spawnprobability="0.12"/>
+        <PreferredContainer primary="outpostmedcompartment" minamount="0" maxamount="10" spawnprobability="0.25"/>
 
-        <Price baseprice="216">
-            <Price storeidentifier="merchantmedical" sold="true" multiplier="0.9" minavailable="6"/>
+        <Price baseprice="54">
+            <Price storeidentifier="merchantmedical" sold="true" multiplier="0.9" minavailable="18"/>
         </Price>
 
-        <Fabricate suitablefabricators="medicalfabricator" requiredtime="15">
+        <Fabricate suitablefabricators="medicalfabricator" requiredtime="15" amount="8">
             <RequiredSkill identifier="medical" level="10"/>
             <RequiredItem identifier="stabilozine" amount="2"/>
             <RequiredItem identifier="antibiotics" amount="2"/>
         </Fabricate>
 
-        <Deconstruct time="5">
-            <Item identifier="stabilozine" mincondition="0.1"/>
-        </Deconstruct>
+        <Deconstruct/>
 
-        <SuitableTreatment identifier="infectedwound" suitability="20"/>
-        <SuitableTreatment identifier="burn" suitability="15"/>
+        <SuitableTreatment identifier="infectedwound" suitability="100"/>
         <InventoryIcon texture="%ModDir%/Images/InventoryItemIconAtlas.png" sourcerect="64,64,64,64" origin="0.5,0.5"/>
         <Sprite texture="%ModDir%/Images/InGameItemIconAtlas.png" sourcerect="128,256,128,128" depth="0.6" origin="0.5,0.5"/>
         <Body width="60" height="20" density="20"/>
 
         <MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="5,0" handle1="-5,0" holdangle="10" reload="1.0" msg="ItemMsgPickUpSelect">
+            <RequiredSkill identifier="medical" level="55" />
+            <StatusEffect type="OnUse" target="This" Condition="-100.0" setvalue="true">
+                <Sound file="%ModDir%/Sound/ointment.ogg" range="500" />
+            </StatusEffect>
+            <StatusEffect statuseffecttags="medical" type="OnSuccess" target="This, Limb" duration="1.0">
+                <ReduceAffliction type="infectedwound" amount="60" />
+                <Affliction identifier="ointmented" amount="100" />
+            </StatusEffect>
+            <StatusEffect statuseffecttags="medical" type="OnFailure" target="This, Limb" duration="1.0">
+                <ReduceAffliction type="infectedwound" amount="30" />
+                <Affliction identifier="ointmented" amount="80" />
+            </StatusEffect>
             <StatusEffect type="OnBroken" target="This">
                 <Remove/>
             </StatusEffect>
@@ -445,6 +454,152 @@
                 <LuaHook name="NT.runItemMethod"/>
             </StatusEffect>
         </Projectile>
+    </Item>
+
+     <!-- Analgesic Tank -->
+    <Item name="" identifier="analgesictank" category="Medical" health="200" maxstacksize="8" maxstacksizecharacterinventory="1" MaxStackSizeHoldableOrWearableInventory="1" Tags="smallitem,analgesictank" cargocontaineridentifier="metalcrate" scale="0.25" impactsoundtag="impact_metal_light" allowdroppingonswap="true">
+        <Price baseprice="200" soldbydefault="false">
+            <Price storeidentifier="merchantmedical" sold="true" multiplier="1.5" minavailable="1"/>
+        </Price>
+        <Deconstruct time="10">
+            <Item identifier="aluminium" />
+        </Deconstruct>
+        <Fabricate suitablefabricators="medicalfabricator" requiredtime="9">
+            <RequiredSkill identifier="medical" level="40" />
+            <RequiredSkill identifier="mechanical" level="20" />
+            <RequiredItem identifier="aluminium" amount="2" />
+            <RequiredItem identifier="morphine" amount="2" />
+        </Fabricate>
+        <Fabricate suitablefabricators="medicalfabricator" displayname="recycleitem" requiredtime="7">
+            <RequiredSkill identifier="medical" level="40" />
+            <RequiredItem identifier="analgesictank" mincondition="0.0" maxcondition="0.1" usecondition="false"/>
+            <RequiredItem identifier="morphine" amount="2" />
+        </Fabricate>
+        <InventoryIcon texture="%ModDir%/Images/InGameItemIconAtlas.png" sourcerect="261,912,46,112" origin="0.5,0.5" />
+        <Sprite texture="%ModDir%/Images/InGameItemIconAtlas.png" sourcerect="261,912,46,112" depth="0.52" origin="0.5,0.5" />
+        <Body width="22" height="64" density="9.7" />
+        <Holdable canbecombined="true" slots="Any,RightHand,LeftHand" holdpos="30,-15" handle1="0,5" handle2="0,-5" msg="ItemMsgPickUpSelect">
+            <StatusEffect type="OnFire" target="This" Condition="-1.0" tags="onfire" duration="1" stackable="false" />
+            <StatusEffect type="OnBroken" target="This" delay="1" stackable="false">
+                <Conditional HasStatusTag="onfire" />
+                <sound file="Content/Items/Weapons/ExplosionSmall1.ogg" range="2000" />
+                <sound file="Content/Items/Weapons/ExplosionDebris1.ogg" range="2000" />
+            </StatusEffect>
+        </Holdable>
+        <Quality>
+            <QualityStat stattype="Condition" value="0.05"/>
+        </Quality>
+    </Item>
+    
+     <!-- Toxin Filter -->
+    <Item name="" identifier="toxfilter" category="Medical" health="200" maxstacksize="8" maxstacksizecharacterinventory="1" MaxStackSizeHoldableOrWearableInventory="8" Tags="smallitem,toxfilter" cargocontaineridentifier="metalcrate" scale="0.15" impactsoundtag="impact_metal_light" allowdroppingonswap="true">
+        <Deconstruct time="10">
+            <Item identifier="aluminium" />
+        </Deconstruct>
+        <Fabricate suitablefabricators="medicalfabricator" requiredtime="20">
+            <RequiredSkill identifier="medical" level="40" />
+            <RequiredSkill identifier="mechanical" level="40" />
+            <RequiredItem identifier="titaniumaluminiumalloy" amount="1" />
+            <RequiredItem identifier="fpgacircuit" amount="2" />
+            <RequiredItem identifier="organicfiber" amount="2" />
+            <RequiredItem identifier="sodium" amount="2" />
+            <RequiredItem identifier="stabilozine" amount="2" />
+        </Fabricate>
+        <Fabricate suitablefabricators="medicalfabricator" displayname="recycleitem" requiredtime="10">
+            <RequiredSkill identifier="medical" level="40" />
+            <RequiredItem identifier="toxfilter" mincondition="0.0" maxcondition="0.1" usecondition="false"/>
+            <RequiredItem identifier="organicfiber" amount="2" />
+            <RequiredItem identifier="stabilozine" amount="2" />
+        </Fabricate>
+        <InventoryIcon texture="%ModDir%/Images/InGameItemIconAtlas.png" sourcerect="366,924,78,95" origin="0.5,0.5" />
+        <Sprite texture="%ModDir%/Images/InGameItemIconAtlas.png" sourcerect="366,924,78,95" depth="0.52" origin="0.5,0.5" />
+        <Body width="22" height="64" density="9.7" />
+        <Holdable canbecombined="true" slots="Any,RightHand,LeftHand" holdpos="30,-15" handle1="0,5" handle2="0,-5" msg="ItemMsgPickUpSelect"/>
+        <Quality>
+            <QualityStat stattype="Condition" value="0.05"/>
+        </Quality>
+    </Item>
+
+    <!-- Dialyzer -->
+    <Item name="" identifier="dialyzer" category="Medical" health="200" maxstacksize="8" maxstacksizecharacterinventory="1" MaxStackSizeHoldableOrWearableInventory="8" Tags="smallitem,dialyzer" cargocontaineridentifier="metalcrate" scale="0.15" impactsoundtag="impact_metal_light" allowdroppingonswap="true">
+        
+        <Deconstruct time="10">
+            <Item identifier="aluminium" />
+        </Deconstruct>
+
+        <Fabricate suitablefabricators="medicalfabricator" requiredtime="20">
+            <RequiredSkill identifier="medical" level="60" />
+            <RequiredSkill identifier="mechanical" level="40" />
+            <RequiredItem identifier="titaniumaluminiumalloy" amount="1" />
+            <RequiredItem identifier="fpgacircuit" amount="2" />
+            <RequiredItem identifier="organicfiber" amount="4" />
+            <RequiredItem identifier="sodium" amount="2" />
+            <RequiredItem identifier="calcium" amount="1" />
+        </Fabricate>
+
+        <Fabricate suitablefabricators="medicalfabricator" displayname="recycleitem" requiredtime="10">
+            <RequiredSkill identifier="medical" level="60" />
+            <RequiredItem identifier="dialyzer" mincondition="0.0" maxcondition="0.1" usecondition="false"/>
+            <RequiredItem identifier="organicfiber" amount="4" />
+        </Fabricate>
+
+        <InventoryIcon texture="%ModDir%/Images/InGameItemIconAtlas.png" sourcerect="447,924,76,95" origin="0.5,0.5" />
+        <Sprite texture="%ModDir%/Images/InGameItemIconAtlas.png" sourcerect="447,924,76,95" depth="0.52" origin="0.5,0.5" />
+        <Body width="22" height="64" density="9.7" />
+        <Holdable canbecombined="true" slots="Any,RightHand,LeftHand" holdpos="30,-15" handle1="0,5" handle2="0,-5" msg="ItemMsgPickUpSelect"/>
+        
+        <Quality>
+            <QualityStat stattype="Condition" value="0.05"/>
+        </Quality>
+    </Item>
+
+
+    <!-- Regenerative ointment / increases natural healing of most surface trauma -->
+    <Item name="" identifier="skinaid" category="Medical" Tags="smallitem,medical" maxstacksize="32" maxstacksizecharacterinventory="8" useinhealthinterface="true" cargocontaineridentifier="mediccrate" scale="0.265" impactsoundtag="impact_soft">
+        <PreferredContainer primary="medcab" minamount="10" maxamount="16" spawnprobability="1"/>
+        <PreferredContainer primary="supplycab" minamount="1" maxamount="2" spawnprobability="0.1"/>
+        <PreferredContainer primary="wreckmedcab,abandonedmedcab" minamount="0" maxamount="4" spawnprobability="0.12"/>
+        <PreferredContainer primary="outpostmedcompartment" minamount="0" maxamount="10" spawnprobability="0.25"/>
+
+        <Price baseprice="54">
+            <Price storeidentifier="merchantmedical" sold="true" multiplier="0.9" minavailable="12"/>
+        </Price>
+
+        <Fabricate suitablefabricators="medicalfabricator" requiredtime="15" amount="8">
+            <RequiredSkill identifier="medical" level="10"/>
+            <RequiredItem identifier="stabilozine" amount="2"/>
+            <RequiredItem identifier="elastin" amount="2"/>
+        </Fabricate>
+
+        <Deconstruct/>
+
+        <SuitableTreatment identifier="blunttrauma" suitability="30"/>
+        <SuitableTreatment identifier="explosiondamage" suitability="30"/>
+        <SuitableTreatment identifier="bitewounds" suitability="30"/>
+        <SuitableTreatment identifier="gunshotwounds" suitability="30"/>
+        <SuitableTreatment identifier="lacerations" suitability="30"/>
+        <SuitableTreatment type="burn" suitability="30"/>
+        <InventoryIcon texture="%ModDir%/Images/InventoryItemIconAtlas.png" sourcerect="128,256,64,64" origin="0.5,0.5"/>
+        <Sprite texture="%ModDir%/Images/InGameItemIconAtlas.png" sourcerect="640,512,128,128" depth="0.6" origin="0.5,0.5"/>
+        <Body width="60" height="20" density="20"/>
+
+        <MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="5,0" handle1="-5,0" holdangle="10" reload="1.0" msg="ItemMsgPickUpSelect">
+            <RequiredSkill identifier="medical" level="55" />
+            <StatusEffect type="OnUse" target="This" Condition="-100.0" setvalue="true">
+                <Sound file="%ModDir%/Sound/ointment.ogg" range="500" />
+            </StatusEffect>
+            <StatusEffect statuseffecttags="medical" type="OnSuccess" target="This, Limb" duration="1.0">
+                <Affliction identifier="skinointmented" amount="100" />
+            </StatusEffect>
+            <StatusEffect statuseffecttags="medical" type="OnFailure" target="This, Limb" duration="1.0">
+                <Affliction identifier="skinointmented" amount="80" />
+            </StatusEffect>
+            <StatusEffect type="OnBroken" target="This">
+                <Remove/>
+            </StatusEffect>
+        </MeleeWeapon>
+
+        <SkillRequirementHint identifier="medical" level="10"/>
     </Item>
 </Items>
 </Override>

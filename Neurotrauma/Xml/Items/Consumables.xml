@@ -27,7 +27,7 @@
         <SuitableTreatment identifier="bitewounds" suitability="20"/>
         <SuitableTreatment identifier="explosiondamage" suitability="20"/>
         <SuitableTreatment identifier="gunshotwound" suitability="20"/>
-        <SuitableTreatment identifier="bleeding" suitability="40"/>
+        <SuitableTreatment type="bleeding" suitability="40"/>
         <SuitableTreatment identifier="surgeryincision" suitability="100"/>
 
         <MeleeWeapon slots="Any,RightHand,LeftHand" aimpos="5,0" handle1="-5,0" holdangle="10" reload="1.0">
@@ -43,7 +43,7 @@
         <SkillRequirementHint identifier="medical" level="30"/>
     </Item>
     
-    <Item name="" identifier="endovascballoon" category="Medical" maxstacksize="4" cargocontaineridentifier="mediccrate" Tags="smallitem,medical,surgery,surgerytool" description="" useinhealthinterface="True" scale="0.250">
+    <Item name="" identifier="endovascballoon" category="Medical" maxstacksize="16" maxstacksizecharacterinventory="4" cargocontaineridentifier="mediccrate" Tags="smallitem,medical,surgery,surgerytool" description="" useinhealthinterface="True" scale="0.250">
         <PreferredContainer primary="toxcontainer" spawnprobability="0.2"/>
         <PreferredContainer primary="medcab" minamount="0" maxamount="1" spawnprobability="0.5"/>
 
@@ -73,7 +73,7 @@
         </MeleeWeapon>
     </Item>
 
-    <Item name="" identifier="medstent" category="Medical" maxstacksize="4" cargocontaineridentifier="mediccrate" Tags="smallitem,medical,surgery,surgerytool" description="" useinhealthinterface="True" scale="0.250">
+    <Item name="" identifier="medstent" category="Medical" maxstacksize="16" maxstacksizecharacterinventory="4" cargocontaineridentifier="mediccrate" Tags="smallitem,medical,surgery,surgerytool" description="" useinhealthinterface="True" scale="0.250">
         <PreferredContainer primary="toxcontainer" minamount="1" maxamount="1" spawnprobability="0.5"/>
         <PreferredContainer primary="outpostmedcompartment" minamount="0" maxamount="1" spawnprobability="0.125"/>
 
@@ -105,7 +105,7 @@
         </MeleeWeapon>
     </Item>
 
-    <Item name="" identifier="drainage" category="Medical" maxstacksize="4" cargocontaineridentifier="mediccrate" Tags="smallitem,medical,surgery,surgerytool" description="" useinhealthinterface="True" scale="0.250">
+    <Item name="" identifier="drainage" category="Medical" maxstacksize="16" maxstacksizecharacterinventory="4" cargocontaineridentifier="mediccrate" Tags="smallitem,medical,surgery,surgerytool" description="" useinhealthinterface="True" scale="0.250">
         <PreferredContainer primary="toxcontainer" minamount="1" maxamount="1" spawnprobability="0.5"/>
         <PreferredContainer primary="outpostmedcompartment" minamount="0" maxamount="1" spawnprobability="0.125"/>
 

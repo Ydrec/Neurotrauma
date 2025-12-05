@@ -2,6 +2,7 @@
 ## About
 Neurotrauma is inspired by real life medicine. It dwells on the concepts of real life injuries and their treatments. Although, it may seem overcomplicated, Neurotrauma manages to combine realism with playability in a complex system that presents players with incredible but exciting challenges.
 
+
 ## Links
 * [Discord Neurotrauma Fork Server](https://discord.gg/4Yku7qPCYN)
 
@@ -13,6 +14,9 @@ Neurotrauma is inspired by real life medicine. It dwells on the concepts of real
 
 ## Issues
 https://github.com/OlegBSTU/Neurotrauma/issues
+
+## Guidelines
+* Do not make an item with condition, specially if it is consumed and could be stored multiple. Tools are excluded from this, if they utilise the item condition for cooldown timer.
 
 ## Set Up
 In order for Neurotrauma to run, the server (host) requires a CsLua installation. For more information refer to [this workshop page](https://trello.com/b/lA0BSokX/neurotrauma-and-medical-guide).

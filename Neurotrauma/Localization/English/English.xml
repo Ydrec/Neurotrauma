@@ -25,11 +25,25 @@
 <entityname.traumashears>Trauma shears</entityname.traumashears>
 <entitydescription.traumashears>A tool used to remove bandages and casts.</entitydescription.traumashears>
 
-
 <entityname.wheelchair>Wheelchair</entityname.wheelchair>
 <entitydescription.wheelchair>Makes you depend on your arms instead of your legs for movement.</entitydescription.wheelchair>
 
 <entityname.blahaj>Blue Shark</entityname.blahaj>
+
+<entityname.analgesictank>Analgesic Tank</entityname.analgesictank>
+<entitydescription.analgesictank>A tank of gaseous analgesics that can be installed on a surgery table or used in an ambubag.</entitydescription.analgesictank>
+  
+<entityname.anesthetictank>Anesthetic Tank</entityname.anesthetictank>
+<entitydescription.anesthetictank>A tank of gaseous anesthetics that can be installed on a surgery table or used in an ambubag.</entitydescription.anesthetictank>
+
+<entityname.dialyzer>Dialysis Filter</entityname.dialyzer>
+<entitydescription.dialyzer>An advanced filter which can be installed on a surgery table to counter alkalosis and acidosis.</entitydescription.dialyzer>
+
+<entityname.toxfilter>Toxin Filter</entityname.toxfilter>
+<entitydescription.toxfilter>An advanced filter which can be installed on a surgery table to help remove poisons from the bloodstream.</entitydescription.toxfilter>
+  
+<itemmsgmodifytable>[[attack]] Interact</itemmsgmodifytable>
+<operatingtabellabel>Surgery Table Upgrades</operatingtabellabel>
 
 <entityname.healthscanner>Health scanner</entityname.healthscanner>
 <entitydescription.healthscanner>Used to diagnose underlying causes of symptoms.</entitydescription.healthscanner>
@@ -51,7 +65,7 @@
 <entitydescription.tweezers>A small tool that allows the removal of bullets as well as damaged and necrotic tissue.</entitydescription.tweezers>
 
 <entityname.surgerysaw>Surgical saw</entityname.surgerysaw>
-<entitydescription.surgerysaw>A tool used to saw through bones.</entitydescription.surgerysaw>		
+<entitydescription.surgerysaw>A tool used to saw through bones.</entitydescription.surgerysaw>
 
 <entityname.suture>Suture</entityname.suture>
 <entitydescription.suture>Biodegradeable sutures for stitching up wounds and surgical incisions alike.</entitydescription.suture>
@@ -122,7 +136,10 @@
 <entitydescription.pressuremeds>A medication used to lower blood pressure.</entitydescription.pressuremeds>
 
 <entityname.ointment>Antibiotic ointment</entityname.ointment>
-<entitydescription.ointment>A highly antiseptic gel that promotes the recovery from burns as well as from minor infections.</entitydescription.ointment>
+<entitydescription.ointment>A potent antibiotic gel that promotes the recovery from minor infections and makes the applied area sterile.</entitydescription.ointment>
+
+<entityname.skinaid>Regenerative ointment</entityname.skinaid>
+<entitydescription.skinaid>A potent regenerative gel that promotes natural healing of most trauma on the surface.</entitydescription.skinaid>
 
 <entityname.endovascballoon>Endovascular balloon</entityname.endovascballoon>
 <entitydescription.endovascballoon>A balloon inserted into major arteries following their rupture. It will cut off bloodflow, but it will stop the bleeding.</entitydescription.endovascballoon>
@@ -229,7 +246,7 @@ Can give blood to: AB+</entitydescription.abpluscard>
 
 
 <!-- /// New containers /// -->
-<entityname.medtoolbox>Medical container</entityname.medtoolbox> 
+<entityname.medtoolbox>Medical container</entityname.medtoolbox>
 <entitydescription.medtoolbox>Can store medicine and medical instruments</entitydescription.medtoolbox>
 
 <entityname.surgerytoolbox>Surgery toolbox</entityname.surgerytoolbox>
@@ -239,13 +256,13 @@ Can give blood to: AB+</entitydescription.abpluscard>
 <entitydescription.surgerytoolboxset>Can store many small items that are used during surgery</entitydescription.surgerytoolboxset>
 <displayname.surgeryset>[itemname] (kit)</displayname.surgeryset>
 
-<entityname.organcrate>Refrigerated crate</entityname.organcrate> 
+<entityname.organcrate>Refrigerated crate</entityname.organcrate>
 <entitydescription.organcrate>A place to store your precious transplant-ready organs</entitydescription.organcrate>
 
-<entityname.medstartercrate>Medical starter crate</entityname.medstartercrate> 
+<entityname.medstartercrate>Medical starter crate</entityname.medstartercrate>
 <entitydescription.medstartercrate>A crate that contains all the essentials, conveniently packaged into a single crafting recipe</entitydescription.medstartercrate>
 
-<entityname.organtoolbox>Refrigerated container</entityname.organtoolbox> 
+<entityname.organtoolbox>Refrigerated container</entityname.organtoolbox>
 <entitydescription.organtoolbox>A place to store your precious transplant-ready organs</entitydescription.organtoolbox>
 
 <entityname.bodybag>Body bag</entityname.bodybag>
@@ -357,6 +374,9 @@ Can give blood to: AB+</entitydescription.abpluscard>
 <afflictionname.heartremoved>Heart removed</afflictionname.heartremoved>
 <afflictiondescription.heartremoved>The heart has been surgically removed.</afflictiondescription.heartremoved>
 
+<afflictionname.heartswap>Replacing heart</afflictionname.heartswap>
+<afflictiondescription.heartswap>Old heart has been surgically prepared for a new transplant.</afflictiondescription.heartswap>
+
 <!-- /// Brain /// -->
 
 <afflictionname.cerebralhypoxia>Neurotrauma</afflictionname.cerebralhypoxia>
@@ -375,6 +395,9 @@ Can give blood to: AB+</entitydescription.abpluscard>
 
 <afflictionname.brainremoved>Brain removed</afflictionname.brainremoved>
 <afflictiondescription.brainremoved>The brain has been surgically removed.</afflictiondescription.brainremoved>
+
+<afflictionname.brainswap>Replacing brain</afflictionname.brainswap>
+<afflictiondescription.brainswap>Old brain has been surgically prepared for a new transplant.</afflictiondescription.brainswap>
 
 <afflictionname.traumaticshock>Traumatic shock</afflictionname.traumaticshock>
 <afflictiondescription.traumaticshock>You shouldn't be getting dug into like this! This is very wrong!</afflictiondescription.traumaticshock>
@@ -422,6 +445,9 @@ Can give blood to: AB+</entitydescription.abpluscard>
 <afflictionname.lungremoved>Lungs removed</afflictionname.lungremoved>
 <afflictiondescription.lungremoved>The lungs have been surgically removed.</afflictiondescription.lungremoved>
 
+<afflictionname.lungswap>Replacing lungs</afflictionname.lungswap>
+<afflictiondescription.lungswap>Old lungs have been surgically prepared for a new transplant.</afflictiondescription.lungswap>
+
 <!-- /// kidneys /// -->
 
 <afflictionname.kidneydamage>Kidney damage</afflictionname.kidneydamage>
@@ -432,6 +458,9 @@ Can give blood to: AB+</entitydescription.abpluscard>
 
 <afflictionname.kidneyremoved>Kidneys removed</afflictionname.kidneyremoved>
 <afflictiondescription.kidneyremoved>The kidneys have been surgically removed.</afflictiondescription.kidneyremoved>
+
+<afflictionname.kidneyswap>Replacing kidneys</afflictionname.kidneyswap>
+<afflictiondescription.kidneyswap>Old kidneys have been surgically prepared for a new transplant.</afflictiondescription.kidneyswap>
 
 <!-- /// bones /// -->
 
@@ -454,6 +483,9 @@ Can give blood to: AB+</entitydescription.abpluscard>
 
 <afflictionname.liverremoved>Liver removed</afflictionname.liverremoved>
 <afflictiondescription.liverremoved>The liver has been surgically removed.</afflictiondescription.liverremoved>
+
+<afflictionname.liverswap>Replacing liver</afflictionname.liverswap>
+<afflictiondescription.liverswap>Old liver has been surgically prepared for a new transplant.</afflictiondescription.liverswap>
 
 <!-- /// surgery and related /// -->
 
@@ -481,8 +513,11 @@ Can give blood to: AB+</entitydescription.abpluscard>
 <afflictionname.gypsumcast>Plaster cast</afflictionname.gypsumcast>
 <afflictiondescription.gypsumcast>Heals and protects from fractures. Movement is slowed. Remove using trauma shears.</afflictiondescription.gypsumcast>
 
-<afflictionname.ointmented>Ointment</afflictionname.ointmented>
+<afflictionname.ointmented>Antibiotic ointment</afflictionname.ointmented>
 <afflictiondescription.ointmented>A layer of antibiotic gel protects and cleans the wound from any germs.</afflictiondescription.ointmented>
+
+<afflictionname.skinointmented>Regenerative ointment</afflictionname.skinointmented>
+<afflictiondescription.skinointmented>A layer of regenerative gel speeds the healing process of burns and blunt force trauma.</afflictiondescription.skinointmented>
 
 <afflictionname.needlec>Needle</afflictionname.needlec>
 <afflictiondescription.needlec>Normalizes the pressure in the pleural cavity</afflictiondescription.needlec>

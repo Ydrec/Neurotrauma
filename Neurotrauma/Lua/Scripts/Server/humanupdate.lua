@@ -21,16 +21,6 @@ Hook.Add("think", "NT.update", function()
 	-- I'm not entirely sure this should even exist, but lets keep it for reference
 	--NT.TickUpdate()
 end)
-Hook.Add("roundStart", "NT.RoundStart.fetchCharacters", function()
-	-- Apply 5 minute traumatic shock immunity to those who happen to be in surgery
-	for key, character in pairs(Character.CharacterList) do
-		if not character.IsDead then
-			if character.IsHuman and HF.HasAffliction(character, "retractedskin") then
-				HF.SetAfflictionLimb(character, "tshocktimeout", LimbType.Torso, 15)
-			end
-		end
-	end
-end)
 
 -- gets run once every two seconds
 function NT.Update()
@@ -798,7 +788,11 @@ NT.Afflictions = {
 	stun = {
 		max = 30,
 		update = function(c, i)
-			if c.afflictions.t_paralysis.strength > 0 or c.afflictions.anesthesia.strength > 15 then
+			if
+				c.afflictions.t_paralysis.strength > 0
+				or c.afflictions.anesthesia.strength > 15
+				or c.afflictions.sym_unconsciousness.strength > 0
+			then
 				c.afflictions[i].strength = math.max(5, c.afflictions[i].strength)
 			end
 		end,
@@ -862,11 +856,14 @@ NT.Afflictions = {
 	},
 	traumaticshock = {
 		update = function(c, i)
+			if c.afflictions.tshocktimeout.strength > 0 then
+				c.afflictions[i].strength = 0
+				return
+			end
 			local shouldReduce = (c.stats.sedated and c.afflictions.table.strength > 0)
 				or c.afflictions.anesthesia.strength > 15
 			c.afflictions[i].strength = c.afflictions[i].strength
-				- (0.5 + HF.BoolToNum(shouldReduce, 1.5) + c.afflictions.tshocktimeout.strength * 100)
-					* NT.Deltatime
+				- (0.5 + HF.BoolToNum(shouldReduce, 1.5)) * NT.Deltatime
 
 			if c.afflictions[i].strength > 5 and c.afflictions.sym_unconsciousness.strength < 0.1 then
 				HF.AddAffliction(c.character, "shockpain", 10 * NT.Deltatime)
@@ -964,9 +961,6 @@ NT.Afflictions = {
 					or c.afflictions.opiateoverdose.strength > 60
 				)
 			c.afflictions[i].strength = HF.BoolToNum(isUnconscious, 2)
-			if isUnconscious then
-				c.afflictions.stun.strength = math.max(7, c.afflictions.stun.strength)
-			end
 		end,
 	},
 	tachycardia = {
@@ -1383,7 +1377,7 @@ NT.Afflictions = {
 	},
 	luabotomy = {
 		update = function(c, i)
-			c.afflictions[i].strength = 1
+			c.afflictions[i].strength = 0.1
 		end,
 	},
 	modconflict = {
@@ -1446,11 +1440,20 @@ NT.LimbAfflictions = {
 			end
 		end,
 	},
+	skinointmented = {
+		update = function(c, limbaff, i, type)
+			if limbaff[i].strength > 0 then
+				limbaff[i].strength = limbaff[i].strength - 0.2 * NT.Deltatime
+			end
+		end,
+	},
 	gypsumcast = {
 		update = function(c, limbaff, i, type)
 			-- gypsum slowdown and fracture healing
 			if limbaff[i].strength > 0 then
-				c.stats.speedmultiplier = c.stats.speedmultiplier * 0.8
+				if type == LimbType.LeftLeg or type == LimbType.RightLeg then
+					c.stats.speedmultiplier = c.stats.speedmultiplier * 0.8
+				end
 				NT.BreakLimb(c.character, type, -(100 / 300) * NT.Deltatime)
 			end
 		end,
@@ -1480,7 +1483,11 @@ NT.LimbAfflictions = {
 		update = function(c, limbaff, i)
 			if limbaff[i].strength < 50 then
 				limbaff[i].strength = limbaff[i].strength
-					- (c.afflictions.immunity.prev / 3000 + HF.Clamp(limbaff.bandaged.strength, 0, 1) * 0.1)
+					- (
+							c.afflictions.immunity.prev / 3000
+							+ HF.Clamp(limbaff.bandaged.strength, 0, 1) * 0.1
+							+ HF.Clamp(limbaff.skinointmented.strength, 0, 1) * 0.12
+						)
 						* c.stats.healingrate
 						* NT.Deltatime
 			end
@@ -1501,7 +1508,11 @@ NT.LimbAfflictions = {
 		update = function(c, limbaff, i)
 			if limbaff[i].strength < 50 then
 				limbaff[i].strength = limbaff[i].strength
-					- (c.afflictions.immunity.prev / 3000 + HF.Clamp(limbaff.bandaged.strength, 0, 1) * 0.1)
+					- (
+							c.afflictions.immunity.prev / 3000
+							+ HF.Clamp(limbaff.bandaged.strength, 0, 1) * 0.1
+							+ HF.Clamp(limbaff.skinointmented.strength, 0, 1) * 0.12
+						)
 						* c.stats.healingrate
 						* NT.Deltatime
 			end
@@ -1512,7 +1523,11 @@ NT.LimbAfflictions = {
 		update = function(c, limbaff, i)
 			if limbaff[i].strength < 50 then
 				limbaff[i].strength = limbaff[i].strength
-					- (c.afflictions.immunity.prev / 3000 + HF.Clamp(limbaff.bandaged.strength, 0, 1) * 0.1)
+					- (
+							c.afflictions.immunity.prev / 3000
+							+ HF.Clamp(limbaff.bandaged.strength, 0, 1) * 0.1
+							+ HF.Clamp(limbaff.skinointmented.strength, 0, 1) * 0.12
+						)
 						* c.stats.healingrate
 						* NT.Deltatime
 			end
@@ -1523,7 +1538,11 @@ NT.LimbAfflictions = {
 		update = function(c, limbaff, i)
 			if limbaff[i].strength < 100 then
 				limbaff[i].strength = limbaff[i].strength
-					- (c.afflictions.immunity.prev / 3000 + HF.Clamp(limbaff.bandaged.strength, 0, 1) * 0.1)
+					- (
+							c.afflictions.immunity.prev / 3000
+							+ HF.Clamp(limbaff.bandaged.strength, 0, 1) * 0.1
+							+ HF.Clamp(limbaff.skinointmented.strength, 0, 1) * 0.12
+						)
 						* c.stats.healingrate
 						* NT.Deltatime
 			end
@@ -1534,7 +1553,11 @@ NT.LimbAfflictions = {
 		update = function(c, limbaff, i)
 			if limbaff[i].strength < 50 then
 				limbaff[i].strength = limbaff[i].strength
-					- (c.afflictions.immunity.prev / 3000 + HF.Clamp(limbaff.bandaged.strength, 0, 1) * 0.1)
+					- (
+							c.afflictions.immunity.prev / 3000
+							+ HF.Clamp(limbaff.bandaged.strength, 0, 1) * 0.1
+							+ HF.Clamp(limbaff.skinointmented.strength, 0, 1) * 0.12
+						)
 						* c.stats.healingrate
 						* NT.Deltatime
 			end
@@ -1549,6 +1572,7 @@ NT.LimbAfflictions = {
 							c.afflictions.immunity.prev / 8000
 							+ HF.Clamp(limbaff.bandaged.strength, 0, 1) * 0.1
 							+ HF.Clamp(limbaff.iced.strength, 0, 1) * 0.3
+							+ HF.Clamp(limbaff.skinointmented.strength, 0, 1) * 0.12
 						)
 						* c.stats.healingrate
 						* NT.Deltatime
@@ -1931,12 +1955,8 @@ NT.CharStats = {
 }
 
 function NT.UpdateHuman(character)
-	if not HF.HasAffliction(character, "updateme") then
-		if character.TeamID == 1 or character.TeamID == 2 then
-			HF.SetAffliction(character, "updateme", 1)
-		else
-			return
-		end
+	if not HF.HasAffliction(character, "luabotomy") then
+		return
 	end
 
 	-- pre humanupdate hooks
@@ -2080,9 +2100,16 @@ function NT.AddTickTask(type, duration, character)
 end
 
 -- optimization stuff
-Hook.Add("character.created", "NT.updateme", function(character)
+Hook.Add("character.created", "NT.cleanbotomy", function(character)
+	-- Apply 5 minute traumatic shock immunity to those who happen to be in surgery after a starting the round
+	if HF.HasAffliction(character, "surgeryincision") then
+		HF.SetAffliction(character, "tshocktimeout", 15)
+	end
+	-- unfuck shit in the crewmate and add our ""update/debug flag""
 	if character.TeamID == 1 or character.TeamID == 2 then
-		HF.SetAffliction(character, "updateme", 1)
-		HF.SetAffliction(character, "luabotomy", 1)
+		HF.SetAffliction(character, "luabotomypurger", 2)
+		Timer.Wait(function()
+			HF.SetAffliction(character, "luabotomy", 0.1)
+		end, 8000)
 	end
 end)
