@@ -219,6 +219,9 @@
         <Body width="100" height="80" density="9"/>
 
         <MeleeWeapon slots="Any,RightHand,LeftHand" controlpose="true" aimpos="45,10" handle1="-20,0" handle2="-10,5" holdangle="60" reload="1" range="100" combatpriority="5" msg="ItemMsgPickUpSelect">
+            <Attack stun="0.3" targetimpulse="2">
+                <Affliction identifier="stopcreatureabuse" strength="2"/>
+            </Attack>
             <StatusEffect type="OnUse" target="This" disabledeltatime="true">
                 <Sound file="%ModDir%/Sound/squeak1.ogg" type="OnUse" range="500"/>
                 <Sound file="%ModDir%/Sound/squeak2.ogg" type="OnUse" range="500"/>
