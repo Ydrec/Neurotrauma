@@ -24,7 +24,9 @@ local function UseItemMethod(item, usingCharacter, targetCharacter, limb, manual
 
 	local methodtorun = NT.ItemMethods[identifier] -- get the function associated with the identifier
 	if methodtorun ~= nil then
-		if manuallyCalledItems[identifier] and not manualCall then return end
+		if manuallyCalledItems[identifier] and not manualCall then
+			return
+		end
 		-- run said function
 		methodtorun(item, usingCharacter, targetCharacter, limb)
 		return
@@ -45,12 +47,14 @@ end)
 
 Hook.Add("NT.runItemMethod", "NT.itemused_manual", function(effect, deltaTime, item, targets, worldPosition, element)
 	local target = targets[1]
-	if not target then return end
-    if LuaUserData.IsTargetType(target, "Barotrauma.Limb") then
- 		UseItemMethod(item, effect.user, target.character, target, true)
-    elseif LuaUserData.IsTargetType(target, "Barotrauma.Character") then
-    	UseItemMethod(item, effect.user, target, target.AnimController.MainLimb, true)
-    end
+	if not target then
+		return
+	end
+	if LuaUserData.IsTargetType(target, "Barotrauma.Limb") then
+		UseItemMethod(item, effect.user, target.character, target, true)
+	elseif LuaUserData.IsTargetType(target, "Barotrauma.Character") then
+		UseItemMethod(item, effect.user, target, target.AnimController.MainLimb, true)
+	end
 end)
 
 -- TODO: some items trigger afflictions after a single human update, to fix, trigger them immediately for consistency
@@ -1361,7 +1365,15 @@ NT.ItemMethods.organscalpel_liver = function(item, usingCharacter, targetCharact
 						condition = 100 - damage,
 					}
 
-					HF.GiveItemPlusFunction(transplantidentifier, postSpawnFunc, params, usingCharacter)
+					local container = usingCharacter.Inventory.GetItemInLimbSlot(InvSlotType.RightHand)
+					if container == nil then
+						container = usingCharacter.Inventory.GetItemInLimbSlot(InvSlotType.LeftHand)
+					end
+					if container ~= nil then
+						HF.SpawnItemPlusFunction(transplantidentifier, postSpawnFunc, params, container.OwnInventory)
+					else
+						HF.GiveItemPlusFunction(transplantidentifier, postSpawnFunc, params, usingCharacter)
+					end
 				end
 			end
 		end
@@ -1437,7 +1449,15 @@ NT.ItemMethods.organscalpel_lungs = function(item, usingCharacter, targetCharact
 						condition = 100 - damage,
 					}
 
-					HF.GiveItemPlusFunction(transplantidentifier, postSpawnFunc, params, usingCharacter)
+					local container = usingCharacter.Inventory.GetItemInLimbSlot(InvSlotType.RightHand)
+					if container == nil then
+						container = usingCharacter.Inventory.GetItemInLimbSlot(InvSlotType.LeftHand)
+					end
+					if container ~= nil then
+						HF.SpawnItemPlusFunction(transplantidentifier, postSpawnFunc, params, container.OwnInventory)
+					else
+						HF.GiveItemPlusFunction(transplantidentifier, postSpawnFunc, params, usingCharacter)
+					end
 				end
 			end
 		end
@@ -1512,7 +1532,15 @@ NT.ItemMethods.organscalpel_heart = function(item, usingCharacter, targetCharact
 						condition = 100 - damage,
 					}
 
-					HF.GiveItemPlusFunction(transplantidentifier, postSpawnFunc, params, usingCharacter)
+					local container = usingCharacter.Inventory.GetItemInLimbSlot(InvSlotType.RightHand)
+					if container == nil then
+						container = usingCharacter.Inventory.GetItemInLimbSlot(InvSlotType.LeftHand)
+					end
+					if container ~= nil then
+						HF.SpawnItemPlusFunction(transplantidentifier, postSpawnFunc, params, container.OwnInventory)
+					else
+						HF.GiveItemPlusFunction(transplantidentifier, postSpawnFunc, params, usingCharacter)
+					end
 				end
 			end
 		end
@@ -1581,7 +1609,15 @@ NT.ItemMethods.organscalpel_kidneys = function(item, usingCharacter, targetChara
 						condition = 100,
 					}
 
-					HF.GiveItemPlusFunction(transplantidentifier, postSpawnFunc, params, usingCharacter)
+					local container = usingCharacter.Inventory.GetItemInLimbSlot(InvSlotType.RightHand)
+					if container == nil then
+						container = usingCharacter.Inventory.GetItemInLimbSlot(InvSlotType.LeftHand)
+					end
+					if container ~= nil then
+						HF.SpawnItemPlusFunction(transplantidentifier, postSpawnFunc, params, container.OwnInventory)
+					else
+						HF.GiveItemPlusFunction(transplantidentifier, postSpawnFunc, params, usingCharacter)
+					end
 					damage = damage + 50
 				elseif damage < 95 then
 					HF.SetAffliction(targetCharacter, "kidneyremoved", 100, usingCharacter)
@@ -1619,7 +1655,15 @@ NT.ItemMethods.organscalpel_kidneys = function(item, usingCharacter, targetChara
 						condition = 100 - (damage - 50) * 2,
 					}
 
-					HF.GiveItemPlusFunction(transplantidentifier, postSpawnFunc, params, usingCharacter)
+					local container = usingCharacter.Inventory.GetItemInLimbSlot(InvSlotType.RightHand)
+					if container == nil then
+						container = usingCharacter.Inventory.GetItemInLimbSlot(InvSlotType.LeftHand)
+					end
+					if container ~= nil then
+						HF.SpawnItemPlusFunction(transplantidentifier, postSpawnFunc, params, container.OwnInventory)
+					else
+						HF.GiveItemPlusFunction(transplantidentifier, postSpawnFunc, params, usingCharacter)
+					end
 				end
 			end
 		end
@@ -1661,36 +1705,35 @@ NT.ItemMethods.organscalpel_brain = function(item, usingCharacter, targetCharact
 				end
 
 				if damage < 90 then
-					local postSpawnFunction = function(item, donor, client)
-						item.Condition = 100 - damage
-						if client ~= nil then
-							item.Description = client.Name
+					local postSpawnFunc = function(args)
+						args.item.Condition = 100 - damage
+						if args.client ~= nil then
+							args.item.Description = client.Name
 						end
 					end
 
-					if SERVER then
-						-- use server spawn method
-						local prefab = ItemPrefab.GetItemPrefab("braintransplant")
-						local client = HF.CharacterToClient(targetCharacter)
-						Entity.Spawner.AddItemToSpawnQueue(
-							prefab,
-							usingCharacter.WorldPosition,
-							nil,
-							nil,
-							function(item)
-								usingCharacter.Inventory.TryPutItem(item, nil, { InvSlotType.Any })
-								postSpawnFunction(item, targetCharacter, client)
-							end
-						)
+					-- use server spawn method
+					local transplantidentifier = "braintransplant"
+					-- selling(?)
+					--if NTC.HasTag(usingCharacter, "organssellforfull") then
+					--	transplantidentifier = "braintransplant"
+					--end
+					local params = {
+						client = HF.CharacterToClient(targetCharacter),
+					}
 
-						if client ~= nil then
-							client.SetClientCharacter(nil)
-						end
+					local container = usingCharacter.Inventory.GetItemInLimbSlot(InvSlotType.RightHand)
+					if container == nil then
+						container = usingCharacter.Inventory.GetItemInLimbSlot(InvSlotType.LeftHand)
+					end
+					if container ~= nil then
+						HF.SpawnItemPlusFunction(transplantidentifier, postSpawnFunc, params, container.OwnInventory)
 					else
-						-- use client spawn method
-						local item = Item(ItemPrefab.GetItemPrefab("braintransplant"), usingCharacter.WorldPosition)
-						usingCharacter.Inventory.TryPutItem(item, nil, { InvSlotType.Any })
-						postSpawnFunction(item, targetCharacter, nil)
+						HF.GiveItemPlusFunction(transplantidentifier, postSpawnFunc, params, usingCharacter)
+					end
+
+					if client ~= nil then
+						client.SetClientCharacter(nil)
 					end
 				end
 			end
