@@ -897,7 +897,7 @@
 
   <!-- CPR fracture immunity
   Invisible Status
-  immunity against blunt force trauma
+  immunity against fall damage (barophysics)
   -->
   <Affliction
     identifier="cpr_fracturebuff"
@@ -912,12 +912,7 @@
     type="resistance"
     maxstrength="2">
 
-    <Effect minstrength="0" maxstrength="2"
-      strengthchange="-0.5"
-      resistancefor="blunttrauma"
-      minresistance="1"
-      maxresistance="1">
-    </Effect>
+    <Effect minstrength="0" maxstrength="2" strengthchange="-0.5"/>
     <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="256,896,128,128" color="195,104,60,255" origin="0,0"/>
   </Affliction>
 
