@@ -711,7 +711,11 @@ function HF.SpawnItemPlusFunction(identifier, func, params, inventory, targetslo
 				nil,
 				function(newitem)
 					if inventory ~= nil then
-						inventory.TryPutItem(newitem, targetslot, true, true, nil)
+						if targetslot ~= nil then
+							inventory.TryPutItem(newitem, targetslot, true, true, nil)
+						else
+							inventory.TryPutItem(newitem, nil, { 0 }, true, true)
+						end
 					end
 					params["item"] = newitem
 					if func ~= nil then
