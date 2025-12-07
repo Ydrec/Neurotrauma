@@ -59,7 +59,7 @@
     isbuff="false"
     healableinmedicalclinic="false"
     iconcolors="255,255,255,255;255,255,255,255">
-    <Effect minstrength="0" maxstrength="2" strengthchange="-1"/>
+    <Effect minstrength="0" maxstrength="2" strengthchange="-0.5"/>
 
     <icon texture="%ModDir%/Images/AfflictionIcons2.png" sheetindex="7,0" sheetelementsize="128,128" origin="0,0"/>
   </Affliction>
