@@ -14,7 +14,7 @@ namespace BetterHealthUI {
     partial class BetterHealthUIMod {
 
         private int healthGUIRefreshTimer = 0;
-        public static bool NeurotraumaEnabled = false;
+        public static bool NeurotraumaEnabled = true;
         private static Random rnd = new Random();
         private static CharacterHealth prevOpenHealthWindow = null;
 
@@ -23,10 +23,9 @@ namespace BetterHealthUI {
             // Check if Neurotrauma is enabled
             foreach (ContentPackage package in ContentPackageManager.EnabledPackages.All)
             {
-                if (package.NameMatches("Neurotrauma"))
+                if (package.NameMatches("BetterHealthUI (Updated)"))
                 {
-                    NeurotraumaEnabled = true;
-                    break;
+                    return;
                 }
             }
             if (NeurotraumaEnabled)
