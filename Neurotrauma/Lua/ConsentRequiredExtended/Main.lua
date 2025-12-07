@@ -31,4 +31,10 @@ Hook.Add(LUA_EVENT_MELEEWEAPON_HANDLEIMPACT, HOOK_NAME_MELEEWEAPON_HANDLEIMPACT,
 
 Hook.Add(LUA_EVENT_ROUNDSTART, HOOK_NAME_UPDATE_RESCUETARGETS, Api.UpdateRescueTargets)
 
-Hook.Patch('ConsentRequiredExtended.onandleProjectileCollision','Barotrauma.Items.Components.Projectile', 'HandleProjectileCollision', onHandleProjectileCollision, Hook.HookMethodType.After)
+Hook.Patch(
+	"ConsentRequiredExtended.onHandleProjectileCollision",
+	"Barotrauma.Items.Components.Projectile",
+	"HandleProjectileCollision",
+	onHandleProjectileCollision,
+	Hook.HookMethodType.After
+)
