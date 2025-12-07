@@ -704,10 +704,7 @@ NTTut.scenarios = {
                     HF.SpawnItemPlusFunction("hearttransplant",nil,nil,params.item.OwnInventory,4)
                 end,nil,character.Inventory,5,item.WorldPosition)
 
-                HF.GiveItem(character,"organscalpel_kidneys")
-                HF.GiveItem(character,"organscalpel_liver")
-                HF.GiveItem(character,"organscalpel_lungs")
-                HF.GiveItem(character,"organscalpel_heart")
+                HF.GiveItem(character,"multiscalpel")
 
                 HF.SpawnItemPlusFunction("stasisbag",nil,nil,character.Inventory,4,item.WorldPosition)
 
