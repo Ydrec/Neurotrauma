@@ -13,8 +13,8 @@
         <InventoryIcon texture="%ModDir%/Images/InventoryItemIconAtlas.png" sourcerect="0,0,64,64" origin="0.5,0.5"/>
         <Sprite texture="%ModDir%/Images/InGameItemIconAtlas.png" sourcerect="131,188,122,8" depth="0.55" origin="0.5,0.5"/>
         <Body width="65" height="15" density="50"/>
-        <SuitableTreatment identifier="analgesia" suitability="100"/>
-        <SuitableTreatment identifier="sym_unconsciousness" suitability="100"/>
+        <SuitableTreatment identifier="analgesia" suitability="0.01"/>
+        <SuitableTreatment identifier="sym_unconsciousness" suitability="0.01"/>
 
         <MeleeWeapon slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="-7,2" holdangle="60" reload="1.0">
             <StatusEffect type="OnUse" target="Limb" comparison="and">
@@ -49,8 +49,8 @@
         <InventoryIcon texture="%ModDir%/Images/InventoryItemIconAtlas.png" sourcerect="0,256,64,64" origin="0.5,0.5"/>
         <Sprite texture="%ModDir%/Images/InGameItemIconAtlas.png" sourcerect="131,218,122,8" depth="0.55" origin="0.5,0.5"/>
         <Body width="65" height="15" density="50"/>
-        <SuitableTreatment identifier="analgesia" suitability="100"/>
-        <SuitableTreatment identifier="sym_unconsciousness" suitability="100"/>
+        <SuitableTreatment identifier="analgesia" suitability="0.04"/>
+        <SuitableTreatment identifier="sym_unconsciousness" suitability="0.04"/>
 
         <MeleeWeapon slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="-7,2" holdangle="60" reload="1.0">
             <!-- extracting organ -->
