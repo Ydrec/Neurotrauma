@@ -268,8 +268,8 @@ namespace BetterHealthUI {
             }, LuaCsHook.HookMethodType.Before, this);
 
             // CreateRecommendedTreatments override
-            // sets the max amount of displayed treatments to 10
-            const int maxDisplayedSuitableTreatments = 10;
+            // sets the max amount of displayed treatments to 16
+            const int maxDisplayedSuitableTreatments = 16;
             GameMain.LuaCs.Hook.HookMethod("BetterHealthUIMod_CreateRecommendedTreatments",
                 typeof(CharacterHealth).GetMethod("CreateRecommendedTreatments", BindingFlags.Instance | BindingFlags.NonPublic),
                 (object self, Dictionary<string, object> args) => {
