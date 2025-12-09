@@ -1366,10 +1366,14 @@ NT.ItemMethods.organscalpel_liver = function(item, usingCharacter, targetCharact
 					}
 
 					local container = usingCharacter.Inventory.GetItemInLimbSlot(InvSlotType.RightHand)
-					if container == nil then
+					if container == nil or container.OwnInventory == nil or container.OwnInventory.IsFull() == true then
 						container = usingCharacter.Inventory.GetItemInLimbSlot(InvSlotType.LeftHand)
 					end
-					if container ~= nil then
+					if
+						container ~= nil
+						and container.OwnInventory ~= nil
+						and container.OwnInventory.IsFull() == false
+					then
 						HF.SpawnItemPlusFunction(transplantidentifier, postSpawnFunc, params, container.OwnInventory)
 					else
 						HF.GiveItemPlusFunction(transplantidentifier, postSpawnFunc, params, usingCharacter)
@@ -1450,10 +1454,14 @@ NT.ItemMethods.organscalpel_lungs = function(item, usingCharacter, targetCharact
 					}
 
 					local container = usingCharacter.Inventory.GetItemInLimbSlot(InvSlotType.RightHand)
-					if container == nil then
+					if container == nil or container.OwnInventory == nil or container.OwnInventory.IsFull() == true then
 						container = usingCharacter.Inventory.GetItemInLimbSlot(InvSlotType.LeftHand)
 					end
-					if container ~= nil then
+					if
+						container ~= nil
+						and container.OwnInventory ~= nil
+						and container.OwnInventory.IsFull() == false
+					then
 						HF.SpawnItemPlusFunction(transplantidentifier, postSpawnFunc, params, container.OwnInventory)
 					else
 						HF.GiveItemPlusFunction(transplantidentifier, postSpawnFunc, params, usingCharacter)
@@ -1533,10 +1541,14 @@ NT.ItemMethods.organscalpel_heart = function(item, usingCharacter, targetCharact
 					}
 
 					local container = usingCharacter.Inventory.GetItemInLimbSlot(InvSlotType.RightHand)
-					if container == nil then
+					if container == nil or container.OwnInventory == nil or container.OwnInventory.IsFull() == true then
 						container = usingCharacter.Inventory.GetItemInLimbSlot(InvSlotType.LeftHand)
 					end
-					if container ~= nil then
+					if
+						container ~= nil
+						and container.OwnInventory ~= nil
+						and container.OwnInventory.IsFull() == false
+					then
 						HF.SpawnItemPlusFunction(transplantidentifier, postSpawnFunc, params, container.OwnInventory)
 					else
 						HF.GiveItemPlusFunction(transplantidentifier, postSpawnFunc, params, usingCharacter)
@@ -1610,10 +1622,14 @@ NT.ItemMethods.organscalpel_kidneys = function(item, usingCharacter, targetChara
 					}
 
 					local container = usingCharacter.Inventory.GetItemInLimbSlot(InvSlotType.RightHand)
-					if container == nil then
+					if container == nil or container.OwnInventory == nil or container.OwnInventory.IsFull() == true then
 						container = usingCharacter.Inventory.GetItemInLimbSlot(InvSlotType.LeftHand)
 					end
-					if container ~= nil then
+					if
+						container ~= nil
+						and container.OwnInventory ~= nil
+						and container.OwnInventory.IsFull() == false
+					then
 						HF.SpawnItemPlusFunction(transplantidentifier, postSpawnFunc, params, container.OwnInventory)
 					else
 						HF.GiveItemPlusFunction(transplantidentifier, postSpawnFunc, params, usingCharacter)
@@ -1656,10 +1672,14 @@ NT.ItemMethods.organscalpel_kidneys = function(item, usingCharacter, targetChara
 					}
 
 					local container = usingCharacter.Inventory.GetItemInLimbSlot(InvSlotType.RightHand)
-					if container == nil then
+					if container == nil or container.OwnInventory == nil or container.OwnInventory.IsFull() == true then
 						container = usingCharacter.Inventory.GetItemInLimbSlot(InvSlotType.LeftHand)
 					end
-					if container ~= nil then
+					if
+						container ~= nil
+						and container.OwnInventory ~= nil
+						and container.OwnInventory.IsFull() == false
+					then
 						HF.SpawnItemPlusFunction(transplantidentifier, postSpawnFunc, params, container.OwnInventory)
 					else
 						HF.GiveItemPlusFunction(transplantidentifier, postSpawnFunc, params, usingCharacter)
@@ -1705,35 +1725,56 @@ NT.ItemMethods.organscalpel_brain = function(item, usingCharacter, targetCharact
 				end
 
 				if damage < 90 then
-					local postSpawnFunc = function(args)
-						args.item.Condition = 100 - damage
-						if args.client ~= nil then
-							args.item.Description = client.Name
+					local postSpawnFunction = function(item, donor, client)
+						item.Condition = 100 - damage
+						if client ~= nil then
+							item.Description = client.Name
 						end
 					end
 
-					-- use server spawn method
-					local transplantidentifier = "braintransplant"
-					-- selling(?)
-					--if NTC.HasTag(usingCharacter, "organssellforfull") then
-					--	transplantidentifier = "braintransplant"
-					--end
-					local params = {
-						client = HF.CharacterToClient(targetCharacter),
-					}
-
 					local container = usingCharacter.Inventory.GetItemInLimbSlot(InvSlotType.RightHand)
-					if container == nil then
+					if container == nil or container.OwnInventory == nil or container.OwnInventory.IsFull() == true then
 						container = usingCharacter.Inventory.GetItemInLimbSlot(InvSlotType.LeftHand)
 					end
-					if container ~= nil then
-						HF.SpawnItemPlusFunction(transplantidentifier, postSpawnFunc, params, container.OwnInventory)
-					else
-						HF.GiveItemPlusFunction(transplantidentifier, postSpawnFunc, params, usingCharacter)
-					end
+					if SERVER then
+						-- use server spawn method
+						local prefab = ItemPrefab.GetItemPrefab("braintransplant")
+						local client = HF.CharacterToClient(targetCharacter)
+						Entity.Spawner.AddItemToSpawnQueue(
+							prefab,
+							usingCharacter.WorldPosition,
+							nil,
+							nil,
+							function(item)
+								if
+									container ~= nil
+									and container.OwnInventory ~= nil
+									and container.OwnInventory.IsFull() == false
+								then
+									container.OwnInventory.TryPutItem(item, nil, { 0 }, true, true)
+								else
+									usingCharacter.Inventory.TryPutItem(item, nil, { InvSlotType.Any })
+								end
+								postSpawnFunction(item, targetCharacter, client)
+							end
+						)
 
-					if client ~= nil then
-						client.SetClientCharacter(nil)
+						if client ~= nil then
+							client.SetClientCharacter(nil)
+						end
+					else
+						-- use client spawn method
+						local item = Item(ItemPrefab.GetItemPrefab("braintransplant"), usingCharacter.WorldPosition)
+						if
+							container ~= nil
+							and container.OwnInventory ~= nil
+							and container.OwnInventory.IsFull() == false
+						then
+							container.OwnInventory.TryPutItem(item, nil, { 0 }, true, true)
+						else
+							usingCharacter.Inventory.TryPutItem(item, nil, { InvSlotType.Any })
+						end
+						postSpawnFunction(item, targetCharacter, nil)
 					end
 				end
 			end

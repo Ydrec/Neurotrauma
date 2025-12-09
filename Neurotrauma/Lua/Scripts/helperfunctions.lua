@@ -754,7 +754,9 @@ function HF.GiveItemPlusFunction(identifier, func, params, character)
 				character.Inventory.TryPutItem(newitem, nil, { InvSlotType.Any })
 			end
 			params["item"] = newitem
-			func(params)
+			if func ~= nil then
+				func(params)
+			end
 		end)
 	end, 35)
 end
