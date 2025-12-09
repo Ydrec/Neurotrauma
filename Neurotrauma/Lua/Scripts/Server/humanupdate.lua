@@ -32,7 +32,11 @@ function NT.Update()
 	-- fetchcharacters to update
 	for key, character in pairs(Character.CharacterList) do
 		if not character.IsDead then
-			if character.IsHuman then
+			local client = HF.CharacterToClient(character)
+			if
+				character.IsHuman
+				and (not Game.IsMultiplayer or character.IsPlayer == false or (client ~= nil and client.HasSpawned))
+			then
 				table.insert(updateHumans, character)
 				amountHumans = amountHumans + 1
 			else
