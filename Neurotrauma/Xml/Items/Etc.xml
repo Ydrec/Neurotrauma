@@ -17,7 +17,7 @@
             <Item identifier="aluminium"/>
         </Deconstruct>
 
-        <Fabricate suitablefabricators="medicalfabricator" requiredtime="30">
+        <Fabricate suitablefabricators="fabricator" requiredtime="30">
             <RequiredSkill identifier="medical" level="50"/>
             <RequiredItem identifier="fpgacircuit"/>
             <RequiredItem identifier="plastic"/>
