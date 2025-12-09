@@ -561,15 +561,15 @@
         <PreferredContainer primary="wreckmedcab,abandonedmedcab" minamount="0" maxamount="4" spawnprobability="0.12"/>
         <PreferredContainer primary="outpostmedcompartment" minamount="0" maxamount="10" spawnprobability="0.25"/>
 
-        <Price baseprice="54">
+        <!--<Price baseprice="54">
             <Price storeidentifier="merchantmedical" sold="true" multiplier="0.9" minavailable="12"/>
-        </Price>
+        </Price>-->
 
-        <Fabricate suitablefabricators="medicalfabricator" requiredtime="15" amount="8">
+        <!--<Fabricate suitablefabricators="medicalfabricator" requiredtime="15" amount="8">
             <RequiredSkill identifier="medical" level="10"/>
             <RequiredItem identifier="stabilozine" amount="2"/>
             <RequiredItem identifier="elastin" amount="2"/>
-        </Fabricate>
+        </Fabricate>-->
 
         <Deconstruct/>
 
